@@ -513,36 +513,192 @@
     }
 
     .timeline {
-      display: grid;
-      border-top: 1px solid var(--line);
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--gold) 18%, var(--green) 50%, var(--gold) 82%, transparent);
+      opacity: .35;
+      transform: translateX(-50%);
     }
 
     .timeline-item {
+      position: relative;
       display: grid;
-      grid-template-columns: 11rem minmax(0, 1fr) minmax(190px, .3fr);
-      gap: clamp(1rem, 3vw, 2rem);
-      align-items: start;
-      padding: 1.35rem 0;
-      border-bottom: 1px solid var(--line);
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+      min-height: 122px;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+      grid-column: 2;
+    }
+
+    .timeline-item:nth-child(even) .timeline-year {
+      grid-column: 1;
+      text-align: right;
     }
 
     .timeline-year {
       color: var(--gold);
-      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
-      font-size: 1rem;
-      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3.7rem);
+      line-height: .9;
+      font-weight: 900;
+      opacity: .4;
+      transition: opacity .28s var(--ease), transform .28s var(--ease);
     }
 
-    .timeline-item p {
+    .timeline-content {
+      padding: 1.15rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.025);
+      transition: transform .28s var(--ease), border-color .28s var(--ease), background .28s var(--ease);
+    }
+
+    .timeline-content p {
+      margin-top: .45rem;
       color: var(--muted);
-      max-width: 65ch;
     }
 
-    .timeline-tag {
-      justify-self: end;
-      color: var(--quiet);
+    .timeline-content a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+
+    .timeline-node {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      width: 12px;
+      height: 12px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      background: var(--bg);
+      transform: translate(-50%, -50%);
+      transition: transform .28s var(--ease), background .28s var(--ease);
+    }
+
+    .timeline-item:hover .timeline-year {
+      opacity: .9;
+      transform: translateY(-2px);
+    }
+
+    .timeline-item:hover .timeline-content {
+      transform: translateY(-4px);
+      border-color: var(--line-strong);
+      background: rgba(255,255,255,.045);
+    }
+
+    .timeline-item:hover .timeline-node {
+      background: var(--gold);
+      transform: translate(-50%, -50%) scale(1.4);
+    }
+
+    .philosophy {
+      max-width: 890px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .philosophy blockquote {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(1.65rem, 3.6vw, 3.2rem);
+      font-weight: 320;
+      line-height: 1.28;
+    }
+
+    .philosophy em {
+      color: var(--gold);
+    }
+
+    .philosophy cite {
+      display: block;
+      margin-top: 1.4rem;
+      color: var(--muted);
+      font-style: normal;
       font-size: .78rem;
-      font-weight: 800;
+      font-weight: 850;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .identity-grid,
+    .campaign-grid {
+      display: grid;
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .identity-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .identity-card,
+    .campaign-card {
+      background: var(--panel);
+      transition: transform .28s var(--ease), background .28s var(--ease);
+    }
+
+    .identity-card {
+      padding: clamp(1.7rem, 4vw, 3.8rem);
+    }
+
+    .identity-card:hover,
+    .campaign-card:hover {
+      transform: translateY(-4px);
+      background: var(--panel-2);
+    }
+
+    .identity-card h3,
+    .campaign-card h3 {
+      color: var(--gold);
+    }
+
+    .identity-card p,
+    .campaign-card p {
+      margin-top: .85rem;
+      color: var(--muted);
+    }
+
+    .identity-card strong {
+      color: var(--ink);
+    }
+
+    .campaign-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .campaign-card {
+      min-height: 230px;
+      padding: clamp(1.25rem, 3vw, 2.4rem);
+    }
+
+    .campaign-card.featured {
+      grid-column: span 2;
+      background: linear-gradient(135deg, rgba(217,182,93,.12), var(--panel));
+    }
+
+    .campaign-stat {
+      display: block;
+      margin-top: 1.3rem;
+      color: var(--green);
+      font-size: .78rem;
+      font-weight: 850;
       letter-spacing: .12em;
       text-transform: uppercase;
     }
@@ -607,7 +763,65 @@
       font-weight: 780;
     }
 
-    .platform-link svg,
+    .platform-label {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      min-width: 0;
+    }
+
+    .platform-icon {
+      width: 28px;
+      height: 28px;
+      flex: 0 0 auto;
+      color: var(--gold);
+      fill: currentColor;
+      transition: transform .28s var(--ease);
+    }
+
+    .platform-link:hover .platform-icon,
+    .platform-link:focus-visible .platform-icon {
+      transform: scale(1.12);
+    }
+
+    .social-strip {
+      display: flex;
+      justify-content: center;
+      gap: .9rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(255,255,255,.025);
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .04em;
+      transition: transform .28s var(--ease), color .28s var(--ease), border-color .28s var(--ease), background .28s var(--ease);
+    }
+
+    .social-link svg {
+      width: 23px;
+      height: 23px;
+      fill: currentColor;
+    }
+
+    .social-link:hover,
+    .social-link:focus-visible {
+      transform: translateY(-4px);
+      color: var(--gold);
+      border-color: var(--gold);
+      background: rgba(217,182,93,.1);
+      outline: none;
+    }
+
     .arrow-icon {
       width: 18px;
       height: 18px;
@@ -1161,6 +1375,7 @@
       .statement-grid,
       .listen-grid,
       .video-grid,
+      .identity-grid,
       .contact-grid {
         grid-template-columns: 1fr;
       }
@@ -1219,15 +1434,39 @@
 
       .timeline-item {
         grid-template-columns: 1fr;
+        min-height: auto;
+        padding-left: 3rem;
+        gap: .75rem;
       }
 
-      .timeline-tag {
-        justify-self: start;
+      .timeline::before {
+        left: 1rem;
+      }
+
+      .timeline-item:nth-child(even) .timeline-content,
+      .timeline-item:nth-child(even) .timeline-year {
+        grid-column: 1;
+        text-align: left;
+      }
+
+      .timeline-node {
+        top: .7rem;
+        left: 1rem;
+        transform: translate(-50%, 0);
+      }
+
+      .timeline-item:hover .timeline-node {
+        transform: translate(-50%, 0) scale(1.4);
       }
 
       .platforms,
+      .campaign-grid,
       .press-grid {
         grid-template-columns: 1fr;
+      }
+
+      .campaign-card.featured {
+        grid-column: span 1;
       }
 
       .youtube-frame {
@@ -1282,6 +1521,23 @@
   </style>
 </head>
 <body>
+  <svg style="display:none" aria-hidden="true">
+    <defs>
+      <symbol id="icon-spotify" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.65 14.65c-.2.3-.6.4-.9.2-2.5-1.5-5.6-1.9-9.3-1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.1-.9 7.6-.5 10.4 1.2.3.2.4.6.2.9zm1.2-2.8c-.3.4-.7.5-1.1.3-2.8-1.7-7.1-2.2-10.4-1.2-.4.1-.9-.1-1-.6-.1-.4.1-.9.6-1 3.8-1.1 8.5-.6 11.7 1.3.4.3.5.8.2 1.2zm.1-2.9c-3.4-2-8.9-2.2-12.1-1.2-.5.2-1-.1-1.1-.6-.2-.5.1-1 .6-1.2 3.7-1.1 9.8-.9 13.7 1.3.5.3.6.9.3 1.4-.3.4-.9.6-1.4.3z"/></symbol>
+      <symbol id="icon-apple" viewBox="0 0 24 24"><path d="M18.7 8.7c-.9-1.1-2.2-1.9-3.7-1.9-.2 0-.4 0-.6.1-.8.2-1.5.7-2 1.3-.5-.6-1.2-1.1-2-1.3-.2 0-.4-.1-.6-.1-1.5 0-2.8.8-3.7 1.9-1.6 2-1.3 5.6.4 8.3.8 1.3 1.9 2.7 3.3 2.7h.1c.8 0 1.3-.5 2-.5.7 0 1.1.5 2 .5h.1c1.4 0 2.5-1.4 3.3-2.7 1.7-2.7 2-6.3.4-8.3zM12 7.5c.8-1 2.1-1.6 3.2-1.6.1 0 .2 0 .3.1-1.1 1.6-1 4.3.2 6.1-.5.3-1.1.5-1.7.5-.8 0-1.2-.4-1.9-.4-.7 0-1.1.4-1.9.4-.6 0-1.2-.2-1.7-.5 1.2-1.8 1.3-4.5.2-6.1.1 0 .2-.1.3-.1 1.1 0 2.4.6 3.2 1.6z"/></symbol>
+      <symbol id="icon-amazon" viewBox="0 0 24 24"><path d="M15.93 17.09c-.17.23-.44.34-.7.24-1.95-.8-4.12-1.23-6.46-1.23-1.83 0-3.83.25-5.67.75-.28.08-.57-.08-.66-.36-.08-.27.08-.56.36-.65 2.03-.56 4.22-.84 6.47-.84 2.57 0 4.97.48 7.14 1.43.27.11.4.42.29.69-.02.05-.04.09-.07.13-.53.73-1.11 1.43-1.71 2.09 2.24-.56 4.14-1.79 5.35-3.44.18-.24.52-.29.76-.11.24.18.29.52.11.76-1.46 1.96-3.72 3.4-6.24 3.99-.26.06-.52-.1-.58-.36-.06-.26.1-.52.36-.58 2.18-.52 4.14-1.75 5.45-3.41-1.33 1.28-3.01 2.17-4.89 2.55-.22.04-.44-.07-.53-.27zM10.5 2C5.81 2 2 5.81 2 10.5c0 2.48 1.09 4.7 2.81 6.22.18-.56.45-1.09.8-1.57-.42-.53-.67-1.19-.67-1.9 0-1.74 1.41-3.15 3.15-3.15.36 0 .7.06 1.02.17C8.42 7.67 9.87 6.5 11.58 6.5c2.32 0 4.2 1.88 4.2 4.2 0 .56-.11 1.09-.31 1.58.73.34 1.38.8 1.93 1.36.36-.92.56-1.92.56-2.96 0-3.87-2.58-7.14-6.11-8.18-.25-.08-.41-.32-.36-.58.05-.26.29-.43.55-.38 4.04 1.18 6.92 4.87 6.92 9.14 0 1.2-.23 2.34-.65 3.39.28.53.44 1.13.44 1.77 0 .34-.04.67-.11.99C20.91 15.2 22 13 22 10.5 22 5.81 18.19 2 13.5 2h-3z"/></symbol>
+      <symbol id="icon-audiomack" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-6h-2v-4h2v4zm4 0h-2v-4h2v4zm4 0h-2v-4h2v4z"/></symbol>
+      <symbol id="icon-boomplay" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></symbol>
+      <symbol id="icon-deezer" viewBox="0 0 24 24"><path d="M3 16h4v4H3zm6-2h4v6H9zm6-2h4v8h-4zm6-2h4v10h-4zM3 10h4v4H3zm6-2h4v6H9zm6-2h4v8h-4zm6-2h4v10h-4z"/></symbol>
+      <symbol id="icon-youtube" viewBox="0 0 24 24"><path d="M21.8 8.001c-.24-.91-.95-1.62-1.86-1.86C17.96 5.67 12 5.67 12 5.67s-5.96 0-7.94.47c-.91.24-1.62.95-1.86 1.86C1.73 9.981 1.73 12 1.73 12s0 2.02.47 4c.24.91.95 1.62 1.86 1.86 1.98.47 7.94.47 7.94.47s5.96 0 7.94-.47c.91-.24 1.62-.95 1.86-1.86.47-1.98.47-4 .47-4s0-2.02-.47-4zM9.55 15V9l5.27 3-5.27 3z"/></symbol>
+      <symbol id="icon-instagram" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85 0 3.2-.01 3.58-.07 4.85-.15 3.23-1.69 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07-3.2 0-3.58-.01-4.85-.07-3.26-.15-4.77-1.69-4.92-4.92C2.17 15.58 2.17 15.2 2.16 12c0-3.2.01-3.58.07-4.85.15-3.26 1.69-4.77 4.92-4.92C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.7.07 7.05.01 8.33 0 8.74 0 12c0 3.26.01 3.67.07 4.95.27 4.34 2.7 6.77 7.05 6.95C8.33 23.99 8.74 24 12 24c3.26 0 3.67-.01 4.95-.07 4.35-.18 6.78-2.7 6.96-6.95.06-1.28.07-1.69.07-4.95 0-3.26-.01-3.67-.07-4.95C23.73 2.7 21.3.27 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm7.85-10.4a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></symbol>
+      <symbol id="icon-twitter" viewBox="0 0 24 24"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.21-6.82-5.96 6.82H1.69l7.73-8.84L1.16 2.25h6.81l4.71 6.23 5.56-6.23zm-1.16 16.98h1.84L7.08 4.2H5.12l12.96 15.03z"/></symbol>
+      <symbol id="icon-facebook" viewBox="0 0 24 24"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.12 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></symbol>
+      <symbol id="icon-tiktok" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.88-2.89 2.89 2.89 0 012.88-2.89c.27 0 .53.04.78.11V9.4a6.33 6.33 0 00-.78-.05A6.34 6.34 0 003.84 15.7 6.34 6.34 0 0010.18 22a6.34 6.34 0 006.34-6.34V8.18a8.15 8.15 0 004.8 1.55V6.29a4.86 4.86 0 01-1.73-.6z"/></symbol>
+      <symbol id="icon-globe" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></symbol>
+      <symbol id="icon-submithub" viewBox="0 0 24 24"><path d="M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9H10.07L12 5.84zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 7c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM3 21.5h8v-8H3v8zm2-6h4v4H5v-4z"/></symbol>
+    </defs>
+  </svg>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="site-shell">
     <header class="topbar">
@@ -1329,98 +1585,133 @@
         </div>
       </section>
 
-      <section class="section" id="identity">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <div>
-              <span class="kicker">Identity</span>
-              <h2>Built like an artist, run like an archive.</h2>
-            </div>
-            <p class="lede">This site treats Hero One as a complete body of work: sound, image, timeline, licensing context, and press-ready metadata kept in one clear static system.</p>
-          </div>
-          <div class="statement-grid reveal">
-            <div class="statement statement-large">
-              <p>Music with <span>memory</span>, pressure, and a long horizon.</p>
-            </div>
-            <div class="statement-copy">
-              <article>
-                <h3>Beats & Blues Reality Music</h3>
-                <p>A refined fusion of hip-hop, Afro-influenced rhythm, soulful trap, and lived-in storytelling, built for streaming audiences, radio rooms, sync catalogs, and live stages.</p>
-              </article>
-              <article>
-                <h3>Independent catalog discipline</h3>
-                <p>The narrative moves from early movement-building to formal label structures, master ownership, and distribution through Opulence Grandeur Sound.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section class="section tight" id="timeline">
         <div class="wrap">
           <div class="section-head reveal">
             <div>
-              <span class="kicker">Timeline</span>
-              <h2>The long work.</h2>
+              <span class="kicker">The Journey</span>
+              <h2>From the ground up.</h2>
             </div>
-            <p class="lede">Key moments arranged for press, booking, and catalog context.</p>
+            <p class="lede">A decade-plus arc from early records to independent ownership, distribution, and global catalog management.</p>
           </div>
           <div class="timeline reveal" aria-label="Hero One career timeline">
             <article class="timeline-item">
               <div class="timeline-year">2010</div>
-              <div>
+              <div class="timeline-content">
                 <h3>Klaplyne Records</h3>
-                <p>The first imprint and the foundation for the sound.</p>
+                <p>The first imprint. Where the foundation was poured.</p>
               </div>
-              <div class="timeline-tag">Origin</div>
+              <div class="timeline-node"></div>
             </article>
             <article class="timeline-item">
-              <div class="timeline-year">2011-2016</div>
-              <div>
+              <div class="timeline-year">2011-16</div>
+              <div class="timeline-content">
                 <h3>Massive Gang Nation</h3>
-                <p>Movement-building years that expanded the name, network, and stage experience.</p>
+                <p>Movement-building years. <a href="https://www.reverbnation.com/label/massivegangnation" target="_blank" rel="noreferrer">ReverbNation</a></p>
               </div>
-              <div class="timeline-tag">Label era</div>
+              <div class="timeline-node"></div>
             </article>
             <article class="timeline-item">
               <div class="timeline-year">2016</div>
-              <div>
+              <div class="timeline-content">
                 <h3>MGN Workaholix Entertainment Ltd</h3>
-                <p>A more formal business framework for releases, collaboration, and artist operations.</p>
+                <p>Formalizing the business of sound.</p>
               </div>
-              <div class="timeline-tag">Company</div>
+              <div class="timeline-node"></div>
             </article>
             <article class="timeline-item">
-              <div class="timeline-year">2017-2020</div>
-              <div>
+              <div class="timeline-year">2017-20</div>
+              <div class="timeline-content">
                 <h3>Music Genius Network</h3>
-                <p>Expansion years focused on catalog development and a wider creative identity.</p>
+                <p>Expanding the reach and sharpening the craft.</p>
               </div>
-              <div class="timeline-tag">Growth</div>
+              <div class="timeline-node"></div>
             </article>
             <article class="timeline-item">
               <div class="timeline-year">2020</div>
-              <div>
+              <div class="timeline-content">
                 <h3>Millenial Renaissance Art Limited</h3>
-                <p>A step toward deeper ownership of the masters, the visual identity, and the message.</p>
+                <p>Full ownership of the masters and the message.</p>
               </div>
-              <div class="timeline-tag">Ownership</div>
+              <div class="timeline-node"></div>
             </article>
             <article class="timeline-item">
               <div class="timeline-year">2022</div>
-              <div>
+              <div class="timeline-content">
                 <h3>Opulence Grandeur Sound</h3>
-                <p>The sonic imprint for catalog distribution, publishing context, and sync positioning.</p>
+                <p>The sonic imprint for catalog distribution and sync.</p>
               </div>
-              <div class="timeline-tag">Distribution</div>
+              <div class="timeline-node"></div>
             </article>
             <article class="timeline-item">
               <div class="timeline-year">2024</div>
-              <div>
-                <h3>24 songs in 12 months</h3>
-                <p>A high-output campaign spanning multiple EP moments, international press, and visible social traction.</p>
+              <div class="timeline-content">
+                <h3>24 Songs in 12 Months</h3>
+                <p>Three EPs: M.C, O.T 3, BAYO, Lifted, plus viral moments with Force and DFDDP.</p>
               </div>
-              <div class="timeline-tag">Campaign</div>
+              <div class="timeline-node"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tight" aria-labelledby="philosophy-title">
+        <div class="wrap">
+          <div class="philosophy reveal">
+            <blockquote id="philosophy-title">“Music is more than sound. <em>It's a mirror to real life,</em> and a vessel for emotion, culture, and purpose. Every track is crafted to heal, reflect, and rise.”</blockquote>
+            <cite>Hero One's Philosophy</cite>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="identity">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div>
+              <span class="kicker">Musical Identity</span>
+              <h2>More than just an artist.</h2>
+            </div>
+            <p class="lede">With a sound that blends culture and feeling, Hero One connects with people in a real way.</p>
+          </div>
+          <div class="identity-grid reveal">
+            <article class="identity-card">
+              <h3>Creator of Beats & Blues</h3>
+              <p>Hero One started with Ghetto Gospel Reality Music, but the sound kept growing. What came next was <strong>Beats & Blues</strong>: a raw and soulful fusion of hip-hop, Afro-influences, Modern Classics, and multiple genres.</p>
+            </article>
+            <article class="identity-card">
+              <h3>Cultural Bridge-Builder</h3>
+              <p>His music carries the weight of the streets and the warmth of tradition, layered with interstellar energy. We are building something <strong>TIMELESS</strong>.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tight" id="campaign">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div>
+              <span class="kicker">2024 Campaign</span>
+              <h2>A year of music. A year of movement.</h2>
+            </div>
+            <p class="lede">One release every month. Three EPs. International press. Viral momentum. A statement made.</p>
+          </div>
+          <div class="campaign-grid reveal">
+            <article class="campaign-card featured">
+              <h3>24 Songs</h3>
+              <p>One drop per month for the entire calendar year. Pure consistency and evolution.</p>
+              <span class="campaign-stat">Monthly Cadence</span>
+            </article>
+            <article class="campaign-card">
+              <h3>3 EPs</h3>
+              <p>M.C, O.T 3, BAYO, Lifted: multi-dimensional projects showing range and intent.</p>
+            </article>
+            <article class="campaign-card">
+              <h3>Force</h3>
+              <p>International buzz and editorial support across English and French press.</p>
+            </article>
+            <article class="campaign-card">
+              <h3>DFDDP</h3>
+              <p>Sparked viral moments across social media, expanding the digital footprint.</p>
             </article>
           </div>
         </div>
@@ -1431,9 +1722,9 @@
           <div class="section-head reveal">
             <div>
               <span class="kicker">Listen</span>
-              <h2>Catalog access, no friction.</h2>
+              <h2>Enter the catalog.</h2>
             </div>
-            <p class="lede">Streaming links are grouped as operational entry points, with the embedded player kept visually quiet and functional.</p>
+            <p class="lede">Stream, save, and sync. The full discography lives across every major platform.</p>
           </div>
           <div class="listen-grid reveal">
             <div class="listen-panel listen-frame">
@@ -1441,19 +1732,38 @@
             </div>
             <div class="listen-panel">
               <h3>Stream Hero One</h3>
-              <p class="lede">Major platforms, official channels, and social surfaces for discovery, saves, bookings, and campaign tracking.</p>
+              <p class="lede">Major platforms and official channels for discovery, saves, bookings, and campaign tracking.</p>
               <div class="platforms" aria-label="Music and social platforms">
-                <a class="platform-link" href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noreferrer"><span>Spotify</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                <a class="platform-link" href="https://music.apple.com/ng/artist/hero-one/1520370143" target="_blank" rel="noreferrer"><span>Apple Music</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                <a class="platform-link" href="https://music.amazon.com/artists/B01HOYS7YK/hero-one" target="_blank" rel="noreferrer"><span>Amazon</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                <a class="platform-link" href="https://audiomack.com/hero-one/" target="_blank" rel="noreferrer"><span>Audiomack</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                <a class="platform-link" href="https://www.boomplay.com/artists/24967874?from=artists" target="_blank" rel="noreferrer"><span>Boomplay</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                <a class="platform-link" href="https://deezer.com/us/artist/10614549" target="_blank" rel="noreferrer"><span>Deezer</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                <a class="platform-link" href="http://www.youtube.com/@hero-one" target="_blank" rel="noreferrer"><span>YouTube</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                <a class="platform-link" href="https://www.instagram.com/heromgn" target="_blank" rel="noreferrer"><span>Instagram</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                <a class="platform-link" href="https://www.submithub.com/link/hero-one" target="_blank" rel="noreferrer"><span>SubmitHub</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="platform-link" href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-spotify"/></svg><span>Spotify</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="platform-link" href="https://music.apple.com/ng/artist/hero-one/1520370143" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-apple"/></svg><span>Apple Music</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="platform-link" href="https://music.amazon.com/artists/B01HOYS7YK/hero-one" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-amazon"/></svg><span>Amazon</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="platform-link" href="https://audiomack.com/hero-one/" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-audiomack"/></svg><span>Audiomack</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="platform-link" href="https://www.boomplay.com/artists/24967874?from=artists" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-boomplay"/></svg><span>Boomplay</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="platform-link" href="https://deezer.com/us/artist/10614549" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-deezer"/></svg><span>Deezer</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="platform-link" href="http://www.youtube.com/@hero-one" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-youtube"/></svg><span>YouTube</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="platform-link" href="https://www.heroone1.online" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-globe"/></svg><span>Website</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="platform-link" href="https://www.submithub.com/link/hero-one" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-submithub"/></svg><span>SubmitHub</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tight" id="social">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div>
+              <span class="kicker">Social</span>
+              <h2>Follow the movement.</h2>
+            </div>
+            <p class="lede">Exclusive content, behind-the-scenes, and real-time updates.</p>
+          </div>
+          <div class="social-strip reveal" aria-label="Hero One social links">
+            <a class="social-link" href="https://www.instagram.com/heromgn" target="_blank" rel="noreferrer" aria-label="Instagram"><svg aria-hidden="true"><use href="#icon-instagram"/></svg></a>
+            <a class="social-link" href="https://www.twitter.com/heromgn" target="_blank" rel="noreferrer" aria-label="Twitter or X"><svg aria-hidden="true"><use href="#icon-twitter"/></svg></a>
+            <a class="social-link" href="https://www.facebook.com/heromgn" target="_blank" rel="noreferrer" aria-label="Facebook"><svg aria-hidden="true"><use href="#icon-facebook"/></svg></a>
+            <a class="social-link" href="https://www.tiktok.com/heromgn" target="_blank" rel="noreferrer" aria-label="TikTok"><svg aria-hidden="true"><use href="#icon-tiktok"/></svg></a>
+            <a class="social-link" href="http://www.youtube.com/@hero-one" target="_blank" rel="noreferrer" aria-label="YouTube"><svg aria-hidden="true"><use href="#icon-youtube"/></svg></a>
           </div>
         </div>
       </section>
