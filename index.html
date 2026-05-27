@@ -1,0 +1,1937 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090d">
+  <title>Hero One | Beats & Blues Reality Music</title>
+  <meta name="description" content="The official Hero One artist site and visual archive. Beats & Blues Reality Music by Adebayo Michael Manuwa.">
+  <meta name="author" content="Hero One">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="Hero One design no bg .png">
+  <link rel="apple-touch-icon" href="Hero One design no bg .png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hero One | Beats & Blues Reality Music">
+  <meta property="og:description" content="Official artist site, music links, timeline, and gallery for Hero One.">
+  <meta property="og:image" content="Hero One March 2024.jpg">
+  <meta property="og:site_name" content="Hero One">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hero One | Beats & Blues Reality Music">
+  <meta name="twitter:description" content="Official artist site, music links, timeline, and gallery for Hero One.">
+  <meta name="twitter:image" content="Hero One March 2024.jpg">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicGroup",
+      "name": "Hero One",
+      "alternateName": "Adebayo Michael Manuwa",
+      "description": "Canadian artist and producer creating Beats & Blues Reality Music.",
+      "image": "Hero One March 2024.jpg",
+      "logo": "Hero One design no bg .png",
+      "url": "https://www.heroone1.online",
+      "genre": ["Hip-hop", "Afrofusion", "Soulful trap", "Beats & Blues"],
+      "sameAs": [
+        "https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g",
+        "https://music.apple.com/ng/artist/hero-one/1520370143",
+        "https://audiomack.com/hero-one/",
+        "http://www.youtube.com/@hero-one",
+        "https://www.instagram.com/heromgn",
+        "https://www.facebook.com/heromgn"
+      ]
+    }
+  </script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #08090d;
+      --panel: #111217;
+      --panel-2: #18191f;
+      --ink: #f3eee5;
+      --muted: #b2aa9e;
+      --quiet: #766f66;
+      --line: rgba(243, 238, 229, 0.14);
+      --line-strong: rgba(243, 238, 229, 0.24);
+      --gold: #d9b65d;
+      --green: #78c8a4;
+      --red: #c76557;
+      --blue: #7aa0ca;
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+      --radius: 8px;
+      --ease: cubic-bezier(.2, .8, .2, 1);
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.035), transparent 34rem),
+        linear-gradient(90deg, rgba(217,182,93,.08), transparent 35%, rgba(120,200,164,.06) 72%, transparent),
+        var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .site-shell {
+      overflow: clip;
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: 1rem;
+      z-index: 1000;
+      transform: translateY(-200%);
+      padding: .75rem 1rem;
+      background: var(--ink);
+      color: var(--bg);
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: transform .2s var(--ease);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--line);
+      background: rgba(8, 9, 13, .78);
+      backdrop-filter: blur(20px) saturate(1.2);
+    }
+
+    .nav {
+      width: min(100% - 2rem, var(--max));
+      min-height: 76px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      text-decoration: none;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 32px;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 22px rgba(217, 182, 93, .22));
+      flex: 0 0 auto;
+    }
+
+    .brand-name {
+      display: grid;
+      line-height: 1;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    .brand-name span {
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 650;
+      letter-spacing: .16em;
+      margin-top: .22rem;
+    }
+
+    .nav-links {
+      justify-self: center;
+      display: flex;
+      align-items: center;
+      gap: clamp(.75rem, 2vw, 1.8rem);
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: .74rem;
+      font-weight: 750;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      transition: color .22s var(--ease);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--ink);
+    }
+
+    .nav-actions {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      gap: .6rem;
+    }
+
+    .icon-button,
+    .text-button {
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.035);
+      color: var(--ink);
+      cursor: pointer;
+      transition: transform .22s var(--ease), border-color .22s var(--ease), background .22s var(--ease);
+    }
+
+    .icon-button {
+      width: 42px;
+      display: inline-grid;
+      place-items: center;
+    }
+
+    .icon-button svg {
+      width: 19px;
+      height: 19px;
+      stroke: currentColor;
+      stroke-width: 1.9;
+      fill: none;
+    }
+
+    .text-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      padding: 0 1rem;
+      text-decoration: none;
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .icon-button:hover,
+    .text-button:hover,
+    .icon-button:focus-visible,
+    .text-button:focus-visible {
+      transform: translateY(-1px);
+      border-color: var(--line-strong);
+      background: rgba(217,182,93,.11);
+      outline: none;
+    }
+
+    .menu-button {
+      display: none;
+    }
+
+    main {
+      isolation: isolate;
+    }
+
+    .section {
+      padding: clamp(4.8rem, 8vw, 7.8rem) 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section.tight {
+      padding-block: clamp(3rem, 6vw, 5rem);
+    }
+
+    .wrap {
+      width: min(100% - 2rem, var(--max));
+      margin-inline: auto;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      margin-bottom: 1rem;
+      color: var(--green);
+      font-size: .76rem;
+      font-weight: 850;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+      opacity: .75;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: .98;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 11ch;
+      font-size: clamp(3.45rem, 7.1vw, 7rem);
+      font-weight: 900;
+    }
+
+    h2 {
+      max-width: 12ch;
+      font-size: clamp(2.65rem, 7vw, 5.9rem);
+      font-weight: 900;
+    }
+
+    h3 {
+      font-size: clamp(1.12rem, 2vw, 1.65rem);
+      font-weight: 840;
+    }
+
+    .lede {
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 1.5vw, 1.22rem);
+    }
+
+    .hero {
+      min-height: min(760px, calc(100svh - 116px));
+      display: grid;
+      align-items: stretch;
+      padding: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-stage {
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+      min-height: min(760px, calc(100svh - 116px));
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2rem, 5vw, 4.6rem);
+      border-right: 1px solid var(--line);
+    }
+
+    .hero-logo {
+      width: min(26vw, 170px);
+      margin-bottom: clamp(1.1rem, 3vw, 2.1rem);
+      filter: drop-shadow(0 32px 56px rgba(217, 182, 93, .18));
+    }
+
+    .hero-title-row {
+      display: flex;
+      align-items: end;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-number {
+      margin-bottom: .72rem;
+      color: var(--gold);
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      font-weight: 700;
+    }
+
+    .hero-lede {
+      max-width: 56ch;
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.45vw, 1.18rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      flex-wrap: wrap;
+      margin-top: 1.35rem;
+    }
+
+    .primary-action,
+    .secondary-action {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .65rem;
+      border-radius: var(--radius);
+      padding: 0 1.1rem;
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: transform .22s var(--ease), border-color .22s var(--ease), background .22s var(--ease);
+    }
+
+    .primary-action {
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: #141007;
+    }
+
+    .secondary-action {
+      border: 1px solid var(--line);
+      color: var(--ink);
+      background: rgba(255,255,255,.035);
+    }
+
+    .primary-action:hover,
+    .secondary-action:hover,
+    .primary-action:focus-visible,
+    .secondary-action:focus-visible {
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .hero-media {
+      position: relative;
+      min-height: 590px;
+      overflow: hidden;
+      background: #0b0b0e;
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
+      object-position: 50% 20%;
+      filter: saturate(.94) contrast(1.04);
+    }
+
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(8,9,13,.46), transparent 42%);
+      pointer-events: none;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .78fr) minmax(280px, .5fr);
+      gap: clamp(1.5rem, 5vw, 5rem);
+      align-items: end;
+      margin-bottom: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    .section-head .lede {
+      align-self: end;
+      padding-bottom: .35rem;
+    }
+
+    .statement-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .statement {
+      padding: clamp(1.5rem, 4vw, 3rem);
+      background: var(--panel);
+    }
+
+    .statement-large {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+      min-height: 420px;
+    }
+
+    .statement-large p {
+      max-width: 19ch;
+      font-size: clamp(2.25rem, 5vw, 4.8rem);
+      font-weight: 900;
+      line-height: .98;
+    }
+
+    .statement-large span {
+      color: var(--gold);
+    }
+
+    .statement-copy {
+      display: grid;
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .statement-copy article {
+      background: var(--panel-2);
+      padding: clamp(1.5rem, 3vw, 2.2rem);
+    }
+
+    .statement-copy p {
+      margin-top: .85rem;
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      border-top: 1px solid var(--line);
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 11rem minmax(0, 1fr) minmax(190px, .3fr);
+      gap: clamp(1rem, 3vw, 2rem);
+      align-items: start;
+      padding: 1.35rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-year {
+      color: var(--gold);
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      max-width: 65ch;
+    }
+
+    .timeline-tag {
+      justify-self: end;
+      color: var(--quiet);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .listen-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .listen-panel {
+      background: var(--panel);
+      padding: clamp(1.2rem, 3vw, 2rem);
+    }
+
+    .listen-frame {
+      min-height: 352px;
+    }
+
+    .listen-frame iframe {
+      width: 100%;
+      height: 352px;
+      border: 0;
+      border-radius: var(--radius);
+      background: #000;
+    }
+
+    .platforms {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .75rem;
+      margin-top: 1.4rem;
+    }
+
+    .platform-link {
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      padding: .85rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--muted);
+      background: rgba(255,255,255,.025);
+      transition: color .22s var(--ease), border-color .22s var(--ease), background .22s var(--ease);
+    }
+
+    .platform-link:hover,
+    .platform-link:focus-visible {
+      color: var(--ink);
+      border-color: var(--line-strong);
+      background: rgba(255,255,255,.055);
+      outline: none;
+    }
+
+    .platform-link span {
+      font-size: .82rem;
+      font-weight: 780;
+    }
+
+    .platform-link svg,
+    .arrow-icon {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr);
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .video-feature,
+    .video-list {
+      background: var(--panel);
+      padding: clamp(1.2rem, 3vw, 2rem);
+    }
+
+    .youtube-frame {
+      position: relative;
+      min-height: 460px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #050506;
+      text-decoration: none;
+    }
+
+    .youtube-frame img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.04) contrast(1.03);
+      transition: transform .55s var(--ease);
+    }
+
+    .youtube-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(8,9,13,.88), rgba(8,9,13,.14) 58%, rgba(8,9,13,.42));
+    }
+
+    .youtube-frame:hover img,
+    .youtube-frame:focus-visible img {
+      transform: scale(1.035);
+    }
+
+    .youtube-badge {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      margin: 1rem;
+      padding: .85rem 1rem;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: var(--radius);
+      background: rgba(8,9,13,.76);
+      color: var(--ink);
+      backdrop-filter: blur(14px);
+      font-size: .82rem;
+      font-weight: 850;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .youtube-icon {
+      width: 22px;
+      height: 22px;
+      fill: var(--red);
+    }
+
+    .video-list {
+      display: grid;
+      align-content: start;
+      gap: .8rem;
+    }
+
+    .video-card {
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: .9rem;
+      min-height: 94px;
+      padding: .75rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.025);
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .22s var(--ease), border-color .22s var(--ease), background .22s var(--ease);
+    }
+
+    .video-card:hover,
+    .video-card:focus-visible {
+      color: var(--ink);
+      border-color: var(--line-strong);
+      background: rgba(255,255,255,.055);
+      outline: none;
+    }
+
+    .video-card img {
+      width: 112px;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: calc(var(--radius) - 2px);
+    }
+
+    .video-card strong {
+      display: block;
+      color: var(--ink);
+      font-size: .98rem;
+      line-height: 1.22;
+    }
+
+    .video-card span {
+      display: block;
+      margin-top: .25rem;
+      font-size: .76rem;
+      font-weight: 780;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .gallery-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .filter-button {
+      min-height: 36px;
+      padding: 0 .85rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      cursor: pointer;
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .filter-button[aria-pressed="true"],
+    .filter-button:hover,
+    .filter-button:focus-visible {
+      border-color: var(--gold);
+      color: var(--ink);
+      background: rgba(217,182,93,.14);
+      outline: none;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: .8rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      min-height: 360px;
+      grid-column: span 4;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      cursor: zoom-in;
+      isolation: isolate;
+    }
+
+    .gallery-item.wide {
+      grid-column: span 6;
+      min-height: 330px;
+    }
+
+    .gallery-item.tall {
+      grid-row: span 2;
+      min-height: 520px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
+      transition: transform .55s var(--ease), filter .55s var(--ease);
+    }
+
+    .gallery-item:hover img,
+    .gallery-item:focus-visible img {
+      transform: scale(1.045);
+      filter: saturate(1.08) contrast(1.05);
+    }
+
+    .gallery-item:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .gallery-meta {
+      position: absolute;
+      inset: auto .85rem .85rem .85rem;
+      z-index: 1;
+      display: grid;
+      gap: .35rem;
+      padding: .9rem;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      background: rgba(8, 9, 13, .72);
+      backdrop-filter: blur(14px);
+      opacity: .98;
+    }
+
+    .gallery-meta strong {
+      font-size: .98rem;
+      line-height: 1.16;
+    }
+
+    .gallery-meta span {
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 760;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(8,9,13,.74), transparent 48%);
+      pointer-events: none;
+    }
+
+    .press-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .press-item {
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: clamp(1.2rem, 3vw, 2rem);
+      background: var(--panel);
+    }
+
+    .press-logo {
+      min-height: 108px;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+    }
+
+    .press-logo img {
+      max-width: min(180px, 100%);
+      max-height: 82px;
+      object-fit: contain;
+    }
+
+    .press-item strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+
+    .press-item span {
+      display: block;
+      margin-top: .35rem;
+      color: var(--muted);
+      font-size: .82rem;
+      font-weight: 760;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .contact-panel {
+      background: var(--panel);
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .contact-panel p {
+      margin-top: 1rem;
+      color: var(--muted);
+      max-width: 48ch;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: .75rem;
+    }
+
+    .contact-link {
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--muted);
+      text-decoration: none;
+      background: rgba(255,255,255,.025);
+      transition: color .22s var(--ease), border-color .22s var(--ease), background .22s var(--ease);
+    }
+
+    .contact-link:hover,
+    .contact-link:focus-visible {
+      color: var(--ink);
+      border-color: var(--line-strong);
+      background: rgba(255,255,255,.055);
+      outline: none;
+    }
+
+    .contact-link strong {
+      display: block;
+      color: var(--ink);
+      font-size: .96rem;
+    }
+
+    .contact-link span {
+      display: block;
+      margin-top: .18rem;
+      font-size: .8rem;
+    }
+
+    .footer {
+      padding: 2.2rem 0;
+      color: var(--quiet);
+      font-size: .82rem;
+    }
+
+    .footer-inner {
+      width: min(100% - 2rem, var(--max));
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      color: var(--muted);
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .footer-brand img {
+      width: 40px;
+      height: 25px;
+      object-fit: contain;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(3, 4, 6, .88);
+      backdrop-filter: blur(12px);
+    }
+
+    .lightbox[open] {
+      display: flex;
+    }
+
+    .lightbox-panel {
+      width: min(100%, 1100px);
+      max-height: calc(100svh - 2rem);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, .34fr);
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .lightbox-image {
+      min-height: 320px;
+      max-height: calc(100svh - 2rem);
+      background: #050506;
+    }
+
+    .lightbox-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .lightbox-copy {
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border-left: 1px solid var(--line);
+    }
+
+    .lightbox-copy p {
+      color: var(--muted);
+    }
+
+    .metadata-list {
+      display: grid;
+      gap: .55rem;
+      margin-top: auto;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .metadata-list div {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: .55rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .metadata-list dt {
+      color: var(--quiet);
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .metadata-list dd {
+      margin: 0;
+      text-align: right;
+    }
+
+    .close-button {
+      align-self: end;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 1040px) {
+      .nav {
+        grid-template-columns: auto auto;
+      }
+
+      .nav-links {
+        position: fixed;
+        left: 1rem;
+        right: 1rem;
+        top: 84px;
+        display: none;
+        padding: .8rem;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(12, 13, 18, .96);
+        backdrop-filter: blur(18px);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.is-open {
+        display: grid;
+      }
+
+      .nav-links li,
+      .nav-links a {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: .85rem;
+      }
+
+      .nav-actions {
+        justify-self: end;
+      }
+
+      .menu-button {
+        display: inline-grid;
+      }
+
+      .hero-stage,
+      .section-head,
+      .statement-grid,
+      .listen-grid,
+      .video-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        min-height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero-media {
+        min-height: 560px;
+      }
+
+      .section-head .lede {
+        padding-bottom: 0;
+      }
+
+      .press-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .lightbox-panel {
+        grid-template-columns: 1fr;
+        overflow: auto;
+      }
+
+      .lightbox-copy {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .text-button.nav-book {
+        display: none;
+      }
+
+      .brand-name {
+        font-size: .74rem;
+      }
+
+      .hero-logo {
+        width: 210px;
+      }
+
+      .hero-media {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero-media img {
+        min-height: 430px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-tag {
+        justify-self: start;
+      }
+
+      .platforms,
+      .press-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .youtube-frame {
+        min-height: 360px;
+      }
+
+      .video-card {
+        grid-template-columns: 96px minmax(0, 1fr);
+      }
+
+      .video-card .arrow-icon {
+        display: none;
+      }
+
+      .gallery-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item,
+      .gallery-item.wide,
+      .gallery-item.tall {
+        grid-column: auto;
+        min-height: 430px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .hero-actions > a {
+        width: 100%;
+      }
+
+      .gallery-item,
+      .gallery-item.wide,
+      .gallery-item.tall {
+        min-height: 360px;
+      }
+
+      .contact-link {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="topbar">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Hero One home">
+          <img class="brand-mark" src="Hero One design no bg .png" width="3000" height="1800" alt="">
+          <span class="brand-name">Hero One <span>Beats & Blues</span></span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#identity">Identity</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#listen">Listen</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a class="text-button nav-book" href="mailto:mraltd@yahoo.com">Book</a>
+          <button class="icon-button menu-button" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-stage">
+          <div class="hero-copy">
+            <img class="hero-logo reveal" src="Hero One design no bg .png" width="3000" height="1800" alt="Hero One">
+            <span class="kicker reveal">Official artist archive</span>
+            <div class="hero-title-row reveal">
+              <h1 id="hero-title">Hero One</h1>
+              <span class="hero-number">001</span>
+            </div>
+            <p class="hero-lede reveal">Adebayo Michael Manuwa creates Beats & Blues Reality Music: grounded stories, clean production instincts, and a visual world built with the same care as the records.</p>
+            <div class="hero-actions reveal">
+              <a class="primary-action" href="#listen">Listen now</a>
+              <a class="secondary-action" href="#gallery">View gallery</a>
+            </div>
+          </div>
+          <div class="hero-media" aria-label="Hero One portrait">
+            <img src="Hero One March 2024.jpg" width="4000" height="5000" alt="Hero One portrait from March 2024" fetchpriority="high">
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="identity">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div>
+              <span class="kicker">Identity</span>
+              <h2>Built like an artist, run like an archive.</h2>
+            </div>
+            <p class="lede">This site treats Hero One as a complete body of work: sound, image, timeline, licensing context, and press-ready metadata kept in one clear static system.</p>
+          </div>
+          <div class="statement-grid reveal">
+            <div class="statement statement-large">
+              <p>Music with <span>memory</span>, pressure, and a long horizon.</p>
+            </div>
+            <div class="statement-copy">
+              <article>
+                <h3>Beats & Blues Reality Music</h3>
+                <p>A refined fusion of hip-hop, Afro-influenced rhythm, soulful trap, and lived-in storytelling, built for streaming audiences, radio rooms, sync catalogs, and live stages.</p>
+              </article>
+              <article>
+                <h3>Independent catalog discipline</h3>
+                <p>The narrative moves from early movement-building to formal label structures, master ownership, and distribution through Opulence Grandeur Sound.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tight" id="timeline">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div>
+              <span class="kicker">Timeline</span>
+              <h2>The long work.</h2>
+            </div>
+            <p class="lede">Key moments arranged for press, booking, and catalog context.</p>
+          </div>
+          <div class="timeline reveal" aria-label="Hero One career timeline">
+            <article class="timeline-item">
+              <div class="timeline-year">2010</div>
+              <div>
+                <h3>Klaplyne Records</h3>
+                <p>The first imprint and the foundation for the sound.</p>
+              </div>
+              <div class="timeline-tag">Origin</div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-year">2011-2016</div>
+              <div>
+                <h3>Massive Gang Nation</h3>
+                <p>Movement-building years that expanded the name, network, and stage experience.</p>
+              </div>
+              <div class="timeline-tag">Label era</div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-year">2016</div>
+              <div>
+                <h3>MGN Workaholix Entertainment Ltd</h3>
+                <p>A more formal business framework for releases, collaboration, and artist operations.</p>
+              </div>
+              <div class="timeline-tag">Company</div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-year">2017-2020</div>
+              <div>
+                <h3>Music Genius Network</h3>
+                <p>Expansion years focused on catalog development and a wider creative identity.</p>
+              </div>
+              <div class="timeline-tag">Growth</div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-year">2020</div>
+              <div>
+                <h3>Millenial Renaissance Art Limited</h3>
+                <p>A step toward deeper ownership of the masters, the visual identity, and the message.</p>
+              </div>
+              <div class="timeline-tag">Ownership</div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-year">2022</div>
+              <div>
+                <h3>Opulence Grandeur Sound</h3>
+                <p>The sonic imprint for catalog distribution, publishing context, and sync positioning.</p>
+              </div>
+              <div class="timeline-tag">Distribution</div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-year">2024</div>
+              <div>
+                <h3>24 songs in 12 months</h3>
+                <p>A high-output campaign spanning multiple EP moments, international press, and visible social traction.</p>
+              </div>
+              <div class="timeline-tag">Campaign</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="listen">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div>
+              <span class="kicker">Listen</span>
+              <h2>Catalog access, no friction.</h2>
+            </div>
+            <p class="lede">Streaming links are grouped as operational entry points, with the embedded player kept visually quiet and functional.</p>
+          </div>
+          <div class="listen-grid reveal">
+            <div class="listen-panel listen-frame">
+              <iframe title="Hero One Spotify playlist" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO1pQCrg?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="listen-panel">
+              <h3>Stream Hero One</h3>
+              <p class="lede">Major platforms, official channels, and social surfaces for discovery, saves, bookings, and campaign tracking.</p>
+              <div class="platforms" aria-label="Music and social platforms">
+                <a class="platform-link" href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noreferrer"><span>Spotify</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="platform-link" href="https://music.apple.com/ng/artist/hero-one/1520370143" target="_blank" rel="noreferrer"><span>Apple Music</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="platform-link" href="https://music.amazon.com/artists/B01HOYS7YK/hero-one" target="_blank" rel="noreferrer"><span>Amazon</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="platform-link" href="https://audiomack.com/hero-one/" target="_blank" rel="noreferrer"><span>Audiomack</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="platform-link" href="https://www.boomplay.com/artists/24967874?from=artists" target="_blank" rel="noreferrer"><span>Boomplay</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="platform-link" href="https://deezer.com/us/artist/10614549" target="_blank" rel="noreferrer"><span>Deezer</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="platform-link" href="http://www.youtube.com/@hero-one" target="_blank" rel="noreferrer"><span>YouTube</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="platform-link" href="https://www.instagram.com/heromgn" target="_blank" rel="noreferrer"><span>Instagram</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="platform-link" href="https://www.submithub.com/link/hero-one" target="_blank" rel="noreferrer"><span>SubmitHub</span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="videos">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div>
+              <span class="kicker">Videos</span>
+              <h2>YouTube presence, built into the archive.</h2>
+            </div>
+            <p class="lede">Campaign visuals, official clips, and performance-adjacent content connect back to the Hero One YouTube channel.</p>
+          </div>
+          <div class="video-grid reveal">
+            <div class="video-feature">
+              <a class="youtube-frame" href="http://www.youtube.com/@hero-one" target="_blank" rel="noreferrer" aria-label="Watch Hero One on YouTube">
+                <img src="VIP VIBES by Hero One mashup -  2024 A.jpg" width="1280" height="720" alt="VIP Vibes by Hero One video campaign artwork">
+                <span class="youtube-badge">
+                  <svg class="youtube-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 8.001c-.24-.91-.95-1.62-1.86-1.86C17.96 5.67 12 5.67 12 5.67s-5.96 0-7.94.47c-.91.24-1.62.95-1.86 1.86C1.73 9.981 1.73 12 1.73 12s0 2.02.47 4c.24.91.95 1.62 1.86 1.86 1.98.47 7.94.47 7.94.47s5.96 0 7.94-.47c.91-.24 1.62-.95 1.86-1.86.47-1.98.47-4 .47-4s0-2.02-.47-4zM9.55 15V9l5.27 3-5.27 3z"/></svg>
+                  Watch on YouTube
+                </span>
+              </a>
+            </div>
+            <div class="video-list" aria-label="Hero One video links">
+              <a class="video-card" href="http://www.youtube.com/@hero-one" target="_blank" rel="noreferrer">
+                <img src="VIP VIBES by Hero One mashup - 2024 B.jpg" width="1280" height="720" alt="VIP Vibes alternate campaign artwork">
+                <span><strong>VIP Vibes campaign</strong><span>Official video surface</span></span>
+                <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+              <a class="video-card" href="http://www.youtube.com/@hero-one" target="_blank" rel="noreferrer">
+                <img src="Hero One performing in 2011.jpg" width="604" height="453" alt="Hero One performing in 2011">
+                <span><strong>Live archive</strong><span>Performance history</span></span>
+                <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+              <a class="video-card" href="http://www.youtube.com/@hero-one" target="_blank" rel="noreferrer">
+                <img src="Hero One March 2024 B.jpg" width="4000" height="5600" alt="Hero One March 2024 portrait">
+                <span><strong>Artist channel</strong><span>@hero-one on YouTube</span></span>
+                <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div>
+              <span class="kicker">Gallery</span>
+              <h2>Visual archive with usable metadata.</h2>
+            </div>
+            <p class="lede">Every image is registered with year, format, dimensions, and purpose so the gallery can support press kits, social drops, and future site updates without guesswork.</p>
+          </div>
+          <div class="gallery-toolbar reveal">
+            <div id="gallery-count">Loading gallery assets</div>
+            <div class="filter-group" aria-label="Gallery filters">
+              <button class="filter-button" type="button" data-filter="all" aria-pressed="true">All</button>
+              <button class="filter-button" type="button" data-filter="portrait" aria-pressed="false">Portrait</button>
+              <button class="filter-button" type="button" data-filter="studio" aria-pressed="false">Studio</button>
+              <button class="filter-button" type="button" data-filter="stage" aria-pressed="false">Stage</button>
+              <button class="filter-button" type="button" data-filter="campaign" aria-pressed="false">Campaign</button>
+              <button class="filter-button" type="button" data-filter="legacy" aria-pressed="false">Legacy</button>
+            </div>
+          </div>
+          <div class="gallery-grid reveal" id="gallery-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section tight" aria-labelledby="signals-title">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div>
+              <span class="kicker">Signals</span>
+              <h2 id="signals-title">Press-kit facts up front.</h2>
+            </div>
+            <p class="lede">A compact surface for the details people usually hunt for first.</p>
+          </div>
+          <div class="press-grid reveal">
+            <div class="press-item">
+              <div class="press-logo"><img src="BMI ICON.webp" alt="BMI"></div>
+              <div><strong>BMI</strong><span>Registered catalog</span></div>
+            </div>
+            <div class="press-item">
+              <div class="press-logo"><img src="SoundExchangeLogo.png" width="2664" height="1128" alt="SoundExchange"></div>
+              <div><strong>SoundExchange</strong><span>Registered catalog</span></div>
+            </div>
+            <div class="press-item">
+              <div class="press-logo"><img src="mra logo.png" width="180" height="180" alt="Millenial Renaissance Art Limited"></div>
+              <div><strong>MRAL</strong><span>Millenial Renaissance Art Limited</span></div>
+            </div>
+            <div class="press-item">
+              <div class="press-logo"><img src="OGs no bg.png" width="2048" height="2048" alt="Opulence Grandeur Sound"></div>
+              <div><strong>OGS</strong><span>Opulence Grandeur Sound</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="wrap">
+          <div class="contact-grid reveal">
+            <div class="contact-panel">
+              <span class="kicker">Contact</span>
+              <h2>Booking, licensing, press, collaboration.</h2>
+              <p>Use the right channel for booking inquiries, management conversations, legacy label context, and platform review.</p>
+            </div>
+            <div class="contact-panel">
+              <div class="contact-list">
+                <a class="contact-link" href="mailto:mraltd@yahoo.com">
+                  <span><strong>Booking</strong><span>mraltd@yahoo.com</span></span>
+                  <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </a>
+                <a class="contact-link" href="mailto:millenialrenaissance@yahoo.com">
+                  <span><strong>Management</strong><span>millenialrenaissance@yahoo.com</span></span>
+                  <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </a>
+                <a class="contact-link" href="https://www.reverbnation.com/label/massivegangnation" target="_blank" rel="noreferrer">
+                  <span><strong>Legacy label</strong><span>Massive Gang Nation</span></span>
+                  <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </a>
+                <a class="contact-link" href="https://metameta3.com" target="_blank" rel="noreferrer">
+                  <span><strong>Platform</strong><span>metameta3.com</span></span>
+                  <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="Hero One design no bg .png" width="3000" height="1800" alt="">
+          <span>Hero One</span>
+        </div>
+        <div>Copyright 2024-2026 Millenial Renaissance Art Limited and Opulence Grandeur Sound. All rights reserved.</div>
+      </div>
+    </footer>
+  </div>
+
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-title">
+    <div class="lightbox-panel">
+      <div class="lightbox-image">
+        <img id="lightbox-img" src="" alt="">
+      </div>
+      <div class="lightbox-copy">
+        <button class="icon-button close-button" type="button" id="lightbox-close" aria-label="Close gallery preview">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+        <div>
+          <span class="kicker" id="lightbox-category">Gallery</span>
+          <h3 id="lightbox-title"></h3>
+          <p id="lightbox-description"></p>
+        </div>
+        <dl class="metadata-list">
+          <div><dt>Year</dt><dd id="lightbox-year"></dd></div>
+          <div><dt>Use</dt><dd id="lightbox-use"></dd></div>
+          <div><dt>Size</dt><dd id="lightbox-size"></dd></div>
+          <div><dt>File</dt><dd id="lightbox-file"></dd></div>
+        </dl>
+      </div>
+    </div>
+  </dialog>
+
+  <script type="application/json" id="gallery-data">
+    [
+      {
+        "file": "Hero One March 2024.jpg",
+        "title": "March 2024 Portrait",
+        "year": "2024",
+        "category": "portrait",
+        "usage": "Primary press image",
+        "width": 4000,
+        "height": 5000,
+        "description": "High-resolution Hero One portrait for hero art, press packets, and campaign lead imagery.",
+        "layout": "tall"
+      },
+      {
+        "file": "Hero One March 2024 B.jpg",
+        "title": "March 2024 Alternate Portrait",
+        "year": "2024",
+        "category": "portrait",
+        "usage": "Secondary press image",
+        "width": 4000,
+        "height": 5600,
+        "description": "Alternate vertical portrait with strong editorial framing for artist bios and feature layouts.",
+        "layout": "tall"
+      },
+      {
+        "file": "Hero One Photo Dec 2023.jpg",
+        "title": "December 2023 Portrait",
+        "year": "2023",
+        "category": "portrait",
+        "usage": "Artist profile",
+        "width": 3590,
+        "height": 4488,
+        "description": "Clean modern portrait suited for platform profiles, artist pages, and press thumbnails.",
+        "layout": ""
+      },
+      {
+        "file": "Hero One Photo dEC 2023 A .jpg",
+        "title": "December 2023 Editorial Portrait",
+        "year": "2023",
+        "category": "portrait",
+        "usage": "Editorial profile",
+        "width": 3524,
+        "height": 4405,
+        "description": "Companion portrait from the December 2023 session for editorial rotation and social features.",
+        "layout": ""
+      },
+      {
+        "file": "Hero One 2023.jpg",
+        "title": "Hero One 2023",
+        "year": "2023",
+        "category": "portrait",
+        "usage": "Archive portrait",
+        "width": 3648,
+        "height": 5376,
+        "description": "Vertical archive portrait documenting the visual identity before the 2024 campaign.",
+        "layout": "tall"
+      },
+      {
+        "file": "Hero One 2023 B.jpg",
+        "title": "Hero One 2023 B",
+        "year": "2023",
+        "category": "portrait",
+        "usage": "Archive portrait",
+        "width": 3648,
+        "height": 4560,
+        "description": "Additional 2023 portrait asset for rotating layouts and platform-specific crops.",
+        "layout": ""
+      },
+      {
+        "file": "Hero One 2023 C.jpg",
+        "title": "Hero One 2023 C",
+        "year": "2023",
+        "category": "portrait",
+        "usage": "Archive portrait",
+        "width": 3141,
+        "height": 3926,
+        "description": "Portrait archive image with strong vertical composition for mobile-first placements.",
+        "layout": ""
+      },
+      {
+        "file": "VIP Vibes with Hero One Poster.jpg",
+        "title": "VIP Vibes Poster",
+        "year": "2024",
+        "category": "campaign",
+        "usage": "Release artwork",
+        "width": 960,
+        "height": 1280,
+        "description": "Poster-style campaign artwork for VIP Vibes with Hero One.",
+        "layout": ""
+      },
+      {
+        "file": "VIP VIBES by Hero One mashup -  2024 A.jpg",
+        "title": "VIP Vibes Mashup A",
+        "year": "2024",
+        "category": "campaign",
+        "usage": "Landscape campaign creative",
+        "width": 1280,
+        "height": 720,
+        "description": "Landscape promotional creative optimized for video thumbnails and wide social placements.",
+        "layout": "wide"
+      },
+      {
+        "file": "VIP VIBES by Hero One mashup - 2024 B.jpg",
+        "title": "VIP Vibes Mashup B",
+        "year": "2024",
+        "category": "campaign",
+        "usage": "Landscape campaign creative",
+        "width": 1280,
+        "height": 720,
+        "description": "Alternate wide campaign creative for VIP Vibes by Hero One.",
+        "layout": "wide"
+      },
+      {
+        "file": "Hero One at BBJN studio 2014 A.jpg",
+        "title": "BBJN Studio Session A",
+        "year": "2014",
+        "category": "studio",
+        "usage": "Studio archive",
+        "width": 960,
+        "height": 720,
+        "description": "Studio-era documentation from the BBJN sessions.",
+        "layout": "wide"
+      },
+      {
+        "file": "Hero One at BBJN studio 2014 B.jpg",
+        "title": "BBJN Studio Session B",
+        "year": "2014",
+        "category": "studio",
+        "usage": "Studio archive",
+        "width": 960,
+        "height": 720,
+        "description": "Alternate image from the BBJN studio archive.",
+        "layout": "wide"
+      },
+      {
+        "file": "Hero One MGN 2nd studio 2015.jpg",
+        "title": "MGN Second Studio",
+        "year": "2015",
+        "category": "studio",
+        "usage": "Studio archive",
+        "width": 640,
+        "height": 480,
+        "description": "Compact archive image from the MGN second studio period.",
+        "layout": ""
+      },
+      {
+        "file": "Hero at MGN workaholix 2016.jpg",
+        "title": "MGN Workaholix",
+        "year": "2016",
+        "category": "studio",
+        "usage": "Company-era archive",
+        "width": 1200,
+        "height": 1600,
+        "description": "Archive image tied to the MGN Workaholix era and business development period.",
+        "layout": ""
+      },
+      {
+        "file": "Hero One performing in 2011.jpg",
+        "title": "Performing in 2011",
+        "year": "2011",
+        "category": "stage",
+        "usage": "Performance archive",
+        "width": 604,
+        "height": 453,
+        "description": "Early-stage performance image documenting the live foundation.",
+        "layout": "wide"
+      },
+      {
+        "file": "Hero One Freshers's nite 2011.jpg",
+        "title": "Freshers's Nite 2011",
+        "year": "2011",
+        "category": "stage",
+        "usage": "Performance archive",
+        "width": 640,
+        "height": 1024,
+        "description": "Early performance archive from Freshers's Nite 2011.",
+        "layout": ""
+      },
+      {
+        "file": "Hero One's First Award 2011.jpg",
+        "title": "First Award",
+        "year": "2011",
+        "category": "legacy",
+        "usage": "Milestone archive",
+        "width": 453,
+        "height": 604,
+        "description": "Milestone image documenting Hero One's first award in 2011.",
+        "layout": ""
+      }
+    ]
+  </script>
+
+  <script>
+    const menuButton = document.querySelector(".menu-button");
+    const navLinks = document.querySelector("#nav-links");
+    const galleryGrid = document.querySelector("#gallery-grid");
+    const galleryCount = document.querySelector("#gallery-count");
+    const filterButtons = Array.from(document.querySelectorAll(".filter-button"));
+    const galleryItems = JSON.parse(document.querySelector("#gallery-data").textContent);
+    const lightbox = document.querySelector("#lightbox");
+    const lightboxClose = document.querySelector("#lightbox-close");
+
+    function setNavigation(open) {
+      navLinks.classList.toggle("is-open", open);
+      menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+    }
+
+    function gallerySchema(items) {
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "ImageGallery",
+        "name": "Hero One visual archive",
+        "image": items.map((item) => ({
+          "@type": "ImageObject",
+          "name": item.title,
+          "contentUrl": item.file,
+          "description": item.description,
+          "width": item.width,
+          "height": item.height,
+          "dateCreated": item.year
+        }))
+      };
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.textContent = JSON.stringify(schema);
+      document.head.append(script);
+    }
+
+    function itemTemplate(item, index) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = ["gallery-item", item.layout].filter(Boolean).join(" ");
+      button.dataset.category = item.category;
+      button.dataset.index = index;
+      button.setAttribute("aria-label", `View ${item.title}`);
+      button.innerHTML = `
+        <img src="${item.file}" width="${item.width}" height="${item.height}" alt="${item.title}: ${item.description}" loading="${index < 4 ? "eager" : "lazy"}" decoding="async">
+        <span class="gallery-meta">
+          <strong>${item.title}</strong>
+          <span>${item.year} / ${item.category} / ${item.width}x${item.height}</span>
+        </span>
+      `;
+      return button;
+    }
+
+    function renderGallery(filter = "all") {
+      const visibleItems = filter === "all" ? galleryItems : galleryItems.filter((item) => item.category === filter);
+      galleryGrid.replaceChildren(...visibleItems.map(itemTemplate));
+      galleryCount.textContent = `${visibleItems.length} image${visibleItems.length === 1 ? "" : "s"} shown / ${galleryItems.length} archived`;
+    }
+
+    function openLightbox(item) {
+      document.querySelector("#lightbox-img").src = item.file;
+      document.querySelector("#lightbox-img").alt = `${item.title}: ${item.description}`;
+      document.querySelector("#lightbox-category").textContent = item.category;
+      document.querySelector("#lightbox-title").textContent = item.title;
+      document.querySelector("#lightbox-description").textContent = item.description;
+      document.querySelector("#lightbox-year").textContent = item.year;
+      document.querySelector("#lightbox-use").textContent = item.usage;
+      document.querySelector("#lightbox-size").textContent = `${item.width} x ${item.height}`;
+      document.querySelector("#lightbox-file").textContent = item.file;
+      lightbox.showModal();
+    }
+
+    menuButton.addEventListener("click", () => setNavigation(!navLinks.classList.contains("is-open")));
+
+    navLinks.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        setNavigation(false);
+      }
+    });
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach((item) => item.setAttribute("aria-pressed", "false"));
+        button.setAttribute("aria-pressed", "true");
+        renderGallery(button.dataset.filter);
+      });
+    });
+
+    galleryGrid.addEventListener("click", (event) => {
+      const button = event.target.closest(".gallery-item");
+      if (!button) return;
+      const currentItems = Array.from(galleryGrid.querySelectorAll(".gallery-item"));
+      const visibleIndex = currentItems.indexOf(button);
+      const filter = filterButtons.find((item) => item.getAttribute("aria-pressed") === "true").dataset.filter;
+      const visibleItems = filter === "all" ? galleryItems : galleryItems.filter((item) => item.category === filter);
+      openLightbox(visibleItems[visibleIndex]);
+    });
+
+    lightboxClose.addEventListener("click", () => lightbox.close());
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        lightbox.close();
+      }
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: .06 });
+
+    document.querySelectorAll(".reveal").forEach((item) => revealObserver.observe(item));
+
+    renderGallery();
+    gallerySchema(galleryItems);
+  </script>
+</body>
+</html>
