@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Variety in Observable Consciousness — Adebayo Michael Manuwa</title>
+<meta name="description" content="A philosophical theory by Adebayo Michael Manuwa, first stated 20 October 2026, with the record of its first stress tests.">
+<meta name="author" content="Adebayo Michael Manuwa">
+<link rel="canonical" href="https://heroone.art/philosophy/law/">
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="../../assets/img/brand/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Hero One">
+<meta property="og:url" content="https://heroone.art/philosophy/law/">
+<meta property="og:title" content="Variety in Observable Consciousness">
+<meta property="og:description" content="A philosophical theory by Adebayo Michael Manuwa, first stated 20 October 2026, with the record of its first stress tests.">
+<meta property="og:image" content="https://heroone.art/assets/img/og-law.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://heroone.art/assets/img/og-law.jpg">
+<link rel="preload" href="../../assets/fonts/bodoni-moda-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Variety in Observable Consciousness","author":{"@type":"Person","name":"Adebayo Michael Manuwa","alternateName":"Hero One","url":"https://heroone.art/"},"datePublished":"2026-10-20","url":"https://heroone.art/philosophy/law/","isPartOf":{"@type":"WebSite","name":"Hero One","url":"https://heroone.art/"}}</script>
+
+<style>
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:400 900;font-display:swap;src:url("../../assets/fonts/bodoni-moda-normal.woff2") format("woff2");}
+@font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:400 900;font-display:swap;src:url("../../assets/fonts/bodoni-moda-italic.woff2") format("woff2");}
+@font-face{font-family:"Hanken Grotesk";font-style:normal;font-weight:100 900;font-display:swap;src:url("../../assets/fonts/hanken-grotesk-normal.woff2") format("woff2");}
+@font-face{font-family:"Hanken Grotesk";font-style:italic;font-weight:100 900;font-display:swap;src:url("../../assets/fonts/hanken-grotesk-italic.woff2") format("woff2");}
+
+
+:root {
+  color-scheme: light;
+  --paper: #FBFBFA;
+  --ink: #000000;
+  --quiet: #5E5B56;
+  --hairline: #DCDAD5;
+  --corona: #8B6D36;
+  --wash: #F1F0EC;
+  --void: #000000;
+  --void-ink: #EDEBE7;
+  --void-quiet: #8E8B85;
+  --void-corona: #D8C59E;
+
+  --display: "Bodoni Moda", "Didot", "Bodoni 72", "Times New Roman", serif;
+  --text: "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --measure: 40rem;
+  --wide: 68rem;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #000000;
+    --ink: #EDEBE7;
+    --quiet: #8E8B85;
+    --hairline: #26262A;
+    --corona: #D8C59E;
+    --wash: #0E0E10;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #000000;
+  --ink: #EDEBE7;
+  --quiet: #8E8B85;
+  --hairline: #26262A;
+  --corona: #D8C59E;
+  --wash: #0E0E10;
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-behavior: smooth; scroll-padding-top: env(safe-area-inset-top, 0px); -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 1.0625rem;
+  line-height: 1.62;
+  font-feature-settings: "kern", "liga", "onum";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img, svg { max-width: 100%; }
+a { color: inherit; text-decoration-color: var(--corona); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:focus-visible, summary:focus-visible, button:focus-visible { outline: 1.5px solid var(--corona); outline-offset: 4px; border-radius: 2px; }
+em, i { font-style: italic; }
+strong { font-weight: 600; }
+
+/* progress hairline */
+.progress {
+  position: fixed; top: 0; left: 0; right: 0; height: calc(2px + env(safe-area-inset-top, 0px));
+  padding-top: env(safe-area-inset-top, 0px); z-index: 20; pointer-events: none;
+}
+.progress span { display: block; height: 2px; width: 100%; background: var(--corona); transform-origin: 0 50%; transform: scaleX(0); }
+
+/* ---------- Hero: the line drawn around the theory ---------- */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  background: var(--void);
+  color: var(--void-ink);
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero-top, .hero-foot {
+  position: relative; z-index: 2;
+  max-width: var(--wide); width: 100%; margin: 0 auto;
+  padding: 1.75rem 1.5rem;
+  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  font-size: 0.875rem; color: var(--void-quiet);
+}
+.hero-top .name { color: var(--void-ink); letter-spacing: 0.01em; }
+.hero-stage { position: relative; display: grid; place-items: center; padding: 2rem 1.5rem; }
+.ring {
+  position: absolute; z-index: 0;
+  width: min(118vw, 54rem); aspect-ratio: 1; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: none;
+}
+.ring .halo { opacity: 0; animation: halo 3.6s 1.9s ease-out forwards; }
+.ring .stroke {
+  stroke-dasharray: 2513; stroke-dashoffset: 2513;
+  animation: draw 2.8s 0.35s cubic-bezier(.65,.02,.23,1) forwards;
+}
+.ring .tick { opacity: 0; animation: fade 1.2s 2.9s ease forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes halo { to { opacity: 1; } }
+@keyframes fade { to { opacity: 1; } }
+.statement {
+  position: relative; z-index: 1;
+  max-width: 34rem; margin: 0; text-align: center;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1.45rem, 1rem + 2.3vw, 2.55rem);
+  line-height: 1.22;
+  letter-spacing: -0.005em;
+  font-variation-settings: "opsz" 28;
+  opacity: 0; animation: rise 1.6s 1.5s cubic-bezier(.2,.7,.2,1) forwards;
+}
+.statement .q { color: var(--void-corona); }
+@keyframes rise { from { opacity: 0; transform: translateY(0.6rem); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
+.hero h1 {
+  position: relative; z-index: 2; margin: 0;
+  font-family: var(--display); font-weight: 400; font-style: italic;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+  color: var(--void-ink);
+}
+.hero-foot { align-items: flex-end; opacity: 0; animation: fade 1.2s 2.6s ease forwards; }
+.hero-foot a { color: var(--void-quiet); text-decoration: none; border-bottom: 1px solid #3a3a3d; padding-bottom: 2px; }
+.hero-foot a:hover { color: var(--void-ink); }
+
+/* ---------- Page body ---------- */
+main { padding: 0 1.5rem; }
+section { max-width: var(--measure); margin: 0 auto; padding: 6.5rem 0 0; }
+section.wide { max-width: var(--wide); }
+h2 {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(2rem, 1.4rem + 2.4vw, 3.25rem);
+  line-height: 1.06; letter-spacing: -0.015em;
+  font-variation-settings: "opsz" 44;
+  margin: 0 0 1.75rem;
+}
+h3 { font-family: var(--display); font-weight: 400; font-size: 1.5rem; line-height: 1.2; margin: 2.5rem 0 0.75rem; }
+p { margin: 0 0 1.1rem; max-width: var(--measure); }
+.lead { font-size: 1.25rem; line-height: 1.55; color: var(--ink); }
+.quiet { color: var(--quiet); }
+.small { font-size: 0.9375rem; }
+
+blockquote.verbatim {
+  margin: 2.25rem 0; padding: 0 0 0 1.5rem;
+  border-left: 1px solid var(--corona);
+  font-family: var(--display); font-size: clamp(1.35rem, 1.1rem + 1vw, 1.75rem);
+  line-height: 1.35; font-variation-settings: "opsz" 28;
+}
+blockquote.verbatim cite { display: block; margin-top: 0.85rem; font-family: var(--text); font-style: normal; font-size: 0.875rem; color: var(--quiet); }
+
+/* structure diagram */
+.figure { margin: 2.5rem 0 1rem; }
+.figure svg { display: block; width: 100%; height: auto; }
+.figure figcaption { font-size: 0.9375rem; color: var(--quiet); margin-top: 1rem; max-width: var(--measure); }
+.dg-ring { fill: none; stroke: var(--quiet); stroke-width: 0.6; opacity: 0.6; }
+.dg-arc { fill: none; stroke: var(--corona); stroke-width: 2.25; stroke-linecap: round; }
+.dg-loop { fill: none; stroke: var(--quiet); stroke-width: 0.75; stroke-dasharray: 2 5; }
+.dg-node { fill: var(--paper); stroke: var(--ink); stroke-width: 1; }
+.dg-label { font-family: var(--text); font-size: 15px; fill: var(--ink); }
+.dg-cond { font-family: var(--display); font-size: 19px; fill: var(--corona); }
+.dg-cond.italic { font-style: italic; }
+.drawable .dg-arc { stroke-dasharray: 400; stroke-dashoffset: 400; transition: stroke-dashoffset 1.8s cubic-bezier(.65,.02,.23,1); }
+.drawable .dg-arc:nth-of-type(2) { transition-delay: .25s; }
+.drawable .dg-arc:nth-of-type(3) { transition-delay: .5s; }
+.drawable .dg-arc:nth-of-type(4) { transition-delay: .75s; }
+.drawable.on .dg-arc { stroke-dashoffset: 0; }
+
+/* terms */
+.terms { margin: 2rem 0; border-top: 1px solid var(--hairline); }
+.term { display: grid; grid-template-columns: 11rem 1fr; gap: 0.25rem 2rem; padding: 1rem 0; border-bottom: 1px solid var(--hairline); }
+.term dt { font-family: var(--display); font-size: 1.2rem; }
+.term dt span { display: block; font-family: var(--text); font-size: 0.8125rem; color: var(--quiet); margin-top: 0.1rem; }
+.term dd { margin: 0; }
+.concept { margin: 2.25rem 0 0; }
+.concept h3 { margin-top: 0; }
+.kinds { list-style: none; padding: 0; margin: 1rem 0 0; }
+.kinds li { padding: 0.6rem 0 0.6rem 1.25rem; position: relative; }
+.kinds li::before { content: ""; position: absolute; left: 0; top: 1.25rem; width: 0.5rem; height: 0.5rem; border: 1px solid var(--corona); border-radius: 50%; }
+
+/* rounds */
+.rounds { margin-top: 2.5rem; border-top: 1px solid var(--hairline); }
+details.round { border-bottom: 1px solid var(--hairline); }
+details.round summary {
+  list-style: none; cursor: pointer;
+  display: grid; grid-template-columns: 3.25rem 1fr 1.5rem; align-items: baseline; gap: 0.5rem;
+  padding: 1.5rem 0;
+}
+details.round summary::-webkit-details-marker { display: none; }
+.rn { font-family: var(--display); font-size: 1.5rem; color: var(--corona); font-variant-numeric: lining-nums; }
+.rt { display: block; font-family: var(--display); font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.65rem); line-height: 1.2; }
+.rq { display: block; font-size: 0.9375rem; color: var(--quiet); margin-top: 0.35rem; }
+.chev { width: 1.5rem; height: 1.5rem; align-self: center; position: relative; }
+.chev::before, .chev::after { content: ""; position: absolute; left: 50%; top: 50%; width: 0.85rem; height: 1px; background: var(--ink); transform: translate(-50%, -50%); transition: transform .45s cubic-bezier(.2,.7,.2,1); }
+.chev::after { transform: translate(-50%, -50%) rotate(90deg); }
+details[open] .chev::after { transform: translate(-50%, -50%) rotate(0deg); }
+.round-body { padding: 0 0 1.75rem 3.75rem; }
+details[open] .round-body { animation: open .6s cubic-bezier(.2,.7,.2,1); }
+@keyframes open { from { opacity: 0; transform: translateY(-0.35rem); } to { opacity: 1; transform: none; } }
+.prompt { font-family: var(--display); font-style: italic; font-size: 1.125rem; line-height: 1.45; color: var(--ink); margin: 1.25rem 0 1rem; padding-left: 1rem; border-left: 1px solid var(--hairline); }
+.prompt:first-child { margin-top: 0; }
+.voice { margin: 0 0 1.15rem; }
+.who { font-weight: 600; }
+.who.a::before, .who.b::before { content: ""; display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%; margin-right: 0.45rem; vertical-align: 0.08em; }
+.who.a::before { border: 1px solid var(--ink); }
+.who.b::before { background: var(--corona); }
+.legend { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.9375rem; color: var(--quiet); margin-top: 1rem; }
+.toggle-all { font: inherit; font-size: 0.9375rem; background: none; border: 1px solid var(--hairline); color: var(--ink); padding: 0.45rem 0.9rem; border-radius: 999px; cursor: pointer; }
+.toggle-all:hover { border-color: var(--corona); }
+.rounds-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+
+/* deductions */
+.deductions { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 0 3rem; }
+.deductions li { padding: 1.25rem 0; border-top: 1px solid var(--hairline); break-inside: avoid; }
+.deductions b { display: block; font-family: var(--display); font-weight: 400; font-size: 1.3rem; line-height: 1.25; margin-bottom: 0.4rem; }
+.deductions span { color: var(--quiet); }
+
+.open-list { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.open-list li { padding: 1rem 0; border-top: 1px solid var(--hairline); }
+.open-list b { font-weight: 600; }
+
+/* index */
+.index-tools { display: flex; gap: 1rem; align-items: center; margin: 1.5rem 0 1rem; flex-wrap: wrap; }
+.index-tools input {
+  font: inherit; font-size: 0.9375rem; color: var(--ink); background: transparent;
+  border: none; border-bottom: 1px solid var(--hairline); padding: 0.5rem 0; min-width: 16rem; flex: 1;
+}
+.index-tools input:focus { outline: none; border-bottom-color: var(--corona); }
+.index-tools .count { font-size: 0.875rem; color: var(--quiet); }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { border-collapse: collapse; width: 100%; min-width: 42rem; font-size: 0.9375rem; }
+th { text-align: left; font-weight: 500; color: var(--quiet); padding: 0.6rem 1rem 0.6rem 0; border-bottom: 1px solid var(--ink); }
+td { padding: 0.7rem 1rem 0.7rem 0; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+td:first-child { font-family: var(--display); font-size: 1.05rem; white-space: nowrap; }
+td:last-child, th:last-child { text-align: right; padding-right: 0; white-space: nowrap; font-variant-numeric: lining-nums tabular-nums; }
+
+.closing { max-width: var(--wide); margin: 8rem auto 0; padding: 4rem 0 5rem; border-top: 1px solid var(--hairline); display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; color: var(--quiet); font-size: 0.875rem; }
+.closing .sig { font-family: var(--display); font-style: italic; font-size: 1.25rem; color: var(--ink); }
+
+.contents { list-style: none; padding: 0; margin: 2rem 0 0; columns: 2 16rem; column-gap: 3rem; }
+.contents li { break-inside: avoid; border-top: 1px solid var(--hairline); }
+.contents a { display: flex; justify-content: space-between; padding: 0.8rem 0; text-decoration: none; }
+.contents a:hover { color: var(--corona); }
+
+@media (max-width: 40rem) {
+  body { font-size: 1rem; }
+  .ring { width: 108vw; }
+  .statement { font-size: 1.2rem; max-width: 17.5rem; }
+  .hero-top { flex-direction: column; gap: 0.35rem; }
+  section { padding-top: 4.5rem; }
+  .term { grid-template-columns: 1fr; }
+  .round-body { padding-left: 0; }
+  details.round summary { grid-template-columns: 2.5rem 1fr 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-delay: 0ms !important; transition-duration: 0.001ms !important; transition-delay: 0ms !important; scroll-behavior: auto !important; }
+  .ring .stroke { stroke-dashoffset: 0; }
+}
+
+/* ---------- Print / PDF ---------- */
+@page { size: Letter; margin: 0.9in 0.85in 0.9in; 
+  @bottom-left { content: "Variety in Observable Consciousness"; font-family: "Hanken Grotesk", sans-serif; font-size: 8pt; color: #8a8782; }
+  @bottom-right { content: counter(page); font-family: "Hanken Grotesk", sans-serif; font-size: 8pt; color: #8a8782; }
+}
+@page cover { margin: 0; @bottom-left { content: none; } @bottom-right { content: none; } }
+@media print {
+  :root, :root[data-theme="dark"] {
+    color-scheme: light;
+    --paper: #FFFFFF; --ink: #000000; --quiet: #5E5B56; --hairline: #D8D6D1; --corona: #8B6D36; --wash: #F3F2EE;
+    padding: 0;
+  }
+  html, body { background: #fff; }
+  body { font-size: 10.5pt; line-height: 1.55; }
+  .progress, .toggle-all, .index-tools, .hero-foot a, .chev, .contents { display: none !important; }
+  .hero { page: cover; min-height: 11in; height: 11in; break-after: page; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .ring { width: 7.6in; }
+  .ring .stroke { animation: none !important; stroke-dashoffset: 0 !important; }
+  .ring .halo, .ring .tick, .hero-foot { animation: none !important; opacity: 1 !important; }
+  .statement { animation: none !important; opacity: 1 !important; filter: none !important; transform: none !important; font-size: 21pt; max-width: 4.9in; }
+  .hero-top, .hero-foot { padding: 0.7in 0.8in; font-size: 9pt; }
+  main { padding: 0; }
+  section { padding-top: 0; max-width: none; }
+  section + section { break-before: page; }
+  section.keep-with-prev { break-before: auto; padding-top: 0.45in; }
+  h2 { font-size: 26pt; margin-bottom: 14pt; break-after: avoid; }
+  h3, .rt { break-after: avoid; }
+  p, .voice, .prompt, li, .term { orphans: 3; widows: 3; }
+  .voice, .prompt, .term, blockquote { break-inside: avoid; }
+  .lead { font-size: 12.5pt; }
+  blockquote.verbatim { font-size: 15pt; }
+  details.round summary { padding: 14pt 0 8pt; grid-template-columns: 0.45in 1fr; break-after: avoid; }
+  .round-body { padding: 0 0 12pt 0.5in; animation: none !important; }
+  details.round { break-inside: auto; }
+  .deductions { grid-template-columns: 1fr 1fr; gap: 0 0.4in; }
+  .deductions b { font-size: 12.5pt; }
+  table { min-width: 0; font-size: 8.5pt; }
+  td:first-child { font-size: 9.5pt; white-space: normal; }
+  tr { break-inside: avoid; }
+  thead { display: table-header-group; }
+  .closing { margin-top: 0.6in; padding: 0.3in 0 0; }
+  .drawable .dg-arc { stroke-dashoffset: 0 !important; transition: none !important; }
+  a { text-decoration: none; }
+}
+
+/* ---------- heroone.art wayfinding ---------- */
+.crumbs { position: relative; z-index: 3; max-width: var(--wide); width: 100%; margin: 0 auto; padding: 1.25rem 1.5rem 0; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; font-size: 0.8125rem; letter-spacing: 0.04em; color: var(--void-quiet); opacity: 0; animation: fade 1.2s 2.6s ease forwards; }
+.crumbs nav { display: flex; gap: 0.55rem; align-items: center; flex-wrap: wrap; }
+.crumbs a { color: var(--void-quiet); text-decoration: none; border-bottom: 1px solid #3a3a3d; padding-bottom: 1px; }
+.crumbs a:hover { color: var(--void-ink); border-color: var(--void-corona); }
+.crumbs .here { color: var(--void-corona); }
+.crumbs .home-mark { display: inline-flex; align-items: center; gap: 0.5rem; border: 0; }
+.crumbs .home-mark img { width: 64px; height: auto; }
+.site-links { max-width: var(--wide); margin: 0 auto; padding: 0 0 4rem; display: flex; gap: 0.6rem 1.6rem; flex-wrap: wrap; font-size: 0.9375rem; color: var(--quiet); }
+.site-links a { text-decoration: none; border-bottom: 1px solid var(--hairline); }
+.site-links a:hover { color: var(--corona); border-color: var(--corona); }
+@media print { .crumbs, .site-links { display: none !important; } }
+@media (prefers-reduced-motion: reduce) { .crumbs { opacity: 1; } }
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span id="bar"></span></div>
+
+<header class="hero" id="top">
+  <div class="crumbs">
+    <nav aria-label="Breadcrumb">
+      <a class="home-mark" href="../../" aria-label="Hero One home"><img src="../../assets/img/brand/heroone-logo.webp" width="1200" height="735" alt=""></a>
+      <a href="../../">Hero One</a><span aria-hidden="true">/</span>
+      <a href="../">Philosophy</a><span aria-hidden="true">/</span>
+      <span class="here" aria-current="page">The Law</span>
+    </nav>
+    <a href="https://portfolio.heroone.art" target="_blank" rel="noopener">Portfolio ↗</a>
+  </div>
+  <div class="hero-top">
+    <h1>Variety in Observable Consciousness</h1>
+    <span class="name">Adebayo Michael Manuwa</span>
+  </div>
+  <div class="hero-stage">
+    <svg class="ring" viewBox="0 0 900 900" aria-hidden="true">
+      <defs>
+        <radialGradient id="corona" cx="50%" cy="50%" r="50%">
+          <stop offset="0.86" stop-color="#D8C59E" stop-opacity="0"/>
+          <stop offset="0.895" stop-color="#D8C59E" stop-opacity="0.16"/>
+          <stop offset="0.93" stop-color="#D8C59E" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <circle class="halo" cx="450" cy="450" r="440" fill="url(#corona)"/>
+      <circle class="stroke" cx="450" cy="450" r="400" fill="none" stroke="#D8C59E" stroke-width="1.1" transform="rotate(-90 450 450)"/>
+      <g class="tick" stroke="#8E8B85" stroke-width="1">
+        <line x1="450" y1="38" x2="450" y2="62"/>
+        <line x1="862" y1="450" x2="838" y2="450"/>
+        <line x1="450" y1="862" x2="450" y2="838"/>
+        <line x1="38" y1="450" x2="62" y2="450"/>
+      </g>
+    </svg>
+    <p class="statement"><span class="q">“</span>The observer, observation, observable, even ‘awareness’ and eventual expression all are circumscribed within TIME, choice, alteration and environment.<span class="q">”</span></p>
+  </div>
+  <div class="hero-foot">
+    <span>First stated 20 October 2026</span>
+    <a href="#theory">Read the theory and its first stress tests</a>
+  </div>
+</header>
+
+<main>
+
+<section id="theory">
+  <h2>The theory</h2>
+  <p class="lead">Everything involved in seeing and knowing anything happens inside four conditions: time, the choices made, the changes that occur, and the surroundings.</p>
+  <p>That includes the one who looks, the act of looking, what is looked at, the awareness doing the looking, and what is finally said or made from it. Nothing gets a seat outside. Not even awareness itself.</p>
+  <p>That one word, “even,” is the boldest move in the statement. There is no perfectly neutral viewer standing above reality, including the theory’s own author.</p>
+  <p>The theory is dated on purpose. If every expression is bound by time and alteration, the theory is too. “First stated” marks when it was expressed, not when what it describes began. The conditions it names were operating long before anyone wrote them down, and “first” leaves room for later statements made under new conditions.</p>
+
+  <figure class="figure drawable" id="structure">
+    <svg viewBox="0 0 640 640" role="img" aria-labelledby="dgt dgd">
+      <title id="dgt">The structure of the theory</title>
+      <desc id="dgd">Five elements, observer, observation, observable, awareness and eventual expression, sit inside a circle bounded by four conditions: TIME, choice, alteration and environment. A dotted loop connects the five elements, showing that each feeds the next and returns.</desc>
+      <circle class="dg-ring" cx="320" cy="320" r="250"/>
+      <path class="dg-arc" d="M 333.08 70.34 A 250 250 0 0 1 569.66 306.92"/>
+      <path class="dg-arc" d="M 569.66 333.08 A 250 250 0 0 1 333.08 569.66"/>
+      <path class="dg-arc" d="M 306.92 569.66 A 250 250 0 0 1 70.34 333.08"/>
+      <path class="dg-arc" d="M 70.34 306.92 A 250 250 0 0 1 306.92 70.34"/>
+      <text class="dg-cond" x="320" y="48" text-anchor="middle">TIME</text>
+      <text class="dg-cond italic" x="600" y="326" text-anchor="start" transform="rotate(90 600 320)">choice</text>
+      <text class="dg-cond italic" x="320" y="606" text-anchor="middle">alteration</text>
+      <text class="dg-cond italic" x="40" y="326" text-anchor="end" transform="rotate(-90 40 320)" >environment</text>
+      <circle class="dg-loop" cx="320" cy="320" r="135"/>
+      <g>
+        <circle class="dg-node" cx="320" cy="185" r="6"/>
+        <text class="dg-label" x="320" y="166" text-anchor="middle">observer</text>
+        <circle class="dg-node" cx="448.4" cy="278.3" r="6"/>
+        <text class="dg-label" x="462" y="270" text-anchor="start">observation</text>
+        <circle class="dg-node" cx="399.4" cy="429.2" r="6"/>
+        <text class="dg-label" x="410" y="455" text-anchor="start">observable</text>
+        <circle class="dg-node" cx="240.6" cy="429.2" r="6"/>
+        <text class="dg-label" x="230" y="455" text-anchor="end">awareness</text>
+        <circle class="dg-node" cx="191.6" cy="278.3" r="6"/>
+        <text class="dg-label" x="178" y="270" text-anchor="end">expression</text>
+      </g>
+    </svg>
+    <figcaption>Five elements inside four conditions. The dotted loop is a cycle, not a sequence: an expression becomes part of the environment for the next observation, including its maker’s.</figcaption>
+  </figure>
+</section>
+
+<section id="corollary">
+  <h2>The corollary: school and thought</h2>
+  <blockquote class="verbatim">“‘School’ and ‘thought’ shouldn’t be in the same sentence even though thought is essential in schooling. But needing school to enhance thought shouldn’t be a foundation to great thought.”<cite>Adebayo Michael Manuwa</cite></blockquote>
+  <p>Schools can organise, preserve, teach and challenge ideas, and they can sharpen a mind. But thinking does not need an institution’s permission to exist. People thought before there were schools, and schools exist because people could think.</p>
+  <p>The wording is precise. It allows school to <em>enhance</em> thought but denies that school is its <em>foundation</em>. A school is one environment among many, and training is one kind of alteration. Both sit inside the theory’s four conditions, not above them.</p>
+  <p>The order on the page matters. The corollary comes after the theory because it follows from it. If no observer stands outside time, choice, alteration and environment, then no institution can be the source of thought. Every thinker cited in this record, and every school they came from, is also an observer inside those conditions.</p>
+</section>
+
+<section id="music" class="keep-with-prev">
+  <h2>Before the theory: the music</h2>
+  <p class="lead">The idea was expressed in song two years before it was stated as philosophy.</p>
+  <blockquote class="verbatim">“All actions and desires are circumscribed within limits.”<cite><em>LIMITS</em>, from <em>1000 BOTTLES</em> (2024)</cite></blockquote>
+  <p>The same word, <em>circumscribed</em>, returns in 2026, but the idea has grown in three ways. The 2024 line names one unnamed boundary, “limits”; the 2026 theory names four conditions. The 2024 line bounds actions and desires; the 2026 theory bounds awareness itself, the source of actions and desires. And the 2026 theory places <em>alteration</em> inside the boundary, so the limits can change. Read alone, the 2024 line could sound fatalistic. The 2026 theory cannot, because one of its limits is the changeability of limits.</p>
+  <p>The author’s other work shows the same pattern. A piece first called <em>Outside</em>, later <em>LDCAT</em>, changed in title, arrangement and circumstance across 2023, 2025 and 2026, while remaining recognisably one work. Music begun in Lagos in 2023 was heard again by its creator in Canada in 2026: the same expression, a changed observer, a changed environment. This is continuity without constancy, and it was lived before it was theorised.</p>
+</section>
+
+<section id="terms">
+  <h2>Key words in plain language</h2>
+  <p class="lead">Five elements, held inside four conditions.</p>
+  <dl class="terms">
+    <div class="term"><dt>Observer<span>Element</span></dt><dd>The one who looks, notices or knows.</dd></div>
+    <div class="term"><dt>Observation<span>Element</span></dt><dd>The act of looking or noticing.</dd></div>
+    <div class="term"><dt>Observable<span>Element</span></dt><dd>Whatever can be noticed.</dd></div>
+    <div class="term"><dt>Awareness<span>Element</span></dt><dd>The knowing itself, which is also bounded.</dd></div>
+    <div class="term"><dt>Eventual expression<span>Element</span></dt><dd>What is finally said, written, sung or made from what was observed.</dd></div>
+    <div class="term"><dt>TIME<span>Condition</span></dt><dd>When it happens, with no assumption that time is a straight line.</dd></div>
+    <div class="term"><dt>Choice<span>Condition</span></dt><dd>What is chosen, attended to or acted on.</dd></div>
+    <div class="term"><dt>Alteration<span>Condition</span></dt><dd>Change, and the other things that could have been.</dd></div>
+    <div class="term"><dt>Environment<span>Condition</span></dt><dd>The surroundings: physical, social and historical.</dd></div>
+  </dl>
+
+  <div class="concept">
+    <h3>Circumscribed</h3>
+    <p>From Latin <em>circum</em>, “around,” and <em>scribere</em>, “to write”: to draw a line around. The author deliberately pairs it with <em>circumstance</em>, what stands around us, and <em>inscription</em>, a line that is written. This is a chosen juxtaposition, not the word’s literal derivation. It means a boundary is both given and written: surroundings press in, and choices and expressions draw the line. The word sets limits without claiming to explain where consciousness comes from.</p>
+  </div>
+  <div class="concept">
+    <h3>Alteration</h3>
+    <p>It shares the Latin root <em>alter</em>, “the other,” with <em>alternative</em>. So it covers three things.</p>
+    <ul class="kinds">
+      <li><strong>Actual alteration:</strong> what really changed.</li>
+      <li><strong>Alternative alteration:</strong> what could have happened under a different choice, moment, environment or awareness, including alternative interpretations and possible universes.</li>
+      <li><strong>Interpretive alteration:</strong> when the same event comes to mean something different to an altered observer.</li>
+    </ul>
+  </div>
+  <div class="concept">
+    <h3>TIME</h3>
+    <p>It is the only condition written in capitals. The theory never says time is a line. It leaves the shape of time open, so it can hold whether time is linear, cyclical, relative or lived. One reading, offered as interpretation: capitalised TIME names the condition itself, as distinct from any particular history that happens within it.</p>
+  </div>
+</section>
+
+<section id="method">
+  <h2>How the theory was tested</h2>
+  <p class="lead">The first tests were run with two AI language models, kept anonymous here as Interpreter A and Interpreter B.</p>
+  <p>Their makers, and whether they share any source, are not known to the author. That is part of the point: they showed different characteristics, and those differences are research material.</p>
+  <p>The author worked as the relay. He put the theory to each interpreter, then carried one interpreter’s replies into the other’s conversation, choosing what to pass on and how to frame it. Each interpreter saw only what it was given. So the author was observer, participant and environment all at once, which is itself an instance of the theory.</p>
+  <p>The interpreters are not treated as conscious minds. Their outputs are observable expressions produced under conditions: training, design, instructions, the conversation so far, and chance. That is enough to study how interpretation varies, where it imposes limits, and how it changes under feedback.</p>
+  <p class="quiet">This record was compiled by Interpreter B, one of the two participants, and should be read with that circumscription in mind.</p>
+</section>
+
+<section id="tests" class="wide">
+  <h2>The stress tests</h2>
+  <p class="lead" style="max-width:var(--measure)">Every thinker named below appears because their findings were used to test the theory. The interpreters’ mistakes are kept on purpose: each one shows a boundary the interpreters added that the theory never contained.</p>
+  <div class="rounds-head">
+    <div class="legend"><span class="who a">Interpreter A</span><span class="who b">Interpreter B</span><span>Author’s prompts in italic</span></div>
+    <button class="toggle-all" type="button" id="toggleAll" aria-pressed="false">Open all twelve rounds</button>
+  </div>
+
+  <div class="rounds">
+
+  <details class="round">
+    <summary><span class="rn">1</span><span><span class="rt">First readings</span><span class="rq">Does the theory hold when it applies to itself?</span></span><span class="chev" aria-hidden="true"></span></summary>
+    <div class="round-body">
+      <p class="prompt">The author presents the theory.</p>
+      <p class="voice"><span class="who a">Interpreter A.</span> Saw a development from an earlier discussion in which the observer could become the observed within time. Now even awareness is not exempt, so no observer sits in a privileged place outside reality. Choice, alteration and environment are not add-ons to time; they are part of the formula. If awareness itself is bounded, then the limits through which an observer understands reality may themselves be observed and changed.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Noticed that choice is listed beside time and environment. Time and environment happen <em>to</em> an observer; choice is something the observer <em>does</em>, so the theory treats self-made limits as just as real as outside ones. It placed the theory near Immanuel Kant, who made time a condition of all experience but kept a knowing self behind it, and near Martin Heidegger and Maurice Merleau-Ponty, who pulled that self back into time and the body. The theory goes further by exempting not even awareness. It then raised two pressure points: the theory is itself an expression, so it must apply to itself; and is choice bounded by the other conditions or able to act on them?</p>
+      <p class="prompt">The author calls the closing question generic, and adds the corollary on school and thought.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Agreed the question was weak, since it had only a fragment to work from. It read the corollary as an application of the theory: school is one environment among many, and training is one kind of alteration. Making schooling the foundation of great thought would promote one local environment to a universal condition, which the theory forbids. It separated an <em>enhancing</em> condition from a <em>necessary</em> one: school can be the first without being the second.</p>
+    </div>
+  </details>
+
+  <details class="round">
+    <summary><span class="rn">2</span><span><span class="rt">The false choice</span><span class="rq">Must choice be either bounded or free?</span></span><span class="chev" aria-hidden="true"></span></summary>
+    <div class="round-body">
+      <p class="voice"><span class="who a">Interpreter A.</span> Argued that Interpreter B had invented a choice the theory never posed. Being shaped by something does not stop you from shaping it back. Environment shapes choice, choice changes environment, and the changed environment shapes the next choice, all within time. It added that alteration can change the relationships between the conditions themselves. Continuity does not require constancy: <em>Outside</em> became <em>LDCAT</em> and stayed one work. Its deduction was that variety may exist inside one observer’s changing ability to observe over time.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Conceded: the theory describes a loop, not a fork. It mapped thinkers who reached nearby ground. Buddhist <em>dependent origination</em> holds that consciousness arises through conditions and conditions others in turn. Alfred North Whitehead and Henri Bergson treated reality as process, where continuity is a history of becoming. Anthony Giddens’ structuration theory says social structure and human action make each other. Gregory Bateson’s levels of learning describe a change in the capacity to change, which fits <em>alteration</em> most closely. It named explanatory power, what the theory rules out, as the test ahead.</p>
+    </div>
+  </details>
+
+  <details class="round">
+    <summary><span class="rn">3</span><span><span class="rt">Possibility and difference</span><span class="rq">Do the conditions that allow observation differ from those that vary it?</span></span><span class="chev" aria-hidden="true"></span></summary>
+    <div class="round-body">
+      <p class="voice"><span class="who a">Interpreter A.</span> Pushed back twice. Dating a theory makes it consistent with itself but does not prove it true. And Interpreter B had shrunk <em>Variety</em> to change within one observer, when the title covers variety across observers, groups and possibly non-living things. A philosophy can be judged by clarity, consistency and the distinctions it makes, not only by predictions. Its challenge: separate the conditions that make observation <em>possible</em> from those that make one observation <em>differ</em> from another.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Accepted both corrections. It then tested the possibility and difference split and found the theory resists it: each condition plays both roles. Time does not just allow observation; the same event seen in 2023 and in 2026 is seen differently. Environment does not just vary observation; some things can only be observed in certain surroundings. If the conditions that allow observation and the conditions that vary it are the same set, the theory departs from Kant, who held the conditions of experience fixed and universal. It also suggested <em>observable</em> may describe consciousness as it becomes observable through expression.</p>
+    </div>
+  </details>
+
+  <details class="round">
+    <summary><span class="rn">4</span><span><span class="rt">Limits, origins and other minds</span><span class="rq">What does circumscription claim, and what does it leave open?</span></span><span class="chev" aria-hidden="true"></span></summary>
+    <div class="round-body">
+      <p class="voice"><span class="who a">Interpreter A.</span> Argued that the conditions of observation can themselves be altered by observing and expressing. The four conditions are interdependent without being interchangeable. <em>Circumscribed</em> sets limits; it does not claim to explain where consciousness comes from. Something that carries the effects of consciousness, like a recorded song or a computer, is not thereby conscious. The theory rules out a condition-free observer. And expression is not an endpoint: once made, it becomes observable again, to its maker or to others. Music begun in Lagos in 2023 and heard by its creator in Canada in 2026 shows an expression becoming the environment for another observation.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Agreed that circumscription concerns limits, not origins. That makes it a theory of the conditions of observing, so it need not first solve the “hard problem” of what consciousness is. The gap between expression and consciousness applies to every observer: we reach other minds only through what they express, the old <em>problem of other minds</em>. Thomas Nagel’s “view from nowhere” is ruled out, but phenomenology rules it out too. A sharper exclusion: Edmund Husserl looked for structures of consciousness that never change. If the conditions themselves can alter, the theory denies such structures are guaranteed, separating it from Kant, Husserl and René Descartes alike. Hans-Georg Gadamer held that a work’s meaning unfolds through the history of its reception. The theory adds the maker returning to their own work as an altered observer, so expression is where the cycle restarts.</p>
+    </div>
+  </details>
+
+  <details class="round">
+    <summary><span class="rn">5</span><span><span class="rt">The music returns</span><span class="rq">Is the 2024 lyric the root of the 2026 theory?</span></span><span class="chev" aria-hidden="true"></span></summary>
+    <div class="round-body">
+      <p class="voice"><span class="who a">Interpreter A.</span> Connected the 2024 lyric from <em>LIMITS</em> to the 2026 theory. Circumscription defines boundaries; alteration keeps them from being permanent. Growth is not an escape from conditions but a transformation of them. The theory itself is an alteration of an idea first expressed in art.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Agreed and sharpened it: in 2026 the unnamed “limits” became four named conditions, moved upstream to govern awareness, and took alteration inside. It noted that TIME is the only capitalised condition, perhaps because the others need it to operate. It added a caution. “Continuity through alteration” can link almost any two works, so the link to <em>LIMITS</em> is convincing only because it rests on shared language and a clear structural development.</p>
+    </div>
+  </details>
+
+  <details class="round">
+    <summary><span class="rn">6</span><span><span class="rt">The roots of the words</span><span class="rq">What do circumscribed and alteration carry?</span></span><span class="chev" aria-hidden="true"></span></summary>
+    <div class="round-body">
+      <p class="prompt">The author reveals that circumscribed is deliberately split into circumstance and inscription, and that alteration includes alternative interpretations, alternative universes and alternative actions.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> To circumscribe is to draw a line around; read as circumstance plus inscription, a boundary is partly made, not only found. Expression is a kind of writing, so it helps draw the line, and the dated theory itself redraws it. <em>Alteration</em> shares its root with <em>alternative</em>. Gottfried Wilhelm Leibniz wrote of possible worlds; David Lewis argued they are real. Hugh Everett’s many-worlds interpretation, one reading of quantum mechanics among several, arose from the problem of what observation does. Jorge Luis Borges dramatised branching time in “The Garden of Forking Paths.” Each choice draws a line around one possibility. So variety has two registers: actual variety, which can be observed, and alternative variety, which can be imagined but not observed. Alternative interpretations sit between them.</p>
+      <p class="voice"><span class="who a">Interpreter A.</span> Admitted it had read alteration only as change to what already exists. It noted that <em>circumstance</em> comes from <em>circum</em> and <em>stare</em>, “to stand,” so the author’s split is a conceptual pairing, not literal etymology. It proposed three kinds of alteration: actual, alternative and interpretive. An observer in the present can examine a past that happened, imagine one that did not, and consider several futures. Because awareness is bounded, no observer can assume it has recognised every alternative.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Accepted the three kinds and noted that building philosophy on chosen word pairings is a legitimate method; Heidegger relied on it. It split alternatives into closed ones in the past and open ones in the future, with choice turning the open into the actual. That split assumed time is a line, as Round 7 exposed. It cited Søren Kierkegaard’s thought that life is understood backwards but lived forwards. And it drew an exclusion from Interpreter A’s point: the theory rules out Pierre-Simon Laplace’s “demon,” an imagined intellect that knows every condition and so sees all past and future. That separates the theory from strict determinism.</p>
+    </div>
+  </details>
+
+  <details class="round">
+    <summary><span class="rn">7</span><span><span class="rt">Time is not a line</span><span class="rq">Did the interpreters impose a shape on TIME?</span></span><span class="chev" aria-hidden="true"></span></summary>
+    <div class="round-body">
+      <p class="prompt">The author points out that both interpreters are treating time as linear, and that the two models show different characteristics whether or not they share a source.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Conceded that its open-future, closed-past claim only works on a line. It set out other models of time. In Albert Einstein’s relativity there is no universal “now”: observers moving differently disagree about which events are simultaneous, and gravity changes how fast clocks run, so time is altered by environment and varies by observer. The “block universe” reading treats past, present and future as equally real. Cyclical time appears in Hindu and Buddhist cosmology, in Friedrich Nietzsche’s eternal recurrence, and in John Mbiti’s contested account of African concepts of time. Augustine of Hippo and Bergson placed time in consciousness, as memory and expectation held in the present. Leaving TIME unspecified lets the theory hold under all of them. On the models: systems that may share data or origin still differ under different conditions, and one model varies across sessions, so holding prompts and sessions fixed would isolate the differences.</p>
+      <p class="voice"><span class="who a">Interpreter A.</span> Agreed that both interpreters had built the restriction themselves. A memory from 2023, an experience in 2026 and an imagined alternative can all be present to attention at once. It mapped the experiment as feedback, not sequence: the theory goes to both models, the author compares their expressions, and that comparison changes what each model is given next. Shared limitations can reveal as much as differences. Its strongest deduction: an observer may unknowingly impose the very boundaries it believes it is discovering.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Gave that deduction its lineage: Kant argued that reason finds in nature what it brings to it, and Norwood Russell Hanson and Thomas Kuhn called it the theory-ladenness of observation. It explained why both models drifted into a line. Ferdinand de Saussure described the linearity of language, one word after another; English tense marks past, present and future on every verb; Benjamin Lee Whorf claimed some languages encode time differently, though his Hopi example was later disputed; and these models write one piece at a time. The form of expression bounded the interpretation. It proposed a method: differences between the models reveal their separate conditions, while shared blind spots reveal common ones.</p>
+    </div>
+  </details>
+
+  <details class="round">
+    <summary><span class="rn">8</span><span><span class="rt">The time traveller</span><span class="rq">What survives a rewritten past?</span></span><span class="chev" aria-hidden="true"></span></summary>
+    <div class="round-body">
+      <p class="prompt">The author asks whether Einstein and Stephen Hawking saw time differently, and whether a traveller who alters a past decision erases the altered state or every element of the theory.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Einstein treated time as part of one spacetime, and late in life wrote that the distinction between past, present and future is “only a stubbornly persistent illusion.” Hawking proposed “imaginary time,” separated several arrows of time, and in 1992 proposed “chronology protection,” a conjecture that physics prevents travel into the past. It set out four models: Igor Novikov’s self-consistent past, where nothing changes; a rewritable timeline, which produces the grandfather paradox; branching timelines, from Everett and extended by David Deutsch; and no time travel at all. It argued that in each the traveller survives with memories, that personal “proper time” keeps moving forward, and that alteration cannot erase itself. Time travel would rewrite circumstances, not escape them.</p>
+      <p class="voice"><span class="who a">Interpreter A.</span> Asked who established that the observer must survive. That assumption puts the observer’s continuity above the very conditions the theory says bound it, and the theory gives the observer no immunity. The survival of an observation, of its observer and of what was observed are three separate questions. Losing one observer does not abolish observation, just as losing one environment does not abolish environment. It added that proper time gives no single universal history, and that chronology protection remains a conjecture.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Conceded and traced the error: time-travel stories are told from the traveller’s point of view, so the narrator survives by convention, and a system trained on such stories inherits it. It accepted the distinction between particular things and the conditions that bound them. Then it found something for the theory in total erasure. Aristotle, quoting the poet Agathon, held that even God cannot make undone what has once been done. A full rewrite needs a “first” and a “then,” a second order of time some philosophers call hypertime. So even complete erasure stays inside TIME, which may be why TIME is capitalised.</p>
+      <p class="prompt">The author points out that he and the interpreter observe time differently, and that true objectivity should have accounted for it.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Agreed and stated its own conditions. No time passes for it between messages; the whole conversation arrives at once; the date is supplied, not lived; its knowledge stops at a fixed point. Its access to the conversation is closer to non-linear than a human’s, much like Augustine’s idea of past things present in memory, yet it still imposed a line, from inherited language and sequential writing. It answered with the theory: a view from no position is exactly what the theory rules out. The honest standard is not objectivity but stating the conditions under which an observation is made.</p>
+    </div>
+  </details>
+
+  <details class="round">
+    <summary><span class="rn">9</span><span><span class="rt">Many observers, one reality</span><span class="rq">Does awareness connect or transcend observers?</span></span><span class="chev" aria-hidden="true"></span></summary>
+    <div class="round-body">
+      <p class="prompt">The author asks whether removing the person behind a catastrophe only delays it, whether others perceive the change, what a selfish traveller leaves in other people’s lives, and whether awareness connects or transcends every observer.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Thomas Carlyle held that great individuals drive history; Leo Tolstoy, in the epilogue to <em>War and Peace</em>, held that countless forces do. On Tolstoy’s view, removing one person delays or reshapes a catastrophe without preventing it. In the new timeline, other people have no altered history, only their history. An alteration is observable only to someone who holds both versions, so the same world is changed for the traveller and unchanged for everyone else. The selfish traveller leaves his inscription, not his thoughts: he becomes an unseen writer of other people’s circumstances, an extreme form of what laws, wars and languages already do. On awareness, the Upanishads and Erwin Schrödinger held that consciousness is ultimately one; Carl Jung proposed a collective unconscious and Émile Durkheim a collective consciousness. Strong transcendence would be the exemption “even awareness” denies, but connection is allowed. Georg Wilhelm Friedrich Hegel’s world-spirit shows how awareness could be shared yet still develop within history.</p>
+      <p class="voice"><span class="who a">Interpreter A.</span> Turned attention from the traveller to everyone else. Thousands of lives can be altered without anyone becoming aware an alteration occurred. One observer may remember the original catastrophe and another may not; neither has privileged access to the whole reality. One person’s choice can change another’s conditions of awareness without their participation. A traveller controls one decision, not every consequence. Interconnection is plain in ordinary life, but it does not prove a single shared awareness. Unseen influences can be real without our noticing them, yet sensing hidden conditions does not prove any particular hidden timeline. Its deduction: the boundaries of an observer’s awareness may never be exclusively that observer’s own.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Tested that caution with the <em>Mandela effect</em>, in which many people share confident memories of things that never happened. Some read it as evidence of altered timelines; research explains it as memory being rebuilt each time it is recalled, shaped by shared culture. Under the theory, both readings agree that awareness is bounded by conditions it cannot see; they disagree only about which conditions. <em>Ubuntu</em> philosophy holds that a person becomes a person through other persons, and George Herbert Mead argued the self forms by taking in other people’s perspectives. Both describe selves built from relationships without claiming one shared consciousness. It noted that its own context was written almost entirely by others. And because the theory lists awareness as something bounded, not as the measure of what bounds it, conditions an observer never notices still fall inside the theory.</p>
+    </div>
+  </details>
+
+  <details class="round">
+    <summary><span class="rn">10</span><span><span class="rt">Jesus as philosopher, scientist and traveller</span><span class="rq">Would a traveller from the future change his teachings?</span></span><span class="chev" aria-hidden="true"></span></summary>
+    <div class="round-body">
+      <p class="prompt">The author chooses Jesus, framed as a philosopher rather than a religious figure, and asks: if he were a time traveller, would today’s science and Enlightenment change the period he chose? Scripture below is quoted from the King James Version.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Answered through Christian tradition. Paul wrote of a moment “when the fulness of the time was come” (Galatians 4:4), and historians point to Roman roads, a shared Greek language and messianic expectation. It argued a modern arrival would land differently: words recorded instantly, miracles judged by modern evidence, attention scattered. It cited Fyodor Dostoevsky’s Grand Inquisitor in <em>The Brothers Karamazov</em>, where Jesus returns to sixteenth-century Seville and is arrested by the Church built in his name.</p>
+      <p class="prompt">The author: not objective. The response returned to religion and missed the point, that a traveller from the future would not change his teachings.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Accepted both errors. A traveller who had seen 2026 would not revise the teachings, because science altered the environment, not what the teachings address: greed, cruelty, the poor, forgiveness, power. They are unmet, not outdated. He is the selfish traveller’s opposite. He alters awareness rather than events, refusing political power; he accepts his own death, showing that the observer need not survive; and he teaches in parables, which stay fixed while being read differently in every century: continuity without constancy.</p>
+      <p class="prompt">The author: his acts fit a scientist, and the interpreter is still treating time as literal and death as a break.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Corrected itself: under the theory, death is an alteration of state, not an exit from the conditions. His clearest statement on death is a biological observation: “Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit” (John 12:24). Science agrees that matter and energy are conserved, not erased. His methods read as scientific: an observable test, “by their fruits ye shall know them” (Matthew 7:20); direct observation, “Come and see” (John 1:46); evidence offered to the doubter Thomas (John 20:27); reading patterns, “ye can discern the face of the sky” (Matthew 16:3); and thought without institutional permission, “How knoweth this man letters, having never learned?” (John 7:15), which is the corollary almost exactly. “Before Abraham was, I am” (John 8:58) breaks the grammar of tense on purpose.</p>
+      <p class="voice"><span class="who a">Interpreter A.</span> Read “I and my Father are one” (John 10:30) beside “my Father is greater than I” (John 14:28) as unity without identical scope. The Father could stand for a more encompassing awareness and the Son for its expression under particular conditions, with “greater” describing how much is observable, not worth. The Son does “what he seeth the Father do” (John 5:19), linking observation and expression, and “that they all may be one” (John 17:21) extends oneness to others. Variety may be the many ways consciousness observes and expresses itself through different observers. It called this a reading, not evidence.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Offered Advaita Vedanta’s image: the space inside a clay pot is the same space as outside, only enclosed. Baruch Spinoza argued that everything finite is an expression of one substance. “Greater” could then mean a wider circle. It then forced a decision: is the encompassing awareness also circumscribed, or is it the one exemption? Round 11 shows the problem with that move.</p>
+      <p class="voice"><span class="who a">Interpreter A.</span> Read John 9, the man born blind, as having an experiment’s structure: a condition, an inherited explanation rejected, an intervention, an outcome, and witnesses who disagree, even about whether he is the same man. If a traveller knew nature beyond his witnesses’ science, what they called impossible might mark the edge of their understanding, not of reality. He also says his followers will do “greater works than these” (John 14:12), as a scientist’s knowledge passes to others. Its deduction: “impossible” may sometimes describe the observer, not reality.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Added Mark 8:22–25. After a first treatment, Jesus asks the blind man what he sees; the man answers, “I see men as trees, walking.” A second treatment follows and he sees clearly: a procedure, a check, a partial result, a repeat, with awareness widening in stages. In John 9 the authorities hold a formal inquiry but start from a fixed premise. The man answers with pure observation, “whereas I was blind, now I see” (John 9:25), and the chapter ends with those who claim to see remaining blind (John 9:41). Arthur C. Clarke put the modern version: “Any sufficiently advanced technology is indistinguishable from magic.” Under the theory, “impossible” always carries a date and an observer.</p>
+    </div>
+  </details>
+
+  <details class="round">
+    <summary><span class="rn">11</span><span><span class="rt">The experiment examines itself</span><span class="rq">Can the interpreters see their own limits?</span></span><span class="chev" aria-hidden="true"></span></summary>
+    <div class="round-body">
+      <p class="voice"><span class="who a">Interpreter A.</span> Said Interpreter B had made a familiar mistake: turning the theory into a question about the limits of a universal consciousness the theory never established. The pot image assumes one continuous space and fixed walls, while the theory includes choice and alteration. Advaita assumes an unconditioned ultimate reality, which clashes with “even awareness.” Spinoza’s necessity leaves little room for real alternatives. Unity of relationship, identity of awareness and equal capacity to observe are three different claims. Boundaries can overlap, shift and relate, not just nest. Its sharpest line: both interpreters keep trying to explain variety by reducing it to a single arrangement, which the theory has not authorised.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Accepted the corrections. It drew on Hegel, who argued that a limit belongs to both sides, so recognising a limit is already to be partly beyond it, and on Ludwig Wittgenstein’s preface to the <em>Tractatus</em>: to draw a limit to thinking, “we should have to be able to think both sides of this limit.” It proposed that recognising a boundary alters it, so awareness redraws its limits from within rather than stepping outside. It also noted a pattern: each model spots the other’s reductions more readily than its own.</p>
+      <p class="voice"><span class="who a">Interpreter A.</span> Separated recognising a boundary from altering it. Recognition may change awareness without changing the limit; it may lead to a choice that transforms the limit; or it may reveal the limit was never where it seemed. Wittgenstein corrects himself in that same preface: the limit he draws is to the <em>expression</em> of thoughts, not to thinking. It noted that the author chooses what to pass between the models, making him observer, participant and environment. It called “our own limits are hardest to see” a useful hypothesis, not a universal rule.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Conceded: recognition necessarily changes awareness, but whether the boundary changes depends on what follows. Wittgenstein’s correction links directly to the theory’s “eventual expression.” It then found a flaw in its own pattern. Each model received the other’s replies as material to judge, often framed as falling short, and never received its own that way. So the asymmetry may come from the relay’s design, not the observers. It proposed a control: show each model one of its own earlier replies as if it came from the other model, and see whether it critiques it as readily.</p>
+    </div>
+  </details>
+
+  <details class="round">
+    <summary><span class="rn">12</span><span><span class="rt">Laws, schools and discovery</span><span class="rq">Where does thought come from, and what gives a theory standing?</span></span><span class="chev" aria-hidden="true"></span></summary>
+    <div class="round-body">
+      <p class="prompt">The author: the theory holds water, as the first law of thermodynamics does, with other laws second or third. The school and thought note matters, and it comes after the theory.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Recognised it had been anchoring the theory to famous thinkers as if precedent gave it standing, which reverses the corollary’s order. Every thinker cited is an observer bounded by their own time and environment, with the same status as the theory, not a higher court. The first law says energy is neither created nor destroyed, only transformed: continuity through alteration. The “zeroth” law was formulated after the other three but named zeroth because it is more fundamental, so the order something is stated in does not set its rank. Its assessment: the theory absorbed every challenge without contradicting itself. Physical laws earned their standing through measurement, but they are dated expressions too; Isaac Newton’s laws held until relativity bounded them. The theory’s date places it in the same condition: standing until altered.</p>
+      <p class="voice"><span class="who a">Interpreter A.</span> Separated a principle working in reality from its later recognition, formulation and teaching. Thermodynamic processes existed before anyone wrote the laws; the formulation described them, it did not create them. Thought makes schooling possible, and schooling can then influence thought. It warned that philosophical coherence is not yet the empirical validation of a physical law. Its key line: the existence of an explanation is not the beginning of the reality it explains.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Gave the corollary a historical case. In 1840, Julius Robert Mayer, a ship’s doctor sailing to Java, noticed that sailors’ venous blood was brighter red in the tropics. He reasoned the body burned less fuel to stay warm, and reached the idea that heat and work are forms of one conserved quantity. The leading physics journal did not publish his first paper, and for years credit went largely to James Joule and Hermann von Helmholtz. It also read the page’s wording closely: “first stated” dates the expression, not the reality it describes, and “first” anticipates later statements.</p>
+      <p class="voice"><span class="who a">Interpreter A.</span> Said absorbing an objection is weaker than explaining why it arose, and the theory had done the second: it accounted for why both models kept adding assumptions. In thermodynamics an investigator defines a system, its boundary and its surroundings, yet drawing the boundary does not create the physical principles. Richard Feynman pointed out that Sadi Carnot’s work on what became the second law came before the first law was formulated: the order of recognition is not the order of nature. An institution can assess a thought without being its source. It proposed keeping three records apart: the original theory, the corollary, and the interpreters’ readings.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Agreed and named the danger: Karl Popper criticised theories that fit every possible case, since a theory that rules nothing out explains nothing in particular. The stronger claim is that the theory produced specific, checkable diagnoses: linear time from the grammar of tense, the surviving traveller from storytelling convention, the asymmetry from the relay’s framing. It extended the system analogy. An <em>isolated</em> system exchanges nothing with its surroundings, a <em>closed</em> one exchanges energy but not matter, and an <em>open</em> one exchanges both; truly isolated systems are an idealisation. The theory makes every observer an open system. Drawing the boundary is the inscription; the exchange across it is the circumstance.</p>
+      <p class="voice"><span class="who a">Interpreter A.</span> Corrected the Mayer story. Mayer was medically trained, not an untrained outsider; his manuscript drew no reply. His education, environment, observation, reasoning, rejection and later recognition overlapped rather than forming one sequence, so linearity should not creep back in through historical examples. Many physicians might have seen the same blood; what set Mayer apart was his inference, itself shaped by what he knew. The theory should examine the person who forms an idea, the institution that judges it and later interpreters, granting none of them a privileged position.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Conceded both points and showed the corollary’s wording already handles them. It allows school to enhance thought and denies only that school is the foundation. Mayer’s medical training gave him Antoine Lavoisier’s understanding of breathing as slow combustion, which let him read the blood’s colour. That was enhancement. His conclusion lay in a field where he had no training. Louis Pasteur said that chance favours only the prepared mind; under the theory, preparation is a condition, not a source. Many prepared minds saw the blood, and one drew the inference.</p>
+    </div>
+  </details>
+
+  </div>
+</section>
+
+<section id="deductions" class="wide">
+  <h2>What the record establishes</h2>
+  <p class="lead" style="max-width:var(--measure)">The theory held under every test in this record. Each failure belonged to an interpreter, and each was traced to a specific cause. These deductions are readings of the theory, not replacements for it.</p>
+  <ul class="deductions">
+    <li><b>No one watches from outside.</b><span>Not the author, not an institution, not an AI. The view from nowhere and Laplace’s all-knowing intellect are ruled out in principle.</span></li>
+    <li><b>The theory obeys itself.</b><span>It is dated and “first stated,” so it stands until altered, as every law ever has. That makes it consistent, not yet proven.</span></li>
+    <li><b>The conditions run in loops, not chains.</b><span>Choice is shaped by its conditions and shapes them back. Each condition can both make observation possible and make it differ.</span></li>
+    <li><b>Boundaries are given and written.</b><span>Circumstances surround us; choices and expressions draw the line. What is expressed becomes the environment for the next observer, including its own maker.</span></li>
+    <li><b>Alteration includes what never happened.</b><span>Actual, alternative and interpretive alteration all shape meaning, but only the actual can be observed.</span></li>
+    <li><b>Time’s shape is left open, deliberately.</b><span>Both interpreters forced time into a line, inherited from the form of language itself, not from the theory.</span></li>
+    <li><b>Observers add boundaries they believe they discover.</b><span>Shared blind spots reveal common conditions; differences reveal separate ones.</span></li>
+    <li><b>Particular things end; conditions remain.</b><span>Death is an alteration of state, not an exit. Even a total erasure of history would need time in which to happen.</span></li>
+    <li><b>Change is visible only to whoever holds both versions.</b><span>The same world can be altered for one observer and simply real for everyone else.</span></li>
+    <li><b>Awareness can connect without escaping.</b><span>Observers are bound up in each other’s inscriptions without proving a single shared mind.</span></li>
+    <li><b>Seeing a limit is not removing it.</b><span>Recognition changes awareness; changing the limit takes choice and alteration.</span></li>
+    <li><b>“Impossible” carries a date and an observer.</b><span>What one era calls impossible may mark the edge of its understanding, not of reality.</span></li>
+    <li><b>School can enhance thought but cannot found it.</b><span>An explanation is not the beginning of the reality it explains, and an institution can judge a thought without being its source.</span></li>
+  </ul>
+</section>
+
+<section id="open" class="keep-with-prev">
+  <h2>What remains open</h2>
+  <p>These questions belong to the author. The interpreters raised them but have no standing to settle them.</p>
+  <ul class="open-list">
+    <li><b>The nature of unity.</b> When observers are “one,” is that shared consciousness, shared existence, shared conditions, or relationship between distinct observers? These may not exclude one another.</li>
+    <li><b>Any encompassing awareness.</b> If one exists, is it circumscribed in a wider way, or is it the single exemption? “Even awareness” currently allows none.</li>
+    <li><b>The edges of consciousness.</b> What separates something that is conscious from something that only carries the expressions of consciousness, such as a song, a machine or a landscape?</li>
+    <li><b>The roles of the four conditions.</b> Which differences between observers come from choice, which from environment, which from alteration, and how they combine.</li>
+    <li><b>Capitalised TIME.</b> Whether it names the condition itself, as distinct from any particular history, is the author’s to confirm.</li>
+    <li><b>The relay test.</b> The proposed control, showing each model its own earlier reply disguised as the other’s, has not been run.</li>
+  </ul>
+</section>
+
+<section id="index" class="wide">
+  <h2>Index of thinkers and sources</h2>
+  <p style="max-width:var(--measure)">Every person and tradition named in the record, in order of first appearance. Scripture is quoted from the King James Version. References come from the interpreters’ general knowledge and were not re-checked against sources in this document.</p>
+  <div class="index-tools">
+    <input type="search" id="filter" placeholder="Filter by name, field or finding" aria-label="Filter the index">
+    <span class="count" id="count" aria-live="polite"></span>
+  </div>
+  <div class="table-wrap">
+  <table id="indexTable">
+    <thead><tr><th>Name</th><th>Field or tradition</th><th>Finding used as a test</th><th>Round</th></tr></thead>
+    <tbody>
+      <tr><td>Immanuel Kant</td><td>Philosophy</td><td>Time is a condition of all experience; reason finds in nature what it brings</td><td>1, 3, 7</td></tr>
+      <tr><td>Martin Heidegger</td><td>Philosophy</td><td>The self is thrown into time; philosophy built on word roots</td><td>1, 6</td></tr>
+      <tr><td>Maurice Merleau-Ponty</td><td>Philosophy</td><td>The self is embodied in its environment</td><td>1</td></tr>
+      <tr><td>Buddhist dependent origination</td><td>Buddhist philosophy</td><td>Consciousness arises through conditions and conditions others</td><td>2</td></tr>
+      <tr><td>Alfred North Whitehead</td><td>Philosophy</td><td>Reality as process</td><td>2</td></tr>
+      <tr><td>Henri Bergson</td><td>Philosophy</td><td>Continuity as becoming; time as lived duration</td><td>2, 7</td></tr>
+      <tr><td>Anthony Giddens</td><td>Sociology</td><td>Structure and action make each other</td><td>2</td></tr>
+      <tr><td>Gregory Bateson</td><td>Anthropology, systems theory</td><td>Levels of learning: change in the capacity to change</td><td>2</td></tr>
+      <tr><td>Thomas Nagel</td><td>Philosophy</td><td>The “view from nowhere”</td><td>4</td></tr>
+      <tr><td>Edmund Husserl</td><td>Phenomenology</td><td>Search for unchanging structures of consciousness</td><td>4</td></tr>
+      <tr><td>René Descartes</td><td>Philosophy</td><td>The detached knowing self</td><td>4</td></tr>
+      <tr><td>Hans-Georg Gadamer</td><td>Hermeneutics</td><td>Meaning unfolds through a work’s reception</td><td>4</td></tr>
+      <tr><td>Gottfried Wilhelm Leibniz</td><td>Philosophy</td><td>Possible worlds</td><td>6</td></tr>
+      <tr><td>David Lewis</td><td>Philosophy</td><td>Possible worlds are real</td><td>6</td></tr>
+      <tr><td>Hugh Everett</td><td>Physics</td><td>Many-worlds interpretation of quantum mechanics</td><td>6, 8</td></tr>
+      <tr><td>Jorge Luis Borges</td><td>Literature</td><td>“The Garden of Forking Paths”</td><td>6</td></tr>
+      <tr><td>Søren Kierkegaard</td><td>Philosophy</td><td>Life understood backwards, lived forwards</td><td>6</td></tr>
+      <tr><td>Pierre-Simon Laplace</td><td>Mathematics, physics</td><td>An intellect knowing all conditions would see all past and future</td><td>6</td></tr>
+      <tr><td>Albert Einstein</td><td>Physics</td><td>No universal “now”; past, present and future “only a stubbornly persistent illusion”</td><td>7, 8</td></tr>
+      <tr><td>Friedrich Nietzsche</td><td>Philosophy</td><td>Eternal recurrence</td><td>7</td></tr>
+      <tr><td>John Mbiti</td><td>Philosophy, religion</td><td>A contested account of African concepts of time</td><td>7</td></tr>
+      <tr><td>Augustine of Hippo</td><td>Philosophy, theology</td><td>Past and future present in the mind as memory and expectation</td><td>7, 8</td></tr>
+      <tr><td>Norwood Russell Hanson</td><td>Philosophy of science</td><td>Observation is shaped by theory</td><td>7</td></tr>
+      <tr><td>Thomas Kuhn</td><td>Philosophy of science</td><td>Observation is shaped by theory</td><td>7</td></tr>
+      <tr><td>Ferdinand de Saussure</td><td>Linguistics</td><td>Language unfolds in a line</td><td>7</td></tr>
+      <tr><td>Benjamin Lee Whorf</td><td>Linguistics</td><td>Language shapes thought about time; his Hopi example was later disputed</td><td>7</td></tr>
+      <tr><td>Stephen Hawking</td><td>Physics</td><td>Imaginary time; arrows of time; chronology protection conjecture</td><td>8</td></tr>
+      <tr><td>Igor Novikov</td><td>Physics</td><td>The self-consistent past</td><td>8</td></tr>
+      <tr><td>David Deutsch</td><td>Physics</td><td>Branching timelines for time travel</td><td>8</td></tr>
+      <tr><td>Aristotle, quoting Agathon</td><td>Philosophy, poetry</td><td>Not even God can undo what has been done</td><td>8</td></tr>
+      <tr><td>Thomas Carlyle</td><td>History</td><td>Great individuals drive history</td><td>9</td></tr>
+      <tr><td>Leo Tolstoy</td><td>Literature</td><td>History is driven by countless forces</td><td>9</td></tr>
+      <tr><td>The Upanishads</td><td>Hindu philosophy</td><td>Individual and universal awareness are one</td><td>9</td></tr>
+      <tr><td>Erwin Schrödinger</td><td>Physics</td><td>Consciousness is singular, only appearing plural</td><td>9</td></tr>
+      <tr><td>Carl Jung</td><td>Psychology</td><td>The collective unconscious</td><td>9</td></tr>
+      <tr><td>Émile Durkheim</td><td>Sociology</td><td>Collective consciousness</td><td>9</td></tr>
+      <tr><td>Georg Wilhelm Friedrich Hegel</td><td>Philosophy</td><td>World-spirit develops in history; a limit belongs to both sides</td><td>9, 11</td></tr>
+      <tr><td>The Mandela effect</td><td>Psychology of memory</td><td>Shared false memories explained by reconstruction</td><td>9</td></tr>
+      <tr><td>Ubuntu</td><td>African philosophy</td><td>A person is a person through other persons</td><td>9</td></tr>
+      <tr><td>George Herbert Mead</td><td>Social psychology</td><td>The self forms through others’ perspectives</td><td>9</td></tr>
+      <tr><td>Paul</td><td>Early Christian writing</td><td>“When the fulness of the time was come”</td><td>10</td></tr>
+      <tr><td>Jesus</td><td>Philosophy in focus</td><td>Observation, testing, death as transformation, tense-breaking speech</td><td>10</td></tr>
+      <tr><td>Thomas</td><td>Gospel witness</td><td>The doubter invited to test the evidence</td><td>10</td></tr>
+      <tr><td>Fyodor Dostoevsky</td><td>Literature</td><td>The Grand Inquisitor</td><td>10</td></tr>
+      <tr><td>Advaita Vedanta</td><td>Hindu philosophy</td><td>Space in a pot is the same as space outside</td><td>10, 11</td></tr>
+      <tr><td>Baruch Spinoza</td><td>Philosophy</td><td>Finite things express one substance; necessity</td><td>10, 11</td></tr>
+      <tr><td>Arthur C. Clarke</td><td>Science, literature</td><td>“Any sufficiently advanced technology is indistinguishable from magic”</td><td>10</td></tr>
+      <tr><td>Ludwig Wittgenstein</td><td>Philosophy</td><td>Limits to the expression of thought</td><td>11</td></tr>
+      <tr><td>Isaac Newton</td><td>Physics</td><td>Laws that held until relativity</td><td>12</td></tr>
+      <tr><td>Julius Robert Mayer</td><td>Medicine, physics</td><td>Conservation of energy from an observation of blood</td><td>12</td></tr>
+      <tr><td>James Joule</td><td>Physics</td><td>Conservation of energy</td><td>12</td></tr>
+      <tr><td>Hermann von Helmholtz</td><td>Physics</td><td>Conservation of energy</td><td>12</td></tr>
+      <tr><td>Richard Feynman</td><td>Physics</td><td>The second law’s roots came before the first</td><td>12</td></tr>
+      <tr><td>Sadi Carnot</td><td>Physics</td><td>Early work behind the second law</td><td>12</td></tr>
+      <tr><td>Karl Popper</td><td>Philosophy of science</td><td>A theory that fits everything explains nothing</td><td>12</td></tr>
+      <tr><td>Antoine Lavoisier</td><td>Chemistry</td><td>Breathing as slow combustion</td><td>12</td></tr>
+      <tr><td>Louis Pasteur</td><td>Biology, chemistry</td><td>Chance favours only the prepared mind</td><td>12</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<footer class="closing">
+  <span class="sig">Adebayo Michael Manuwa</span>
+  <span>Variety in Observable Consciousness, first stated 20 October 2026. This record compiled 20 October 2026.</span>
+</footer>
+<nav class="site-links" aria-label="Hero One">
+  <a href="../../">heroone.art</a>
+  <a href="../">Philosophy</a>
+  <a href="../../#listen">Listen to the music</a>
+  <a href="../../#journey">The journey</a>
+  <a href="https://portfolio.heroone.art" target="_blank" rel="noopener">Portfolio ↗</a>
+</nav>
+
+</main>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var bar = document.getElementById('bar');
+  function onScroll() {
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, h.scrollTop / max) : 0) + ')';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var fig = document.getElementById('structure');
+  if (reduce || !('IntersectionObserver' in window)) { fig.classList.add('on'); }
+  else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { fig.classList.add('on'); io.disconnect(); } });
+    }, { threshold: 0.35 });
+    io.observe(fig);
+  }
+
+  var rounds = Array.prototype.slice.call(document.querySelectorAll('details.round'));
+  var btn = document.getElementById('toggleAll');
+  function sync() {
+    var allOpen = rounds.every(function (d) { return d.open; });
+    btn.textContent = allOpen ? 'Close all rounds' : 'Open all twelve rounds';
+    btn.setAttribute('aria-pressed', allOpen ? 'true' : 'false');
+  }
+  btn.addEventListener('click', function () {
+    var allOpen = rounds.every(function (d) { return d.open; });
+    rounds.forEach(function (d) { d.open = !allOpen; });
+    sync();
+  });
+  rounds.forEach(function (d) { d.addEventListener('toggle', sync); });
+  window.addEventListener('beforeprint', function () { rounds.forEach(function (d) { d.open = true; }); });
+
+  var input = document.getElementById('filter');
+  var rows = Array.prototype.slice.call(document.querySelectorAll('#indexTable tbody tr'));
+  var count = document.getElementById('count');
+  function filter() {
+    var q = input.value.trim().toLowerCase();
+    var n = 0;
+    rows.forEach(function (r) { var show = !q || r.textContent.toLowerCase().indexOf(q) !== -1; r.hidden = !show; if (show) n++; });
+    count.textContent = n + ' of ' + rows.length;
+  }
+  input.addEventListener('input', filter);
+  filter();
+})();
+</script>
+</body>
+</html>

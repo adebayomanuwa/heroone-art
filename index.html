@@ -2,2246 +2,499 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#08090d">
-  <title>Hero One | Beats & Blues Reality Music</title>
-  <meta name="description" content="The official Hero One artist site and visual archive. Beats & Blues Reality Music by Adebayo Michael Manuwa.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#06080f">
+  <title>Hero One · Beats &amp; Blues Reality Music</title>
+  <meta name="description" content="The official home of Hero One, the artist and producer Adebayo Michael Manuwa. Beats & Blues Reality Music: listen, follow the journey, browse the visual archive, and read the philosophy.">
   <meta name="author" content="Hero One">
-  <meta name="robots" content="index, follow">
-  <link rel="icon" type="image/png" href="Hero One design no bg .png">
-  <link rel="apple-touch-icon" href="Hero One design no bg .png">
+  <link rel="canonical" href="https://heroone.art/">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/brand/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/brand/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/img/brand/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Hero One | Beats & Blues Reality Music">
-  <meta property="og:description" content="Official artist site, music links, timeline, and gallery for Hero One.">
-  <meta property="og:image" content="Hero One March 2024.jpg">
+  <meta property="og:url" content="https://heroone.art/">
   <meta property="og:site_name" content="Hero One">
+  <meta property="og:title" content="Hero One · Beats & Blues Reality Music">
+  <meta property="og:description" content="Official artist site: music, journey, visual archive and philosophy.">
+  <meta property="og:image" content="https://heroone.art/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hero One | Beats & Blues Reality Music">
-  <meta name="twitter:description" content="Official artist site, music links, timeline, and gallery for Hero One.">
-  <meta name="twitter:image" content="Hero One March 2024.jpg">
+  <meta name="twitter:site" content="@heromgn">
+  <meta name="twitter:image" content="https://heroone.art/assets/img/og-image.jpg">
+  <link rel="preload" href="assets/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/dm-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/img/gallery/march-2024.webp" as="image">
+  <link rel="stylesheet" href="assets/css/site.css">
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MusicGroup",
-      "name": "Hero One",
-      "alternateName": "Adebayo Michael Manuwa",
-      "description": "Canadian artist and producer creating Beats & Blues Reality Music.",
-      "image": "Hero One March 2024.jpg",
-      "logo": "Hero One design no bg .png",
-      "url": "https://www.heroone1.online",
-      "genre": ["Hip-hop", "Afrofusion", "Soulful trap", "Beats & Blues"],
-      "sameAs": [
-        "https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g",
-        "https://music.apple.com/ng/artist/hero-one/1520370143",
-        "https://audiomack.com/hero-one/",
-        "http://www.youtube.com/@hero-one",
-        "https://www.instagram.com/heromgn",
-        "https://www.facebook.com/heromgn"
-      ]
-    }
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Hero One",
+    "alternateName": "Adebayo Michael Manuwa",
+    "description": "Canadian artist and producer creating Beats & Blues Reality Music.",
+    "url": "https://heroone.art/",
+    "image": "https://heroone.art/assets/img/og-image.jpg",
+    "logo": "https://heroone.art/assets/img/brand/heroone-logo.webp",
+    "genre": ["Hip-hop", "Afrofusion", "Soulful trap", "Beats & Blues"],
+    "sameAs": [
+      "https://portfolio.heroone.art",
+      "https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g",
+      "https://music.apple.com/ng/artist/hero-one/1520370143",
+      "https://soundcloud.com/heroone",
+      "https://audiomack.com/hero-one/",
+      "https://www.youtube.com/@hero-one",
+      "https://www.instagram.com/heromgn",
+      "https://www.facebook.com/heromgn"
+    ]
+  }
   </script>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #08090d;
-      --panel: #111217;
-      --panel-2: #18191f;
-      --ink: #f3eee5;
-      --muted: #b2aa9e;
-      --quiet: #766f66;
-      --line: rgba(243, 238, 229, 0.14);
-      --line-strong: rgba(243, 238, 229, 0.24);
-      --gold: #d9b65d;
-      --green: #78c8a4;
-      --red: #c76557;
-      --blue: #7aa0ca;
-      --shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
-      --radius: 8px;
-      --ease: cubic-bezier(.2, .8, .2, 1);
-      --max: 1180px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      min-width: 320px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.035), transparent 34rem),
-        linear-gradient(90deg, rgba(217,182,93,.08), transparent 35%, rgba(120,200,164,.06) 72%, transparent),
-        var(--bg);
-      color: var(--ink);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    button,
-    input,
-    textarea {
-      font: inherit;
-    }
-
-    .site-shell {
-      overflow: clip;
-    }
-
-    .skip-link {
-      position: fixed;
-      left: 1rem;
-      top: 1rem;
-      z-index: 1000;
-      transform: translateY(-200%);
-      padding: .75rem 1rem;
-      background: var(--ink);
-      color: var(--bg);
-      border-radius: var(--radius);
-      text-decoration: none;
-      transition: transform .2s var(--ease);
-    }
-
-    .skip-link:focus {
-      transform: translateY(0);
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      border-bottom: 1px solid var(--line);
-      background: rgba(8, 9, 13, .78);
-      backdrop-filter: blur(20px) saturate(1.2);
-    }
-
-    .nav {
-      width: min(100% - 2rem, var(--max));
-      min-height: 76px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: .75rem;
-      text-decoration: none;
-      min-width: 0;
-    }
-
-    .brand-mark {
-      width: 52px;
-      height: 32px;
-      object-fit: contain;
-      filter: drop-shadow(0 10px 22px rgba(217, 182, 93, .22));
-      flex: 0 0 auto;
-    }
-
-    .brand-name {
-      display: grid;
-      line-height: 1;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      font-size: .82rem;
-      font-weight: 800;
-    }
-
-    .brand-name span {
-      color: var(--muted);
-      font-size: .68rem;
-      font-weight: 650;
-      letter-spacing: .16em;
-      margin-top: .22rem;
-    }
-
-    .nav-links {
-      justify-self: center;
-      display: flex;
-      align-items: center;
-      gap: clamp(.75rem, 2vw, 1.8rem);
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      color: var(--muted);
-      font-size: .74rem;
-      font-weight: 750;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      transition: color .22s var(--ease);
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--ink);
-    }
-
-    .nav-actions {
-      display: flex;
-      justify-content: end;
-      align-items: center;
-      gap: .6rem;
-    }
-
-    .icon-button,
-    .text-button {
-      min-height: 42px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.035);
-      color: var(--ink);
-      cursor: pointer;
-      transition: transform .22s var(--ease), border-color .22s var(--ease), background .22s var(--ease);
-    }
-
-    .icon-button {
-      width: 42px;
-      display: inline-grid;
-      place-items: center;
-    }
-
-    .icon-button svg {
-      width: 19px;
-      height: 19px;
-      stroke: currentColor;
-      stroke-width: 1.9;
-      fill: none;
-    }
-
-    .text-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: .5rem;
-      padding: 0 1rem;
-      text-decoration: none;
-      font-size: .74rem;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .icon-button:hover,
-    .text-button:hover,
-    .icon-button:focus-visible,
-    .text-button:focus-visible {
-      transform: translateY(-1px);
-      border-color: var(--line-strong);
-      background: rgba(217,182,93,.11);
-      outline: none;
-    }
-
-    .menu-button {
-      display: none;
-    }
-
-    main {
-      isolation: isolate;
-    }
-
-    .section {
-      padding: clamp(4.8rem, 8vw, 7.8rem) 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section.tight {
-      padding-block: clamp(3rem, 6vw, 5rem);
-    }
-
-    .wrap {
-      width: min(100% - 2rem, var(--max));
-      margin-inline: auto;
-    }
-
-    .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: .6rem;
-      margin-bottom: 1rem;
-      color: var(--green);
-      font-size: .76rem;
-      font-weight: 850;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .kicker::before {
-      content: "";
-      width: 34px;
-      height: 1px;
-      background: currentColor;
-      opacity: .75;
-    }
-
-    h1,
-    h2,
-    h3,
-    p {
-      margin: 0;
-    }
-
-    h1,
-    h2,
-    h3 {
-      line-height: .98;
-      letter-spacing: 0;
-    }
-
-    h1 {
-      max-width: 11ch;
-      font-size: clamp(3.45rem, 7.1vw, 7rem);
-      font-weight: 900;
-    }
-
-    h2 {
-      max-width: 12ch;
-      font-size: clamp(2.65rem, 7vw, 5.9rem);
-      font-weight: 900;
-    }
-
-    h3 {
-      font-size: clamp(1.12rem, 2vw, 1.65rem);
-      font-weight: 840;
-    }
-
-    .lede {
-      max-width: 62ch;
-      color: var(--muted);
-      font-size: clamp(1.02rem, 1.5vw, 1.22rem);
-    }
-
-    .hero {
-      min-height: min(760px, calc(100svh - 116px));
-      display: grid;
-      align-items: stretch;
-      padding: 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero-stage {
-      display: grid;
-      grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
-      min-height: min(760px, calc(100svh - 116px));
-    }
-
-    .hero-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: clamp(2rem, 5vw, 4.6rem);
-      border-right: 1px solid var(--line);
-    }
-
-    .hero-logo {
-      width: min(26vw, 170px);
-      margin-bottom: clamp(1.1rem, 3vw, 2.1rem);
-      filter: drop-shadow(0 32px 56px rgba(217, 182, 93, .18));
-    }
-
-    .hero-title-row {
-      display: flex;
-      align-items: end;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-number {
-      margin-bottom: .72rem;
-      color: var(--gold);
-      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
-      font-size: clamp(1rem, 2vw, 1.4rem);
-      font-weight: 700;
-    }
-
-    .hero-lede {
-      max-width: 56ch;
-      margin-top: 1rem;
-      color: var(--muted);
-      font-size: clamp(1rem, 1.45vw, 1.18rem);
-    }
-
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: .75rem;
-      flex-wrap: wrap;
-      margin-top: 1.35rem;
-    }
-
-    .primary-action,
-    .secondary-action {
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: .65rem;
-      border-radius: var(--radius);
-      padding: 0 1.1rem;
-      text-decoration: none;
-      font-size: .78rem;
-      font-weight: 850;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      transition: transform .22s var(--ease), border-color .22s var(--ease), background .22s var(--ease);
-    }
-
-    .primary-action {
-      border: 1px solid var(--gold);
-      background: var(--gold);
-      color: #141007;
-    }
-
-    .secondary-action {
-      border: 1px solid var(--line);
-      color: var(--ink);
-      background: rgba(255,255,255,.035);
-    }
-
-    .primary-action:hover,
-    .secondary-action:hover,
-    .primary-action:focus-visible,
-    .secondary-action:focus-visible {
-      transform: translateY(-2px);
-      outline: none;
-    }
-
-    .hero-media {
-      position: relative;
-      min-height: 590px;
-      overflow: hidden;
-      background: #0b0b0e;
-    }
-
-    .hero-media img {
-      width: 100%;
-      height: 100%;
-      min-height: inherit;
-      object-fit: cover;
-      object-position: 50% 20%;
-      filter: saturate(.94) contrast(1.04);
-    }
-
-    .hero-media::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(8,9,13,.46), transparent 42%);
-      pointer-events: none;
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: minmax(0, .78fr) minmax(280px, .5fr);
-      gap: clamp(1.5rem, 5vw, 5rem);
-      align-items: end;
-      margin-bottom: clamp(2rem, 4vw, 3.5rem);
-    }
-
-    .section-head .lede {
-      align-self: end;
-      padding-bottom: .35rem;
-    }
-
-    .statement-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
-      gap: 1px;
-      border: 1px solid var(--line);
-      background: var(--line);
-    }
-
-    .statement {
-      padding: clamp(1.5rem, 4vw, 3rem);
-      background: var(--panel);
-    }
-
-    .statement-large {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 2rem;
-      min-height: 420px;
-    }
-
-    .statement-large p {
-      max-width: 19ch;
-      font-size: clamp(2.25rem, 5vw, 4.8rem);
-      font-weight: 900;
-      line-height: .98;
-    }
-
-    .statement-large span {
-      color: var(--gold);
-    }
-
-    .statement-copy {
-      display: grid;
-      gap: 1px;
-      background: var(--line);
-    }
-
-    .statement-copy article {
-      background: var(--panel-2);
-      padding: clamp(1.5rem, 3vw, 2.2rem);
-    }
-
-    .statement-copy p {
-      margin-top: .85rem;
-      color: var(--muted);
-    }
-
-    .timeline {
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 1px;
-      background: linear-gradient(to bottom, transparent, var(--gold) 18%, var(--green) 50%, var(--gold) 82%, transparent);
-      opacity: .35;
-      transform: translateX(-50%);
-    }
-
-    .timeline-item {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(2rem, 5vw, 4rem);
-      align-items: center;
-      min-height: 122px;
-      margin-bottom: 2rem;
-    }
-
-    .timeline-item:nth-child(even) .timeline-content {
-      grid-column: 2;
-    }
-
-    .timeline-item:nth-child(even) .timeline-year {
-      grid-column: 1;
-      text-align: right;
-    }
-
-    .timeline-year {
-      color: var(--gold);
-      font-size: clamp(2rem, 4vw, 3.7rem);
-      line-height: .9;
-      font-weight: 900;
-      opacity: .4;
-      transition: opacity .28s var(--ease), transform .28s var(--ease);
-    }
-
-    .timeline-content {
-      padding: 1.15rem;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.025);
-      transition: transform .28s var(--ease), border-color .28s var(--ease), background .28s var(--ease);
-    }
-
-    .timeline-content p {
-      margin-top: .45rem;
-      color: var(--muted);
-    }
-
-    .timeline-content a {
-      color: var(--gold);
-      text-decoration: none;
-      border-bottom: 1px solid currentColor;
-    }
-
-    .timeline-node {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      z-index: 2;
-      width: 12px;
-      height: 12px;
-      border: 2px solid var(--gold);
-      border-radius: 50%;
-      background: var(--bg);
-      transform: translate(-50%, -50%);
-      transition: transform .28s var(--ease), background .28s var(--ease);
-    }
-
-    .timeline-item:hover .timeline-year {
-      opacity: .9;
-      transform: translateY(-2px);
-    }
-
-    .timeline-item:hover .timeline-content {
-      transform: translateY(-4px);
-      border-color: var(--line-strong);
-      background: rgba(255,255,255,.045);
-    }
-
-    .timeline-item:hover .timeline-node {
-      background: var(--gold);
-      transform: translate(-50%, -50%) scale(1.4);
-    }
-
-    .philosophy {
-      max-width: 890px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .philosophy blockquote {
-      margin: 0;
-      color: var(--ink);
-      font-size: clamp(1.65rem, 3.6vw, 3.2rem);
-      font-weight: 320;
-      line-height: 1.28;
-    }
-
-    .philosophy em {
-      color: var(--gold);
-    }
-
-    .philosophy cite {
-      display: block;
-      margin-top: 1.4rem;
-      color: var(--muted);
-      font-style: normal;
-      font-size: .78rem;
-      font-weight: 850;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .identity-grid,
-    .campaign-grid {
-      display: grid;
-      gap: 1px;
-      border: 1px solid var(--line);
-      background: var(--line);
-    }
-
-    .identity-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .identity-card,
-    .campaign-card {
-      background: var(--panel);
-      transition: transform .28s var(--ease), background .28s var(--ease);
-    }
-
-    .identity-card {
-      padding: clamp(1.7rem, 4vw, 3.8rem);
-    }
-
-    .identity-card:hover,
-    .campaign-card:hover {
-      transform: translateY(-4px);
-      background: var(--panel-2);
-    }
-
-    .identity-card h3,
-    .campaign-card h3 {
-      color: var(--gold);
-    }
-
-    .identity-card p,
-    .campaign-card p {
-      margin-top: .85rem;
-      color: var(--muted);
-    }
-
-    .identity-card strong {
-      color: var(--ink);
-    }
-
-    .campaign-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .campaign-card {
-      min-height: 230px;
-      padding: clamp(1.25rem, 3vw, 2.4rem);
-    }
-
-    .campaign-card.featured {
-      grid-column: span 2;
-      background: linear-gradient(135deg, rgba(217,182,93,.12), var(--panel));
-    }
-
-    .campaign-stat {
-      display: block;
-      margin-top: 1.3rem;
-      color: var(--green);
-      font-size: .78rem;
-      font-weight: 850;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .listen-grid {
-      display: grid;
-      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
-      gap: 1px;
-      border: 1px solid var(--line);
-      background: var(--line);
-    }
-
-    .listen-panel {
-      background: var(--panel);
-      padding: clamp(1.2rem, 3vw, 2rem);
-    }
-
-    .listen-frame {
-      min-height: 352px;
-    }
-
-    .listen-frame iframe {
-      width: 100%;
-      height: 352px;
-      border: 0;
-      border-radius: var(--radius);
-      background: #000;
-    }
-
-    .platforms {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: .75rem;
-      margin-top: 1.4rem;
-    }
-
-    .platform-link {
-      min-height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: .75rem;
-      padding: .85rem 1rem;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      text-decoration: none;
-      color: var(--muted);
-      background: rgba(255,255,255,.025);
-      transition: color .22s var(--ease), border-color .22s var(--ease), background .22s var(--ease);
-    }
-
-    .platform-link:hover,
-    .platform-link:focus-visible {
-      color: var(--ink);
-      border-color: var(--line-strong);
-      background: rgba(255,255,255,.055);
-      outline: none;
-    }
-
-    .platform-link span {
-      font-size: .82rem;
-      font-weight: 780;
-    }
-
-    .platform-label {
-      display: inline-flex;
-      align-items: center;
-      gap: .65rem;
-      min-width: 0;
-    }
-
-    .platform-icon {
-      width: 28px;
-      height: 28px;
-      flex: 0 0 auto;
-      color: var(--gold);
-      fill: currentColor;
-      transition: transform .28s var(--ease);
-    }
-
-    .platform-link:hover .platform-icon,
-    .platform-link:focus-visible .platform-icon {
-      transform: scale(1.12);
-    }
-
-    .social-strip {
-      display: flex;
-      justify-content: center;
-      gap: .9rem;
-      flex-wrap: wrap;
-    }
-
-    .social-link {
-      width: 58px;
-      height: 58px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      background: rgba(255,255,255,.025);
-      color: var(--muted);
-      text-decoration: none;
-      font-size: .72rem;
-      font-weight: 900;
-      letter-spacing: .04em;
-      transition: transform .28s var(--ease), color .28s var(--ease), border-color .28s var(--ease), background .28s var(--ease);
-    }
-
-    .social-link svg {
-      width: 23px;
-      height: 23px;
-      fill: currentColor;
-    }
-
-    .social-link:hover,
-    .social-link:focus-visible {
-      transform: translateY(-4px);
-      color: var(--gold);
-      border-color: var(--gold);
-      background: rgba(217,182,93,.1);
-      outline: none;
-    }
-
-    .arrow-icon {
-      width: 18px;
-      height: 18px;
-      stroke: currentColor;
-      stroke-width: 2;
-      fill: none;
-    }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr);
-      gap: 1px;
-      border: 1px solid var(--line);
-      background: var(--line);
-    }
-
-    .video-feature,
-    .video-list {
-      background: var(--panel);
-      padding: clamp(1.2rem, 3vw, 2rem);
-    }
-
-    .youtube-frame {
-      position: relative;
-      min-height: 460px;
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #050506;
-      text-decoration: none;
-    }
-
-    .youtube-frame img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(1.04) contrast(1.03);
-      transition: transform .55s var(--ease);
-    }
-
-    .youtube-frame::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(0deg, rgba(8,9,13,.88), rgba(8,9,13,.14) 58%, rgba(8,9,13,.42));
-    }
-
-    .youtube-frame:hover img,
-    .youtube-frame:focus-visible img {
-      transform: scale(1.035);
-    }
-
-    .youtube-badge {
-      position: relative;
-      z-index: 1;
-      display: inline-flex;
-      align-items: center;
-      gap: .65rem;
-      margin: 1rem;
-      padding: .85rem 1rem;
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: var(--radius);
-      background: rgba(8,9,13,.76);
-      color: var(--ink);
-      backdrop-filter: blur(14px);
-      font-size: .82rem;
-      font-weight: 850;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .youtube-icon {
-      width: 22px;
-      height: 22px;
-      fill: var(--red);
-    }
-
-    .video-list {
-      display: grid;
-      align-content: start;
-      gap: .8rem;
-    }
-
-    .video-card {
-      display: grid;
-      grid-template-columns: 112px minmax(0, 1fr) auto;
-      align-items: center;
-      gap: .9rem;
-      min-height: 94px;
-      padding: .75rem;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.025);
-      color: var(--muted);
-      text-decoration: none;
-      transition: color .22s var(--ease), border-color .22s var(--ease), background .22s var(--ease);
-    }
-
-    .video-card:hover,
-    .video-card:focus-visible {
-      color: var(--ink);
-      border-color: var(--line-strong);
-      background: rgba(255,255,255,.055);
-      outline: none;
-    }
-
-    .video-card img {
-      width: 112px;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      border-radius: calc(var(--radius) - 2px);
-    }
-
-    .video-card strong {
-      display: block;
-      color: var(--ink);
-      font-size: .98rem;
-      line-height: 1.22;
-    }
-
-    .video-card span {
-      display: block;
-      margin-top: .25rem;
-      font-size: .76rem;
-      font-weight: 780;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .gallery-toolbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 1.2rem;
-      color: var(--muted);
-      font-size: .85rem;
-    }
-
-    .filter-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .5rem;
-    }
-
-    .filter-button {
-      min-height: 36px;
-      padding: 0 .85rem;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,255,255,.03);
-      color: var(--muted);
-      cursor: pointer;
-      font-size: .74rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .filter-button[aria-pressed="true"],
-    .filter-button:hover,
-    .filter-button:focus-visible {
-      border-color: var(--gold);
-      color: var(--ink);
-      background: rgba(217,182,93,.14);
-      outline: none;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: .8rem;
-    }
-
-    .gallery-item {
-      position: relative;
-      min-height: 360px;
-      grid-column: span 4;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--panel);
-      cursor: zoom-in;
-      isolation: isolate;
-    }
-
-    .gallery-item.wide {
-      grid-column: span 6;
-      min-height: 330px;
-    }
-
-    .gallery-item.tall {
-      grid-row: span 2;
-      min-height: 520px;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      min-height: inherit;
-      object-fit: cover;
-      transition: transform .55s var(--ease), filter .55s var(--ease);
-    }
-
-    .gallery-item:hover img,
-    .gallery-item:focus-visible img {
-      transform: scale(1.045);
-      filter: saturate(1.08) contrast(1.05);
-    }
-
-    .gallery-item:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 3px;
-    }
-
-    .gallery-meta {
-      position: absolute;
-      inset: auto .85rem .85rem .85rem;
-      z-index: 1;
-      display: grid;
-      gap: .35rem;
-      padding: .9rem;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: var(--radius);
-      background: rgba(8, 9, 13, .72);
-      backdrop-filter: blur(14px);
-      opacity: .98;
-    }
-
-    .gallery-meta strong {
-      font-size: .98rem;
-      line-height: 1.16;
-    }
-
-    .gallery-meta span {
-      color: var(--muted);
-      font-size: .76rem;
-      font-weight: 760;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .gallery-item::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(0deg, rgba(8,9,13,.74), transparent 48%);
-      pointer-events: none;
-    }
-
-    .press-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1px;
-      border: 1px solid var(--line);
-      background: var(--line);
-    }
-
-    .press-item {
-      min-height: 240px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1.5rem;
-      padding: clamp(1.2rem, 3vw, 2rem);
-      background: var(--panel);
-    }
-
-    .press-logo {
-      min-height: 108px;
-      display: grid;
-      place-items: center;
-      padding: 1rem;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.04);
-    }
-
-    .press-logo img {
-      max-width: min(180px, 100%);
-      max-height: 82px;
-      object-fit: contain;
-    }
-
-    .press-item strong {
-      display: block;
-      color: var(--ink);
-      font-size: 1rem;
-      line-height: 1.2;
-    }
-
-    .press-item span {
-      display: block;
-      margin-top: .35rem;
-      color: var(--muted);
-      font-size: .82rem;
-      font-weight: 760;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-      gap: 1px;
-      border: 1px solid var(--line);
-      background: var(--line);
-    }
-
-    .contact-panel {
-      background: var(--panel);
-      padding: clamp(1.5rem, 4vw, 3rem);
-    }
-
-    .contact-panel p {
-      margin-top: 1rem;
-      color: var(--muted);
-      max-width: 48ch;
-    }
-
-    .contact-list {
-      display: grid;
-      gap: .75rem;
-    }
-
-    .contact-link {
-      min-height: 66px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1rem;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      color: var(--muted);
-      text-decoration: none;
-      background: rgba(255,255,255,.025);
-      transition: color .22s var(--ease), border-color .22s var(--ease), background .22s var(--ease);
-    }
-
-    .contact-link:hover,
-    .contact-link:focus-visible {
-      color: var(--ink);
-      border-color: var(--line-strong);
-      background: rgba(255,255,255,.055);
-      outline: none;
-    }
-
-    .contact-link strong {
-      display: block;
-      color: var(--ink);
-      font-size: .96rem;
-    }
-
-    .contact-link span {
-      display: block;
-      margin-top: .18rem;
-      font-size: .8rem;
-    }
-
-    .footer {
-      padding: 2.2rem 0;
-      color: var(--quiet);
-      font-size: .82rem;
-    }
-
-    .footer-inner {
-      width: min(100% - 2rem, var(--max));
-      margin-inline: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: .65rem;
-      color: var(--muted);
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .footer-brand img {
-      width: 40px;
-      height: 25px;
-      object-fit: contain;
-    }
-
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-      background: rgba(3, 4, 6, .88);
-      backdrop-filter: blur(12px);
-    }
-
-    .lightbox[open] {
-      display: flex;
-    }
-
-    .lightbox-panel {
-      width: min(100%, 1100px);
-      max-height: calc(100svh - 2rem);
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, .34fr);
-      overflow: hidden;
-      border: 1px solid var(--line-strong);
-      border-radius: var(--radius);
-      background: var(--panel);
-      box-shadow: var(--shadow);
-    }
-
-    .lightbox-image {
-      min-height: 320px;
-      max-height: calc(100svh - 2rem);
-      background: #050506;
-    }
-
-    .lightbox-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .lightbox-copy {
-      padding: 1.2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      border-left: 1px solid var(--line);
-    }
-
-    .lightbox-copy p {
-      color: var(--muted);
-    }
-
-    .metadata-list {
-      display: grid;
-      gap: .55rem;
-      margin-top: auto;
-      color: var(--muted);
-      font-size: .82rem;
-    }
-
-    .metadata-list div {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      padding-top: .55rem;
-      border-top: 1px solid var(--line);
-    }
-
-    .metadata-list dt {
-      color: var(--quiet);
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .metadata-list dd {
-      margin: 0;
-      text-align: right;
-    }
-
-    .close-button {
-      align-self: end;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .7s var(--ease), transform .7s var(--ease);
-    }
-
-    .reveal.is-visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
-    }
-
-    @media (max-width: 1040px) {
-      .nav {
-        grid-template-columns: auto auto;
-      }
-
-      .nav-links {
-        position: fixed;
-        left: 1rem;
-        right: 1rem;
-        top: 84px;
-        display: none;
-        padding: .8rem;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: rgba(12, 13, 18, .96);
-        backdrop-filter: blur(18px);
-        box-shadow: var(--shadow);
-      }
-
-      .nav-links.is-open {
-        display: grid;
-      }
-
-      .nav-links li,
-      .nav-links a {
-        width: 100%;
-      }
-
-      .nav-links a {
-        display: block;
-        padding: .85rem;
-      }
-
-      .nav-actions {
-        justify-self: end;
-      }
-
-      .menu-button {
-        display: inline-grid;
-      }
-
-      .hero-stage,
-      .section-head,
-      .statement-grid,
-      .listen-grid,
-      .video-grid,
-      .identity-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-copy {
-        min-height: auto;
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .hero-media {
-        min-height: 560px;
-      }
-
-      .section-head .lede {
-        padding-bottom: 0;
-      }
-
-      .press-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .lightbox-panel {
-        grid-template-columns: 1fr;
-        overflow: auto;
-      }
-
-      .lightbox-copy {
-        border-left: 0;
-        border-top: 1px solid var(--line);
-      }
-    }
-
-    @media (max-width: 760px) {
-      .text-button.nav-book {
-        display: none;
-      }
-
-      .brand-name {
-        font-size: .74rem;
-      }
-
-      .hero-logo {
-        width: 210px;
-      }
-
-      .hero-media {
-        min-height: auto;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .hero-media img {
-        min-height: 430px;
-      }
-
-      .timeline-item {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        padding-left: 3rem;
-        gap: .75rem;
-      }
-
-      .timeline::before {
-        left: 1rem;
-      }
-
-      .timeline-item:nth-child(even) .timeline-content,
-      .timeline-item:nth-child(even) .timeline-year {
-        grid-column: 1;
-        text-align: left;
-      }
-
-      .timeline-node {
-        top: .7rem;
-        left: 1rem;
-        transform: translate(-50%, 0);
-      }
-
-      .timeline-item:hover .timeline-node {
-        transform: translate(-50%, 0) scale(1.4);
-      }
-
-      .platforms,
-      .campaign-grid,
-      .press-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .campaign-card.featured {
-        grid-column: span 1;
-      }
-
-      .youtube-frame {
-        min-height: 360px;
-      }
-
-      .video-card {
-        grid-template-columns: 96px minmax(0, 1fr);
-      }
-
-      .video-card .arrow-icon {
-        display: none;
-      }
-
-      .gallery-toolbar {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-item,
-      .gallery-item.wide,
-      .gallery-item.tall {
-        grid-column: auto;
-        min-height: 430px;
-      }
-
-      .footer-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 460px) {
-      .hero-actions > a {
-        width: 100%;
-      }
-
-      .gallery-item,
-      .gallery-item.wide,
-      .gallery-item.tall {
-        min-height: 360px;
-      }
-
-      .contact-link {
-        align-items: flex-start;
-      }
-    }
-  </style>
 </head>
 <body>
-  <svg style="display:none" aria-hidden="true">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
-      <symbol id="icon-spotify" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.65 14.65c-.2.3-.6.4-.9.2-2.5-1.5-5.6-1.9-9.3-1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.1-.9 7.6-.5 10.4 1.2.3.2.4.6.2.9zm1.2-2.8c-.3.4-.7.5-1.1.3-2.8-1.7-7.1-2.2-10.4-1.2-.4.1-.9-.1-1-.6-.1-.4.1-.9.6-1 3.8-1.1 8.5-.6 11.7 1.3.4.3.5.8.2 1.2zm.1-2.9c-3.4-2-8.9-2.2-12.1-1.2-.5.2-1-.1-1.1-.6-.2-.5.1-1 .6-1.2 3.7-1.1 9.8-.9 13.7 1.3.5.3.6.9.3 1.4-.3.4-.9.6-1.4.3z"/></symbol>
-      <symbol id="icon-apple" viewBox="0 0 24 24"><path d="M18.7 8.7c-.9-1.1-2.2-1.9-3.7-1.9-.2 0-.4 0-.6.1-.8.2-1.5.7-2 1.3-.5-.6-1.2-1.1-2-1.3-.2 0-.4-.1-.6-.1-1.5 0-2.8.8-3.7 1.9-1.6 2-1.3 5.6.4 8.3.8 1.3 1.9 2.7 3.3 2.7h.1c.8 0 1.3-.5 2-.5.7 0 1.1.5 2 .5h.1c1.4 0 2.5-1.4 3.3-2.7 1.7-2.7 2-6.3.4-8.3zM12 7.5c.8-1 2.1-1.6 3.2-1.6.1 0 .2 0 .3.1-1.1 1.6-1 4.3.2 6.1-.5.3-1.1.5-1.7.5-.8 0-1.2-.4-1.9-.4-.7 0-1.1.4-1.9.4-.6 0-1.2-.2-1.7-.5 1.2-1.8 1.3-4.5.2-6.1.1 0 .2-.1.3-.1 1.1 0 2.4.6 3.2 1.6z"/></symbol>
-      <symbol id="icon-amazon" viewBox="0 0 24 24"><path d="M15.93 17.09c-.17.23-.44.34-.7.24-1.95-.8-4.12-1.23-6.46-1.23-1.83 0-3.83.25-5.67.75-.28.08-.57-.08-.66-.36-.08-.27.08-.56.36-.65 2.03-.56 4.22-.84 6.47-.84 2.57 0 4.97.48 7.14 1.43.27.11.4.42.29.69-.02.05-.04.09-.07.13-.53.73-1.11 1.43-1.71 2.09 2.24-.56 4.14-1.79 5.35-3.44.18-.24.52-.29.76-.11.24.18.29.52.11.76-1.46 1.96-3.72 3.4-6.24 3.99-.26.06-.52-.1-.58-.36-.06-.26.1-.52.36-.58 2.18-.52 4.14-1.75 5.45-3.41-1.33 1.28-3.01 2.17-4.89 2.55-.22.04-.44-.07-.53-.27zM10.5 2C5.81 2 2 5.81 2 10.5c0 2.48 1.09 4.7 2.81 6.22.18-.56.45-1.09.8-1.57-.42-.53-.67-1.19-.67-1.9 0-1.74 1.41-3.15 3.15-3.15.36 0 .7.06 1.02.17C8.42 7.67 9.87 6.5 11.58 6.5c2.32 0 4.2 1.88 4.2 4.2 0 .56-.11 1.09-.31 1.58.73.34 1.38.8 1.93 1.36.36-.92.56-1.92.56-2.96 0-3.87-2.58-7.14-6.11-8.18-.25-.08-.41-.32-.36-.58.05-.26.29-.43.55-.38 4.04 1.18 6.92 4.87 6.92 9.14 0 1.2-.23 2.34-.65 3.39.28.53.44 1.13.44 1.77 0 .34-.04.67-.11.99C20.91 15.2 22 13 22 10.5 22 5.81 18.19 2 13.5 2h-3z"/></symbol>
-      <symbol id="icon-audiomack" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-6h-2v-4h2v4zm4 0h-2v-4h2v4zm4 0h-2v-4h2v4z"/></symbol>
-      <symbol id="icon-boomplay" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></symbol>
-      <symbol id="icon-deezer" viewBox="0 0 24 24"><path d="M3 16h4v4H3zm6-2h4v6H9zm6-2h4v8h-4zm6-2h4v10h-4zM3 10h4v4H3zm6-2h4v6H9zm6-2h4v8h-4zm6-2h4v10h-4z"/></symbol>
-      <symbol id="icon-youtube" viewBox="0 0 24 24"><path d="M21.8 8.001c-.24-.91-.95-1.62-1.86-1.86C17.96 5.67 12 5.67 12 5.67s-5.96 0-7.94.47c-.91.24-1.62.95-1.86 1.86C1.73 9.981 1.73 12 1.73 12s0 2.02.47 4c.24.91.95 1.62 1.86 1.86 1.98.47 7.94.47 7.94.47s5.96 0 7.94-.47c.91-.24 1.62-.95 1.86-1.86.47-1.98.47-4 .47-4s0-2.02-.47-4zM9.55 15V9l5.27 3-5.27 3z"/></symbol>
-      <symbol id="icon-instagram" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85 0 3.2-.01 3.58-.07 4.85-.15 3.23-1.69 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07-3.2 0-3.58-.01-4.85-.07-3.26-.15-4.77-1.69-4.92-4.92C2.17 15.58 2.17 15.2 2.16 12c0-3.2.01-3.58.07-4.85.15-3.26 1.69-4.77 4.92-4.92C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.7.07 7.05.01 8.33 0 8.74 0 12c0 3.26.01 3.67.07 4.95.27 4.34 2.7 6.77 7.05 6.95C8.33 23.99 8.74 24 12 24c3.26 0 3.67-.01 4.95-.07 4.35-.18 6.78-2.7 6.96-6.95.06-1.28.07-1.69.07-4.95 0-3.26-.01-3.67-.07-4.95C23.73 2.7 21.3.27 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm7.85-10.4a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></symbol>
-      <symbol id="icon-twitter" viewBox="0 0 24 24"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.21-6.82-5.96 6.82H1.69l7.73-8.84L1.16 2.25h6.81l4.71 6.23 5.56-6.23zm-1.16 16.98h1.84L7.08 4.2H5.12l12.96 15.03z"/></symbol>
-      <symbol id="icon-facebook" viewBox="0 0 24 24"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.12 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></symbol>
-      <symbol id="icon-tiktok" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.88-2.89 2.89 2.89 0 012.88-2.89c.27 0 .53.04.78.11V9.4a6.33 6.33 0 00-.78-.05A6.34 6.34 0 003.84 15.7 6.34 6.34 0 0010.18 22a6.34 6.34 0 006.34-6.34V8.18a8.15 8.15 0 004.8 1.55V6.29a4.86 4.86 0 01-1.73-.6z"/></symbol>
-      <symbol id="icon-globe" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></symbol>
-      <symbol id="icon-submithub" viewBox="0 0 24 24"><path d="M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9H10.07L12 5.84zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 7c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM3 21.5h8v-8H3v8zm2-6h4v4H5v-4z"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></symbol>
+      <symbol id="i-spotify" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.65 14.65c-.2.3-.6.4-.9.2-2.5-1.5-5.6-1.9-9.3-1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.1-.9 7.6-.5 10.4 1.2.3.2.4.6.2.9zm1.2-2.8c-.3.4-.7.5-1.1.3-2.8-1.7-7.1-2.2-10.4-1.2-.4.1-.9-.1-1-.6-.1-.4.1-.9.6-1 3.8-1.1 8.5-.6 11.7 1.3.4.3.5.8.2 1.2zm.1-2.9c-3.4-2-8.9-2.2-12.1-1.2-.5.2-1-.1-1.1-.6-.2-.5.1-1 .6-1.2 3.7-1.1 9.8-.9 13.7 1.3.5.3.6.9.3 1.4-.3.4-.9.6-1.4.3z"/></symbol>
+      <symbol id="i-apple" viewBox="0 0 24 24"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.02-1.5-2.62-1.7-3.19-1.73-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.61 2.19-1.54 2.67-.39 6.62 1.11 8.79.73 1.06 1.6 2.25 2.75 2.2 1.1-.04 1.52-.71 2.85-.71 1.33 0 1.71.71 2.88.69 1.19-.02 1.94-1.08 2.67-2.14.84-1.23 1.19-2.42 1.21-2.48-.03-.01-2.32-.89-2.33-3.54zM14.18 6.1c.61-.74 1.02-1.76.91-2.78-.88.04-1.94.59-2.57 1.32-.56.65-1.06 1.69-.93 2.69.98.08 1.98-.5 2.59-1.23z"/></symbol>
+      <symbol id="i-soundcloud" viewBox="0 0 24 24"><path d="M1 14.5c0 1 .5 1.8 1 1.8V12.7c-.5 0-1 .8-1 1.8zm2.2 2.1h.9v-5.4l-.9.5zm1.8 0h.9V10l-.9.4zm1.8 0h.9V9.1l-.9.2zm1.8 0h.9V8.4l-.9.3zm1.8 0h.9V7.6l-.9.5zm1.8 0h7.3a3.3 3.3 0 0 0 0-6.6c-.4 0-.8.1-1.2.2A5.5 5.5 0 0 0 12.2 6.8v9.8z"/></symbol>
+      <symbol id="i-amazon" viewBox="0 0 24 24"><path d="M3 15.5c3.9 2.4 10.3 3.6 16 .8.6-.3 1.1.3.5.8-4.4 3.5-12.7 3.3-16.9-.9-.4-.4.1-1 .4-.7zm17.2-1.2c.5.6-.1 4.1-2.3 5.8-.3.3-.6.1-.5-.2.5-1.3 1.6-4 1.1-4.6-.5-.6-3.2-.3-4.4-.1-.4 0-.4-.3-.1-.5 2.1-1.5 5.6-1 6.2-.4zM12.4 4c-2.5 0-4.4 1.3-4.9 3.4l2.3.3c.2-.9.9-1.6 2.1-1.6 1.6 0 1.9 1.2 1.9 2.1v.5c-3 .2-6.6.8-6.6 4.1 0 2 1.5 3.1 3.3 3.1 1.6 0 2.6-.6 3.4-1.6.3.5.7.9 1.2 1.3l1.8-1.6c-.5-.5-.9-1-.9-2V7.9C16 5.5 14.9 4 12.4 4zm1.4 6.9c0 1.5-.8 2.9-2.2 2.9-1 0-1.6-.6-1.6-1.6 0-1.9 1.7-2.1 3.8-2.1z"/></symbol>
+      <symbol id="i-audiomack" viewBox="0 0 24 24"><path d="M2 14h2v3H2zm3.5-3h2v6h-2zm3.5-3h2v9H9zm3.5 2h2v7h-2zm3.5-4h2v11h-2zm3.5 5h2v6h-2z"/></symbol>
+      <symbol id="i-boomplay" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-2 14.5v-9l6 4.5-6 4.5z"/></symbol>
+      <symbol id="i-deezer" viewBox="0 0 24 24"><path d="M2 17h4v3H2zm5 0h4v3H7zm5 0h4v3h-4zm5 0h5v3h-5zm-5-4h4v3h-4zm5 0h5v3h-5zm-10 0h4v3H7zm10-4h5v3h-5zm-5 0h4v3h-4zm5-4h5v3h-5z"/></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M21.8 8c-.24-.91-.95-1.62-1.86-1.86C17.96 5.67 12 5.67 12 5.67s-5.96 0-7.94.47C3.15 6.38 2.44 7.09 2.2 8 1.73 9.98 1.73 12 1.73 12s0 2.02.47 4c.24.91.95 1.62 1.86 1.86 1.98.47 7.94.47 7.94.47s5.96 0 7.94-.47c.91-.24 1.62-.95 1.86-1.86.47-1.98.47-4 .47-4s0-2.02-.47-4zM9.55 15V9l5.27 3-5.27 3z"/></symbol>
+      <symbol id="i-submithub" viewBox="0 0 24 24"><path d="M12 2 6.5 11h11L12 2zm5.5 11a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zM3 21.5h8v-8H3v8z"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.21-6.82-5.96 6.82H1.69l7.73-8.84L1.16 2.25h6.81l4.71 6.23 5.56-6.23zm-1.16 16.98h1.84L7.08 4.2H5.12l11.96 15.03z"/></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.12 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></symbol>
+      <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 3.18-4.51V9.4a6.33 6.33 0 0 0-5.38 10.86A6.34 6.34 0 0 0 16.52 15.7V8.18a8.15 8.15 0 0 0 4.8 1.55V6.29a4.86 4.86 0 0 1-1.73-.6z"/></symbol>
     </defs>
   </svg>
+
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="site-shell">
-    <header class="topbar">
-      <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="#top" aria-label="Hero One home">
-          <img class="brand-mark" src="Hero One design no bg .png" width="3000" height="1800" alt="">
-          <span class="brand-name">Hero One <span>Beats & Blues</span></span>
-        </a>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#identity">Identity</a></li>
-          <li><a href="#timeline">Timeline</a></li>
-          <li><a href="#listen">Listen</a></li>
-          <li><a href="#videos">Videos</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="nav-actions">
-          <a class="text-button nav-book" href="mailto:mraltd@yahoo.com">Book</a>
-          <button class="icon-button menu-button" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-          </button>
-        </div>
-      </nav>
-    </header>
 
-    <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="hero-stage">
-          <div class="hero-copy">
-            <img class="hero-logo reveal" src="Hero One design no bg .png" width="3000" height="1800" alt="Hero One">
-            <span class="kicker reveal">Official artist archive</span>
-            <div class="hero-title-row reveal">
-              <h1 id="hero-title">Hero One</h1>
-              <span class="hero-number">001</span>
-            </div>
-            <p class="hero-lede reveal">Adebayo Michael Manuwa creates Beats & Blues Reality Music: grounded stories, clean production instincts, and a visual world built with the same care as the records.</p>
-            <div class="hero-actions reveal">
-              <a class="primary-action" href="#listen">Listen now</a>
-              <a class="secondary-action" href="#gallery">View gallery</a>
-            </div>
-          </div>
-          <div class="hero-media" aria-label="Hero One portrait">
-            <img src="Hero One March 2024.jpg" width="4000" height="5000" alt="Hero One portrait from March 2024" fetchpriority="high">
-          </div>
-        </div>
-      </section>
+  <header class="site-header">
+    <a class="brand-lockup" href="#top" aria-label="Hero One, back to top">
+      <img src="assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="">
+      <span>Beats &amp; Blues<br>Reality Music</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#identity">Identity</a>
+      <a href="#listen">Listen</a>
+      <a href="#journey">Journey</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#gallery">Gallery</a>
+      <a class="nav-portfolio" href="https://portfolio.heroone.art" target="_blank" rel="noopener">Portfolio <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+    </nav>
+    <div class="header-actions">
+      <a class="button button--primary button--sm" href="#contact">Book</a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </header>
 
-      <section class="section tight" id="timeline">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <div>
-              <span class="kicker">The Journey</span>
-              <h2>From the ground up.</h2>
-            </div>
-            <p class="lede">A decade-plus arc from early records to independent ownership, distribution, and global catalog management.</p>
-          </div>
-          <div class="timeline reveal" aria-label="Hero One career timeline">
-            <article class="timeline-item">
-              <div class="timeline-year">2010</div>
-              <div class="timeline-content">
-                <h3>Klaplyne Records</h3>
-                <p>The first imprint. Where the foundation was poured.</p>
-              </div>
-              <div class="timeline-node"></div>
-            </article>
-            <article class="timeline-item">
-              <div class="timeline-year">2011-16</div>
-              <div class="timeline-content">
-                <h3>Massive Gang Nation</h3>
-                <p>Movement-building years. <a href="https://www.reverbnation.com/label/massivegangnation" target="_blank" rel="noreferrer">ReverbNation</a></p>
-              </div>
-              <div class="timeline-node"></div>
-            </article>
-            <article class="timeline-item">
-              <div class="timeline-year">2016</div>
-              <div class="timeline-content">
-                <h3>MGN Workaholix Entertainment Ltd</h3>
-                <p>Formalizing the business of sound.</p>
-              </div>
-              <div class="timeline-node"></div>
-            </article>
-            <article class="timeline-item">
-              <div class="timeline-year">2017-20</div>
-              <div class="timeline-content">
-                <h3>Music Genius Network</h3>
-                <p>Expanding the reach and sharpening the craft.</p>
-              </div>
-              <div class="timeline-node"></div>
-            </article>
-            <article class="timeline-item">
-              <div class="timeline-year">2020</div>
-              <div class="timeline-content">
-                <h3>Millenial Renaissance Art Limited</h3>
-                <p>Full ownership of the masters and the message.</p>
-              </div>
-              <div class="timeline-node"></div>
-            </article>
-            <article class="timeline-item">
-              <div class="timeline-year">2022</div>
-              <div class="timeline-content">
-                <h3>Opulence Grandeur Sound</h3>
-                <p>The sonic imprint for catalog distribution and sync.</p>
-              </div>
-              <div class="timeline-node"></div>
-            </article>
-            <article class="timeline-item">
-              <div class="timeline-year">2024</div>
-              <div class="timeline-content">
-                <h3>24 Songs in 12 Months</h3>
-                <p>Three EPs: M.C, O.T 3, BAYO, Lifted, plus viral moments with Force and DFDDP.</p>
-              </div>
-              <div class="timeline-node"></div>
-            </article>
-          </div>
-        </div>
-      </section>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="signal-field" data-signal-field aria-hidden="true"><canvas></canvas></div>
+      <div class="hero-grain" aria-hidden="true"></div>
 
-      <section class="section tight" aria-labelledby="philosophy-title">
-        <div class="wrap">
-          <div class="philosophy reveal">
-            <blockquote id="philosophy-title">“Music is more than sound. <em>It's a mirror to real life,</em> and a vessel for emotion, culture, and purpose. Every track is crafted to heal, reflect, and rise.”</blockquote>
-            <cite>Hero One's Philosophy</cite>
-          </div>
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="pulse-dot"></span> Official artist site</span>
+        <img class="hero-logo" src="assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="Hero One">
+        <h1 id="hero-title">
+          <span class="line">Beats &amp; Blues</span>
+          <span class="line line--gold">Reality Music.</span>
+        </h1>
+        <p class="hero-lede">Adebayo Michael Manuwa makes grounded stories over soulful trap, afrofusion and modern hip-hop, and builds the visual world with the same care as the records.</p>
+        <div class="hero-actions">
+          <a class="button button--primary" href="#listen">Listen now</a>
+          <a class="button button--ghost" href="https://portfolio.heroone.art" target="_blank" rel="noopener">View portfolio <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
-      </section>
-
-      <section class="section" id="identity">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <div>
-              <span class="kicker">Musical Identity</span>
-              <h2>More than just an artist.</h2>
-            </div>
-            <p class="lede">With a sound that blends culture and feeling, Hero One connects with people in a real way.</p>
-          </div>
-          <div class="identity-grid reveal">
-            <article class="identity-card">
-              <h3>Creator of Beats & Blues</h3>
-              <p>Hero One started with Ghetto Gospel Reality Music, but the sound kept growing. What came next was <strong>Beats & Blues</strong>: a raw and soulful fusion of hip-hop, Afro-influences, Modern Classics, and multiple genres.</p>
-            </article>
-            <article class="identity-card">
-              <h3>Cultural Bridge-Builder</h3>
-              <p>His music carries the weight of the streets and the warmth of tradition, layered with interstellar energy. We are building something <strong>TIMELESS</strong>.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section tight" id="campaign">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <div>
-              <span class="kicker">2024 Campaign</span>
-              <h2>A year of music. A year of movement.</h2>
-            </div>
-            <p class="lede">One release every month. Three EPs. International press. Viral momentum. A statement made.</p>
-          </div>
-          <div class="campaign-grid reveal">
-            <article class="campaign-card featured">
-              <h3>24 Songs</h3>
-              <p>One drop per month for the entire calendar year. Pure consistency and evolution.</p>
-              <span class="campaign-stat">Monthly Cadence</span>
-            </article>
-            <article class="campaign-card">
-              <h3>3 EPs</h3>
-              <p>M.C, O.T 3, BAYO, Lifted: multi-dimensional projects showing range and intent.</p>
-            </article>
-            <article class="campaign-card">
-              <h3>Force</h3>
-              <p>International buzz and editorial support across English and French press.</p>
-            </article>
-            <article class="campaign-card">
-              <h3>DFDDP</h3>
-              <p>Sparked viral moments across social media, expanding the digital footprint.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="listen">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <div>
-              <span class="kicker">Listen</span>
-              <h2>Enter the catalog.</h2>
-            </div>
-            <p class="lede">Stream, save, and sync. The full discography lives across every major platform.</p>
-          </div>
-          <div class="listen-grid reveal">
-            <div class="listen-panel listen-frame">
-              <iframe title="Hero One Spotify playlist" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO1pQCrg?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
-            <div class="listen-panel">
-              <h3>Stream Hero One</h3>
-              <p class="lede">Major platforms and official channels for discovery, saves, bookings, and campaign tracking.</p>
-              <div class="platforms" aria-label="Music and social platforms">
-                <a class="platform-link" href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-spotify"/></svg><span>Spotify</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                <a class="platform-link" href="https://music.apple.com/ng/artist/hero-one/1520370143" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-apple"/></svg><span>Apple Music</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                <a class="platform-link" href="https://music.amazon.com/artists/B01HOYS7YK/hero-one" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-amazon"/></svg><span>Amazon</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                <a class="platform-link" href="https://audiomack.com/hero-one/" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-audiomack"/></svg><span>Audiomack</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                <a class="platform-link" href="https://www.boomplay.com/artists/24967874?from=artists" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-boomplay"/></svg><span>Boomplay</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                <a class="platform-link" href="https://deezer.com/us/artist/10614549" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-deezer"/></svg><span>Deezer</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                <a class="platform-link" href="http://www.youtube.com/@hero-one" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-youtube"/></svg><span>YouTube</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                <a class="platform-link" href="https://www.heroone1.online" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-globe"/></svg><span>Website</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                <a class="platform-link" href="https://www.submithub.com/link/hero-one" target="_blank" rel="noreferrer"><span class="platform-label"><svg class="platform-icon" aria-hidden="true"><use href="#icon-submithub"/></svg><span>SubmitHub</span></span><svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section tight" id="social">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <div>
-              <span class="kicker">Social</span>
-              <h2>Follow the movement.</h2>
-            </div>
-            <p class="lede">Exclusive content, behind-the-scenes, and real-time updates.</p>
-          </div>
-          <div class="social-strip reveal" aria-label="Hero One social links">
-            <a class="social-link" href="https://www.instagram.com/heromgn" target="_blank" rel="noreferrer" aria-label="Instagram"><svg aria-hidden="true"><use href="#icon-instagram"/></svg></a>
-            <a class="social-link" href="https://www.twitter.com/heromgn" target="_blank" rel="noreferrer" aria-label="Twitter or X"><svg aria-hidden="true"><use href="#icon-twitter"/></svg></a>
-            <a class="social-link" href="https://www.facebook.com/heromgn" target="_blank" rel="noreferrer" aria-label="Facebook"><svg aria-hidden="true"><use href="#icon-facebook"/></svg></a>
-            <a class="social-link" href="https://www.tiktok.com/heromgn" target="_blank" rel="noreferrer" aria-label="TikTok"><svg aria-hidden="true"><use href="#icon-tiktok"/></svg></a>
-            <a class="social-link" href="http://www.youtube.com/@hero-one" target="_blank" rel="noreferrer" aria-label="YouTube"><svg aria-hidden="true"><use href="#icon-youtube"/></svg></a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="videos">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <div>
-              <span class="kicker">Videos</span>
-              <h2>YouTube presence, built into the archive.</h2>
-            </div>
-            <p class="lede">Campaign visuals, official clips, and performance-adjacent content connect back to the Hero One YouTube channel.</p>
-          </div>
-          <div class="video-grid reveal">
-            <div class="video-feature">
-              <a class="youtube-frame" href="http://www.youtube.com/@hero-one" target="_blank" rel="noreferrer" aria-label="Watch Hero One on YouTube">
-                <img src="VIP VIBES by Hero One mashup -  2024 A.jpg" width="1280" height="720" alt="VIP Vibes by Hero One video campaign artwork">
-                <span class="youtube-badge">
-                  <svg class="youtube-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 8.001c-.24-.91-.95-1.62-1.86-1.86C17.96 5.67 12 5.67 12 5.67s-5.96 0-7.94.47c-.91.24-1.62.95-1.86 1.86C1.73 9.981 1.73 12 1.73 12s0 2.02.47 4c.24.91.95 1.62 1.86 1.86 1.98.47 7.94.47 7.94.47s5.96 0 7.94-.47c.91-.24 1.62-.95 1.86-1.86.47-1.98.47-4 .47-4s0-2.02-.47-4zM9.55 15V9l5.27 3-5.27 3z"/></svg>
-                  Watch on YouTube
-                </span>
-              </a>
-            </div>
-            <div class="video-list" aria-label="Hero One video links">
-              <a class="video-card" href="http://www.youtube.com/@hero-one" target="_blank" rel="noreferrer">
-                <img src="VIP VIBES by Hero One mashup - 2024 B.jpg" width="1280" height="720" alt="VIP Vibes alternate campaign artwork">
-                <span><strong>VIP Vibes campaign</strong><span>Official video surface</span></span>
-                <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-              </a>
-              <a class="video-card" href="http://www.youtube.com/@hero-one" target="_blank" rel="noreferrer">
-                <img src="Hero One performing in 2011.jpg" width="604" height="453" alt="Hero One performing in 2011">
-                <span><strong>Live archive</strong><span>Performance history</span></span>
-                <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-              </a>
-              <a class="video-card" href="http://www.youtube.com/@hero-one" target="_blank" rel="noreferrer">
-                <img src="Hero One March 2024 B.jpg" width="4000" height="5600" alt="Hero One March 2024 portrait">
-                <span><strong>Artist channel</strong><span>@hero-one on YouTube</span></span>
-                <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="gallery">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <div>
-              <span class="kicker">Gallery</span>
-              <h2>Visual archive with usable metadata.</h2>
-            </div>
-            <p class="lede">Every image is registered with year, format, dimensions, and purpose so the gallery can support press kits, social drops, and future site updates without guesswork.</p>
-          </div>
-          <div class="gallery-toolbar reveal">
-            <div id="gallery-count">Loading gallery assets</div>
-            <div class="filter-group" aria-label="Gallery filters">
-              <button class="filter-button" type="button" data-filter="all" aria-pressed="true">All</button>
-              <button class="filter-button" type="button" data-filter="portrait" aria-pressed="false">Portrait</button>
-              <button class="filter-button" type="button" data-filter="studio" aria-pressed="false">Studio</button>
-              <button class="filter-button" type="button" data-filter="stage" aria-pressed="false">Stage</button>
-              <button class="filter-button" type="button" data-filter="campaign" aria-pressed="false">Campaign</button>
-              <button class="filter-button" type="button" data-filter="legacy" aria-pressed="false">Legacy</button>
-            </div>
-          </div>
-          <div class="gallery-grid reveal" id="gallery-grid" aria-live="polite"></div>
-        </div>
-      </section>
-
-      <section class="section tight" aria-labelledby="signals-title">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <div>
-              <span class="kicker">Signals</span>
-              <h2 id="signals-title">Press-kit facts up front.</h2>
-            </div>
-            <p class="lede">A compact surface for the details people usually hunt for first.</p>
-          </div>
-          <div class="press-grid reveal">
-            <div class="press-item">
-              <div class="press-logo"><img src="BMI ICON.webp" alt="BMI"></div>
-              <div><strong>BMI</strong><span>Registered catalog</span></div>
-            </div>
-            <div class="press-item">
-              <div class="press-logo"><img src="SoundExchangeLogo.png" width="2664" height="1128" alt="SoundExchange"></div>
-              <div><strong>SoundExchange</strong><span>Registered catalog</span></div>
-            </div>
-            <div class="press-item">
-              <div class="press-logo"><img src="mra logo.png" width="180" height="180" alt="Millenial Renaissance Art Limited"></div>
-              <div><strong>MRAL</strong><span>Millenial Renaissance Art Limited</span></div>
-            </div>
-            <div class="press-item">
-              <div class="press-logo"><img src="OGs no bg.png" width="2048" height="2048" alt="Opulence Grandeur Sound"></div>
-              <div><strong>OGS</strong><span>Opulence Grandeur Sound</span></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="contact">
-        <div class="wrap">
-          <div class="contact-grid reveal">
-            <div class="contact-panel">
-              <span class="kicker">Contact</span>
-              <h2>Booking, licensing, press, collaboration.</h2>
-              <p>Use the right channel for booking inquiries, management conversations, legacy label context, and platform review.</p>
-            </div>
-            <div class="contact-panel">
-              <div class="contact-list">
-                <a class="contact-link" href="mailto:mraltd@yahoo.com">
-                  <span><strong>Booking</strong><span>mraltd@yahoo.com</span></span>
-                  <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
-                </a>
-                <a class="contact-link" href="mailto:millenialrenaissance@yahoo.com">
-                  <span><strong>Management</strong><span>millenialrenaissance@yahoo.com</span></span>
-                  <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
-                </a>
-                <a class="contact-link" href="https://www.reverbnation.com/label/massivegangnation" target="_blank" rel="noreferrer">
-                  <span><strong>Legacy label</strong><span>Massive Gang Nation</span></span>
-                  <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
-                </a>
-                <a class="contact-link" href="https://metameta3.com" target="_blank" rel="noreferrer">
-                  <span><strong>Platform</strong><span>metameta3.com</span></span>
-                  <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <img src="Hero One design no bg .png" width="3000" height="1800" alt="">
-          <span>Hero One</span>
-        </div>
-        <div>Copyright 2024-2026 Millenial Renaissance Art Limited and Opulence Grandeur Sound. All rights reserved.</div>
-      </div>
-    </footer>
-  </div>
-
-  <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-title">
-    <div class="lightbox-panel">
-      <div class="lightbox-image">
-        <img id="lightbox-img" src="" alt="">
-      </div>
-      <div class="lightbox-copy">
-        <button class="icon-button close-button" type="button" id="lightbox-close" aria-label="Close gallery preview">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
-        </button>
-        <div>
-          <span class="kicker" id="lightbox-category">Gallery</span>
-          <h3 id="lightbox-title"></h3>
-          <p id="lightbox-description"></p>
-        </div>
-        <dl class="metadata-list">
-          <div><dt>Year</dt><dd id="lightbox-year"></dd></div>
-          <div><dt>Use</dt><dd id="lightbox-use"></dd></div>
-          <div><dt>Size</dt><dd id="lightbox-size"></dd></div>
-          <div><dt>File</dt><dd id="lightbox-file"></dd></div>
+        <dl class="hero-stats">
+          <div><dt>Streams in 2025</dt><dd>319K+</dd></div>
+          <div><dt>Songs in 2024</dt><dd>24</dd></div>
+          <div><dt>First imprint</dt><dd>2010</dd></div>
         </dl>
       </div>
+
+      <div class="hero-stage">
+        <svg class="orbit" viewBox="0 0 620 775" aria-hidden="true">
+          <circle class="o1" cx="310" cy="387" r="300"/>
+          <circle class="o2" cx="310" cy="387" r="270" transform="rotate(-90 310 387)"/>
+          <circle class="o3" cx="310" cy="387" r="236"/>
+        </svg>
+        <figure class="portrait">
+          <img src="assets/img/gallery/march-2024.webp" width="1440" height="1800" alt="Hero One in white under a warm spotlight, March 2024" fetchpriority="high">
+          <figcaption><strong>Hero One</strong><span class="mono">MMXXIV</span></figcaption>
+        </figure>
+        <span class="float-chip float-chip--a"><i></i> Artist · Producer</span>
+        <span class="float-chip float-chip--b"><i></i> Opulence Grandeur Sound</span>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span><i></i>Beats &amp; Blues</span><span><i></i>Afrofusion</span><span><i></i>Soulful trap</span><span><i></i>Modern hip-hop</span><span><i></i>Ghetto Gospel Reality</span><span><i></i>Opulence Grandeur Sound</span><span><i></i>Millenial Renaissance Art</span><span><i></i>Heal · Reflect · Rise</span><span><i></i>Variety in Observable Consciousness</span><span><i></i>Beats &amp; Blues</span><span><i></i>Afrofusion</span><span><i></i>Soulful trap</span><span><i></i>Modern hip-hop</span><span><i></i>Ghetto Gospel Reality</span><span><i></i>Opulence Grandeur Sound</span><span><i></i>Millenial Renaissance Art</span><span><i></i>Heal · Reflect · Rise</span><span><i></i>Variety in Observable Consciousness</span>
+      </div>
+    </div>
+
+    <section class="section" id="identity" aria-labelledby="identity-title">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow"><span class="pulse-dot"></span> Musical identity</span>
+          <h2 id="identity-title">More than just an artist.</h2>
+        </div>
+        <p>With a sound that blends culture and feeling, Hero One connects with people in a real way: artist, producer, and owner of the masters and the message.</p>
+      </div>
+      <div class="bento">
+        <article class="card card--feature card--wide reveal">
+          <span class="kicker">Creator of</span>
+          <h3>Beats &amp; Blues</h3>
+          <p>Hero One started with Ghetto Gospel Reality Music, but the sound kept growing. What came next was <strong>Beats &amp; Blues</strong>: a raw and soulful fusion of hip-hop, Afro-influences, modern classics, and multiple genres.</p>
+          <div class="genre-list">
+            <span class="chip chip--gold">Hip-hop</span><span class="chip chip--gold">Afrofusion</span><span class="chip chip--gold">Soulful trap</span><span class="chip">Modern classics</span><span class="chip">Ghetto Gospel Reality</span>
+          </div>
+          <img class="card__mark" src="assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="" loading="lazy">
+        </article>
+        <article class="card card--teal reveal">
+          <span class="kicker">Cultural bridge-builder</span>
+          <h3>Streets and tradition</h3>
+          <p>The music carries the weight of the streets and the warmth of tradition, layered with interstellar energy. We are building something <strong>timeless</strong>.</p>
+        </article>
+        <article class="card reveal">
+          <span class="kicker">Artist</span>
+          <h3>Writing that hits</h3>
+          <p>Emotive writing, sharp melodic hooks, and a self-defined Beats &amp; Blues identity.</p>
+        </article>
+        <article class="card card--teal reveal">
+          <span class="kicker">Producer</span>
+          <h3>Weight and swing</h3>
+          <p>Textured percussion, afrofusion movement, trap swing, and film-friendly instrumental weight.</p>
+        </article>
+        <article class="card card--ember reveal">
+          <span class="kicker">Owner</span>
+          <h3>Masters and message</h3>
+          <p>Independent since 2020 through Millenial Renaissance Art Limited, with Opulence Grandeur Sound for catalog distribution and sync.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="listen" aria-labelledby="listen-title">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow"><span class="pulse-dot"></span> Listen</span>
+          <h2 id="listen-title">Enter the catalog.</h2>
+        </div>
+        <p>Stream, save, and share. The full discography lives across every major platform, with official visuals on YouTube.</p>
+      </div>
+      <div class="listen-grid">
+        <div class="embed reveal">
+          <iframe title="Hero One on Spotify" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO1pQCrg?utm_source=generator&amp;theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <div class="reveal">
+          <span class="kicker">Stream Hero One</span>
+          <div class="platforms">
+            <a class="platform" href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-spotify"/></svg>Spotify</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="platform" href="https://music.apple.com/ng/artist/hero-one/1520370143" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-apple"/></svg>Apple Music</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="platform" href="https://soundcloud.com/heroone" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-soundcloud"/></svg>SoundCloud</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="platform" href="https://www.youtube.com/@hero-one" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-youtube"/></svg>YouTube</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="platform" href="https://music.amazon.com/artists/B01HOYS7YK/hero-one" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-amazon"/></svg>Amazon Music</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="platform" href="https://audiomack.com/hero-one/" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-audiomack"/></svg>Audiomack</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="platform" href="https://www.boomplay.com/artists/24967874" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-boomplay"/></svg>Boomplay</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="platform" href="https://www.deezer.com/us/artist/10614549" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-deezer"/></svg>Deezer</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="platform" href="https://www.submithub.com/link/hero-one" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-submithub"/></svg>SubmitHub</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+          <a class="watch" href="https://www.youtube.com/@hero-one" target="_blank" rel="noopener">
+            <img src="assets/img/gallery/vip-vibes-a.webp" width="1280" height="720" alt="" loading="lazy">
+            <span class="watch__label"><svg aria-hidden="true"><use href="#i-youtube"/></svg><span>Watch on YouTube<small>@hero-one · VIP Vibes and more</small></span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="campaign" aria-labelledby="campaign-title">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow"><span class="pulse-dot"></span> The 2024 campaign</span>
+          <h2 id="campaign-title">A year of music.<br>A year of movement.</h2>
+        </div>
+        <p>One release every month. Three EPs. International press. Viral momentum. A statement made.</p>
+      </div>
+      <ol class="doctrine-grid reveal">
+        <li><span class="mono">01 · Cadence</span><strong>24 songs</strong><p>Drops every month for the entire calendar year. Pure consistency and evolution.</p></li>
+        <li><span class="mono">02 · Projects</span><strong>3 EPs</strong><p>M.C, O.T 3, BAYO, Lifted: multi-dimensional projects showing range and intent.</p></li>
+        <li><span class="mono">03 · Press</span><strong>Force</strong><p>International buzz and editorial support across English and French press.</p></li>
+        <li><span class="mono">04 · Social</span><strong>DFDDP</strong><p>Sparked viral moments across social media, expanding the digital footprint.</p></li>
+      </ol>
+    </section>
+
+    <section class="section" id="journey" aria-labelledby="journey-title">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow"><span class="pulse-dot"></span> The journey</span>
+          <h2 id="journey-title">From the ground up.</h2>
+        </div>
+        <p>A decade-plus arc from early records to independent ownership, global catalog management, and a philosophy of its own.</p>
+      </div>
+      <ol class="timeline">
+        <li class="reveal"><span class="year">2010</span><article class="card"><h3>Klaplyne Records</h3><p>The first imprint. Where the foundation was poured.</p></article></li>
+        <li class="reveal"><span class="year">2011–16</span><article class="card"><h3>Massive Gang Nation</h3><p>Movement-building years, first stages and a first award. <a href="https://www.reverbnation.com/label/massivegangnation" target="_blank" rel="noopener">ReverbNation</a></p></article></li>
+        <li class="reveal"><span class="year">2016</span><article class="card"><h3>MGN Workaholix Entertainment Ltd</h3><p>Formalizing the business of sound.</p></article></li>
+        <li class="reveal"><span class="year">2017–20</span><article class="card"><h3>Music Genius Network</h3><p>Expanding the reach and sharpening the craft.</p></article></li>
+        <li class="reveal"><span class="year">2020</span><article class="card"><h3>Millenial Renaissance Art Limited</h3><p>Full ownership of the masters and the message.</p></article></li>
+        <li class="reveal"><span class="year">2022</span><article class="card"><h3>Opulence Grandeur Sound</h3><p>The sonic imprint for catalog distribution and sync.</p></article></li>
+        <li class="reveal"><span class="year">2024</span><article class="card"><h3>24 songs in 12 months</h3><p>Three EPs, plus viral moments with Force and DFDDP. <em>LIMITS</em>, from <em>1000 BOTTLES</em>: “All actions and desires are circumscribed within limits.”</p></article></li>
+        <li class="reveal"><span class="year">2025</span><article class="card"><h3>The world is listening</h3><p>319K+ streams across Symphonic, SoundCloud and oneRPM, with press in English, French and Spanish and radio support for <em>Faa ji</em>. <a href="https://portfolio.heroone.art" target="_blank" rel="noopener">See the portfolio</a></p></article></li>
+        <li class="reveal is-now"><span class="year">2026</span><article class="card"><h3>Variety in Observable Consciousness</h3><p>The idea in the music becomes a stated law, first stated 20 October 2026. <a href="philosophy/law/">Read the law</a></p></article></li>
+      </ol>
+    </section>
+
+    <section class="philosophy" id="philosophy" aria-labelledby="philosophy-title">
+      <div class="philosophy__inner">
+        <div class="law-ring reveal" aria-hidden="true">
+          <svg viewBox="0 0 900 900">
+            <defs>
+              <radialGradient id="corona" cx="50%" cy="50%" r="50%">
+                <stop offset="0.86" stop-color="#D8C59E" stop-opacity="0"/>
+                <stop offset="0.895" stop-color="#D8C59E" stop-opacity="0.16"/>
+                <stop offset="0.93" stop-color="#D8C59E" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="450" cy="450" r="440" fill="url(#corona)"/>
+            <circle class="ring-stroke" cx="450" cy="450" r="400" transform="rotate(-90 450 450)"/>
+            <g stroke="#8E8B85" stroke-width="1"><line x1="450" y1="38" x2="450" y2="62"/><line x1="862" y1="450" x2="838" y2="450"/><line x1="450" y1="862" x2="450" y2="838"/><line x1="38" y1="450" x2="62" y2="450"/></g>
+            <text x="450" y="98" text-anchor="middle">Time</text>
+            <text x="450" y="820" text-anchor="middle">Alteration</text>
+            <text x="104" y="455" text-anchor="middle" transform="rotate(-90 104 450)">Environment</text>
+            <text x="796" y="455" text-anchor="middle" transform="rotate(90 796 450)">Choice</text>
+          </svg>
+          <blockquote><span>“</span>The observer, observation, observable, even ‘awareness’ and eventual expression all are circumscribed within TIME, choice, alteration and environment.<span>”</span></blockquote>
+        </div>
+        <div class="reveal">
+          <span class="eyebrow"><span class="pulse-dot"></span> Philosophy · The Law</span>
+          <h2 id="philosophy-title">Variety in Observable Consciousness.</h2>
+          <p>Everything involved in seeing and knowing anything happens inside four conditions: time, the choices made, the changes that occur, and the surroundings. Nothing gets a seat outside, not even awareness itself. First stated 20 October 2026, with the full record of its first twelve stress tests.</p>
+          <blockquote class="music-quote">“Music is more than sound. It’s a mirror to real life, and a vessel for emotion, culture, and purpose. Every track is crafted to heal, reflect, and rise.”<cite>Hero One’s philosophy of music</cite></blockquote>
+          <div class="hero-actions">
+            <a class="button button--primary" href="philosophy/law/">Read the law</a>
+            <a class="button button--ghost" href="philosophy/">All philosophy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow"><span class="pulse-dot"></span> Visual archive</span>
+          <h2 id="gallery-title">Fifteen years in frame.</h2>
+        </div>
+        <p>From the first award and early stages in 2011 to the 2024 campaign. Open any image for its year, purpose and a full-resolution download.</p>
+      </div>
+      <div class="segmented reveal" role="radiogroup" aria-label="Filter the gallery">
+        <button type="button" role="radio" data-filter="all" aria-checked="true">All <span class="segmented__count">17</span></button>
+        <button type="button" role="radio" data-filter="portrait" aria-checked="false">Portrait <span class="segmented__count">7</span></button>
+        <button type="button" role="radio" data-filter="studio" aria-checked="false">Studio <span class="segmented__count">4</span></button>
+        <button type="button" role="radio" data-filter="stage" aria-checked="false">Stage <span class="segmented__count">2</span></button>
+        <button type="button" role="radio" data-filter="campaign" aria-checked="false">Campaign <span class="segmented__count">3</span></button>
+        <button type="button" role="radio" data-filter="legacy" aria-checked="false">Legacy <span class="segmented__count">1</span></button>
+      </div>
+      <p class="mono" id="gallery-count" aria-live="polite" style="color:var(--text-dim);margin:0 0 1rem"></p>
+      <div class="gallery">
+        <button class="shot" type="button" data-category="portrait" data-title="March 2024 Portrait" data-year="2024" data-usage="Primary press image" data-description="High-resolution portrait for hero art, press packets, and campaign lead imagery." data-size="4000 × 5000" data-full="assets/img/gallery/march-2024.webp" data-original="assets/originals/hero-one-march-2024.jpg" aria-label="Open March 2024 Portrait, 2024">
+          <img src="assets/img/gallery/march-2024-sm.webp" width="576" height="720" alt="March 2024 Portrait: High-resolution portrait for hero art, press packets, and campaign lead imagery." loading="lazy" decoding="async">
+          <span class="shot__meta"><strong>March 2024 Portrait</strong><span>2024 · portrait</span></span>
+        </button>
+        <button class="shot" type="button" data-category="campaign" data-title="VIP Vibes Poster" data-year="2024" data-usage="Release artwork" data-description="Poster-style campaign artwork for VIP Vibes with Hero One." data-size="960 × 1280" data-full="assets/img/gallery/vip-vibes-poster.webp" data-original="assets/originals/hero-one-vip-vibes-poster.jpg" aria-label="Open VIP Vibes Poster, 2024">
+          <img src="assets/img/gallery/vip-vibes-poster-sm.webp" width="540" height="720" alt="VIP Vibes Poster: Poster-style campaign artwork for VIP Vibes with Hero One." loading="lazy" decoding="async">
+          <span class="shot__meta"><strong>VIP Vibes Poster</strong><span>2024 · campaign</span></span>
+        </button>
+        <button class="shot" type="button" data-category="portrait" data-title="December 2023 Portrait" data-year="2023" data-usage="Artist profile" data-description="Clean modern portrait suited for platform profiles, artist pages, and press thumbnails." data-size="3590 × 4488" data-full="assets/img/gallery/dec-2023.webp" data-original="assets/originals/hero-one-dec-2023.jpg" aria-label="Open December 2023 Portrait, 2023">
+          <img src="assets/img/gallery/dec-2023-sm.webp" width="576" height="720" alt="December 2023 Portrait: Clean modern portrait suited for platform profiles, artist pages, and press thumbnails." loading="lazy" decoding="async">
+          <span class="shot__meta"><strong>December 2023 Portrait</strong><span>2023 · portrait</span></span>
+        </button>
+        <button class="shot" type="button" data-category="studio" data-title="BBJN Studio Session A" data-year="2014" data-usage="Studio archive" data-description="Studio-era documentation from the BBJN sessions." data-size="960 × 720" data-full="assets/img/gallery/bbjn-studio-2014-a.webp" data-original="assets/originals/hero-one-bbjn-studio-2014-a.jpg" aria-label="Open BBJN Studio Session A, 2014">
+          <img src="assets/img/gallery/bbjn-studio-2014-a-sm.webp" width="720" height="540" alt="BBJN Studio Session A: Studio-era documentation from the BBJN sessions." loading="lazy" decoding="async">
+          <span class="shot__meta"><strong>BBJN Studio Session A</strong><span>2014 · studio</span></span>
+        </button>
+        <button class="shot" type="button" data-category="portrait" data-title="March 2024 Alternate Portrait" data-year="2024" data-usage="Secondary press image" data-description="Alternate vertical portrait with strong editorial framing for artist bios and feature layouts." data-size="4000 × 5600" data-full="assets/img/gallery/march-2024-b.webp" data-original="assets/originals/hero-one-march-2024-b.jpg" aria-label="Open March 2024 Alternate Portrait, 2024">
+          <img src="assets/img/gallery/march-2024-b-sm.webp" width="514" height="720" alt="March 2024 Alternate Portrait: Alternate vertical portrait with strong editorial framing for artist bios and feature layouts." loading="lazy" decoding="async">
+          <span class="shot__meta"><strong>March 2024 Alternate Portrait</strong><span>2024 · portrait</span></span>
+        </button>
+        <button class="shot" type="button" data-category="stage" data-title="Performing in 2011" data-year="2011" data-usage="Performance archive" data-description="Early-stage performance image documenting the live foundation." data-size="604 × 453" data-full="assets/img/gallery/performing-2011.webp" data-original="assets/originals/hero-one-performing-2011.jpg" aria-label="Open Performing in 2011, 2011">
+          <img src="assets/img/gallery/performing-2011-sm.webp" width="604" height="453" alt="Performing in 2011: Early-stage performance image documenting the live foundation." loading="lazy" decoding="async">
+          <span class="shot__meta"><strong>Performing in 2011</strong><span>2011 · stage</span></span>
+        </button>
+        <button class="shot" type="button" data-category="portrait" data-title="Hero One 2023" data-year="2023" data-usage="Archive portrait" data-description="Vertical archive portrait documenting the visual identity before the 2024 campaign." data-size="3648 × 5376" data-full="assets/img/gallery/portrait-2023.webp" data-original="assets/originals/hero-one-portrait-2023.jpg" aria-label="Open Hero One 2023, 2023">
+          <img src="assets/img/gallery/portrait-2023-sm.webp" width="489" height="720" alt="Hero One 2023: Vertical archive portrait documenting the visual identity before the 2024 campaign." loading="lazy" decoding="async">
+          <span class="shot__meta"><strong>Hero One 2023</strong><span>2023 · portrait</span></span>
+        </button>
+        <button class="shot" type="button" data-category="campaign" data-title="VIP Vibes Mashup A" data-year="2024" data-usage="Landscape campaign creative" data-description="Landscape promotional creative for video thumbnails and wide social placements." data-size="1280 × 720" data-full="assets/img/gallery/vip-vibes-a.webp" data-original="assets/originals/hero-one-vip-vibes-a.jpg" aria-label="Open VIP Vibes Mashup A, 2024">
+          <img src="assets/img/gallery/vip-vibes-a-sm.webp" width="720" height="405" alt="VIP Vibes Mashup A: Landscape promotional creative for video thumbnails and wide social placements." loading="lazy" decoding="async">
+          <span class="shot__meta"><strong>VIP Vibes Mashup A</strong><span>2024 · campaign</span></span>
+        </button>
+        <button class="shot" type="button" data-category="legacy" data-title="First Award" data-year="2011" data-usage="Milestone archive" data-description="Milestone image documenting Hero One&#x27;s first award in 2011." data-size="453 × 604" data-full="assets/img/gallery/first-award-2011.webp" data-original="assets/originals/hero-one-first-award-2011.jpg" aria-label="Open First Award, 2011">
+          <img src="assets/img/gallery/first-award-2011-sm.webp" width="453" height="604" alt="First Award: Milestone image documenting Hero One&#x27;s first award in 2011." loading="lazy" decoding="async">
+          <span class="shot__meta"><strong>First Award</strong><span>2011 · legacy</span></span>
+        </button>
+        <button class="shot" type="button" data-category="portrait" data-title="December 2023 Editorial Portrait" data-year="2023" data-usage="Editorial profile" data-description="Companion portrait from the December 2023 session for editorial rotation and social features." data-size="3524 × 4405" data-full="assets/img/gallery/dec-2023-a.webp" data-original="assets/originals/hero-one-dec-2023-a.jpg" aria-label="Open December 2023 Editorial Portrait, 2023">
+          <img src="assets/img/gallery/dec-2023-a-sm.webp" width="576" height="720" alt="December 2023 Editorial Portrait: Companion portrait from the December 2023 session for editorial rotation and social features." loading="lazy" decoding="async">
+          <span class="shot__meta"><strong>December 2023 Editorial Portrait</strong><span>2023 · portrait</span></span>
+        </button>
+        <button class="shot" type="button" data-category="studio" data-title="MGN Workaholix" data-year="2016" data-usage="Company-era archive" data-description="Archive image tied to the MGN Workaholix era and business development period." data-size="1200 × 1600" data-full="assets/img/gallery/mgn-workaholix-2016.webp" data-original="assets/originals/hero-one-mgn-workaholix-2016.jpg" aria-label="Open MGN Workaholix, 2016">
+          <img src="assets/img/gallery/mgn-workaholix-2016-sm.webp" width="540" height="720" alt="MGN Workaholix: Archive image tied to the MGN Workaholix era and business development period." loading="lazy" decoding="async">
+          <span class="shot__meta"><strong>MGN Workaholix</strong><span>2016 · studio</span></span>
+        </button>
+        <button class="shot" type="button" data-category="studio" data-title="BBJN Studio Session B" data-year="2014" data-usage="Studio archive" data-description="Alternate image from the BBJN studio archive." data-size="960 × 720" data-full="assets/img/gallery/bbjn-studio-2014-b.webp" data-original="assets/originals/hero-one-bbjn-studio-2014-b.jpg" aria-label="Open BBJN Studio Session B, 2014">
+          <img src="assets/img/gallery/bbjn-studio-2014-b-sm.webp" width="720" height="540" alt="BBJN Studio Session B: Alternate image from the BBJN studio archive." loading="lazy" decoding="async">
+          <span class="shot__meta"><strong>BBJN Studio Session B</strong><span>2014 · studio</span></span>
+        </button>
+        <button class="shot" type="button" data-category="portrait" data-title="Hero One 2023 B" data-year="2023" data-usage="Archive portrait" data-description="Additional 2023 portrait for rotating layouts and platform-specific crops." data-size="3648 × 4560" data-full="assets/img/gallery/portrait-2023-b.webp" data-original="assets/originals/hero-one-portrait-2023-b.jpg" aria-label="Open Hero One 2023 B, 2023">
+          <img src="assets/img/gallery/portrait-2023-b-sm.webp" width="576" height="720" alt="Hero One 2023 B: Additional 2023 portrait for rotating layouts and platform-specific crops." loading="lazy" decoding="async">
+          <span class="shot__meta"><strong>Hero One 2023 B</strong><span>2023 · portrait</span></span>
+        </button>
+        <button class="shot" type="button" data-category="stage" data-title="Freshers&#x27; Nite 2011" data-year="2011" data-usage="Performance archive" data-description="Early performance archive from Freshers&#x27; Nite 2011." data-size="640 × 1024" data-full="assets/img/gallery/freshers-nite-2011.webp" data-original="assets/originals/hero-one-freshers-nite-2011.jpg" aria-label="Open Freshers&#x27; Nite 2011, 2011">
+          <img src="assets/img/gallery/freshers-nite-2011-sm.webp" width="450" height="720" alt="Freshers&#x27; Nite 2011: Early performance archive from Freshers&#x27; Nite 2011." loading="lazy" decoding="async">
+          <span class="shot__meta"><strong>Freshers&#x27; Nite 2011</strong><span>2011 · stage</span></span>
+        </button>
+        <button class="shot" type="button" data-category="campaign" data-title="VIP Vibes Mashup B" data-year="2024" data-usage="Landscape campaign creative" data-description="Alternate wide campaign creative for VIP Vibes by Hero One." data-size="1280 × 720" data-full="assets/img/gallery/vip-vibes-b.webp" data-original="assets/originals/hero-one-vip-vibes-b.jpg" aria-label="Open VIP Vibes Mashup B, 2024">
+          <img src="assets/img/gallery/vip-vibes-b-sm.webp" width="720" height="405" alt="VIP Vibes Mashup B: Alternate wide campaign creative for VIP Vibes by Hero One." loading="lazy" decoding="async">
+          <span class="shot__meta"><strong>VIP Vibes Mashup B</strong><span>2024 · campaign</span></span>
+        </button>
+        <button class="shot" type="button" data-category="portrait" data-title="Hero One 2023 C" data-year="2023" data-usage="Archive portrait" data-description="Portrait with strong vertical composition for mobile-first placements." data-size="3141 × 3926" data-full="assets/img/gallery/portrait-2023-c.webp" data-original="assets/originals/hero-one-portrait-2023-c.jpg" aria-label="Open Hero One 2023 C, 2023">
+          <img src="assets/img/gallery/portrait-2023-c-sm.webp" width="576" height="720" alt="Hero One 2023 C: Portrait with strong vertical composition for mobile-first placements." loading="lazy" decoding="async">
+          <span class="shot__meta"><strong>Hero One 2023 C</strong><span>2023 · portrait</span></span>
+        </button>
+        <button class="shot" type="button" data-category="studio" data-title="MGN Second Studio" data-year="2015" data-usage="Studio archive" data-description="Archive image from the MGN second studio period." data-size="640 × 480" data-full="assets/img/gallery/mgn-studio-2015.webp" data-original="assets/originals/hero-one-mgn-studio-2015.jpg" aria-label="Open MGN Second Studio, 2015">
+          <img src="assets/img/gallery/mgn-studio-2015-sm.webp" width="640" height="480" alt="MGN Second Studio: Archive image from the MGN second studio period." loading="lazy" decoding="async">
+          <span class="shot__meta"><strong>MGN Second Studio</strong><span>2015 · studio</span></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio" aria-labelledby="portfolio-title">
+      <div class="portfolio reveal">
+        <div>
+          <span class="eyebrow"><span class="pulse-dot"></span> Press kit &amp; portfolio</span>
+          <h2 id="portfolio-title">Numbers, press and receipts, in one place.</h2>
+          <p>The Hero One portfolio is the full press kit: streaming analytics, press clippings, industry reviews, sync signals and campaign video, ready for booking, licensing and features.</p>
+          <div class="press-chips">
+            <span class="chip">ChuneDesk</span><span class="chip">Extravafrench</span><span class="chip">Lyrical Odyssey</span><span class="chip">KTRU radio</span><span class="chip">Atlas De Música</span><span class="chip">Boulimique de Musique</span><span class="chip">HypeHub Mag</span><span class="chip">scannerFM</span>
+          </div>
+          <div class="hero-actions">
+            <a class="button button--primary" href="https://portfolio.heroone.art" target="_blank" rel="noopener">Open the portfolio <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+        <div class="stat-stack">
+          <div class="stat"><b>151,108</b><span>Symphonic streams</span></div>
+          <div class="stat"><b>109,410</b><span>SoundCloud plays</span></div>
+          <div class="stat"><b>59,268</b><span>oneRPM streams</span></div>
+          <div class="stat"><b class="gold">5,183%</b><span>SoundCloud growth</span></div>
+        </div>
+      </div>
+
+      <div class="registry">
+        <div class="card reveal"><div class="logo logo--light"><img src="assets/img/brand/bmi.webp" alt="BMI" loading="lazy"></div><strong>BMI</strong><span>Registered catalog</span></div>
+        <div class="card reveal"><div class="logo logo--light"><img src="assets/img/brand/soundexchange.webp" alt="SoundExchange" loading="lazy"></div><strong>SoundExchange</strong><span>Registered catalog</span></div>
+        <div class="card reveal"><div class="logo"><img src="assets/img/brand/mral.webp" alt="Millenial Renaissance Art Limited" loading="lazy"></div><strong>MRAL</strong><span>Millenial Renaissance Art Ltd</span></div>
+        <div class="card reveal"><div class="logo"><img src="assets/img/brand/ogs.webp" alt="Opulence Grandeur Sound" loading="lazy"></div><strong>OGS</strong><span>Opulence Grandeur Sound</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="contact-grid">
+        <div class="reveal">
+          <span class="eyebrow"><span class="pulse-dot"></span> Contact</span>
+          <h2 id="contact-title" style="margin-top:1.2rem;font-size:clamp(1.9rem,3vw,2.8rem);font-weight:800;letter-spacing:-.04em">Booking, licensing, press, collaboration.</h2>
+          <p style="margin-top:1rem;color:var(--text-muted);max-width:34rem">Use the right channel and you will reach the right desk. Follow along for releases, behind-the-scenes and real-time updates.</p>
+          <div class="socials">
+            <a class="social" href="https://www.instagram.com/heromgn" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
+            <a class="social" href="https://x.com/heromgn" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg aria-hidden="true"><use href="#i-x"/></svg></a>
+            <a class="social" href="https://www.facebook.com/heromgn" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true"><use href="#i-facebook"/></svg></a>
+            <a class="social" href="https://www.tiktok.com/@heromgn" target="_blank" rel="noopener" aria-label="TikTok"><svg aria-hidden="true"><use href="#i-tiktok"/></svg></a>
+            <a class="social" href="https://www.youtube.com/@hero-one" target="_blank" rel="noopener" aria-label="YouTube"><svg aria-hidden="true"><use href="#i-youtube"/></svg></a>
+            <a class="social" href="https://soundcloud.com/heroone" target="_blank" rel="noopener" aria-label="SoundCloud"><svg aria-hidden="true"><use href="#i-soundcloud"/></svg></a>
+          </div>
+        </div>
+        <div class="contact-list reveal">
+          <a class="contact-link" href="mailto:mraltd@yahoo.com?subject=Booking%20Hero%20One"><span><strong>Booking</strong><span>mraltd@yahoo.com</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="contact-link" href="mailto:millenialrenaissance@yahoo.com?subject=Hero%20One%20management"><span><strong>Management</strong><span>millenialrenaissance@yahoo.com</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="contact-link" href="https://portfolio.heroone.art" target="_blank" rel="noopener"><span><strong>Press kit &amp; portfolio</strong><span>portfolio.heroone.art</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="contact-link" href="https://www.reverbnation.com/label/massivegangnation" target="_blank" rel="noopener"><span><strong>Legacy label</strong><span>Massive Gang Nation</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="contact-link" href="https://metameta3.com" target="_blank" rel="noopener"><span><strong>Platform</strong><span>metameta3.com</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="closing__glow" aria-hidden="true"></div>
+      <span class="eyebrow"><span class="pulse-dot"></span> Heal · Reflect · Rise</span>
+      <h2 id="closing-title">Press play on<br>Beats &amp; Blues.</h2>
+      <div class="hero-actions">
+        <a class="button button--primary" href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noopener">Listen on Spotify</a>
+        <a class="button button--ghost" href="https://portfolio.heroone.art" target="_blank" rel="noopener">Hero One portfolio <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="Hero One">
+        <p>Beats &amp; Blues Reality Music by Adebayo Michael Manuwa. Part of the <a href="https://333bi.tech" target="_blank" rel="noopener" style="color:var(--gold-bright)">333BI</a> ecosystem.</p>
+      </div>
+      <nav aria-label="Site">
+        <h2 class="kicker">Site</h2>
+        <a href="./">Home</a>
+        <a href="./#listen">Listen</a>
+        <a href="./#journey">Journey</a>
+        <a href="./#gallery">Gallery</a>
+        <a href="philosophy/">Philosophy</a>
+        <a href="philosophy/law/">The Law</a>
+      </nav>
+      <nav aria-label="Listen">
+        <h2 class="kicker">Listen</h2>
+        <a href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://music.apple.com/ng/artist/hero-one/1520370143" target="_blank" rel="noopener">Apple Music</a>
+        <a href="https://soundcloud.com/heroone" target="_blank" rel="noopener">SoundCloud</a>
+        <a href="https://www.youtube.com/@hero-one" target="_blank" rel="noopener">YouTube</a>
+      </nav>
+      <nav aria-label="Hero One elsewhere">
+        <h2 class="kicker">Elsewhere</h2>
+        <a href="https://portfolio.heroone.art" target="_blank" rel="noopener">Portfolio &amp; press kit <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a href="mailto:mraltd@yahoo.com">Booking</a>
+        <a href="https://metameta3.com" target="_blank" rel="noopener">metameta3.com</a>
+        <a href="https://333bi.tech" target="_blank" rel="noopener">333bi.tech</a>
+      </nav>
+    </div>
+    <div class="footer-base mono">
+      <span>© 2010–<span data-current-year>2026</span> Millenial Renaissance Art Limited &amp; Opulence Grandeur Sound</span>
+      <span>Heal · Reflect · Rise</span>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
+    <div class="lightbox__img"><img id="lb-img" src="" alt=""></div>
+    <div class="lightbox__copy">
+      <div class="lightbox__nav">
+        <button class="icon-button" type="button" id="lb-prev" aria-label="Previous image"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+        <button class="icon-button" type="button" id="lb-next" aria-label="Next image"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+        <button class="icon-button" type="button" id="lb-close" aria-label="Close" style="margin-left:auto"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <div>
+        <span class="kicker" id="lb-cat"></span>
+        <h3 id="lb-title" style="margin-top:.6rem"></h3>
+        <p id="lb-desc" style="margin-top:.7rem"></p>
+      </div>
+      <dl class="meta-list">
+        <div><dt>Year</dt><dd id="lb-year"></dd></div>
+        <div><dt>Use</dt><dd id="lb-use"></dd></div>
+        <div><dt>Original</dt><dd id="lb-size"></dd></div>
+      </dl>
+      <a class="button button--ghost button--sm" id="lb-download" href="#" download>Download full resolution</a>
     </div>
   </dialog>
 
-  <script type="application/json" id="gallery-data">
-    [
-      {
-        "file": "Hero One March 2024.jpg",
-        "title": "March 2024 Portrait",
-        "year": "2024",
-        "category": "portrait",
-        "usage": "Primary press image",
-        "width": 4000,
-        "height": 5000,
-        "description": "High-resolution Hero One portrait for hero art, press packets, and campaign lead imagery.",
-        "layout": "tall"
-      },
-      {
-        "file": "Hero One March 2024 B.jpg",
-        "title": "March 2024 Alternate Portrait",
-        "year": "2024",
-        "category": "portrait",
-        "usage": "Secondary press image",
-        "width": 4000,
-        "height": 5600,
-        "description": "Alternate vertical portrait with strong editorial framing for artist bios and feature layouts.",
-        "layout": "tall"
-      },
-      {
-        "file": "Hero One Photo Dec 2023.jpg",
-        "title": "December 2023 Portrait",
-        "year": "2023",
-        "category": "portrait",
-        "usage": "Artist profile",
-        "width": 3590,
-        "height": 4488,
-        "description": "Clean modern portrait suited for platform profiles, artist pages, and press thumbnails.",
-        "layout": ""
-      },
-      {
-        "file": "Hero One Photo dEC 2023 A .jpg",
-        "title": "December 2023 Editorial Portrait",
-        "year": "2023",
-        "category": "portrait",
-        "usage": "Editorial profile",
-        "width": 3524,
-        "height": 4405,
-        "description": "Companion portrait from the December 2023 session for editorial rotation and social features.",
-        "layout": ""
-      },
-      {
-        "file": "Hero One 2023.jpg",
-        "title": "Hero One 2023",
-        "year": "2023",
-        "category": "portrait",
-        "usage": "Archive portrait",
-        "width": 3648,
-        "height": 5376,
-        "description": "Vertical archive portrait documenting the visual identity before the 2024 campaign.",
-        "layout": "tall"
-      },
-      {
-        "file": "Hero One 2023 B.jpg",
-        "title": "Hero One 2023 B",
-        "year": "2023",
-        "category": "portrait",
-        "usage": "Archive portrait",
-        "width": 3648,
-        "height": 4560,
-        "description": "Additional 2023 portrait asset for rotating layouts and platform-specific crops.",
-        "layout": ""
-      },
-      {
-        "file": "Hero One 2023 C.jpg",
-        "title": "Hero One 2023 C",
-        "year": "2023",
-        "category": "portrait",
-        "usage": "Archive portrait",
-        "width": 3141,
-        "height": 3926,
-        "description": "Portrait archive image with strong vertical composition for mobile-first placements.",
-        "layout": ""
-      },
-      {
-        "file": "VIP Vibes with Hero One Poster.jpg",
-        "title": "VIP Vibes Poster",
-        "year": "2024",
-        "category": "campaign",
-        "usage": "Release artwork",
-        "width": 960,
-        "height": 1280,
-        "description": "Poster-style campaign artwork for VIP Vibes with Hero One.",
-        "layout": ""
-      },
-      {
-        "file": "VIP VIBES by Hero One mashup -  2024 A.jpg",
-        "title": "VIP Vibes Mashup A",
-        "year": "2024",
-        "category": "campaign",
-        "usage": "Landscape campaign creative",
-        "width": 1280,
-        "height": 720,
-        "description": "Landscape promotional creative optimized for video thumbnails and wide social placements.",
-        "layout": "wide"
-      },
-      {
-        "file": "VIP VIBES by Hero One mashup - 2024 B.jpg",
-        "title": "VIP Vibes Mashup B",
-        "year": "2024",
-        "category": "campaign",
-        "usage": "Landscape campaign creative",
-        "width": 1280,
-        "height": 720,
-        "description": "Alternate wide campaign creative for VIP Vibes by Hero One.",
-        "layout": "wide"
-      },
-      {
-        "file": "Hero One at BBJN studio 2014 A.jpg",
-        "title": "BBJN Studio Session A",
-        "year": "2014",
-        "category": "studio",
-        "usage": "Studio archive",
-        "width": 960,
-        "height": 720,
-        "description": "Studio-era documentation from the BBJN sessions.",
-        "layout": "wide"
-      },
-      {
-        "file": "Hero One at BBJN studio 2014 B.jpg",
-        "title": "BBJN Studio Session B",
-        "year": "2014",
-        "category": "studio",
-        "usage": "Studio archive",
-        "width": 960,
-        "height": 720,
-        "description": "Alternate image from the BBJN studio archive.",
-        "layout": "wide"
-      },
-      {
-        "file": "Hero One MGN 2nd studio 2015.jpg",
-        "title": "MGN Second Studio",
-        "year": "2015",
-        "category": "studio",
-        "usage": "Studio archive",
-        "width": 640,
-        "height": 480,
-        "description": "Compact archive image from the MGN second studio period.",
-        "layout": ""
-      },
-      {
-        "file": "Hero at MGN workaholix 2016.jpg",
-        "title": "MGN Workaholix",
-        "year": "2016",
-        "category": "studio",
-        "usage": "Company-era archive",
-        "width": 1200,
-        "height": 1600,
-        "description": "Archive image tied to the MGN Workaholix era and business development period.",
-        "layout": ""
-      },
-      {
-        "file": "Hero One performing in 2011.jpg",
-        "title": "Performing in 2011",
-        "year": "2011",
-        "category": "stage",
-        "usage": "Performance archive",
-        "width": 604,
-        "height": 453,
-        "description": "Early-stage performance image documenting the live foundation.",
-        "layout": "wide"
-      },
-      {
-        "file": "Hero One Freshers's nite 2011.jpg",
-        "title": "Freshers's Nite 2011",
-        "year": "2011",
-        "category": "stage",
-        "usage": "Performance archive",
-        "width": 640,
-        "height": 1024,
-        "description": "Early performance archive from Freshers's Nite 2011.",
-        "layout": ""
-      },
-      {
-        "file": "Hero One's First Award 2011.jpg",
-        "title": "First Award",
-        "year": "2011",
-        "category": "legacy",
-        "usage": "Milestone archive",
-        "width": 453,
-        "height": 604,
-        "description": "Milestone image documenting Hero One's first award in 2011.",
-        "layout": ""
-      }
-    ]
-  </script>
-
-  <script>
-    const menuButton = document.querySelector(".menu-button");
-    const navLinks = document.querySelector("#nav-links");
-    const galleryGrid = document.querySelector("#gallery-grid");
-    const galleryCount = document.querySelector("#gallery-count");
-    const filterButtons = Array.from(document.querySelectorAll(".filter-button"));
-    const galleryItems = JSON.parse(document.querySelector("#gallery-data").textContent);
-    const lightbox = document.querySelector("#lightbox");
-    const lightboxClose = document.querySelector("#lightbox-close");
-
-    function setNavigation(open) {
-      navLinks.classList.toggle("is-open", open);
-      menuButton.setAttribute("aria-expanded", String(open));
-      menuButton.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
-    }
-
-    function gallerySchema(items) {
-      const schema = {
-        "@context": "https://schema.org",
-        "@type": "ImageGallery",
-        "name": "Hero One visual archive",
-        "image": items.map((item) => ({
-          "@type": "ImageObject",
-          "name": item.title,
-          "contentUrl": item.file,
-          "description": item.description,
-          "width": item.width,
-          "height": item.height,
-          "dateCreated": item.year
-        }))
-      };
-      const script = document.createElement("script");
-      script.type = "application/ld+json";
-      script.textContent = JSON.stringify(schema);
-      document.head.append(script);
-    }
-
-    function itemTemplate(item, index) {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = ["gallery-item", item.layout].filter(Boolean).join(" ");
-      button.dataset.category = item.category;
-      button.dataset.index = index;
-      button.setAttribute("aria-label", `View ${item.title}`);
-      button.innerHTML = `
-        <img src="${item.file}" width="${item.width}" height="${item.height}" alt="${item.title}: ${item.description}" loading="${index < 4 ? "eager" : "lazy"}" decoding="async">
-        <span class="gallery-meta">
-          <strong>${item.title}</strong>
-          <span>${item.year} / ${item.category} / ${item.width}x${item.height}</span>
-        </span>
-      `;
-      return button;
-    }
-
-    function renderGallery(filter = "all") {
-      const visibleItems = filter === "all" ? galleryItems : galleryItems.filter((item) => item.category === filter);
-      galleryGrid.replaceChildren(...visibleItems.map(itemTemplate));
-      galleryCount.textContent = `${visibleItems.length} image${visibleItems.length === 1 ? "" : "s"} shown / ${galleryItems.length} archived`;
-    }
-
-    function openLightbox(item) {
-      document.querySelector("#lightbox-img").src = item.file;
-      document.querySelector("#lightbox-img").alt = `${item.title}: ${item.description}`;
-      document.querySelector("#lightbox-category").textContent = item.category;
-      document.querySelector("#lightbox-title").textContent = item.title;
-      document.querySelector("#lightbox-description").textContent = item.description;
-      document.querySelector("#lightbox-year").textContent = item.year;
-      document.querySelector("#lightbox-use").textContent = item.usage;
-      document.querySelector("#lightbox-size").textContent = `${item.width} x ${item.height}`;
-      document.querySelector("#lightbox-file").textContent = item.file;
-      lightbox.showModal();
-    }
-
-    menuButton.addEventListener("click", () => setNavigation(!navLinks.classList.contains("is-open")));
-
-    navLinks.addEventListener("click", (event) => {
-      if (event.target.closest("a")) {
-        setNavigation(false);
-      }
-    });
-
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        filterButtons.forEach((item) => item.setAttribute("aria-pressed", "false"));
-        button.setAttribute("aria-pressed", "true");
-        renderGallery(button.dataset.filter);
-      });
-    });
-
-    galleryGrid.addEventListener("click", (event) => {
-      const button = event.target.closest(".gallery-item");
-      if (!button) return;
-      const currentItems = Array.from(galleryGrid.querySelectorAll(".gallery-item"));
-      const visibleIndex = currentItems.indexOf(button);
-      const filter = filterButtons.find((item) => item.getAttribute("aria-pressed") === "true").dataset.filter;
-      const visibleItems = filter === "all" ? galleryItems : galleryItems.filter((item) => item.category === filter);
-      openLightbox(visibleItems[visibleIndex]);
-    });
-
-    lightboxClose.addEventListener("click", () => lightbox.close());
-
-    lightbox.addEventListener("click", (event) => {
-      if (event.target === lightbox) {
-        lightbox.close();
-      }
-    });
-
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: "0px 0px -10% 0px", threshold: .06 });
-
-    document.querySelectorAll(".reveal").forEach((item) => revealObserver.observe(item));
-
-    renderGallery();
-    gallerySchema(galleryItems);
-  </script>
+  <script src="assets/js/signal-field.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
 </body>
 </html>
