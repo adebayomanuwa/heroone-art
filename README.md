@@ -78,4 +78,4 @@ robots.txt  sitemap.xml  site.webmanifest  vercel.json  package.json  .env.examp
 
 MP3s are git-ignored on purpose: the masters live only in the private bucket.
 
-The previous site's loose image files (`Hero One March 2024.jpg` and the rest) were renamed and moved into `assets/`. If anything outside this site hot-links the old file names, add a redirect or keep a copy at the old path.
+Root image cleanup: 17 duplicate photos were removed after SHA-256 verification against `assets/originals/`. The five original brand and registry images are preserved under `assets/originals/brand/`; the site uses the web versions in `assets/img/brand/`.

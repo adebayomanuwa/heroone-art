@@ -98,6 +98,12 @@ heroone-art/
 │   │   ├── highest-currency.json
 │   │   └── ldcat.json
 │   ├── originals/
+│   │   ├── brand/
+│   │   │   ├── bmi-icon.webp
+│   │   │   ├── heroone-logo.png
+│   │   │   ├── mral-logo.png
+│   │   │   ├── ogs-logo.png
+│   │   │   └── soundexchange-logo.png
 │   │   ├── hero-one-bbjn-studio-2014-a.jpg
 │   │   ├── hero-one-bbjn-studio-2014-b.jpg
 │   │   ├── hero-one-dec-2023-a.jpg
