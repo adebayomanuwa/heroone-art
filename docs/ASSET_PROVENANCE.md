@@ -54,3 +54,28 @@ Where every binary in this site came from and what was done to it. Hashes are th
 - `333Bi Tech/components/SignalField.tsx` → `assets/js/signal-field.js` (same shader, vanilla JS, no React).
 - `333Bi Tech/components/EcosystemGrid.tsx` → spotlight + tilt behaviour in `assets/js/site.js`.
 - *Variety-in-Observable-Consciousness.html* → `philosophy/law/index.html`. Text, structure, styles and script unchanged; fonts moved to files, wayfinding and share metadata added.
+
+## Music release (2026 roll out)
+
+| File | Source | Transformation |
+| --- | --- | --- |
+| `assets/img/music/ldcat-*.webp`, `ldcat-1200.jpg` | `Hero One 2026 Roll Out/Hero One LDCAT Cover Art.jpg` (4000×4000) | Resized to 160/512/800/1400 WebP and a 1200 JPEG share image |
+| `assets/img/music/highest-currency-*` | `Hero One 2026 Roll Out/Hero One Highest Currency, Gotta Get it Cover Art.jpg` (4000×4000) | Same as above |
+| `assets/music/ldcat.json`, `highest-currency.json` | Measured from `LDCAT.mp3` and `Highest Currency Gotta Get it.mp3` | 240-bin waveform + 20 Hz loudness envelope + duration. No audio is stored in this repo |
+| `music/index.html` | `Hero-One-Press-Release-2026.html` | Text and styles unchanged; embedded fonts moved to files; play buttons and credits links added |
+| `music/Hero-One-Press-Release-2026.pdf` | `Hero-One-Press-Release-2026.pdf` | Byte-for-byte copy |
+| `music/credits/Hero-One-Full-Credits-2026.pdf` | `Hero-One-Full-Credits-2026.pdf` | Byte-for-byte copy |
+| `tools/credits.json` → `music/*/credits/` | `music/ldcat/credits/index.html`, `music/highest-currency-gotta-get-it/credits/index.html` (Roll Out folder) | Every role and name kept exactly; pages rebuilt with `tools/build_credits.py` |
+
+## 3nity Auracle (player)
+
+| File | Source | SHA-256 (first 16) |
+| --- | --- | --- |
+| `assets/img/auracle/auracle-head-clean-512.webp` | `333Bi Tech/public/brand/auracle-head-clean-512.webp` (byte-for-byte) | `0250ac06fef95d11` |
+| `assets/img/auracle/auracle-head-visor-tight-512.webp` | `333Bi Tech/public/brand/auracle-head-visor-tight-512.webp` (byte-for-byte) | `17c4ad9a0352f0e6` |
+| `assets/img/auracle/auracle-face-160.webp` | `333Bi Tech/public/brand/auracle-face-512.webp`, resized to 160 px | `89c54d9e3a321c32` |
+
+- `333Bi Tech/components/AuracleHead.tsx` → the HEAD rig inside `assets/js/player.js` (same feature anchors, servo boot, severity-on-visor-only rule).
+- `333Bi Tech/components/DivineField.tsx` → the DivineTouch field inside `assets/js/player.js` (same nine {n/k} rings).
+- `333Bi Tech/app/globals.css` (AURACLE HEAD rig, DivineTouch field) → `assets/css/player.css`, scoped to `#hx-persist`.
+- `supabase-js` 2.45.4 UMD build → `assets/vendor/` (MIT, from the npm registry), used only by `/studio/`.

@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0d0f14">
+  <title>Studio · Hero One</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/brand/favicon-32.png">
+  <style>
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("/assets/fonts/hanken-grotesk-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Bodoni Moda"; font-style: italic; font-weight: 400 900; font-display: swap; src: url("/assets/fonts/bodoni-moda-italic.woff2") format("woff2"); }
+    :root {
+      color-scheme: dark;
+      --bg: #0d0f14; --panel: #14171e; --panel-2: #191d25; --line: rgb(255 255 255 / .08); --line-2: rgb(255 255 255 / .14);
+      --ink: #f2efe8; --ink-2: rgb(242 239 232 / .72); --ink-3: rgb(242 239 232 / .5);
+      --s1: #b08a28; --s2: #3a8ad0; --seq: #b08a28; --gold: #d8b45a;
+      --good: #4fae6a; --warn: #d08a2c;
+      --r: 16px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body { background: var(--bg); color: var(--ink); font: 15px/1.5 "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+    a { color: var(--gold); }
+    button, input, select { font: inherit; color: inherit; }
+    .wrap { width: min(100% - 32px, 1180px); margin-inline: auto; }
+    header.top { position: sticky; top: 0; z-index: 10; background: rgb(13 15 20 / .86); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+    .top .wrap { display: flex; align-items: center; gap: 16px; min-height: 64px; flex-wrap: wrap; padding-block: 10px; }
+    .brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: var(--ink); margin-right: auto; }
+    .brand b { font-weight: 800; letter-spacing: .14em; text-transform: uppercase; font-size: 13px; }
+    .brand i { font-family: "Bodoni Moda", Georgia, serif; font-size: 20px; color: var(--gold); }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .seg { display: inline-flex; border: 1px solid var(--line-2); border-radius: 999px; padding: 3px; gap: 2px; }
+    .seg button { border: 0; background: transparent; padding: 6px 12px; border-radius: 999px; cursor: pointer; color: var(--ink-2); font-size: 13px; font-weight: 600; }
+    .seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+    select, .btn, input[type=text], input[type=email] { border: 1px solid var(--line-2); background: var(--panel); border-radius: 999px; padding: 8px 14px; font-size: 13px; }
+    .btn { cursor: pointer; font-weight: 600; }
+    .btn:hover { border-color: var(--gold); }
+    .btn--solid { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    main { padding-block: 28px 80px; display: grid; gap: 18px; }
+    .banner { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; padding: 12px 16px; border: 1px solid var(--line-2); border-radius: 12px; background: var(--panel); color: var(--ink-2); font-size: 13.5px; }
+    .banner strong { color: var(--ink); }
+    .banner .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--warn); flex: none; }
+    .banner.ok .dot { background: var(--good); }
+    .banner .btn { margin-left: auto; }
+
+    .kpis { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+    .kpi { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 16px 16px 14px; min-width: 0; }
+    .kpi dt { font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); font-weight: 700; }
+    .kpi dd { margin: 8px 0 0; font-size: clamp(24px, 2.6vw, 32px); font-weight: 750; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+    .kpi small { display: block; margin-top: 2px; color: var(--ink-3); font-size: 12px; }
+
+    .grid2 { display: grid; grid-template-columns: 1.6fr 1fr; gap: 18px; }
+    .grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 18px 18px 16px; min-width: 0; }
+    .card h2 { margin: 0; font-size: 15px; font-weight: 700; letter-spacing: -.01em; }
+    .card .sub { margin: 2px 0 14px; color: var(--ink-3); font-size: 12.5px; }
+    .legend { display: flex; gap: 16px; margin: -4px 0 10px; font-size: 12.5px; color: var(--ink-2); }
+    .legend span { display: inline-flex; align-items: center; gap: 7px; }
+    .legend i { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+
+    .chart { position: relative; }
+    .chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+    .chart .grid line { stroke: var(--line); }
+    .chart .axis text { fill: var(--ink-3); font-size: 11px; font-variant-numeric: tabular-nums; }
+    .chart .lab { fill: var(--ink-2); font-size: 11.5px; font-weight: 600; }
+    .chart .xh { stroke: var(--line-2); }
+    .tip { position: absolute; pointer-events: none; background: #20242d; border: 1px solid var(--line-2); border-radius: 10px; padding: 8px 10px; font-size: 12px; white-space: nowrap; box-shadow: 0 12px 30px -12px rgb(0 0 0 / .7); opacity: 0; transition: opacity .12s; transform: translate(-50%, calc(-100% - 12px)); }
+    .tip.on { opacity: 1; }
+    .tip b { display: block; color: var(--ink); margin-bottom: 3px; }
+    .tip span { display: flex; align-items: center; gap: 6px; color: var(--ink-2); }
+    .tip i { width: 8px; height: 8px; border-radius: 2px; }
+    details.tbl { margin-top: 10px; font-size: 12.5px; color: var(--ink-3); }
+    details.tbl summary { cursor: pointer; }
+    details.tbl .scroll { max-height: 220px; overflow: auto; margin-top: 8px; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+    th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+    th { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); font-weight: 700; }
+    td.n, th.n { text-align: right; }
+    tbody tr:last-child td { border-bottom: 0; }
+    .tscroll { overflow-x: auto; }
+
+    .bars { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+    .bars li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; font-size: 13px; }
+    .bars .k { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--ink); }
+    .bars .v { color: var(--ink-2); font-variant-numeric: tabular-nums; }
+    .bars .b { grid-column: 1 / -1; height: 6px; border-radius: 3px; background: rgb(255 255 255 / .05); overflow: hidden; }
+    .bars .b i { display: block; height: 100%; border-radius: 3px; background: var(--seq); }
+    .empty { color: var(--ink-3); font-size: 13px; padding: 10px 0; }
+
+    .utm { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)) auto; gap: 8px; align-items: center; }
+    .utm input, .utm select { width: 100%; border-radius: 10px; }
+    .utm output { grid-column: 1 / -1; display: block; padding: 10px 12px; border-radius: 10px; background: var(--panel-2); border: 1px dashed var(--line-2); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; overflow-wrap: anywhere; color: var(--ink-2); }
+
+    .signin { max-width: 440px; margin: 10vh auto 0; text-align: center; }
+    .signin h1 { font-family: "Bodoni Moda", Georgia, serif; font-style: italic; font-weight: 500; font-size: 44px; margin: 0 0 6px; color: var(--gold); }
+    .signin p { color: var(--ink-2); margin: 0 0 20px; }
+    .signin form { display: flex; gap: 8px; }
+    .signin input { flex: 1; min-width: 0; padding: 12px 16px; }
+    .signin .btn { padding: 12px 18px; }
+    .signin .msg { margin-top: 14px; font-size: 13.5px; color: var(--ink-2); min-height: 1.5em; }
+    [hidden] { display: none !important; }
+    .loading main > :not(.banner) { opacity: .5; transition: opacity .2s; }
+
+    @media (max-width: 1000px) { .kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); } .grid2, .grid3 { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) {
+      .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .utm { grid-template-columns: 1fr 1fr; } .utm .btn { grid-column: 1 / -1; }
+      .signin form { flex-direction: column; }
+      .brand i { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="/"><b>Hero One</b><i>Studio</i></a>
+      <div class="filters" id="filters" hidden>
+        <div class="seg" role="group" aria-label="Date range" id="range">
+          <button type="button" data-days="7" aria-pressed="false">7d</button>
+          <button type="button" data-days="30" aria-pressed="true">30d</button>
+          <button type="button" data-days="90" aria-pressed="false">90d</button>
+          <button type="button" data-days="365" aria-pressed="false">1y</button>
+        </div>
+        <label class="sr" hidden for="track">Song</label>
+        <select id="track" aria-label="Song"><option value="">All songs</option></select>
+        <button class="btn" type="button" id="refresh">Refresh</button>
+        <button class="btn" type="button" id="signout" hidden>Sign out</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="signin wrap" id="signin" hidden>
+    <h1>Studio</h1>
+    <p>Private listening stats for heroone.art. Enter your email and we'll send you a sign-in link.</p>
+    <form id="signin-form">
+      <input type="email" id="email" required autocomplete="email" placeholder="you@example.com" aria-label="Email">
+      <button class="btn btn--solid" type="submit">Send link</button>
+    </form>
+    <div class="msg" id="signin-msg" role="status"></div>
+  </section>
+
+  <main class="wrap" id="dash" hidden>
+    <div class="banner" id="mode-banner"></div>
+    <div class="banner ok" id="exclude-banner"><span class="dot"></span><span id="exclude-text"></span><button class="btn" type="button" id="exclude-toggle"></button></div>
+
+    <dl class="kpis" id="kpis"></dl>
+
+    <div class="grid2">
+      <section class="card">
+        <h2>Plays per day</h2>
+        <p class="sub">A play starts when someone presses play. A stream counts once they've listened for 30 seconds.</p>
+        <div class="legend"><span><i style="background:var(--s1)"></i>Plays</span><span><i style="background:var(--s2)"></i>Streams (30s+)</span></div>
+        <div class="chart" id="chart-plays"></div>
+        <details class="tbl"><summary>View as table</summary><div class="scroll" id="tbl-plays"></div></details>
+      </section>
+      <section class="card">
+        <h2>Site visits per day</h2>
+        <p class="sub">Page views across heroone.art</p>
+        <div class="chart" id="chart-views"></div>
+        <details class="tbl"><summary>View as table</summary><div class="scroll" id="tbl-views"></div></details>
+      </section>
+    </div>
+
+    <section class="card">
+      <h2>Songs</h2>
+      <p class="sub">How each record is doing in this range</p>
+      <div class="tscroll" id="tracks"></div>
+    </section>
+
+    <div class="grid3">
+      <section class="card"><h2>Where listeners came from</h2><p class="sub">Plays by source (UTM tag, then referring site)</p><div id="sources"></div></section>
+      <section class="card"><h2>Where they are</h2><p class="sub">Plays by city and country</p><div id="places"></div></section>
+      <section class="card"><h2>Devices</h2><p class="sub">Plays by device type</p><div id="devices"></div></section>
+    </div>
+
+    <div class="grid2">
+      <section class="card"><h2>Recent listens</h2><p class="sub">Latest 30 plays</p><div class="tscroll" id="recent"></div></section>
+      <div style="display:grid;gap:18px;align-content:start">
+        <section class="card"><h2>How visitors found the site</h2><p class="sub">Page views by source</p><div id="visit-sources"></div></section>
+        <section class="card"><h2>Top pages</h2><p class="sub">Page views by page</p><div id="pages"></div></section>
+      </div>
+    </div>
+
+    <section class="card">
+      <h2>Trackable share link</h2>
+      <p class="sub">Tag every link you post. Plays from that link show under its source above.</p>
+      <form class="utm" id="utm">
+        <select id="u-page" aria-label="Page"><option value="/music/">Music page</option><option value="/">Home page</option></select>
+        <input type="text" id="u-source" placeholder="Source (instagram)" aria-label="Source">
+        <input type="text" id="u-medium" placeholder="Medium (story)" aria-label="Medium">
+        <input type="text" id="u-campaign" placeholder="Campaign (ldcat)" aria-label="Campaign">
+        <button class="btn" type="button" id="u-copy">Copy link</button>
+        <output id="u-out"></output>
+      </form>
+    </section>
+  </main>
+
+  <script src="/assets/js/music-config.js"></script>
+  <script src="/assets/vendor/supabase-js-2.45.4.umd.js"></script>
+  <script>
+  (function () {
+    'use strict';
+    var CFG = window.HERO_MUSIC || {}, TR = CFG.tracks || [];
+    var $ = function (s) { return document.querySelector(s); };
+    var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+    var nf = new Intl.NumberFormat('en');
+    var num = function (n) { return nf.format(Math.round(n || 0)); };
+    var regionName = (function () { try { var d = new Intl.DisplayNames(['en'], { type: 'region' }); return function (c) { try { return c ? d.of(c) : ''; } catch (e) { return c; } }; } catch (e) { return function (c) { return c || ''; }; } })();
+    var mmss = function (s) { s = Math.round(s || 0); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
+    var titleOf = function (id) { var t = TR.find(function (x) { return x.id === id; }); return t ? t.title : id; };
+    var state = { days: 30, track: '' };
+    var ls = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} } };
+
+    TR.forEach(function (t) { var o = document.createElement('option'); o.value = t.id; o.textContent = t.title; $('#track').appendChild(o); });
+
+    /* -------- your own plays never count: this browser is excluded once you open the studio -------- */
+    if (ls.get('hx_exclude') == null) ls.set('hx_exclude', '1');
+    function paintExclude() {
+      var on = ls.get('hx_exclude') === '1';
+      $('#exclude-banner').classList.toggle('ok', on);
+      $('#exclude-text').innerHTML = on ? '<strong>Your plays aren’t counted.</strong> This browser is excluded from the stats, so testing the site won’t inflate your numbers.' : '<strong>This browser is being counted.</strong> Plays from this device show up in your stats.';
+      $('#exclude-toggle').textContent = on ? 'Count this browser' : 'Exclude this browser';
+    }
+    $('#exclude-toggle').addEventListener('click', function () { ls.set('hx_exclude', ls.get('hx_exclude') === '1' ? '0' : '1'); paintExclude(); });
+    paintExclude();
+
+    /* ---------------------------------- data ---------------------------------- */
+    var live = !!(CFG.supabaseUrl && CFG.supabaseAnonKey && window.supabase);
+    var sb = live ? window.supabase.createClient(CFG.supabaseUrl, CFG.supabaseAnonKey, { auth: { persistSession: true, detectSessionInUrl: true, flowType: 'pkce' } }) : null;
+
+    function fetchStats() {
+      if (!live) return Promise.resolve(sample(state.days, state.track));
+      return sb.rpc('heroone_studio_stats', { p_days: state.days, p_track: state.track || null }).then(function (r) {
+        if (r.error) throw r.error;
+        return r.data;
+      });
+    }
+
+    function load() {
+      document.body.classList.add('loading');
+      fetchStats().then(function (d) { render(d); }).catch(function (e) {
+        var msg = /not authorised/i.test(e.message || '') ? 'This account isn’t on the studio list. Add its email to heroone.studio_admins in Supabase.' : (e.message || 'Could not load stats.');
+        setBanner('warn', '<strong>Couldn’t load stats.</strong> ' + esc(msg));
+      }).finally(function () { document.body.classList.remove('loading'); });
+    }
+
+    function setBanner(kind, html) { var b = $('#mode-banner'); b.className = 'banner' + (kind === 'ok' ? ' ok' : ''); b.innerHTML = '<span class="dot"></span><span>' + html + '</span>'; b.hidden = false; }
+
+    /* --------------------------------- render --------------------------------- */
+    function render(d) {
+      var t = d.totals || {};
+      if (live) setBanner('ok', '<strong>Live.</strong> Updated ' + new Date(d.generated_at || Date.now()).toLocaleString() + '.');
+      var rate = t.plays ? Math.round((t.completions / t.plays) * 100) : 0;
+      var k = [
+        ['Plays', num(t.plays), 'Presses of play'],
+        ['Streams', num(t.streams_30s), '30 seconds or more'],
+        ['Listeners', num(t.listeners), 'Different people'],
+        ['Finished', rate + '%', num(t.completions) + ' listened to the end'],
+        ['Hours listened', (t.listening_hours || 0).toLocaleString('en'), 'Total time'],
+        ['Site visitors', num(t.visitors), num(t.pageviews) + ' page views'],
+      ];
+      $('#kpis').innerHTML = k.map(function (x) { return '<div class="kpi"><dt>' + x[0] + '</dt><dd>' + x[1] + '</dd><small>' + esc(x[2]) + '</small></div>'; }).join('');
+
+      var daily = d.daily || [];
+      lineChart($('#chart-plays'), daily, [{ key: 'plays', name: 'Plays', color: 'var(--s1)' }, { key: 'streams', name: 'Streams (30s+)', color: 'var(--s2)' }]);
+      barChart($('#chart-views'), daily, { key: 'views', name: 'Page views', color: 'var(--seq)' });
+      $('#tbl-plays').innerHTML = table(['Day', 'Plays', 'Streams'], daily.slice().reverse().map(function (r) { return [day(r.day), num(r.plays), num(r.streams)]; }));
+      $('#tbl-views').innerHTML = table(['Day', 'Page views'], daily.slice().reverse().map(function (r) { return [day(r.day), num(r.views)]; }));
+
+      $('#tracks').innerHTML = table(['Song', 'Plays', 'Streams', 'Listeners', 'Finished', 'Avg listen'], (d.tracks || []).map(function (r) {
+        return [esc(r.title), num(r.plays), num(r.streams_30s), num(r.listeners), num(r.completions), mmss(r.avg_listen_s)];
+      }));
+      $('#sources').innerHTML = bars((d.sources || []).map(function (r) { return [prettySource(r.source), r.plays, num(r.plays) + ' · ' + num(r.streams) + ' streams']; }));
+      $('#places').innerHTML = bars((d.places || []).map(function (r) { return [placeName(r), r.plays, num(r.plays) + ' · ' + num(r.listeners) + ' people']; }));
+      $('#devices').innerHTML = bars((d.devices || []).map(function (r) { return [cap(r.device || 'unknown'), r.plays, num(r.plays)]; }));
+      $('#visit-sources').innerHTML = bars((d.visit_sources || []).map(function (r) { return [prettySource(r.source), r.views, num(r.views)]; }));
+      $('#pages').innerHTML = bars((d.pages || []).map(function (r) { return [r.page || '/', r.views, num(r.views)]; }));
+      $('#recent').innerHTML = table(['When', 'Song', 'From', 'Source', 'Listened'], (d.recent || []).map(function (r) {
+        return [new Date(r.started).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }), esc(titleOf(r.track_id)), esc(placeName(r)), esc(prettySource(r.source)), mmss(r.listened_s) + (r.completed ? ' ✓' : '')];
+      }));
+    }
+    function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+    function day(s) { return new Date(s + (String(s).length <= 10 ? 'T00:00:00' : '')).toLocaleDateString([], { month: 'short', day: 'numeric' }); }
+    function placeName(r) { var c = regionName(r.country); return [r.city, c].filter(Boolean).join(', ') || 'Unknown'; }
+    function prettySource(s) { if (!s || s === 'direct') return 'Direct / no referrer'; return s.replace(/^www\./, ''); }
+    function table(head, rows) {
+      if (!rows.length) return '<p class="empty">Nothing in this range yet.</p>';
+      return '<table><thead><tr>' + head.map(function (h, i) { return '<th' + (i ? ' class="n"' : '') + '>' + h + '</th>'; }).join('') + '</tr></thead><tbody>' +
+        rows.map(function (r) { return '<tr>' + r.map(function (c, i) { return '<td' + (i ? ' class="n"' : '') + '>' + c + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table>';
+    }
+    function bars(rows) {
+      rows = rows.slice(0, 8);
+      if (!rows.length) return '<p class="empty">Nothing in this range yet.</p>';
+      var max = Math.max.apply(null, rows.map(function (r) { return r[1] || 0; })) || 1;
+      return '<ul class="bars">' + rows.map(function (r) { return '<li><span class="k" title="' + esc(r[0]) + '">' + esc(r[0]) + '</span><span class="v">' + r[2] + '</span><span class="b"><i style="width:' + Math.max(2, (r[1] / max) * 100) + '%"></i></span></li>'; }).join('') + '</ul>';
+    }
+
+    /* ------------------------------ charts (SVG) ------------------------------ */
+    function niceMax(v) { if (v <= 4) return 4; var p = Math.pow(10, Math.floor(Math.log10(v))), n = v / p; return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 5 ? 5 : 10) * p; }
+    function frame(el, data, maxV) {
+      var W = el.clientWidth || 600, H = 220, m = { l: 34, r: 12, t: 10, b: 24 };
+      var iw = W - m.l - m.r, ih = H - m.t - m.b, top = niceMax(maxV);
+      var x = function (i) { return m.l + (data.length < 2 ? iw / 2 : (i / (data.length - 1)) * iw); };
+      var y = function (v) { return m.t + ih - (v / top) * ih; };
+      var g = '<g class="grid">', ax = '<g class="axis">';
+      for (var i = 0; i <= 4; i++) { var v = (top / 4) * i, yy = y(v); g += '<line x1="' + m.l + '" x2="' + (W - m.r) + '" y1="' + yy + '" y2="' + yy + '"/>'; ax += '<text x="' + (m.l - 8) + '" y="' + (yy + 4) + '" text-anchor="end">' + num(v) + '</text>'; }
+      var step = Math.ceil(data.length / Math.max(2, Math.floor(iw / 80)));
+      data.forEach(function (r, i) { if (i % step === 0 || i === data.length - 1) ax += '<text x="' + x(i) + '" y="' + (H - 6) + '" text-anchor="middle">' + day(r.day) + '</text>'; });
+      return { W: W, H: H, m: m, iw: iw, ih: ih, x: x, y: y, base: g + '</g>' + ax + '</g>' };
+    }
+    function attachHover(el, f, data, series, mode) {
+      var tip = document.createElement('div'); tip.className = 'tip'; el.appendChild(tip);
+      var svg = el.querySelector('svg'), xh = svg.querySelector('.xh'), dots = svg.querySelectorAll('.hd');
+      function at(evt) {
+        var r = svg.getBoundingClientRect(), px = (evt.clientX - r.left) * (f.W / r.width);
+        var i = data.length < 2 ? 0 : Math.round(((px - f.m.l) / f.iw) * (data.length - 1));
+        return Math.max(0, Math.min(data.length - 1, i));
+      }
+      function show(i) {
+        var row = data[i], cx = f.x(i);
+        if (xh) { xh.setAttribute('x1', cx); xh.setAttribute('x2', cx); xh.style.opacity = 1; }
+        dots.forEach(function (d, k) { d.setAttribute('cx', cx); d.setAttribute('cy', f.y(row[series[k].key])); d.style.opacity = 1; });
+        svg.querySelectorAll('.bar').forEach(function (b, k) { b.style.opacity = (mode === 'bar' && k !== i) ? .45 : 1; });
+        tip.innerHTML = '<b>' + day(row.day) + '</b>' + series.map(function (s) { return '<span><i style="background:' + s.color + '"></i>' + s.name + ': ' + num(row[s.key]) + '</span>'; }).join('');
+        var r = svg.getBoundingClientRect(), sx = r.width / f.W, maxY = Math.min.apply(null, series.map(function (s) { return f.y(row[s.key]); }));
+        tip.style.left = Math.max(70, Math.min(r.width - 70, cx * sx)) + 'px'; tip.style.top = (maxY * sx) + 'px'; tip.classList.add('on');
+      }
+      function hide() { tip.classList.remove('on'); if (xh) xh.style.opacity = 0; dots.forEach(function (d) { d.style.opacity = 0; }); svg.querySelectorAll('.bar').forEach(function (b) { b.style.opacity = 1; }); }
+      svg.addEventListener('pointermove', function (e) { if (data.length) show(at(e)); });
+      svg.addEventListener('pointerleave', hide);
+    }
+    function lineChart(el, data, series) {
+      var maxV = Math.max(1, Math.max.apply(null, data.map(function (r) { return Math.max.apply(null, series.map(function (s) { return r[s.key] || 0; })); })));
+      var f = frame(el, data, maxV), s = '';
+      series.forEach(function (se, k) {
+        var d = data.map(function (r, i) { return (i ? 'L' : 'M') + f.x(i).toFixed(1) + ' ' + f.y(r[se.key] || 0).toFixed(1); }).join('');
+        s += '<path d="' + d + '" fill="none" stroke="' + se.color + '" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>';
+        if (data.length) { var li = data.length - 1, v = data[li][se.key] || 0; s += '<circle cx="' + f.x(li) + '" cy="' + f.y(v) + '" r="4" fill="' + se.color + '" stroke="var(--panel)" stroke-width="2"/>'; }
+      });
+      var hover = '<line class="xh" y1="' + f.m.t + '" y2="' + (f.m.t + f.ih) + '" style="opacity:0"/>' + series.map(function (se) { return '<circle class="hd" r="4.5" fill="' + se.color + '" stroke="var(--panel)" stroke-width="2" style="opacity:0"/>'; }).join('');
+      el.innerHTML = '<svg viewBox="0 0 ' + f.W + ' ' + f.H + '" role="img" aria-label="Plays and streams per day">' + f.base + s + hover + '<rect x="' + f.m.l + '" y="0" width="' + f.iw + '" height="' + f.H + '" fill="transparent"/></svg>';
+      attachHover(el, f, data, series, 'line');
+    }
+    function barChart(el, data, se) {
+      var maxV = Math.max(1, Math.max.apply(null, data.map(function (r) { return r[se.key] || 0; })));
+      var f = frame(el, data, maxV), bw = Math.max(2, Math.min(18, f.iw / Math.max(1, data.length) - 2)), s = '';
+      // bars sit inside the plot: shift x scale by half a bar so the first/last aren't clipped
+      var inner = f.iw - bw, x = function (i) { return f.m.l + bw / 2 + (data.length < 2 ? inner / 2 : (i / (data.length - 1)) * inner); };
+      f.x = x;
+      data.forEach(function (r, i) {
+        var v = r[se.key] || 0, y0 = f.m.t + f.ih, y1 = f.y(v), h = Math.max(0, y0 - y1), rr = Math.min(4, bw / 2, h);
+        var xl = x(i) - bw / 2;
+        s += '<path class="bar" fill="' + se.color + '" d="M' + xl + ' ' + y0 + 'V' + (y1 + rr) + 'Q' + xl + ' ' + y1 + ' ' + (xl + rr) + ' ' + y1 + 'H' + (xl + bw - rr) + 'Q' + (xl + bw) + ' ' + y1 + ' ' + (xl + bw) + ' ' + (y1 + rr) + 'V' + y0 + 'Z"/>';
+      });
+      el.innerHTML = '<svg viewBox="0 0 ' + f.W + ' ' + f.H + '" role="img" aria-label="Page views per day">' + f.base + s + '<rect x="' + f.m.l + '" y="0" width="' + f.iw + '" height="' + f.H + '" fill="transparent"/></svg>';
+      attachHover(el, f, data, [se], 'bar');
+    }
+
+    /* ------------------------------ sample preview ------------------------------ */
+    function sample(days, track) {
+      var rnd = (function (s) { return function () { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; }; })(days * 7 + (track ? 3 : 1));
+      var daily = [], now = new Date();
+      for (var i = days - 1; i >= 0; i--) {
+        var dt = new Date(now); dt.setDate(now.getDate() - i);
+        var p = Math.round((track ? 6 : 12) * (0.4 + rnd()) * (1 + (days - i) / days));
+        daily.push({ day: dt.toISOString().slice(0, 10), plays: p, streams: Math.round(p * (0.55 + rnd() * 0.25)), views: Math.round(p * (2.2 + rnd())) });
+      }
+      var sum = function (k) { return daily.reduce(function (a, r) { return a + r[k]; }, 0); };
+      var plays = sum('plays'), streams = sum('streams'), views = sum('views');
+      var tr = TR.filter(function (t) { return !track || t.id === track; }).map(function (t, i) { var share = track ? 1 : (i ? .42 : .58); return { id: t.id, title: t.full || t.title, plays: Math.round(plays * share), streams_30s: Math.round(streams * share), completions: Math.round(plays * share * .38), listeners: Math.round(plays * share * .62), avg_listen_s: 96 + i * 21 }; });
+      var src = [['instagram', .34], ['direct', .22], ['tiktok', .16], ['open.spotify.com', .1], ['x.com', .08], ['whatsapp', .06], ['google.com', .04]];
+      var plc = [['NG', 'Lagos', .31], ['GB', 'London', .17], ['US', 'Houston', .12], ['NG', 'Abuja', .1], ['US', 'Atlanta', .08], ['CA', 'Toronto', .06], ['GH', 'Accra', .05], ['FR', 'Paris', .04]];
+      var recent = [];
+      for (var j = 0; j < 30; j++) { var pl = plc[j % plc.length], tt = (track ? TR.find(function (t) { return t.id === track; }) : TR[j % TR.length]); recent.push({ started: new Date(now - j * 47 * 60000).toISOString(), track_id: tt.id, country: pl[0], city: pl[1], source: src[j % src.length][0], listened_s: Math.round(20 + rnd() * 200), completed: rnd() > .6 }); }
+      return {
+        range_days: days, generated_at: now.toISOString(),
+        totals: { pageviews: views, visitors: Math.round(views * .58), plays: plays, streams_30s: streams, completions: Math.round(plays * .38), listeners: Math.round(plays * .62), listening_hours: Math.round(streams * 2.4 / 6) / 10 },
+        tracks: tr, daily: daily,
+        sources: src.map(function (s) { return { source: s[0], plays: Math.round(plays * s[1]), streams: Math.round(streams * s[1]) }; }),
+        visit_sources: src.map(function (s) { return { source: s[0], views: Math.round(views * s[1]) }; }),
+        places: plc.map(function (p) { return { country: p[0], city: p[1], plays: Math.round(plays * p[2]), listeners: Math.round(plays * p[2] * .6) }; }),
+        devices: [{ device: 'mobile', plays: Math.round(plays * .74) }, { device: 'desktop', plays: Math.round(plays * .21) }, { device: 'tablet', plays: Math.round(plays * .05) }],
+        pages: [{ page: '/music/', views: Math.round(views * .46) }, { page: '/', views: Math.round(views * .38) }, { page: '/philosophy/law/', views: Math.round(views * .1) }, { page: '/philosophy/', views: Math.round(views * .06) }],
+        recent: recent,
+      };
+    }
+
+    /* ---------------------------------- wiring ---------------------------------- */
+    document.querySelectorAll('#range button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        document.querySelectorAll('#range button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+        state.days = +b.dataset.days; load();
+      });
+    });
+    $('#track').addEventListener('change', function (e) { state.track = e.target.value; load(); });
+    $('#refresh').addEventListener('click', load);
+    var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(load, 250); });
+
+    function utm() {
+      var p = new URLSearchParams(), v = function (id) { return $('#' + id).value.trim().toLowerCase().replace(/\s+/g, '-'); };
+      if (v('u-source')) p.set('utm_source', v('u-source'));
+      if (v('u-medium')) p.set('utm_medium', v('u-medium'));
+      if (v('u-campaign')) p.set('utm_campaign', v('u-campaign'));
+      var q = p.toString();
+      $('#u-out').textContent = 'https://heroone.art' + $('#u-page').value + (q ? '?' + q : '');
+    }
+    $('#utm').addEventListener('input', utm);
+    $('#u-copy').addEventListener('click', function () {
+      var t = $('#u-out').textContent, b = this;
+      (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy link'; }, 1600); }).catch(function () {});
+    });
+    utm();
+
+    function showDash() { $('#signin').hidden = true; $('#dash').hidden = false; $('#filters').hidden = false; load(); }
+    function showSignin() { $('#signin').hidden = false; $('#dash').hidden = true; $('#filters').hidden = true; }
+
+    if (!live) {
+      showDash();
+      setBanner('warn', '<strong>Preview with sample numbers.</strong> Add your Supabase URL and anon key to <code>assets/js/music-config.js</code> to see real listeners.');
+      return;
+    }
+    $('#signout').hidden = false;
+    $('#signout').addEventListener('click', function () { sb.auth.signOut().then(showSignin); });
+    $('#signin-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var m = $('#signin-msg'); m.textContent = 'Sending…';
+      sb.auth.signInWithOtp({ email: $('#email').value.trim(), options: { emailRedirectTo: location.origin + '/studio/', shouldCreateUser: false } }).then(function (r) {
+        m.textContent = r.error ? r.error.message : 'Check your inbox for the sign-in link.';
+      });
+    });
+    sb.auth.getSession().then(function (r) { r.data.session ? showDash() : showSignin(); });
+    sb.auth.onAuthStateChange(function (ev, session) { if (ev === 'SIGNED_IN' && session && $('#dash').hidden) showDash(); if (ev === 'SIGNED_OUT') showSignin(); });
+  })();
+  </script>
+</body>
+</html>

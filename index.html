@@ -8,10 +8,10 @@
   <meta name="description" content="The official home of Hero One, the artist and producer Adebayo Michael Manuwa. Beats & Blues Reality Music: listen, follow the journey, browse the visual archive, and read the philosophy.">
   <meta name="author" content="Hero One">
   <link rel="canonical" href="https://heroone.art/">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/brand/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/brand/icon-192.png">
-  <link rel="apple-touch-icon" href="assets/img/brand/apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/brand/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/brand/icon-192.png">
+  <link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://heroone.art/">
   <meta property="og:site_name" content="Hero One">
@@ -23,10 +23,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@heromgn">
   <meta name="twitter:image" content="https://heroone.art/assets/img/og-image.jpg">
-  <link rel="preload" href="assets/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/dm-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/img/gallery/march-2024.webp" as="image">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="preload" href="/assets/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dm-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/img/gallery/march-2024.webp" as="image">
+  <link rel="stylesheet" href="/assets/css/site.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,6 +50,8 @@
     ]
   }
   </script>
+  <meta name="hx-player" content="dark">
+  <link rel="stylesheet" href="/assets/css/player.css" data-hx-persist>
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -75,12 +77,12 @@
 
   <header class="site-header">
     <a class="brand-lockup" href="#top" aria-label="Hero One, back to top">
-      <img src="assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="">
+      <img src="/assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="">
       <span>Beats &amp; Blues<br>Reality Music</span>
     </a>
     <nav class="site-nav" aria-label="Primary">
       <a href="#identity">Identity</a>
-      <a href="#listen">Listen</a>
+      <a href="/music/">Music</a>
       <a href="#journey">Journey</a>
       <a href="#philosophy">Philosophy</a>
       <a href="#gallery">Gallery</a>
@@ -99,21 +101,16 @@
 
       <div class="hero-copy">
         <span class="eyebrow"><span class="pulse-dot"></span> Official artist site</span>
-        <img class="hero-logo" src="assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="Hero One">
+        <img class="hero-logo" src="/assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="Hero One">
         <h1 id="hero-title">
           <span class="line">Beats &amp; Blues</span>
           <span class="line line--gold">Reality Music.</span>
         </h1>
         <p class="hero-lede">Adebayo Michael Manuwa makes grounded stories over soulful trap, afrofusion and modern hip-hop, and builds the visual world with the same care as the records.</p>
         <div class="hero-actions">
-          <a class="button button--primary" href="#listen">Listen now</a>
+          <a class="button button--primary" href="/music/" data-play="ldcat">Listen now</a>
           <a class="button button--ghost" href="https://portfolio.heroone.art" target="_blank" rel="noopener">View portfolio <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
-        <dl class="hero-stats">
-          <div><dt>Streams in 2025</dt><dd>319K+</dd></div>
-          <div><dt>Songs in 2024</dt><dd>24</dd></div>
-          <div><dt>First imprint</dt><dd>2010</dd></div>
-        </dl>
       </div>
 
       <div class="hero-stage">
@@ -123,7 +120,7 @@
           <circle class="o3" cx="310" cy="387" r="236"/>
         </svg>
         <figure class="portrait">
-          <img src="assets/img/gallery/march-2024.webp" width="1440" height="1800" alt="Hero One in white under a warm spotlight, March 2024" fetchpriority="high">
+          <img src="/assets/img/gallery/march-2024.webp" width="1440" height="1800" alt="Hero One in white under a warm spotlight, March 2024" fetchpriority="high">
           <figcaption><strong>Hero One</strong><span class="mono">MMXXIV</span></figcaption>
         </figure>
         <span class="float-chip float-chip--a"><i></i> Artist · Producer</span>
@@ -136,6 +133,43 @@
         <span><i></i>Beats &amp; Blues</span><span><i></i>Afrofusion</span><span><i></i>Soulful trap</span><span><i></i>Modern hip-hop</span><span><i></i>Ghetto Gospel Reality</span><span><i></i>Opulence Grandeur Sound</span><span><i></i>Millenial Renaissance Art</span><span><i></i>Heal · Reflect · Rise</span><span><i></i>Variety in Observable Consciousness</span><span><i></i>Beats &amp; Blues</span><span><i></i>Afrofusion</span><span><i></i>Soulful trap</span><span><i></i>Modern hip-hop</span><span><i></i>Ghetto Gospel Reality</span><span><i></i>Opulence Grandeur Sound</span><span><i></i>Millenial Renaissance Art</span><span><i></i>Heal · Reflect · Rise</span><span><i></i>Variety in Observable Consciousness</span>
       </div>
     </div>
+
+    <section class="section new-music" id="new-music" aria-labelledby="new-music-title">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow"><span class="pulse-dot"></span> Music · 2026</span>
+          <h2 id="new-music-title">LDCAT &amp; Highest Currency, Gotta Get it</h2>
+        </div>
+        <p>Both significantly grounded in “Beats &amp; Blues”.</p>
+      </div>
+      <div class="nm-grid">
+        <article class="nm-card reveal">
+          <button class="nm-art" type="button" data-play="ldcat" aria-label="Play LDCAT">
+            <img src="/assets/img/music/ldcat-512.webp" srcset="/assets/img/music/ldcat-512.webp 512w, /assets/img/music/ldcat-800.webp 800w" sizes="(max-width: 720px) 90vw, 420px" width="800" height="800" alt="LDCAT cover art" loading="lazy">
+            <span class="nm-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="i-play" d="M8 5.5v13l11-6.5z"/><path class="i-pause" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></span>
+          </button>
+          <div class="nm-meta">
+            <h3>LDCAT</h3>
+            <p>Love Don’t Cost a Thang · <a href="/music/ldcat/credits/">Credits</a></p>
+          </div>
+          <button class="button button--sm button--ghost nm-btn" type="button" data-play="ldcat"><span data-play-label>Play</span></button>
+        </article>
+        <article class="nm-card reveal">
+          <button class="nm-art" type="button" data-play="highest-currency" aria-label="Play Highest Currency, Gotta Get it">
+            <img src="/assets/img/music/highest-currency-512.webp" srcset="/assets/img/music/highest-currency-512.webp 512w, /assets/img/music/highest-currency-800.webp 800w" sizes="(max-width: 720px) 90vw, 420px" width="800" height="800" alt="Highest Currency, Gotta Get it cover art" loading="lazy">
+            <span class="nm-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="i-play" d="M8 5.5v13l11-6.5z"/><path class="i-pause" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></span>
+          </button>
+          <div class="nm-meta">
+            <h3>Highest Currency, Gotta Get it</h3>
+            <p>Hero One · <a href="/music/highest-currency-gotta-get-it/credits/">Credits</a></p>
+          </div>
+          <button class="button button--sm button--ghost nm-btn" type="button" data-play="highest-currency"><span data-play-label>Play</span></button>
+        </article>
+      </div>
+      <div class="nm-foot reveal">
+        <a class="button button--primary" href="/music/">Read the press release <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
 
     <section class="section" id="identity" aria-labelledby="identity-title">
       <div class="section-head reveal">
@@ -153,7 +187,7 @@
           <div class="genre-list">
             <span class="chip chip--gold">Hip-hop</span><span class="chip chip--gold">Afrofusion</span><span class="chip chip--gold">Soulful trap</span><span class="chip">Modern classics</span><span class="chip">Ghetto Gospel Reality</span>
           </div>
-          <img class="card__mark" src="assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="" loading="lazy">
+          <img class="card__mark" src="/assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="" loading="lazy">
         </article>
         <article class="card card--teal reveal">
           <span class="kicker">Cultural bridge-builder</span>
@@ -204,7 +238,7 @@
             <a class="platform" href="https://www.submithub.com/link/hero-one" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-submithub"/></svg>SubmitHub</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </div>
           <a class="watch" href="https://www.youtube.com/@hero-one" target="_blank" rel="noopener">
-            <img src="assets/img/gallery/vip-vibes-a.webp" width="1280" height="720" alt="" loading="lazy">
+            <img src="/assets/img/gallery/vip-vibes-a.webp" width="1280" height="720" alt="" loading="lazy">
             <span class="watch__label"><svg aria-hidden="true"><use href="#i-youtube"/></svg><span>Watch on YouTube<small>@hero-one · VIP Vibes and more</small></span></span>
           </a>
         </div>
@@ -243,8 +277,8 @@
         <li class="reveal"><span class="year">2020</span><article class="card"><h3>Millenial Renaissance Art Limited</h3><p>Full ownership of the masters and the message.</p></article></li>
         <li class="reveal"><span class="year">2022</span><article class="card"><h3>Opulence Grandeur Sound</h3><p>The sonic imprint for catalog distribution and sync.</p></article></li>
         <li class="reveal"><span class="year">2024</span><article class="card"><h3>24 songs in 12 months</h3><p>Three EPs, plus viral moments with Force and DFDDP. <em>LIMITS</em>, from <em>1000 BOTTLES</em>: “All actions and desires are circumscribed within limits.”</p></article></li>
-        <li class="reveal"><span class="year">2025</span><article class="card"><h3>The world is listening</h3><p>319K+ streams across Symphonic, SoundCloud and oneRPM, with press in English, French and Spanish and radio support for <em>Faa ji</em>. <a href="https://portfolio.heroone.art" target="_blank" rel="noopener">See the portfolio</a></p></article></li>
-        <li class="reveal is-now"><span class="year">2026</span><article class="card"><h3>Variety in Observable Consciousness</h3><p>The idea in the music becomes a stated law, first stated 20 October 2026. <a href="philosophy/law/">Read the law</a></p></article></li>
+        <li class="reveal"><span class="year">2025</span><article class="card"><h3>Heard in other languages</h3><p>Press in English, French and Spanish, and radio support for <em>Faa ji</em>. <a href="https://portfolio.heroone.art" target="_blank" rel="noopener">See the portfolio</a></p></article></li>
+        <li class="reveal is-now"><span class="year">2026</span><article class="card"><h3>Variety in Observable Consciousness</h3><p>The idea in the music becomes a stated law, first stated 20 October 2026. <a href="/philosophy/law/">Read the law</a></p></article></li>
       </ol>
     </section>
 
@@ -275,8 +309,8 @@
           <p>Everything involved in seeing and knowing anything happens inside four conditions: time, the choices made, the changes that occur, and the surroundings. Nothing gets a seat outside, not even awareness itself. First stated 20 October 2026, with the full record of its first twelve stress tests.</p>
           <blockquote class="music-quote">“Music is more than sound. It’s a mirror to real life, and a vessel for emotion, culture, and purpose. Every track is crafted to heal, reflect, and rise.”<cite>Hero One’s philosophy of music</cite></blockquote>
           <div class="hero-actions">
-            <a class="button button--primary" href="philosophy/law/">Read the law</a>
-            <a class="button button--ghost" href="philosophy/">All philosophy</a>
+            <a class="button button--primary" href="/philosophy/law/">Read the law</a>
+            <a class="button button--ghost" href="/philosophy/">All philosophy</a>
           </div>
         </div>
       </div>
@@ -300,72 +334,72 @@
       </div>
       <p class="mono" id="gallery-count" aria-live="polite" style="color:var(--text-dim);margin:0 0 1rem"></p>
       <div class="gallery">
-        <button class="shot" type="button" data-category="portrait" data-title="March 2024 Portrait" data-year="2024" data-usage="Primary press image" data-description="High-resolution portrait for hero art, press packets, and campaign lead imagery." data-size="4000 × 5000" data-full="assets/img/gallery/march-2024.webp" data-original="assets/originals/hero-one-march-2024.jpg" aria-label="Open March 2024 Portrait, 2024">
-          <img src="assets/img/gallery/march-2024-sm.webp" width="576" height="720" alt="March 2024 Portrait: High-resolution portrait for hero art, press packets, and campaign lead imagery." loading="lazy" decoding="async">
+        <button class="shot" type="button" data-category="portrait" data-title="March 2024 Portrait" data-year="2024" data-usage="Primary press image" data-description="High-resolution portrait for hero art, press packets, and campaign lead imagery." data-size="4000 × 5000" data-full="/assets/img/gallery/march-2024.webp" data-original="/assets/originals/hero-one-march-2024.jpg" aria-label="Open March 2024 Portrait, 2024">
+          <img src="/assets/img/gallery/march-2024-sm.webp" width="576" height="720" alt="March 2024 Portrait: High-resolution portrait for hero art, press packets, and campaign lead imagery." loading="lazy" decoding="async">
           <span class="shot__meta"><strong>March 2024 Portrait</strong><span>2024 · portrait</span></span>
         </button>
-        <button class="shot" type="button" data-category="campaign" data-title="VIP Vibes Poster" data-year="2024" data-usage="Release artwork" data-description="Poster-style campaign artwork for VIP Vibes with Hero One." data-size="960 × 1280" data-full="assets/img/gallery/vip-vibes-poster.webp" data-original="assets/originals/hero-one-vip-vibes-poster.jpg" aria-label="Open VIP Vibes Poster, 2024">
-          <img src="assets/img/gallery/vip-vibes-poster-sm.webp" width="540" height="720" alt="VIP Vibes Poster: Poster-style campaign artwork for VIP Vibes with Hero One." loading="lazy" decoding="async">
+        <button class="shot" type="button" data-category="campaign" data-title="VIP Vibes Poster" data-year="2024" data-usage="Release artwork" data-description="Poster-style campaign artwork for VIP Vibes with Hero One." data-size="960 × 1280" data-full="/assets/img/gallery/vip-vibes-poster.webp" data-original="/assets/originals/hero-one-vip-vibes-poster.jpg" aria-label="Open VIP Vibes Poster, 2024">
+          <img src="/assets/img/gallery/vip-vibes-poster-sm.webp" width="540" height="720" alt="VIP Vibes Poster: Poster-style campaign artwork for VIP Vibes with Hero One." loading="lazy" decoding="async">
           <span class="shot__meta"><strong>VIP Vibes Poster</strong><span>2024 · campaign</span></span>
         </button>
-        <button class="shot" type="button" data-category="portrait" data-title="December 2023 Portrait" data-year="2023" data-usage="Artist profile" data-description="Clean modern portrait suited for platform profiles, artist pages, and press thumbnails." data-size="3590 × 4488" data-full="assets/img/gallery/dec-2023.webp" data-original="assets/originals/hero-one-dec-2023.jpg" aria-label="Open December 2023 Portrait, 2023">
-          <img src="assets/img/gallery/dec-2023-sm.webp" width="576" height="720" alt="December 2023 Portrait: Clean modern portrait suited for platform profiles, artist pages, and press thumbnails." loading="lazy" decoding="async">
+        <button class="shot" type="button" data-category="portrait" data-title="December 2023 Portrait" data-year="2023" data-usage="Artist profile" data-description="Clean modern portrait suited for platform profiles, artist pages, and press thumbnails." data-size="3590 × 4488" data-full="/assets/img/gallery/dec-2023.webp" data-original="/assets/originals/hero-one-dec-2023.jpg" aria-label="Open December 2023 Portrait, 2023">
+          <img src="/assets/img/gallery/dec-2023-sm.webp" width="576" height="720" alt="December 2023 Portrait: Clean modern portrait suited for platform profiles, artist pages, and press thumbnails." loading="lazy" decoding="async">
           <span class="shot__meta"><strong>December 2023 Portrait</strong><span>2023 · portrait</span></span>
         </button>
-        <button class="shot" type="button" data-category="studio" data-title="BBJN Studio Session A" data-year="2014" data-usage="Studio archive" data-description="Studio-era documentation from the BBJN sessions." data-size="960 × 720" data-full="assets/img/gallery/bbjn-studio-2014-a.webp" data-original="assets/originals/hero-one-bbjn-studio-2014-a.jpg" aria-label="Open BBJN Studio Session A, 2014">
-          <img src="assets/img/gallery/bbjn-studio-2014-a-sm.webp" width="720" height="540" alt="BBJN Studio Session A: Studio-era documentation from the BBJN sessions." loading="lazy" decoding="async">
+        <button class="shot" type="button" data-category="studio" data-title="BBJN Studio Session A" data-year="2014" data-usage="Studio archive" data-description="Studio-era documentation from the BBJN sessions." data-size="960 × 720" data-full="/assets/img/gallery/bbjn-studio-2014-a.webp" data-original="/assets/originals/hero-one-bbjn-studio-2014-a.jpg" aria-label="Open BBJN Studio Session A, 2014">
+          <img src="/assets/img/gallery/bbjn-studio-2014-a-sm.webp" width="720" height="540" alt="BBJN Studio Session A: Studio-era documentation from the BBJN sessions." loading="lazy" decoding="async">
           <span class="shot__meta"><strong>BBJN Studio Session A</strong><span>2014 · studio</span></span>
         </button>
-        <button class="shot" type="button" data-category="portrait" data-title="March 2024 Alternate Portrait" data-year="2024" data-usage="Secondary press image" data-description="Alternate vertical portrait with strong editorial framing for artist bios and feature layouts." data-size="4000 × 5600" data-full="assets/img/gallery/march-2024-b.webp" data-original="assets/originals/hero-one-march-2024-b.jpg" aria-label="Open March 2024 Alternate Portrait, 2024">
-          <img src="assets/img/gallery/march-2024-b-sm.webp" width="514" height="720" alt="March 2024 Alternate Portrait: Alternate vertical portrait with strong editorial framing for artist bios and feature layouts." loading="lazy" decoding="async">
+        <button class="shot" type="button" data-category="portrait" data-title="March 2024 Alternate Portrait" data-year="2024" data-usage="Secondary press image" data-description="Alternate vertical portrait with strong editorial framing for artist bios and feature layouts." data-size="4000 × 5600" data-full="/assets/img/gallery/march-2024-b.webp" data-original="/assets/originals/hero-one-march-2024-b.jpg" aria-label="Open March 2024 Alternate Portrait, 2024">
+          <img src="/assets/img/gallery/march-2024-b-sm.webp" width="514" height="720" alt="March 2024 Alternate Portrait: Alternate vertical portrait with strong editorial framing for artist bios and feature layouts." loading="lazy" decoding="async">
           <span class="shot__meta"><strong>March 2024 Alternate Portrait</strong><span>2024 · portrait</span></span>
         </button>
-        <button class="shot" type="button" data-category="stage" data-title="Performing in 2011" data-year="2011" data-usage="Performance archive" data-description="Early-stage performance image documenting the live foundation." data-size="604 × 453" data-full="assets/img/gallery/performing-2011.webp" data-original="assets/originals/hero-one-performing-2011.jpg" aria-label="Open Performing in 2011, 2011">
-          <img src="assets/img/gallery/performing-2011-sm.webp" width="604" height="453" alt="Performing in 2011: Early-stage performance image documenting the live foundation." loading="lazy" decoding="async">
+        <button class="shot" type="button" data-category="stage" data-title="Performing in 2011" data-year="2011" data-usage="Performance archive" data-description="Early-stage performance image documenting the live foundation." data-size="604 × 453" data-full="/assets/img/gallery/performing-2011.webp" data-original="/assets/originals/hero-one-performing-2011.jpg" aria-label="Open Performing in 2011, 2011">
+          <img src="/assets/img/gallery/performing-2011-sm.webp" width="604" height="453" alt="Performing in 2011: Early-stage performance image documenting the live foundation." loading="lazy" decoding="async">
           <span class="shot__meta"><strong>Performing in 2011</strong><span>2011 · stage</span></span>
         </button>
-        <button class="shot" type="button" data-category="portrait" data-title="Hero One 2023" data-year="2023" data-usage="Archive portrait" data-description="Vertical archive portrait documenting the visual identity before the 2024 campaign." data-size="3648 × 5376" data-full="assets/img/gallery/portrait-2023.webp" data-original="assets/originals/hero-one-portrait-2023.jpg" aria-label="Open Hero One 2023, 2023">
-          <img src="assets/img/gallery/portrait-2023-sm.webp" width="489" height="720" alt="Hero One 2023: Vertical archive portrait documenting the visual identity before the 2024 campaign." loading="lazy" decoding="async">
+        <button class="shot" type="button" data-category="portrait" data-title="Hero One 2023" data-year="2023" data-usage="Archive portrait" data-description="Vertical archive portrait documenting the visual identity before the 2024 campaign." data-size="3648 × 5376" data-full="/assets/img/gallery/portrait-2023.webp" data-original="/assets/originals/hero-one-portrait-2023.jpg" aria-label="Open Hero One 2023, 2023">
+          <img src="/assets/img/gallery/portrait-2023-sm.webp" width="489" height="720" alt="Hero One 2023: Vertical archive portrait documenting the visual identity before the 2024 campaign." loading="lazy" decoding="async">
           <span class="shot__meta"><strong>Hero One 2023</strong><span>2023 · portrait</span></span>
         </button>
-        <button class="shot" type="button" data-category="campaign" data-title="VIP Vibes Mashup A" data-year="2024" data-usage="Landscape campaign creative" data-description="Landscape promotional creative for video thumbnails and wide social placements." data-size="1280 × 720" data-full="assets/img/gallery/vip-vibes-a.webp" data-original="assets/originals/hero-one-vip-vibes-a.jpg" aria-label="Open VIP Vibes Mashup A, 2024">
-          <img src="assets/img/gallery/vip-vibes-a-sm.webp" width="720" height="405" alt="VIP Vibes Mashup A: Landscape promotional creative for video thumbnails and wide social placements." loading="lazy" decoding="async">
+        <button class="shot" type="button" data-category="campaign" data-title="VIP Vibes Mashup A" data-year="2024" data-usage="Landscape campaign creative" data-description="Landscape promotional creative for video thumbnails and wide social placements." data-size="1280 × 720" data-full="/assets/img/gallery/vip-vibes-a.webp" data-original="/assets/originals/hero-one-vip-vibes-a.jpg" aria-label="Open VIP Vibes Mashup A, 2024">
+          <img src="/assets/img/gallery/vip-vibes-a-sm.webp" width="720" height="405" alt="VIP Vibes Mashup A: Landscape promotional creative for video thumbnails and wide social placements." loading="lazy" decoding="async">
           <span class="shot__meta"><strong>VIP Vibes Mashup A</strong><span>2024 · campaign</span></span>
         </button>
-        <button class="shot" type="button" data-category="legacy" data-title="First Award" data-year="2011" data-usage="Milestone archive" data-description="Milestone image documenting Hero One&#x27;s first award in 2011." data-size="453 × 604" data-full="assets/img/gallery/first-award-2011.webp" data-original="assets/originals/hero-one-first-award-2011.jpg" aria-label="Open First Award, 2011">
-          <img src="assets/img/gallery/first-award-2011-sm.webp" width="453" height="604" alt="First Award: Milestone image documenting Hero One&#x27;s first award in 2011." loading="lazy" decoding="async">
+        <button class="shot" type="button" data-category="legacy" data-title="First Award" data-year="2011" data-usage="Milestone archive" data-description="Milestone image documenting Hero One&#x27;s first award in 2011." data-size="453 × 604" data-full="/assets/img/gallery/first-award-2011.webp" data-original="/assets/originals/hero-one-first-award-2011.jpg" aria-label="Open First Award, 2011">
+          <img src="/assets/img/gallery/first-award-2011-sm.webp" width="453" height="604" alt="First Award: Milestone image documenting Hero One&#x27;s first award in 2011." loading="lazy" decoding="async">
           <span class="shot__meta"><strong>First Award</strong><span>2011 · legacy</span></span>
         </button>
-        <button class="shot" type="button" data-category="portrait" data-title="December 2023 Editorial Portrait" data-year="2023" data-usage="Editorial profile" data-description="Companion portrait from the December 2023 session for editorial rotation and social features." data-size="3524 × 4405" data-full="assets/img/gallery/dec-2023-a.webp" data-original="assets/originals/hero-one-dec-2023-a.jpg" aria-label="Open December 2023 Editorial Portrait, 2023">
-          <img src="assets/img/gallery/dec-2023-a-sm.webp" width="576" height="720" alt="December 2023 Editorial Portrait: Companion portrait from the December 2023 session for editorial rotation and social features." loading="lazy" decoding="async">
+        <button class="shot" type="button" data-category="portrait" data-title="December 2023 Editorial Portrait" data-year="2023" data-usage="Editorial profile" data-description="Companion portrait from the December 2023 session for editorial rotation and social features." data-size="3524 × 4405" data-full="/assets/img/gallery/dec-2023-a.webp" data-original="/assets/originals/hero-one-dec-2023-a.jpg" aria-label="Open December 2023 Editorial Portrait, 2023">
+          <img src="/assets/img/gallery/dec-2023-a-sm.webp" width="576" height="720" alt="December 2023 Editorial Portrait: Companion portrait from the December 2023 session for editorial rotation and social features." loading="lazy" decoding="async">
           <span class="shot__meta"><strong>December 2023 Editorial Portrait</strong><span>2023 · portrait</span></span>
         </button>
-        <button class="shot" type="button" data-category="studio" data-title="MGN Workaholix" data-year="2016" data-usage="Company-era archive" data-description="Archive image tied to the MGN Workaholix era and business development period." data-size="1200 × 1600" data-full="assets/img/gallery/mgn-workaholix-2016.webp" data-original="assets/originals/hero-one-mgn-workaholix-2016.jpg" aria-label="Open MGN Workaholix, 2016">
-          <img src="assets/img/gallery/mgn-workaholix-2016-sm.webp" width="540" height="720" alt="MGN Workaholix: Archive image tied to the MGN Workaholix era and business development period." loading="lazy" decoding="async">
+        <button class="shot" type="button" data-category="studio" data-title="MGN Workaholix" data-year="2016" data-usage="Company-era archive" data-description="Archive image tied to the MGN Workaholix era and business development period." data-size="1200 × 1600" data-full="/assets/img/gallery/mgn-workaholix-2016.webp" data-original="/assets/originals/hero-one-mgn-workaholix-2016.jpg" aria-label="Open MGN Workaholix, 2016">
+          <img src="/assets/img/gallery/mgn-workaholix-2016-sm.webp" width="540" height="720" alt="MGN Workaholix: Archive image tied to the MGN Workaholix era and business development period." loading="lazy" decoding="async">
           <span class="shot__meta"><strong>MGN Workaholix</strong><span>2016 · studio</span></span>
         </button>
-        <button class="shot" type="button" data-category="studio" data-title="BBJN Studio Session B" data-year="2014" data-usage="Studio archive" data-description="Alternate image from the BBJN studio archive." data-size="960 × 720" data-full="assets/img/gallery/bbjn-studio-2014-b.webp" data-original="assets/originals/hero-one-bbjn-studio-2014-b.jpg" aria-label="Open BBJN Studio Session B, 2014">
-          <img src="assets/img/gallery/bbjn-studio-2014-b-sm.webp" width="720" height="540" alt="BBJN Studio Session B: Alternate image from the BBJN studio archive." loading="lazy" decoding="async">
+        <button class="shot" type="button" data-category="studio" data-title="BBJN Studio Session B" data-year="2014" data-usage="Studio archive" data-description="Alternate image from the BBJN studio archive." data-size="960 × 720" data-full="/assets/img/gallery/bbjn-studio-2014-b.webp" data-original="/assets/originals/hero-one-bbjn-studio-2014-b.jpg" aria-label="Open BBJN Studio Session B, 2014">
+          <img src="/assets/img/gallery/bbjn-studio-2014-b-sm.webp" width="720" height="540" alt="BBJN Studio Session B: Alternate image from the BBJN studio archive." loading="lazy" decoding="async">
           <span class="shot__meta"><strong>BBJN Studio Session B</strong><span>2014 · studio</span></span>
         </button>
-        <button class="shot" type="button" data-category="portrait" data-title="Hero One 2023 B" data-year="2023" data-usage="Archive portrait" data-description="Additional 2023 portrait for rotating layouts and platform-specific crops." data-size="3648 × 4560" data-full="assets/img/gallery/portrait-2023-b.webp" data-original="assets/originals/hero-one-portrait-2023-b.jpg" aria-label="Open Hero One 2023 B, 2023">
-          <img src="assets/img/gallery/portrait-2023-b-sm.webp" width="576" height="720" alt="Hero One 2023 B: Additional 2023 portrait for rotating layouts and platform-specific crops." loading="lazy" decoding="async">
+        <button class="shot" type="button" data-category="portrait" data-title="Hero One 2023 B" data-year="2023" data-usage="Archive portrait" data-description="Additional 2023 portrait for rotating layouts and platform-specific crops." data-size="3648 × 4560" data-full="/assets/img/gallery/portrait-2023-b.webp" data-original="/assets/originals/hero-one-portrait-2023-b.jpg" aria-label="Open Hero One 2023 B, 2023">
+          <img src="/assets/img/gallery/portrait-2023-b-sm.webp" width="576" height="720" alt="Hero One 2023 B: Additional 2023 portrait for rotating layouts and platform-specific crops." loading="lazy" decoding="async">
           <span class="shot__meta"><strong>Hero One 2023 B</strong><span>2023 · portrait</span></span>
         </button>
-        <button class="shot" type="button" data-category="stage" data-title="Freshers&#x27; Nite 2011" data-year="2011" data-usage="Performance archive" data-description="Early performance archive from Freshers&#x27; Nite 2011." data-size="640 × 1024" data-full="assets/img/gallery/freshers-nite-2011.webp" data-original="assets/originals/hero-one-freshers-nite-2011.jpg" aria-label="Open Freshers&#x27; Nite 2011, 2011">
-          <img src="assets/img/gallery/freshers-nite-2011-sm.webp" width="450" height="720" alt="Freshers&#x27; Nite 2011: Early performance archive from Freshers&#x27; Nite 2011." loading="lazy" decoding="async">
+        <button class="shot" type="button" data-category="stage" data-title="Freshers&#x27; Nite 2011" data-year="2011" data-usage="Performance archive" data-description="Early performance archive from Freshers&#x27; Nite 2011." data-size="640 × 1024" data-full="/assets/img/gallery/freshers-nite-2011.webp" data-original="/assets/originals/hero-one-freshers-nite-2011.jpg" aria-label="Open Freshers&#x27; Nite 2011, 2011">
+          <img src="/assets/img/gallery/freshers-nite-2011-sm.webp" width="450" height="720" alt="Freshers&#x27; Nite 2011: Early performance archive from Freshers&#x27; Nite 2011." loading="lazy" decoding="async">
           <span class="shot__meta"><strong>Freshers&#x27; Nite 2011</strong><span>2011 · stage</span></span>
         </button>
-        <button class="shot" type="button" data-category="campaign" data-title="VIP Vibes Mashup B" data-year="2024" data-usage="Landscape campaign creative" data-description="Alternate wide campaign creative for VIP Vibes by Hero One." data-size="1280 × 720" data-full="assets/img/gallery/vip-vibes-b.webp" data-original="assets/originals/hero-one-vip-vibes-b.jpg" aria-label="Open VIP Vibes Mashup B, 2024">
-          <img src="assets/img/gallery/vip-vibes-b-sm.webp" width="720" height="405" alt="VIP Vibes Mashup B: Alternate wide campaign creative for VIP Vibes by Hero One." loading="lazy" decoding="async">
+        <button class="shot" type="button" data-category="campaign" data-title="VIP Vibes Mashup B" data-year="2024" data-usage="Landscape campaign creative" data-description="Alternate wide campaign creative for VIP Vibes by Hero One." data-size="1280 × 720" data-full="/assets/img/gallery/vip-vibes-b.webp" data-original="/assets/originals/hero-one-vip-vibes-b.jpg" aria-label="Open VIP Vibes Mashup B, 2024">
+          <img src="/assets/img/gallery/vip-vibes-b-sm.webp" width="720" height="405" alt="VIP Vibes Mashup B: Alternate wide campaign creative for VIP Vibes by Hero One." loading="lazy" decoding="async">
           <span class="shot__meta"><strong>VIP Vibes Mashup B</strong><span>2024 · campaign</span></span>
         </button>
-        <button class="shot" type="button" data-category="portrait" data-title="Hero One 2023 C" data-year="2023" data-usage="Archive portrait" data-description="Portrait with strong vertical composition for mobile-first placements." data-size="3141 × 3926" data-full="assets/img/gallery/portrait-2023-c.webp" data-original="assets/originals/hero-one-portrait-2023-c.jpg" aria-label="Open Hero One 2023 C, 2023">
-          <img src="assets/img/gallery/portrait-2023-c-sm.webp" width="576" height="720" alt="Hero One 2023 C: Portrait with strong vertical composition for mobile-first placements." loading="lazy" decoding="async">
+        <button class="shot" type="button" data-category="portrait" data-title="Hero One 2023 C" data-year="2023" data-usage="Archive portrait" data-description="Portrait with strong vertical composition for mobile-first placements." data-size="3141 × 3926" data-full="/assets/img/gallery/portrait-2023-c.webp" data-original="/assets/originals/hero-one-portrait-2023-c.jpg" aria-label="Open Hero One 2023 C, 2023">
+          <img src="/assets/img/gallery/portrait-2023-c-sm.webp" width="576" height="720" alt="Hero One 2023 C: Portrait with strong vertical composition for mobile-first placements." loading="lazy" decoding="async">
           <span class="shot__meta"><strong>Hero One 2023 C</strong><span>2023 · portrait</span></span>
         </button>
-        <button class="shot" type="button" data-category="studio" data-title="MGN Second Studio" data-year="2015" data-usage="Studio archive" data-description="Archive image from the MGN second studio period." data-size="640 × 480" data-full="assets/img/gallery/mgn-studio-2015.webp" data-original="assets/originals/hero-one-mgn-studio-2015.jpg" aria-label="Open MGN Second Studio, 2015">
-          <img src="assets/img/gallery/mgn-studio-2015-sm.webp" width="640" height="480" alt="MGN Second Studio: Archive image from the MGN second studio period." loading="lazy" decoding="async">
+        <button class="shot" type="button" data-category="studio" data-title="MGN Second Studio" data-year="2015" data-usage="Studio archive" data-description="Archive image from the MGN second studio period." data-size="640 × 480" data-full="/assets/img/gallery/mgn-studio-2015.webp" data-original="/assets/originals/hero-one-mgn-studio-2015.jpg" aria-label="Open MGN Second Studio, 2015">
+          <img src="/assets/img/gallery/mgn-studio-2015-sm.webp" width="640" height="480" alt="MGN Second Studio: Archive image from the MGN second studio period." loading="lazy" decoding="async">
           <span class="shot__meta"><strong>MGN Second Studio</strong><span>2015 · studio</span></span>
         </button>
       </div>
@@ -375,8 +409,8 @@
       <div class="portfolio reveal">
         <div>
           <span class="eyebrow"><span class="pulse-dot"></span> Press kit &amp; portfolio</span>
-          <h2 id="portfolio-title">Numbers, press and receipts, in one place.</h2>
-          <p>The Hero One portfolio is the full press kit: streaming analytics, press clippings, industry reviews, sync signals and campaign video, ready for booking, licensing and features.</p>
+          <h2 id="portfolio-title">Press, reviews and the visual record, in one place.</h2>
+          <p>The Hero One portfolio is the full press kit: press clippings, industry reviews, sync and campaign video, for booking, licensing and features.</p>
           <div class="press-chips">
             <span class="chip">ChuneDesk</span><span class="chip">Extravafrench</span><span class="chip">Lyrical Odyssey</span><span class="chip">KTRU radio</span><span class="chip">Atlas De Música</span><span class="chip">Boulimique de Musique</span><span class="chip">HypeHub Mag</span><span class="chip">scannerFM</span>
           </div>
@@ -384,19 +418,17 @@
             <a class="button button--primary" href="https://portfolio.heroone.art" target="_blank" rel="noopener">Open the portfolio <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </div>
         </div>
-        <div class="stat-stack">
-          <div class="stat"><b>151,108</b><span>Symphonic streams</span></div>
-          <div class="stat"><b>109,410</b><span>SoundCloud plays</span></div>
-          <div class="stat"><b>59,268</b><span>oneRPM streams</span></div>
-          <div class="stat"><b class="gold">5,183%</b><span>SoundCloud growth</span></div>
-        </div>
+        <figure class="law-quote">
+          <blockquote>“The observer, observation, observable, even ‘awareness’ and eventual expression all are circumscribed within TIME, choice, alteration and environment.”</blockquote>
+          <figcaption>Adebayo Michael Manuwa · <a href="/philosophy/law/">Variety in Observable Consciousness</a></figcaption>
+        </figure>
       </div>
 
       <div class="registry">
-        <div class="card reveal"><div class="logo logo--light"><img src="assets/img/brand/bmi.webp" alt="BMI" loading="lazy"></div><strong>BMI</strong><span>Registered catalog</span></div>
-        <div class="card reveal"><div class="logo logo--light"><img src="assets/img/brand/soundexchange.webp" alt="SoundExchange" loading="lazy"></div><strong>SoundExchange</strong><span>Registered catalog</span></div>
-        <div class="card reveal"><div class="logo"><img src="assets/img/brand/mral.webp" alt="Millenial Renaissance Art Limited" loading="lazy"></div><strong>MRAL</strong><span>Millenial Renaissance Art Ltd</span></div>
-        <div class="card reveal"><div class="logo"><img src="assets/img/brand/ogs.webp" alt="Opulence Grandeur Sound" loading="lazy"></div><strong>OGS</strong><span>Opulence Grandeur Sound</span></div>
+        <div class="card reveal"><div class="logo logo--light"><img src="/assets/img/brand/bmi.webp" alt="BMI" loading="lazy"></div><strong>BMI</strong><span>Registered catalog</span></div>
+        <div class="card reveal"><div class="logo logo--light"><img src="/assets/img/brand/soundexchange.webp" alt="SoundExchange" loading="lazy"></div><strong>SoundExchange</strong><span>Registered catalog</span></div>
+        <div class="card reveal"><div class="logo"><img src="/assets/img/brand/mral.webp" alt="Millenial Renaissance Art Limited" loading="lazy"></div><strong>MRAL</strong><span>Millenial Renaissance Art Ltd</span></div>
+        <div class="card reveal"><div class="logo"><img src="/assets/img/brand/ogs.webp" alt="Opulence Grandeur Sound" loading="lazy"></div><strong>OGS</strong><span>Opulence Grandeur Sound</span></div>
       </div>
     </section>
 
@@ -439,17 +471,18 @@
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="Hero One">
+        <img src="/assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="Hero One">
         <p>Beats &amp; Blues Reality Music by Adebayo Michael Manuwa. Part of the <a href="https://333bi.tech" target="_blank" rel="noopener" style="color:var(--gold-bright)">333BI</a> ecosystem.</p>
       </div>
       <nav aria-label="Site">
         <h2 class="kicker">Site</h2>
-        <a href="./">Home</a>
-        <a href="./#listen">Listen</a>
-        <a href="./#journey">Journey</a>
-        <a href="./#gallery">Gallery</a>
-        <a href="philosophy/">Philosophy</a>
-        <a href="philosophy/law/">The Law</a>
+        <a href="/">Home</a>
+        <a href="/music/">Music</a>
+        <a href="/#listen">Listen</a>
+        <a href="/#journey">Journey</a>
+        <a href="/#gallery">Gallery</a>
+        <a href="/philosophy/">Philosophy</a>
+        <a href="/philosophy/law/">The Law</a>
       </nav>
       <nav aria-label="Listen">
         <h2 class="kicker">Listen</h2>
@@ -494,7 +527,9 @@
     </div>
   </dialog>
 
-  <script src="assets/js/signal-field.js" defer></script>
-  <script src="assets/js/site.js" defer></script>
+  <script src="/assets/js/signal-field.js" defer></script>
+  <script src="/assets/js/site.js" defer></script>
+  <script src="/assets/js/music-config.js" data-hx-persist></script>
+  <script src="/assets/js/player.js" data-hx-persist></script>
 </body>
 </html>

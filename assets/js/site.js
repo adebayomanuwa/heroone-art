@@ -1,6 +1,12 @@
 /* heroone.art site behaviour: glass header, mobile menu, section highlight,
    spotlight/tilt cards, gallery filter + lightbox, ring drawing. */
 (function () {
+  // page-scoped listeners are released when the player swaps to another page
+  var ac = new AbortController(), sig = { signal: ac.signal };
+  var observers = [];
+  (window.__heroCleanup = window.__heroCleanup || []).push(function () {
+    ac.abort(); observers.forEach(function (o) { o.disconnect(); });
+  });
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
@@ -10,7 +16,7 @@
   if (header) {
     var onScroll = function () { header.classList.toggle("is-scrolled", window.scrollY > 12); };
     onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true, signal: ac.signal });
   }
   if (header && menu) {
     var setOpen = function (open) {
@@ -20,7 +26,7 @@
     };
     menu.addEventListener("click", function () { setOpen(!header.classList.contains("is-open")); });
     header.querySelectorAll(".site-nav a").forEach(function (a) { a.addEventListener("click", function () { setOpen(false); }); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); }, sig);
   }
 
   /* Highlight the nav link for the section in view */
@@ -36,6 +42,7 @@
         }
       });
     }, { rootMargin: "-45% 0px -50% 0px" });
+    observers.push(spy);
     Object.keys(byId).forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
   }
 
@@ -62,6 +69,7 @@
       var ro = new IntersectionObserver(function (entries) {
         entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("is-drawn"); ro.unobserve(en.target); } });
       }, { threshold: 0.35 });
+      observers.push(ro);
       rings.forEach(function (r) { ro.observe(r); });
     }
   }

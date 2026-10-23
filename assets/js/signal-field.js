@@ -31,6 +31,9 @@
     "}"
   ].join("\n");
 
+  var ac = new AbortController(), sig = { signal: ac.signal }, stops = [];
+  (window.__heroCleanup = window.__heroCleanup || []).push(function () { ac.abort(); stops.forEach(function (f) { f(); }); });
+
   function start(canvas) {
     var gl = canvas.getContext("webgl", { antialias: false, alpha: false, powerPreference: "low-power" });
     if (!gl || gl.isContextLost()) { canvas.dataset.state = "fallback"; return; }
@@ -55,6 +58,10 @@
     var scale = Math.min(window.devicePixelRatio || 1, 1.5) * 0.6;
     var pointer = { x: 0, y: 0, tx: 0, ty: 0 };
     var raf = 0, visible = true, t0 = performance.now();
+    var io = new IntersectionObserver(function (entries) {
+      visible = entries[0].isIntersecting && !document.hidden;
+      if (visible && !ac.signal.aborted) kick();
+    });
 
     function resize() {
       var w = Math.max(1, Math.floor(canvas.clientWidth * scale));
@@ -70,20 +77,21 @@
       gl.uniform1f(uTime, reduce.matches ? 12 : (now - t0) / 1000);
       gl.uniform2f(uPointer, pointer.x, pointer.y);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
-      raf = visible && !reduce.matches ? requestAnimationFrame(frame) : 0;
+      raf = visible && !reduce.matches && !ac.signal.aborted ? requestAnimationFrame(frame) : 0;
     }
-    function kick() { if (!raf) raf = requestAnimationFrame(frame); }
+    function kick() { if (!raf && !ac.signal.aborted) raf = requestAnimationFrame(frame); }
+    stops.push(function () {
+      cancelAnimationFrame(raf); raf = 0; visible = false; io.disconnect();
+      var lose = gl.getExtension("WEBGL_lose_context"); if (lose) lose.loseContext();   // canvas is leaving the page
+    });
     window.addEventListener("pointermove", function (e) {
       var r = canvas.getBoundingClientRect();
       pointer.tx = (e.clientX - r.left) * scale;
       pointer.ty = (r.height - (e.clientY - r.top)) * scale;
       if (reduce.matches) kick();
-    }, { passive: true });
-    new IntersectionObserver(function (entries) {
-      visible = entries[0].isIntersecting && !document.hidden;
-      if (visible) kick();
-    }).observe(canvas);
-    document.addEventListener("visibilitychange", function () { visible = !document.hidden; if (visible) kick(); });
+    }, { passive: true, signal: ac.signal });
+    io.observe(canvas);
+    document.addEventListener("visibilitychange", function () { visible = !document.hidden; if (visible) kick(); }, sig);
     canvas.addEventListener("webglcontextlost", function (e) { e.preventDefault(); cancelAnimationFrame(raf); raf = 0; canvas.dataset.state = "fallback"; });
     if (reduce.addEventListener) reduce.addEventListener("change", kick);
     kick();

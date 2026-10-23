@@ -522,3 +522,27 @@ p { margin: 0; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
   .orbit .o2, .law-ring .ring-stroke { stroke-dashoffset: 0 !important; }
 }
+
+/* ---------- New music (home) ---------- */
+.nm-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.25rem, 3vw, 2.5rem); }
+.nm-card { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; gap: 1.1rem 1rem; align-items: center; }
+.nm-art { grid-column: 1 / -1; position: relative; display: block; padding: 0; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; cursor: pointer; background: rgb(255 255 255 / .03); aspect-ratio: 1; }
+.nm-art img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2, .8, .2, 1); }
+.nm-art:hover img { transform: scale(1.025); }
+.nm-art:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.nm-play { position: absolute; right: 18px; bottom: 18px; width: 58px; height: 58px; display: grid; place-items: center; border-radius: 50%; color: #0b0c10; background: rgb(242 239 232 / .94); box-shadow: 0 14px 34px -12px rgb(0 0 0 / .7); transition: transform .3s cubic-bezier(.34, 1.56, .64, 1); }
+.nm-art:hover .nm-play { transform: scale(1.06); }
+.nm-play svg { width: 24px; height: 24px; fill: currentColor; }
+.nm-play .i-pause, .is-playing .nm-play .i-play { display: none; }
+.is-playing .nm-play .i-pause { display: block; }
+.nm-meta h3 { font-size: clamp(1.15rem, 1.8vw, 1.45rem); font-weight: 700; letter-spacing: -.02em; }
+.nm-meta p { margin-top: .25rem; color: var(--text-muted); font-size: .92rem; }
+.nm-btn.is-playing { border-color: rgb(var(--gold-rgb) / .6); color: var(--gold); }
+.nm-foot { margin-top: clamp(2rem, 4vw, 3rem); display: flex; justify-content: center; }
+@media (max-width: 720px) { .nm-grid { grid-template-columns: 1fr; } }
+.nm-meta p a { color: var(--gold); text-decoration: none; } .nm-meta p a:hover { text-decoration: underline; }
+.law-quote { position: relative; margin: 0; align-self: center; padding: 1.6rem 0 1.6rem 1.6rem; border-left: 1px solid rgb(var(--gold-rgb) / .45); }
+.law-quote blockquote { margin: 0; font-family: "Bodoni Moda", Georgia, serif; font-style: italic; font-size: clamp(1.3rem, 2.1vw, 1.75rem); line-height: 1.35; color: var(--text); }
+.law-quote figcaption { margin-top: 1rem; font-family: var(--ff-mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); }
+.law-quote figcaption a { color: var(--gold); text-decoration: none; }
+.law-quote figcaption a:hover { text-decoration: underline; }
