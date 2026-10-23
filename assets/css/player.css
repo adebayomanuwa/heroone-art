@@ -185,7 +185,6 @@ html.hx-deck-open { overflow: hidden; }
 .hx-q-no { width: 6px; height: 6px; border-radius: 50%; }
 .hx-q .is-current strong { color: var(--gold-bright); }
 .hx-q .is-current .hx-q-no { background: var(--gold); box-shadow: 0 0 8px rgb(var(--gold-rgb) / .8); }
-.hx-np-note { margin: 0; text-align: center; font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: rgb(140 146 166 / .6); }
 
 /* ─────────────── HEAD rig (port of 333Bi Tech AuracleHead) ─────────────── */
 #hx-persist .ah { position: relative; display: block; aspect-ratio: 1; line-height: 0; }

@@ -309,7 +309,6 @@
             '<ol class="hx-q">' + TRACKS.map(function (t, i) {
               return '<li><button type="button" data-i="' + i + '"><span class="hx-q-no" aria-hidden="true"></span><img src="' + t.cover + '" alt="" width="40" height="40"><span class="hx-q-t"><strong>' + t.full + '</strong><em>' + t.artist + '</em></span><span class="hx-q-d" data-dur="' + t.id + '"></span></button></li>';
             }).join('') + '</ol>' +
-            '<p class="hx-np-note">Streaming only · heroone.art</p>' +
           '</div>' +
         '</div>' +
       '</div>' +

@@ -6,7 +6,7 @@ OUT = os.path.dirname(os.path.abspath(__file__))
 E = lambda s: html.escape(s, quote=True)
 cred = json.load(open(f'{SITE}/tools/credits.json', encoding='utf-8'))
 
-U = 'https://heroone.art'
+U = 'https://www.heroone.art'
 REC = [
   dict(key='ldcat', id='ldcat', n='01', title='LDCAT (Love Don’t Cost a Thang)', short='LDCAT', len='2:35', cover='ldcat'),
   dict(key='highest-currency-gotta-get-it', id='highest-currency', n='02', title='Highest Currency, Gotta Get it', short='Highest Currency, Gotta Get it', len='1:45', cover='highest-currency'),
@@ -66,7 +66,7 @@ doc = f'''<!doctype html><html lang="en"><head><meta charset="utf-8">
 <style>{css}</style></head><body>
 
 <section class="page">
-  <header class="mast"><a class="wm" href="{U}/">HERO ONE</a><span class="mast-r"><a href="{PR}">heroone.art/music/press</a></span></header>
+  <header class="mast"><a class="wm" href="{U}/">HERO ONE</a></header>
   <div class="label"><span class="red">Music / Press release</span><span>Hero One · 2026</span></div>
   <h1><span class="t">LDCAT</span><span class="amp">&amp;</span><em class="t">Highest Currency, Gotta Get it</em></h1>
   <p class="dek">Beats &amp; Blues</p>
@@ -79,18 +79,17 @@ doc = f'''<!doctype html><html lang="en"><head><meta charset="utf-8">
       <p>My theory, <a class="u" href="{U}/philosophy/law/"><em>Variety in Observable Consciousness</em></a>: “The observer, observation, observable, even ‘awareness’ and eventual expression all are circumscribed within TIME, choice, alteration and environment.”</p>
     </div>
   </section>
-  <footer class="foot"><span>Hero One / Beats &amp; Blues</span><span class="pg">1 / 2</span><a href="{U}/">heroone.art ↗</a></footer>
+  <footer class="foot"><span>Hero One / Beats &amp; Blues</span><span></span><a href="{U}/">heroone.art ↗</a></footer>
 </section>
 
 <section class="page">
-  <header class="mast"><a class="wm" href="{U}/">HERO ONE</a><span class="mast-r"><a href="{PR}">heroone.art/music/press</a></span></header>
+  <header class="mast"><a class="wm" href="{U}/">HERO ONE</a></header>
   <div class="label"><span class="red">Credits</span><span>Hero One · 2026</span></div>
   <div class="dets">{details}</div>
 
   <section class="deck">
     <a class="face" href="{U}/music/"><img src="{FACE160}" alt="3nity Auracle"></a>
     <div class="dk">
-      <p class="kick"><i></i>3nity Auracle <b>·</b> heroone.art</p>
       {heads}
     </div>
   </section>
@@ -100,12 +99,9 @@ doc = f'''<!doctype html><html lang="en"><head><meta charset="utf-8">
     <dl class="contact">
       <div><dt>Booking</dt><dd><a href="mailto:mraltd@yahoo.com">mraltd@yahoo.com</a></dd></div>
       <div><dt>Management</dt><dd><a href="mailto:millenialrenaissance@yahoo.com">millenialrenaissance@yahoo.com</a></dd></div>
-      <div><dt>Press kit</dt><dd><a href="https://portfolio.heroone.art">portfolio.heroone.art</a></dd></div>
-      <div><dt>Web</dt><dd><a href="{U}/">heroone.art</a></dd></div>
     </dl>
   </section>
-  <p class="end">###</p>
-  <footer class="foot"><span>Hero One / Beats &amp; Blues</span><span class="pg">2 / 2</span><a href="{U}/">heroone.art ↗</a></footer>
+  <footer class="foot"><span>Hero One / Beats &amp; Blues</span><span></span><a href="{U}/">heroone.art ↗</a></footer>
 </section>
 </body></html>'''
 open(os.path.join(OUT, 'pr.html'), 'w', encoding='utf-8').write(doc)
