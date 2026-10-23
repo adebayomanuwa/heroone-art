@@ -44,25 +44,23 @@ def header(active=''):
       <img src="/assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="">
       <span>Beats &amp; Blues<br>Reality Music</span>
     </a>
-    <nav class="site-nav" aria-label="Primary">
-      <div class="nav-group">
-        <a href="/music/"{cur('music')}>Music <svg class="nav-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></a>
-        <div class="nav-sub" aria-label="Music">
-          <a href="/music/#catalog"><strong>Catalog</strong><small>By year</small></a>
-          <a href="/music/press/"><strong>Press releases</strong><small>The release notes</small></a>
-          <a href="/music/credits/"><strong>Credits</strong><small>Who made each record</small></a>
-        </div>
-      </div>
-      <a href="/philosophy/"{cur('philosophy')}>Philosophy</a>
-      <a href="/#journey"{cur('journey')}>Journey</a>
-      <a href="/gallery/"{cur('gallery')}>Gallery</a>
-      <a class="nav-studio" href="/studio/" data-no-swap title="Studio: listeners and booking requests (sign-in)"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>Studio</a>
-      <a class="nav-book" href="/#contact" data-book>Book</a>
-    </nav>
     <div class="header-actions">
       <a class="button button--primary button--sm" href="/#contact" data-book>Book</a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span></span><span></span></button>
     </div>
+    <nav class="site-nav" id="site-menu" aria-label="Primary">
+      <div class="nav-group">
+        <a class="nav-big" href="/music/"{cur('music')}>Music</a>
+        <div class="nav-sub"><a href="/music/#catalog">Catalog</a><a href="/music/press/">Press releases</a><a href="/music/credits/">Credits</a></div>
+      </div>
+      <a class="nav-big" href="/philosophy/"{cur('philosophy')}>Philosophy</a>
+      <a class="nav-big" href="/#journey"{cur('journey')}>Journey</a>
+      <a class="nav-big" href="/gallery/"{cur('gallery')}>Gallery</a>
+      <div class="nav-foot">
+        <a class="nav-studio" href="/studio/" data-no-swap><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>Studio</a>
+        <a class="nav-book" href="/#contact" data-book>Book</a>
+      </div>
+    </nav>
   </header>'''
 
 FOOTER = '''<footer class="site-footer">
@@ -189,7 +187,7 @@ def build_music():
           <span class="m-press__lede">{esc(p['lede'])}</span>
           <span class="m-press__go">Read {ARROW}</span>
         </a>''' for p in CAT['press'])
-    credits = ''.join(f'<li><a href="/music/credits/{s["slug"]}/"><img src="{s["cover"]}-160.webp" alt="" width="56" height="56" loading="lazy"><span><strong>{esc(s["title"])}</strong><small>Writers · Performers / Production</small></span>{ARROW}</a></li>' for s in SONGS)
+    credits = ''.join(f'<li><a href="/music/credits/{s["slug"]}/"><img src="{s["cover"]}-160.webp" alt="" width="56" height="56" loading="lazy"><span><strong>{esc(s["title"])}</strong></span>{ARROW}</a></li>' for s in SONGS)
     plats = ''.join(f'<a class="platform" href="{u}" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#{i}"/></svg>{esc(n)}</span>{ARROW}</a>' for n, u, i in CAT['platforms'])
     body = f'''    <section class="page-hero page-hero--music" aria-labelledby="ph-title">
       <div class="signal-field" data-signal-field aria-hidden="true"><canvas></canvas></div>
@@ -204,7 +202,7 @@ def build_music():
     </section>
 
     <section class="section m-section" id="catalog" aria-labelledby="catalog-title">
-      <div class="m-head"><h2 id="catalog-title">Catalog</h2><span class="mono">By year</span></div>
+      <div class="m-head"><h2 id="catalog-title">Catalog</h2></div>
       {''.join(rows)}
     </section>
 
@@ -219,7 +217,7 @@ def build_music():
     </section>
 
     <section class="section m-section" id="elsewhere" aria-labelledby="else-title">
-      <div class="m-head"><h2 id="else-title">Elsewhere</h2><span class="mono">The full discography</span></div>
+      <div class="m-head"><h2 id="else-title">Elsewhere</h2></div>
       <div class="platforms m-platforms">{plats}</div>
     </section>'''
     write('music/index.html', page('/music/', 'Music · Hero One', 'Hero One’s music by year: songs streaming on heroone.art, press releases and full credits.', body, active='music', field=True,
@@ -348,7 +346,7 @@ def build_credits_index():
     items = ''.join(f'''<li class="index-row">
         <a href="/music/credits/{s['slug']}/">
           <img src="{s['cover']}-160.webp" alt="" width="64" height="64" loading="lazy">
-          <span class="index-row__t"><strong>{esc(s['title'])}</strong><em>Writers · Performers / Production</em></span>
+          <span class="index-row__t"><strong>{esc(s['title'])}</strong></span>
           <span class="index-row__go">Credits →</span>
         </a>
       </li>''' for s in SONGS)
@@ -438,11 +436,31 @@ def refresh_chrome(rel, active=''):
     s = re.sub(r'<header class="site-header">.*?</header>', header(active).replace('\\', '\\\\'), s, count=1, flags=re.S)
     s = re.sub(r'<footer class="site-footer">.*?</footer>', FOOTER.replace('\\', '\\\\'), s, count=1, flags=re.S)
     if 'book.css' not in s:
+        s = re.sub(r'(<link rel="stylesheet" href="/assets/css/player.css(?:\?v=[0-9a-f]+)?" data-hx-persist>)', r'\1\n  <link rel="stylesheet" href="/assets/css/book.css" data-hx-persist>', s)
         s = s.replace('<link rel="stylesheet" href="/assets/css/player.css" data-hx-persist>', '<link rel="stylesheet" href="/assets/css/player.css" data-hx-persist>\n  <link rel="stylesheet" href="/assets/css/book.css" data-hx-persist>')
     if 'book.js' not in s:
         s = s.replace('<script src="/assets/js/player.js" data-hx-persist></script>', '<script src="/assets/js/player.js" data-hx-persist></script>\n  <script src="/assets/js/book.js" data-hx-persist></script>')
     open(p, 'w', encoding='utf-8').write(s)
     print('chrome', '/' + rel)
+
+def stamp_assets():
+    """Version every /assets/css|js reference with a content hash (?v=…), so a new deploy can
+    never be shown with an old cached stylesheet or script."""
+    import hashlib, glob
+    cache = {}
+    def ver(path):
+        if path not in cache:
+            f = os.path.join(ROOT, path.lstrip('/'))
+            cache[path] = hashlib.sha256(open(f, 'rb').read()).hexdigest()[:10] if os.path.exists(f) else None
+        return cache[path]
+    def sub(m):
+        v = ver(m.group(1))
+        return m.group(1) + (f'?v={v}' if v else '')
+    for f in glob.glob(os.path.join(ROOT, '**', '*.html'), recursive=True):
+        if os.sep + 'tools' + os.sep in f: continue
+        t = open(f, encoding='utf-8').read()
+        n = re.sub(r'(/assets/(?:css|js)/[\w.-]+\.(?:css|js))(?:\?v=[0-9a-f]+)?', sub, t)
+        if n != t: open(f, 'w', encoding='utf-8').write(n)
 
 if __name__ == '__main__':
     build_music()
@@ -450,3 +468,4 @@ if __name__ == '__main__':
         build_song(s); build_now_playing(s)
     build_press_index(); build_credits_index(); build_magazine()
     refresh_chrome('index.html'); refresh_chrome('philosophy/index.html', 'philosophy'); refresh_chrome('404.html')
+    stamp_assets()

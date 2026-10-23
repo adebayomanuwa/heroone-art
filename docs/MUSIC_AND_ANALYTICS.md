@@ -96,7 +96,7 @@ The **Book** button on every page opens a 3nity Auracle chat. It asks what the r
 3. Add the track to `assets/js/music-config.js` (id, slug, title, cover, art, page, credits, press) and to `tools/catalog.json` → `songs`.
 4. Make covers in `assets/img/music/` (`<id>-160/512/800/1400.webp`, `<id>-1200.jpg`).
 5. Generate `assets/music/<id>.json` (waveform and envelope) with `python3 tools/peaks.py <id> path/to/song.mp3`. This needs ffmpeg and numpy.
-6. For credits: add the song to `tools/credits.json`. Then run `python3 tools/build_site.py && python3 tools/build_credits.py` to build its song page, its `/now-playing/` URL and its credits page.
+6. For credits: add the song to `tools/credits.json`. Then run `python3 tools/build_credits.py && python3 tools/build_site.py` to build its song page, its `/now-playing/` URL and its credits page.
 
 To take a song down without redeploying: `update heroone.tracks set is_live = false where id = '<id>';`
 

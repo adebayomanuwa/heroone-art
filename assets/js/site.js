@@ -26,7 +26,8 @@
     };
     menu.addEventListener("click", function () { setOpen(!header.classList.contains("is-open")); });
     header.querySelectorAll(".site-nav a").forEach(function (a) { a.addEventListener("click", function () { setOpen(false); }); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); }, sig);
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && header.classList.contains("is-open")) { setOpen(false); menu.focus(); } }, sig);
+    document.addEventListener("pointerdown", function (e) { if (header.classList.contains("is-open") && !header.contains(e.target)) setOpen(false); }, sig);
   }
 
   /* Highlight the nav link for the section in view */

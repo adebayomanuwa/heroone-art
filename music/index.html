@@ -15,10 +15,10 @@
   <meta property="og:description" content="Hero One’s music by year: songs streaming on heroone.art, press releases and full credits.">
   <meta property="og:image" content="https://heroone.art/assets/img/music/ldcat-1200.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/site.css?v=0c856e25aa">
   <meta name="hx-player" content="dark">
-  <link rel="stylesheet" href="/assets/css/player.css" data-hx-persist>
-  <link rel="stylesheet" href="/assets/css/book.css" data-hx-persist>
+  <link rel="stylesheet" href="/assets/css/player.css?v=fe2347e9b3" data-hx-persist>
+  <link rel="stylesheet" href="/assets/css/book.css?v=5c41800c6b" data-hx-persist>
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -45,25 +45,23 @@
       <img src="/assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="">
       <span>Beats &amp; Blues<br>Reality Music</span>
     </a>
-    <nav class="site-nav" aria-label="Primary">
-      <div class="nav-group">
-        <a href="/music/" aria-current="page">Music <svg class="nav-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></a>
-        <div class="nav-sub" aria-label="Music">
-          <a href="/music/#catalog"><strong>Catalog</strong><small>By year</small></a>
-          <a href="/music/press/"><strong>Press releases</strong><small>The release notes</small></a>
-          <a href="/music/credits/"><strong>Credits</strong><small>Who made each record</small></a>
-        </div>
-      </div>
-      <a href="/philosophy/">Philosophy</a>
-      <a href="/#journey">Journey</a>
-      <a href="/gallery/">Gallery</a>
-      <a class="nav-studio" href="/studio/" data-no-swap title="Studio: listeners and booking requests (sign-in)"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>Studio</a>
-      <a class="nav-book" href="/#contact" data-book>Book</a>
-    </nav>
     <div class="header-actions">
       <a class="button button--primary button--sm" href="/#contact" data-book>Book</a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span></span><span></span></button>
     </div>
+    <nav class="site-nav" id="site-menu" aria-label="Primary">
+      <div class="nav-group">
+        <a class="nav-big" href="/music/" aria-current="page">Music</a>
+        <div class="nav-sub"><a href="/music/#catalog">Catalog</a><a href="/music/press/">Press releases</a><a href="/music/credits/">Credits</a></div>
+      </div>
+      <a class="nav-big" href="/philosophy/">Philosophy</a>
+      <a class="nav-big" href="/#journey">Journey</a>
+      <a class="nav-big" href="/gallery/">Gallery</a>
+      <div class="nav-foot">
+        <a class="nav-studio" href="/studio/" data-no-swap><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>Studio</a>
+        <a class="nav-book" href="/#contact" data-book>Book</a>
+      </div>
+    </nav>
   </header>
   <main id="main">
     <section class="page-hero page-hero--music" aria-labelledby="ph-title">
@@ -79,7 +77,7 @@
     </section>
 
     <section class="section m-section" id="catalog" aria-labelledby="catalog-title">
-      <div class="m-head"><h2 id="catalog-title">Catalog</h2><span class="mono">By year</span></div>
+      <div class="m-head"><h2 id="catalog-title">Catalog</h2></div>
       <section class="m-year reveal" aria-labelledby="y2026"><h3 class="m-year__n" id="y2026">2026</h3><div class="m-year__body"><div class="m-songs"><article class="m-song">
           <div class="m-song__media"><a class="m-song__art" href="/music/ldcat/"><img src="/assets/img/music/ldcat-512.webp" srcset="/assets/img/music/ldcat-512.webp 512w, /assets/img/music/ldcat-800.webp 800w" sizes="(max-width: 720px) 80vw, 300px" width="512" height="512" alt="LDCAT cover art" loading="lazy"></a>
           <button class="m-song__play" type="button" data-play="ldcat" aria-pressed="false" aria-label="Play LDCAT"><svg class="play-i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg><svg class="pause-i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.4v14H7zM13.6 5H17v14h-3.6z"/></svg></button></div>
@@ -111,11 +109,11 @@
 
     <section class="section m-section" id="credits" aria-labelledby="credits-title">
       <div class="m-head"><h2 id="credits-title">Credits</h2><a class="mono" href="/music/credits/Hero-One-Full-Credits-2026.pdf" data-no-swap>Full credits PDF <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-      <ul class="m-credits"><li><a href="/music/credits/ldcat/"><img src="/assets/img/music/ldcat-160.webp" alt="" width="56" height="56" loading="lazy"><span><strong>LDCAT</strong><small>Writers · Performers / Production</small></span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li><a href="/music/credits/highest-currency-gotta-get-it/"><img src="/assets/img/music/highest-currency-160.webp" alt="" width="56" height="56" loading="lazy"><span><strong>Highest Currency, Gotta Get it</strong><small>Writers · Performers / Production</small></span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li></ul>
+      <ul class="m-credits"><li><a href="/music/credits/ldcat/"><img src="/assets/img/music/ldcat-160.webp" alt="" width="56" height="56" loading="lazy"><span><strong>LDCAT</strong></span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li><a href="/music/credits/highest-currency-gotta-get-it/"><img src="/assets/img/music/highest-currency-160.webp" alt="" width="56" height="56" loading="lazy"><span><strong>Highest Currency, Gotta Get it</strong></span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li></ul>
     </section>
 
     <section class="section m-section" id="elsewhere" aria-labelledby="else-title">
-      <div class="m-head"><h2 id="else-title">Elsewhere</h2><span class="mono">The full discography</span></div>
+      <div class="m-head"><h2 id="else-title">Elsewhere</h2></div>
       <div class="platforms m-platforms"><a class="platform" href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-spotify"/></svg>Spotify</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="platform" href="https://music.apple.com/ng/artist/hero-one/1520370143" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-apple"/></svg>Apple Music</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="platform" href="https://soundcloud.com/heroone" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-soundcloud"/></svg>SoundCloud</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="platform" href="https://www.youtube.com/@hero-one" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-youtube"/></svg>YouTube</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="platform" href="https://music.amazon.com/artists/B01HOYS7YK/hero-one" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-amazon"/></svg>Amazon Music</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="platform" href="https://audiomack.com/hero-one/" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-audiomack"/></svg>Audiomack</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="platform" href="https://www.boomplay.com/artists/24967874" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-boomplay"/></svg>Boomplay</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="platform" href="https://www.deezer.com/us/artist/10614549" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-deezer"/></svg>Deezer</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     </section>
   </main>
@@ -156,10 +154,10 @@
       <span>Heal · Reflect · Rise</span>
     </div>
   </footer>
-  <script src="/assets/js/signal-field.js" defer></script>
-  <script src="/assets/js/site.js" defer></script>
-  <script src="/assets/js/music-config.js" data-hx-persist></script>
-  <script src="/assets/js/player.js" data-hx-persist></script>
-  <script src="/assets/js/book.js" data-hx-persist></script>
+  <script src="/assets/js/signal-field.js?v=bcf7c0bbe3" defer></script>
+  <script src="/assets/js/site.js?v=d8fe58fde4" defer></script>
+  <script src="/assets/js/music-config.js?v=a90970ec9c" data-hx-persist></script>
+  <script src="/assets/js/player.js?v=21d2e0ba1f" data-hx-persist></script>
+  <script src="/assets/js/book.js?v=2546014946" data-hx-persist></script>
 </body>
 </html>

@@ -29,7 +29,7 @@ Menu: **Music** (Catalog · Press releases · Credits) · **Philosophy** · **Jo
 After editing `tools/catalog.json`, `tools/magazine.json` or `tools/credits.json`, run:
 
 ```bash
-python3 tools/build_site.py && python3 tools/build_credits.py
+python3 tools/build_credits.py && python3 tools/build_site.py
 ```
 
 The menu and footer live in `tools/build_site.py` and are refreshed inside `index.html`, `philosophy/index.html` and `404.html` on every build.

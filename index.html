@@ -26,7 +26,7 @@
   <link rel="preload" href="/assets/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/dm-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/img/gallery/march-2024.webp" as="image">
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/site.css?v=0c856e25aa">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -51,8 +51,8 @@
   }
   </script>
   <meta name="hx-player" content="dark">
-  <link rel="stylesheet" href="/assets/css/player.css" data-hx-persist>
-  <link rel="stylesheet" href="/assets/css/book.css" data-hx-persist>
+  <link rel="stylesheet" href="/assets/css/player.css?v=fe2347e9b3" data-hx-persist>
+  <link rel="stylesheet" href="/assets/css/book.css?v=5c41800c6b" data-hx-persist>
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -81,25 +81,23 @@
       <img src="/assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="">
       <span>Beats &amp; Blues<br>Reality Music</span>
     </a>
-    <nav class="site-nav" aria-label="Primary">
-      <div class="nav-group">
-        <a href="/music/">Music <svg class="nav-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></a>
-        <div class="nav-sub" aria-label="Music">
-          <a href="/music/#catalog"><strong>Catalog</strong><small>By year</small></a>
-          <a href="/music/press/"><strong>Press releases</strong><small>The release notes</small></a>
-          <a href="/music/credits/"><strong>Credits</strong><small>Who made each record</small></a>
-        </div>
-      </div>
-      <a href="/philosophy/">Philosophy</a>
-      <a href="/#journey">Journey</a>
-      <a href="/gallery/">Gallery</a>
-      <a class="nav-studio" href="/studio/" data-no-swap title="Studio: listeners and booking requests (sign-in)"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>Studio</a>
-      <a class="nav-book" href="/#contact" data-book>Book</a>
-    </nav>
     <div class="header-actions">
       <a class="button button--primary button--sm" href="/#contact" data-book>Book</a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span></span><span></span></button>
     </div>
+    <nav class="site-nav" id="site-menu" aria-label="Primary">
+      <div class="nav-group">
+        <a class="nav-big" href="/music/">Music</a>
+        <div class="nav-sub"><a href="/music/#catalog">Catalog</a><a href="/music/press/">Press releases</a><a href="/music/credits/">Credits</a></div>
+      </div>
+      <a class="nav-big" href="/philosophy/">Philosophy</a>
+      <a class="nav-big" href="/#journey">Journey</a>
+      <a class="nav-big" href="/gallery/">Gallery</a>
+      <div class="nav-foot">
+        <a class="nav-studio" href="/studio/" data-no-swap><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>Studio</a>
+        <a class="nav-book" href="/#contact" data-book>Book</a>
+      </div>
+    </nav>
   </header>
 
   <main id="main">
@@ -146,7 +144,7 @@
       <div class="section-head reveal">
         <div>
           <span class="eyebrow"><span class="pulse-dot"></span> Music</span>
-          <h2 id="new-music-title">Streaming on heroone.art</h2>
+          <h2 id="new-music-title" class="sr-only">Music</h2>
         </div>
         <p>Both significantly grounded in “Beats &amp; Blues”.</p>
       </div>
@@ -244,21 +242,6 @@
             <a class="button button--ghost" href="/philosophy/">All philosophy</a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section hp-mag" id="gallery" aria-labelledby="mag-title">
-      <a class="hp-mag__cover reveal" href="/gallery/">
-        <img src="/assets/img/gallery/march-2024.webp" width="1440" height="1800" alt="Hero One, March 2024" loading="lazy">
-        <span class="hp-mag__mast">HERO<br>ONE</span>
-        <span class="hp-mag__kicker mono">Gallery · Edition 2026</span>
-        <span class="hp-mag__lines"><span>Opulence</span><span>Portraits</span><span>BBJN sessions</span><span>First stages</span></span>
-      </a>
-      <div class="hp-mag__copy reveal">
-        <span class="eyebrow"><span class="pulse-dot"></span> Gallery</span>
-        <h2 id="mag-title">Portraits, stages and studios.</h2>
-        <p>2011 to 2026, from Freshers’ Nite to the March 2024 sessions.</p>
-        <a class="button button--primary" href="/gallery/">Open the gallery <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </section>
 
@@ -362,10 +345,10 @@
 
 
 
-  <script src="/assets/js/signal-field.js" defer></script>
-  <script src="/assets/js/site.js" defer></script>
-  <script src="/assets/js/music-config.js" data-hx-persist></script>
-  <script src="/assets/js/player.js" data-hx-persist></script>
-  <script src="/assets/js/book.js" data-hx-persist></script>
+  <script src="/assets/js/signal-field.js?v=bcf7c0bbe3" defer></script>
+  <script src="/assets/js/site.js?v=d8fe58fde4" defer></script>
+  <script src="/assets/js/music-config.js?v=a90970ec9c" data-hx-persist></script>
+  <script src="/assets/js/player.js?v=21d2e0ba1f" data-hx-persist></script>
+  <script src="/assets/js/book.js?v=2546014946" data-hx-persist></script>
 </body>
 </html>
