@@ -642,6 +642,7 @@ p { margin: 0; }
 .hp-press__go { color: #9c322e; }
 .hp-press__title { display: grid; font-family: "Bodoni Moda", Georgia, serif; font-weight: 400; font-size: clamp(2.8rem, 8vw, 7.2rem); line-height: .95; letter-spacing: -.045em; }
 .hp-press__title em { font-style: italic; }
+.hp-press__title .amp { margin: .12em 0 .16em; font-size: .4em; font-style: italic; line-height: 1; color: #9c322e; }
 .hp-press__body { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.2rem, 4vw, 3.5rem); font-size: clamp(1rem, 1.3vw, 1.12rem); line-height: 1.6; }
 .hp-press__body p { margin: 0; }
 .hp-press__more { display: flex; flex-wrap: wrap; gap: 1.6rem; margin-top: 1.2rem; font-family: var(--ff-mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); }
