@@ -8,11 +8,14 @@ MP3s are deliberately not in this tree, and `.gitignore` keeps them out. The mas
 heroone-art/
 ├── api/
 │   ├── _lib.js
+│   ├── book.js
 │   ├── collect.js
 │   └── stream.js
 ├── assets/
 │   ├── css/
+│   │   ├── book.css
 │   │   ├── credits.css
+│   │   ├── magazine.css
 │   │   ├── player.css
 │   │   └── site.css
 │   ├── fonts/
@@ -90,6 +93,8 @@ heroone-art/
 │   │   ├── og-image.jpg
 │   │   └── og-law.jpg
 │   ├── js/
+│   │   ├── book.js
+│   │   ├── magazine.js
 │   │   ├── music-config.js
 │   │   ├── player.js
 │   │   ├── signal-field.js
@@ -98,12 +103,6 @@ heroone-art/
 │   │   ├── highest-currency.json
 │   │   └── ldcat.json
 │   ├── originals/
-│   │   ├── brand/
-│   │   │   ├── bmi-icon.webp
-│   │   │   ├── heroone-logo.png
-│   │   │   ├── mral-logo.png
-│   │   │   ├── ogs-logo.png
-│   │   │   └── soundexchange-logo.png
 │   │   ├── hero-one-bbjn-studio-2014-a.jpg
 │   │   ├── hero-one-bbjn-studio-2014-b.jpg
 │   │   ├── hero-one-dec-2023-a.jpg
@@ -128,17 +127,31 @@ heroone-art/
 ├── docs/
 │   ├── ASSET_PROVENANCE.md
 │   └── MUSIC_AND_ANALYTICS.md
+├── magazine/
+│   └── index.html
 ├── music/
 │   ├── credits/
-│   │   └── Hero-One-Full-Credits-2026.pdf
+│   │   ├── highest-currency-gotta-get-it/
+│   │   │   └── index.html
+│   │   ├── ldcat/
+│   │   │   └── index.html
+│   │   ├── Hero-One-Full-Credits-2026.pdf
+│   │   └── index.html
 │   ├── highest-currency-gotta-get-it/
-│   │   └── credits/
-│   │       └── index.html
+│   │   └── index.html
 │   ├── ldcat/
-│   │   └── credits/
-│   │       └── index.html
-│   ├── Hero-One-Press-Release-2026.pdf
+│   │   └── index.html
+│   ├── press/
+│   │   ├── ldcat-highest-currency-2026/
+│   │   │   └── index.html
+│   │   ├── Hero-One-Press-Release-2026.pdf
+│   │   └── index.html
 │   └── index.html
+├── now-playing/
+│   ├── highest-currency-gotta-get-it/
+│   │   └── index.html
+│   └── ldcat/
+│       └── index.html
 ├── philosophy/
 │   ├── law/
 │   │   └── index.html
@@ -149,8 +162,12 @@ heroone-art/
 │   └── migrations/
 │       └── 20261023000000_heroone_music.sql
 ├── tools/
+│   ├── _icons.html
 │   ├── build_credits.py
+│   ├── build_site.py
+│   ├── catalog.json
 │   ├── credits.json
+│   ├── magazine.json
 │   └── peaks.py
 ├── .env.example
 ├── .gitignore

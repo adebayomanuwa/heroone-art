@@ -72,7 +72,7 @@ html.hx-deck-open { overflow: hidden; }
 }
 .hx-wave.is-hover .hx-wave-tip { opacity: 1; }
 .hx-time { font-family: var(--mono); font-size: 11px; letter-spacing: .04em; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; min-width: 82px; text-align: right; }
-[data-state="error"] .hx-time::after { content: " · offline"; color: var(--red); }
+
 
 .hx-controls { display: flex; align-items: center; gap: 2px; }
 .hx-btn {

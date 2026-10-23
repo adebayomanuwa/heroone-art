@@ -1,0 +1,55 @@
+{
+  "_note": "Hero One's music catalog for heroone.art. Edit here, then run: python3 tools/build_site.py. Songs with \"stream\": true play on heroone.art (the track id must exist in assets/js/music-config.js and in Supabase). Every other entry links out. Add titles exactly as you want them shown.",
+  "songs": [
+    {
+      "id": "ldcat",
+      "slug": "ldcat",
+      "title": "LDCAT",
+      "subtitle": "Love Don’t Cost a Thang",
+      "year": 2026,
+      "stream": true,
+      "cover": "/assets/img/music/ldcat",
+      "press": "ldcat-highest-currency-2026",
+      "story": "LDCAT was mastered in a coffee shop in downtown London, Ontario, but began in Lagos in 2023, originally as Outside. Its identity passed through different periods of my life, with arrangements taking shape in 2025 and completion coming in 2026."
+    },
+    {
+      "id": "highest-currency",
+      "slug": "highest-currency-gotta-get-it",
+      "title": "Highest Currency, Gotta Get it",
+      "subtitle": "",
+      "year": 2026,
+      "stream": true,
+      "cover": "/assets/img/music/highest-currency",
+      "press": "ldcat-highest-currency-2026",
+      "story": "…the musical origins of “Highest Currency, Gotta Get it” stretch back through Massive Gang Nation, Lagos and Osogbo, Osun State. The new hook formulation draws from that history. LDCAT can be Latin/Reggaeton. Highest Currency can have an entirely different musical architecture. Both significantly grounded in “Beats & Blues”."
+    }
+  ],
+  "releases": [
+    { "year": 2025, "title": "Faa ji", "kind": "Single", "link": "https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" },
+    { "year": 2024, "title": "1000 BOTTLES", "kind": "Release · includes LIMITS", "link": "https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" },
+    { "year": 2024, "title": "M.C, O.T 3, BAYO, Lifted", "kind": "EPs", "link": "https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" },
+    { "year": 2024, "title": "Force", "kind": "Single", "link": "https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" },
+    { "year": 2024, "title": "DFDDP", "kind": "Single", "link": "https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" },
+    { "year": 2024, "title": "VIP Vibes", "kind": "Mashup · video", "link": "https://www.youtube.com/@hero-one" }
+  ],
+  "press": [
+    {
+      "slug": "ldcat-highest-currency-2026",
+      "title": "LDCAT & Highest Currency, Gotta Get it",
+      "year": 2026,
+      "pdf": "/music/press/Hero-One-Press-Release-2026.pdf",
+      "songs": ["ldcat", "highest-currency-gotta-get-it"],
+      "lede": "LDCAT was mastered in a coffee shop in downtown London, Ontario, but began in Lagos in 2023, originally as Outside."
+    }
+  ],
+  "platforms": [
+    ["Spotify", "https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g", "i-spotify"],
+    ["Apple Music", "https://music.apple.com/ng/artist/hero-one/1520370143", "i-apple"],
+    ["SoundCloud", "https://soundcloud.com/heroone", "i-soundcloud"],
+    ["YouTube", "https://www.youtube.com/@hero-one", "i-youtube"],
+    ["Amazon Music", "https://music.amazon.com/artists/B01HOYS7YK/hero-one", "i-amazon"],
+    ["Audiomack", "https://audiomack.com/hero-one/", "i-audiomack"],
+    ["Boomplay", "https://www.boomplay.com/artists/24967874", "i-boomplay"],
+    ["Deezer", "https://www.deezer.com/us/artist/10614549", "i-deezer"]
+  ]
+}

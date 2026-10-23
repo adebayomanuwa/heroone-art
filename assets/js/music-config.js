@@ -5,8 +5,8 @@ window.HERO_MUSIC = {
 
   // Supabase project (for the private /studio dashboard sign-in only).
   // Both values are public by design; the data itself is locked behind the database's row-level security.
-  supabaseUrl: 'https://cspicsytdzmzgnoceecs.supabase.co',                   // e.g. 'https://abcdxyzcompany.supabase.co'
-  supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNzcGljc3l0ZHptemdub2NlZWNzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwNDEyNzcsImV4cCI6MjA5MTYxNzI3N30.BUIiLbTLFmdrmgK9UQfHJGxZKTYCbbbunRBr4ldH1L4',               // Project Settings → API → anon public key
+  supabaseUrl: '',                   // e.g. 'https://abcdxyzcompany.supabase.co'
+  supabaseAnonKey: '',               // Project Settings → API → anon public key
 
   tracks: [
     {
@@ -16,7 +16,10 @@ window.HERO_MUSIC = {
       artist: 'Hero One',
       cover: '/assets/img/music/ldcat-160.webp',
       art: '/assets/img/music/ldcat-512.webp',
-      credits: '/music/ldcat/credits/',
+      slug: 'ldcat',
+      page: '/music/ldcat/',
+      credits: '/music/credits/ldcat/',
+      press: '/music/press/ldcat-highest-currency-2026/',
     },
     {
       id: 'highest-currency',
@@ -25,7 +28,10 @@ window.HERO_MUSIC = {
       artist: 'Hero One',
       cover: '/assets/img/music/highest-currency-160.webp',
       art: '/assets/img/music/highest-currency-512.webp',
-      credits: '/music/highest-currency-gotta-get-it/credits/',
+      slug: 'highest-currency-gotta-get-it',
+      page: '/music/highest-currency-gotta-get-it/',
+      credits: '/music/credits/highest-currency-gotta-get-it/',
+      press: '/music/press/ldcat-highest-currency-2026/',
     },
   ],
 };

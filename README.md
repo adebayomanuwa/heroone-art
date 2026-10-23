@@ -2,23 +2,37 @@
 
 The official Hero One artist website, **heroone.art**: Beats & Blues Reality Music by Adebayo Michael Manuwa.
 
-The press kit / portfolio is a separate site and repo: **portfolio.heroone.art** (`adebayomanuwa/heroone`). This site links to it from the header, hero, journey, portfolio section, contact list, closing call-to-action and footer.
+The press kit / portfolio is a separate site and repo: **portfolio.heroone.art** (`adebayomanuwa/heroone`). This site links to it from the hero, journey, portfolio section, contact list, closing call-to-action and footer.
 
-It's a static site with no build step. Two small Vercel Functions in `/api` stream the songs from a private Supabase bucket and record first-party listening stats, so **host it on Vercel** (GitHub Pages can't run `/api`). Setup is in [`docs/MUSIC_AND_ANALYTICS.md`](docs/MUSIC_AND_ANALYTICS.md).
+It's a static site with no build step. Three small Vercel Functions in `/api` stream the songs, take booking requests from a private Supabase bucket and record first-party listening stats, so **host it on Vercel** (GitHub Pages can't run `/api`). Setup is in [`docs/MUSIC_AND_ANALYTICS.md`](docs/MUSIC_AND_ANALYTICS.md).
 
 ## Pages
 
-| URL | File | What it is |
+Menu: **Music** (Catalog · Press releases · Credits) · **Philosophy** · **Journey** · **Gallery** · **Studio** (private, sign-in) · **Book**.
+
+| URL | Built from | What it is |
 | --- | --- | --- |
-| `/` | `index.html` | Home: WebGL signal-field hero, identity bento, listen, 2024 campaign, journey timeline (2010 to 2026), philosophy band, filterable gallery with lightbox and full-res downloads, portfolio feature, registrations, contact |
-| `/philosophy/` | `philosophy/index.html` | Philosophy hub |
-| `/philosophy/law/` | `philosophy/law/index.html` | **Variety in Observable Consciousness**, the Law (first stated 20 October 2026) |
-| `/music/` | `music/index.html` | Press release: LDCAT & Highest Currency, Gotta Get it (his design, with play buttons) + PDF |
-| `/music/ldcat/credits/` | built by `tools/build_credits.py` | Full credits, LDCAT |
-| `/music/highest-currency-gotta-get-it/credits/` | built by `tools/build_credits.py` | Full credits, Highest Currency, Gotta Get it |
-| `/studio/` | `studio/index.html` | Private listener stats (sign-in, not indexed) |
-| `/api/stream`, `/api/collect` | `api/*.js` | Signed stream links and listening events (Vercel Functions) |
-| (any missing URL) | `404.html` | Not-found page (GitHub Pages / Vercel / Netlify pick it up automatically) |
+| `/` | `index.html` | Home: hero, music streaming here, press release, journey, philosophy, magazine cover, portfolio, contact |
+| `/music/` | `tools/build_site.py` + `tools/catalog.json` | Music: catalog by year, press releases, credits, elsewhere |
+| `/music/ldcat/`, `/music/highest-currency-gotta-get-it/` | `tools/build_site.py` | One page per song: cover, play, the song's paragraph from the press release, credits, press release |
+| `/music/press/` | `tools/build_site.py` | Press releases (paper / ink / oxblood system) |
+| `/music/press/ldcat-highest-currency-2026/` | `music/press/…/index.html` | The 2026 press release (his design) + PDF |
+| `/music/credits/` and `/music/credits/<song>/` | `tools/build_site.py`, `tools/build_credits.py` + `tools/credits.json` | Credits, one line per person with their roles |
+| `/now-playing/<song>/` | `tools/build_site.py` | Shareable player URL: opens the 3nity Auracle deck on that song |
+| `/gallery/` | `tools/build_site.py` + `tools/magazine.json` | Gallery: the pictures laid out as a modern magazine (cover, spreads by year, contact sheet, full-resolution downloads) |
+| `/philosophy/`, `/philosophy/law/` | hand-made | Philosophy hub and **Variety in Observable Consciousness** |
+| Book (any page) | `assets/js/book.js` | 3nity Auracle chat that takes a request to the Booking or Management desk |
+| `/studio/` | `studio/index.html` | Private: listeners and booking requests (sign-in, not indexed) |
+| `/api/stream`, `/api/collect`, `/api/book` | `api/*.js` | Signed stream links, listening events, booking requests (Vercel Functions) |
+| (any missing URL) | `404.html` | Not-found page |
+
+After editing `tools/catalog.json`, `tools/magazine.json` or `tools/credits.json`, run:
+
+```bash
+python3 tools/build_site.py && python3 tools/build_credits.py
+```
+
+The menu and footer live in `tools/build_site.py` and are refreshed inside `index.html`, `philosophy/index.html` and `404.html` on every build.
 
 ## Structure
 
@@ -78,4 +92,4 @@ robots.txt  sitemap.xml  site.webmanifest  vercel.json  package.json  .env.examp
 
 MP3s are git-ignored on purpose: the masters live only in the private bucket.
 
-Root image cleanup: 17 duplicate photos were removed after SHA-256 verification against `assets/originals/`. The five original brand and registry images are preserved under `assets/originals/brand/`; the site uses the web versions in `assets/img/brand/`.
+The previous site's loose image files (`Hero One March 2024.jpg` and the rest) were renamed and moved into `assets/`. If anything outside this site hot-links the old file names, add a redirect or keep a copy at the old path.

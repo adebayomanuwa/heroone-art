@@ -67,5 +67,47 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/music/ldcat/credits",
+      "destination": "/music/credits/ldcat/",
+      "permanent": true
+    },
+    {
+      "source": "/music/ldcat/credits/",
+      "destination": "/music/credits/ldcat/",
+      "permanent": true
+    },
+    {
+      "source": "/music/highest-currency-gotta-get-it/credits",
+      "destination": "/music/credits/highest-currency-gotta-get-it/",
+      "permanent": true
+    },
+    {
+      "source": "/music/highest-currency-gotta-get-it/credits/",
+      "destination": "/music/credits/highest-currency-gotta-get-it/",
+      "permanent": true
+    },
+    {
+      "source": "/music/Hero-One-Press-Release-2026.pdf",
+      "destination": "/music/press/Hero-One-Press-Release-2026.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/book",
+      "destination": "/#book",
+      "permanent": false
+    },
+    {
+      "source": "/magazine",
+      "destination": "/gallery/",
+      "permanent": true
+    },
+    {
+      "source": "/magazine/",
+      "destination": "/gallery/",
+      "permanent": true
+    }
   ]
 }

@@ -80,14 +80,23 @@ Untagged visits fall back to the referring site (for example `open.spotify.com` 
 - Lists: songs, sources, cities and countries, devices, visit sources, top pages, and the last 30 listens.
 - Without keys it shows a sample-data preview, so you can see the layout before setup.
 
+## Booking requests (3nity Auracle chat)
+
+The **Book** button on every page opens a 3nity Auracle chat. It asks what the request is about, who's asking, the reply email, when and where, and the details. Then it shows the request before sending.
+
+- Performance, features, production and sync go to **Booking** (mraltd@yahoo.com). Press and management go to **Management** (millenialrenaissance@yahoo.com).
+- **Send to the desk** saves the request privately in `heroone.bookings`. It appears in `/studio/` under *Booking requests*, with a reply link.
+- Every request can also be sent as a ready-made email to the same desk ("Open in my email"). If saving ever fails, that becomes the main button, so a request is never lost.
+- The same migration file creates the table and its two functions (`heroone_log_booking`, `heroone_studio_bookings`).
+
 ## Adding a song later
 
 1. Upload `<id>.mp3` to the `heroone-streams` bucket.
 2. Run in SQL: `insert into heroone.tracks (id, title, storage_path) values ('<id>', '<Title>', '<id>.mp3');`
-3. Add the track to `assets/js/music-config.js` (id, title, cover, art, credits).
+3. Add the track to `assets/js/music-config.js` (id, slug, title, cover, art, page, credits, press) and to `tools/catalog.json` → `songs`.
 4. Make covers in `assets/img/music/` (`<id>-160/512/800/1400.webp`, `<id>-1200.jpg`).
 5. Generate `assets/music/<id>.json` (waveform and envelope) with `python3 tools/peaks.py <id> path/to/song.mp3`. This needs ffmpeg and numpy.
-6. For credits: add the song to `tools/credits.json` and run `python3 tools/build_credits.py`.
+6. For credits: add the song to `tools/credits.json`. Then run `python3 tools/build_site.py && python3 tools/build_credits.py` to build its song page, its `/now-playing/` URL and its credits page.
 
 To take a song down without redeploying: `update heroone.tracks set is_live = false where id = '<id>';`
 

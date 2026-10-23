@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="/assets/css/site.css">
   <meta name="hx-player" content="dark">
   <link rel="stylesheet" href="/assets/css/player.css" data-hx-persist>
+  <link rel="stylesheet" href="/assets/css/book.css" data-hx-persist>
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -44,15 +45,22 @@
       <span>Beats &amp; Blues<br>Reality Music</span>
     </a>
     <nav class="site-nav" aria-label="Primary">
-      <a href="/#identity">Identity</a>
-      <a href="/music/">Music</a>
+      <div class="nav-group">
+        <a href="/music/">Music <svg class="nav-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></a>
+        <div class="nav-sub" aria-label="Music">
+          <a href="/music/#catalog"><strong>Catalog</strong><small>By year</small></a>
+          <a href="/music/press/"><strong>Press releases</strong><small>The release notes</small></a>
+          <a href="/music/credits/"><strong>Credits</strong><small>Who made each record</small></a>
+        </div>
+      </div>
+      <a href="/philosophy/">Philosophy</a>
       <a href="/#journey">Journey</a>
-      <a href="/philosophy/" aria-current="page">Philosophy</a>
-      <a href="/#gallery">Gallery</a>
-      <a class="nav-portfolio" href="https://portfolio.heroone.art" target="_blank" rel="noopener">Portfolio <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+      <a href="/gallery/">Gallery</a>
+      <a class="nav-studio" href="/studio/" data-no-swap title="Studio: listeners and booking requests (sign-in)"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>Studio</a>
+      <a class="nav-book" href="/#contact" data-book>Book</a>
     </nav>
     <div class="header-actions">
-      <a class="button button--primary button--sm" href="/#contact">Book</a>
+      <a class="button button--primary button--sm" href="/#contact" data-book>Book</a>
       <button class="menu-button" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
     </div>
   </header>
@@ -76,13 +84,13 @@
       </div>
       <nav aria-label="Site">
         <h2 class="kicker">Site</h2>
-        <a href="/">Home</a>
         <a href="/music/">Music</a>
-        <a href="/music/">Music</a>
-        <a href="/#journey">Journey</a>
-        <a href="/#gallery">Gallery</a>
+        <a href="/music/press/">Press releases</a>
+        <a href="/music/credits/">Credits</a>
         <a href="/philosophy/">Philosophy</a>
         <a href="/philosophy/law/">The Law</a>
+        <a href="/#journey">Journey</a>
+        <a href="/gallery/">Gallery</a>
       </nav>
       <nav aria-label="Listen">
         <h2 class="kicker">Listen</h2>
@@ -93,10 +101,11 @@
       </nav>
       <nav aria-label="Hero One elsewhere">
         <h2 class="kicker">Elsewhere</h2>
+        <a href="/#contact" data-book>Book</a>
         <a href="https://portfolio.heroone.art" target="_blank" rel="noopener">Portfolio &amp; press kit <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <a href="mailto:mraltd@yahoo.com">Booking</a>
         <a href="https://metameta3.com" target="_blank" rel="noopener">metameta3.com</a>
         <a href="https://333bi.tech" target="_blank" rel="noopener">333bi.tech</a>
+        <a href="/studio/" data-no-swap>Studio</a>
       </nav>
     </div>
     <div class="footer-base mono">
@@ -108,5 +117,6 @@
   <script src="/assets/js/site.js" defer></script>
   <script src="/assets/js/music-config.js" data-hx-persist></script>
   <script src="/assets/js/player.js" data-hx-persist></script>
+  <script src="/assets/js/book.js" data-hx-persist></script>
 </body>
 </html>

@@ -225,3 +225,49 @@ grant execute on function public.heroone_is_studio_admin() to authenticated;
 insert into storage.buckets (id, name, public)
 values ('heroone-streams', 'heroone-streams', false)
 on conflict (id) do nothing;
+
+-- ── Booking requests from the 3nity Auracle chat (heroone.art/#book) ──
+create table if not exists heroone.bookings (
+  id           bigint generated always as identity primary key,
+  created_at   timestamptz not null default now(),
+  topic        text not null,
+  topic_label  text,
+  desk         text not null check (desk in ('booking', 'management')),
+  name         text not null,
+  email        text not null,
+  when_where   text,
+  message      text not null,
+  page         text,
+  country      text,
+  status       text not null default 'new'
+);
+alter table heroone.bookings enable row level security;
+revoke all on heroone.bookings from public, anon, authenticated;
+
+create or replace function public.heroone_log_booking(p_row jsonb)
+returns void
+language sql volatile security definer set search_path = heroone, public
+as $$
+  insert into heroone.bookings (topic, topic_label, desk, name, email, when_where, message, page, country)
+  select r.topic, r.topic_label, r.desk, r.name, r.email, r.when_where, r.message, r.page, r.country
+  from jsonb_populate_record(null::heroone.bookings, p_row) r;
+$$;
+revoke all on function public.heroone_log_booking(jsonb) from public, anon, authenticated;
+grant execute on function public.heroone_log_booking(jsonb) to service_role;
+
+create or replace function public.heroone_studio_bookings(p_limit int default 50)
+returns jsonb
+language plpgsql stable security definer set search_path = heroone, public
+as $$
+begin
+  if not public.heroone_is_studio_admin() then
+    raise exception 'not authorised' using errcode = '42501';
+  end if;
+  return coalesce((
+    select jsonb_agg(to_jsonb(b) - 'id' order by b.created_at desc)
+    from (select * from heroone.bookings order by created_at desc limit greatest(1, least(p_limit, 500))) b
+  ), '[]'::jsonb);
+end;
+$$;
+revoke all on function public.heroone_studio_bookings(int) from public, anon;
+grant execute on function public.heroone_studio_bookings(int) to authenticated;

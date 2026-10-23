@@ -37,7 +37,7 @@
     "url": "https://heroone.art/",
     "image": "https://heroone.art/assets/img/og-image.jpg",
     "logo": "https://heroone.art/assets/img/brand/heroone-logo.webp",
-    "genre": ["Hip-hop", "Afrofusion", "Soulful trap", "Beats & Blues"],
+    "genre": ["Beats & Blues"],
     "sameAs": [
       "https://portfolio.heroone.art",
       "https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g",
@@ -52,6 +52,7 @@
   </script>
   <meta name="hx-player" content="dark">
   <link rel="stylesheet" href="/assets/css/player.css" data-hx-persist>
+  <link rel="stylesheet" href="/assets/css/book.css" data-hx-persist>
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -76,20 +77,27 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <a class="brand-lockup" href="#top" aria-label="Hero One, back to top">
+    <a class="brand-lockup" href="/" aria-label="Hero One home">
       <img src="/assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="">
       <span>Beats &amp; Blues<br>Reality Music</span>
     </a>
     <nav class="site-nav" aria-label="Primary">
-      <a href="#identity">Identity</a>
-      <a href="/music/">Music</a>
-      <a href="#journey">Journey</a>
-      <a href="#philosophy">Philosophy</a>
-      <a href="#gallery">Gallery</a>
-      <a class="nav-portfolio" href="https://portfolio.heroone.art" target="_blank" rel="noopener">Portfolio <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+      <div class="nav-group">
+        <a href="/music/">Music <svg class="nav-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></a>
+        <div class="nav-sub" aria-label="Music">
+          <a href="/music/#catalog"><strong>Catalog</strong><small>By year</small></a>
+          <a href="/music/press/"><strong>Press releases</strong><small>The release notes</small></a>
+          <a href="/music/credits/"><strong>Credits</strong><small>Who made each record</small></a>
+        </div>
+      </div>
+      <a href="/philosophy/">Philosophy</a>
+      <a href="/#journey">Journey</a>
+      <a href="/gallery/">Gallery</a>
+      <a class="nav-studio" href="/studio/" data-no-swap title="Studio: listeners and booking requests (sign-in)"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>Studio</a>
+      <a class="nav-book" href="/#contact" data-book>Book</a>
     </nav>
     <div class="header-actions">
-      <a class="button button--primary button--sm" href="#contact">Book</a>
+      <a class="button button--primary button--sm" href="/#contact" data-book>Book</a>
       <button class="menu-button" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
     </div>
   </header>
@@ -106,7 +114,7 @@
           <span class="line">Beats &amp; Blues</span>
           <span class="line line--gold">Reality Music.</span>
         </h1>
-        <p class="hero-lede">Adebayo Michael Manuwa makes grounded stories over soulful trap, afrofusion and modern hip-hop, and builds the visual world with the same care as the records.</p>
+        <p class="hero-lede">Adebayo Michael Manuwa: artist, producer, and the author of <a href="/philosophy/law/" style="color:var(--gold-bright)">Variety in Observable Consciousness</a>.</p>
         <div class="hero-actions">
           <a class="button button--primary" href="/music/" data-play="ldcat">Listen now</a>
           <a class="button button--ghost" href="https://portfolio.heroone.art" target="_blank" rel="noopener">View portfolio <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -130,15 +138,15 @@
 
     <div class="ticker" aria-hidden="true">
       <div class="ticker__track">
-        <span><i></i>Beats &amp; Blues</span><span><i></i>Afrofusion</span><span><i></i>Soulful trap</span><span><i></i>Modern hip-hop</span><span><i></i>Ghetto Gospel Reality</span><span><i></i>Opulence Grandeur Sound</span><span><i></i>Millenial Renaissance Art</span><span><i></i>Heal · Reflect · Rise</span><span><i></i>Variety in Observable Consciousness</span><span><i></i>Beats &amp; Blues</span><span><i></i>Afrofusion</span><span><i></i>Soulful trap</span><span><i></i>Modern hip-hop</span><span><i></i>Ghetto Gospel Reality</span><span><i></i>Opulence Grandeur Sound</span><span><i></i>Millenial Renaissance Art</span><span><i></i>Heal · Reflect · Rise</span><span><i></i>Variety in Observable Consciousness</span>
+        <span><i></i>Beats &amp; Blues</span><span><i></i>Ghetto Gospel Reality</span><span><i></i>Opulence Grandeur Sound</span><span><i></i>Millenial Renaissance Art</span><span><i></i>Heal · Reflect · Rise</span><span><i></i>Variety in Observable Consciousness</span><span><i></i>Beats &amp; Blues</span><span><i></i>Ghetto Gospel Reality</span><span><i></i>Opulence Grandeur Sound</span><span><i></i>Millenial Renaissance Art</span><span><i></i>Heal · Reflect · Rise</span><span><i></i>Variety in Observable Consciousness</span>
       </div>
     </div>
 
     <section class="section new-music" id="new-music" aria-labelledby="new-music-title">
       <div class="section-head reveal">
         <div>
-          <span class="eyebrow"><span class="pulse-dot"></span> Music · 2026</span>
-          <h2 id="new-music-title">LDCAT &amp; Highest Currency, Gotta Get it</h2>
+          <span class="eyebrow"><span class="pulse-dot"></span> Music</span>
+          <h2 id="new-music-title">Streaming on heroone.art</h2>
         </div>
         <p>Both significantly grounded in “Beats &amp; Blues”.</p>
       </div>
@@ -149,8 +157,8 @@
             <span class="nm-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="i-play" d="M8 5.5v13l11-6.5z"/><path class="i-pause" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></span>
           </button>
           <div class="nm-meta">
-            <h3>LDCAT</h3>
-            <p>Love Don’t Cost a Thang · <a href="/music/ldcat/credits/">Credits</a></p>
+            <h3><a href="/music/ldcat/">LDCAT</a></h3>
+            <p>Love Don’t Cost a Thang · <a href="/music/credits/ldcat/">Credits</a></p>
           </div>
           <button class="button button--sm button--ghost nm-btn" type="button" data-play="ldcat"><span data-play-label>Play</span></button>
         </article>
@@ -160,105 +168,28 @@
             <span class="nm-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="i-play" d="M8 5.5v13l11-6.5z"/><path class="i-pause" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></span>
           </button>
           <div class="nm-meta">
-            <h3>Highest Currency, Gotta Get it</h3>
-            <p>Hero One · <a href="/music/highest-currency-gotta-get-it/credits/">Credits</a></p>
+            <h3><a href="/music/highest-currency-gotta-get-it/">Highest Currency, Gotta Get it</a></h3>
+            <p>Hero One · <a href="/music/credits/highest-currency-gotta-get-it/">Credits</a></p>
           </div>
           <button class="button button--sm button--ghost nm-btn" type="button" data-play="highest-currency"><span data-play-label>Play</span></button>
         </article>
       </div>
       <div class="nm-foot reveal">
-        <a class="button button--primary" href="/music/">Read the press release <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="button button--primary" href="/music/">All music <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </section>
 
-    <section class="section" id="identity" aria-labelledby="identity-title">
-      <div class="section-head reveal">
-        <div>
-          <span class="eyebrow"><span class="pulse-dot"></span> Musical identity</span>
-          <h2 id="identity-title">More than just an artist.</h2>
+    <section class="section hp-press" id="press" aria-labelledby="press-title">
+      <a class="hp-press__sheet reveal" href="/music/press/ldcat-highest-currency-2026/">
+        <div class="hp-press__top"><span>Music / Press release</span><span>Hero One · 2026</span></div>
+        <h2 id="press-title" class="hp-press__title"><span>LDCAT</span><em>Highest Currency,</em><em>Gotta Get it</em></h2>
+        <div class="hp-press__body">
+          <p>LDCAT was mastered in a coffee shop in downtown London, Ontario, but began in Lagos in 2023, originally as Outside. Its identity passed through different periods of my life, with arrangements taking shape in 2025 and completion coming in 2026.</p>
+          <p>Meanwhile, the musical origins of “Highest Currency, Gotta Get it” stretch back through Massive Gang Nation, Lagos and Osogbo, Osun State. The new hook formulation draws from that history. LDCAT can be Latin/Reggaeton. Highest Currency can have an entirely different musical architecture. Both significantly grounded in “Beats &amp; Blues”.</p>
         </div>
-        <p>With a sound that blends culture and feeling, Hero One connects with people in a real way: artist, producer, and owner of the masters and the message.</p>
-      </div>
-      <div class="bento">
-        <article class="card card--feature card--wide reveal">
-          <span class="kicker">Creator of</span>
-          <h3>Beats &amp; Blues</h3>
-          <p>Hero One started with Ghetto Gospel Reality Music, but the sound kept growing. What came next was <strong>Beats &amp; Blues</strong>: a raw and soulful fusion of hip-hop, Afro-influences, modern classics, and multiple genres.</p>
-          <div class="genre-list">
-            <span class="chip chip--gold">Hip-hop</span><span class="chip chip--gold">Afrofusion</span><span class="chip chip--gold">Soulful trap</span><span class="chip">Modern classics</span><span class="chip">Ghetto Gospel Reality</span>
-          </div>
-          <img class="card__mark" src="/assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="" loading="lazy">
-        </article>
-        <article class="card card--teal reveal">
-          <span class="kicker">Cultural bridge-builder</span>
-          <h3>Streets and tradition</h3>
-          <p>The music carries the weight of the streets and the warmth of tradition, layered with interstellar energy. We are building something <strong>timeless</strong>.</p>
-        </article>
-        <article class="card reveal">
-          <span class="kicker">Artist</span>
-          <h3>Writing that hits</h3>
-          <p>Emotive writing, sharp melodic hooks, and a self-defined Beats &amp; Blues identity.</p>
-        </article>
-        <article class="card card--teal reveal">
-          <span class="kicker">Producer</span>
-          <h3>Weight and swing</h3>
-          <p>Textured percussion, afrofusion movement, trap swing, and film-friendly instrumental weight.</p>
-        </article>
-        <article class="card card--ember reveal">
-          <span class="kicker">Owner</span>
-          <h3>Masters and message</h3>
-          <p>Independent since 2020 through Millenial Renaissance Art Limited, with Opulence Grandeur Sound for catalog distribution and sync.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="listen" aria-labelledby="listen-title">
-      <div class="section-head reveal">
-        <div>
-          <span class="eyebrow"><span class="pulse-dot"></span> Listen</span>
-          <h2 id="listen-title">Enter the catalog.</h2>
-        </div>
-        <p>Stream, save, and share. The full discography lives across every major platform, with official visuals on YouTube.</p>
-      </div>
-      <div class="listen-grid">
-        <div class="embed reveal">
-          <iframe title="Hero One on Spotify" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO1pQCrg?utm_source=generator&amp;theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
-        <div class="reveal">
-          <span class="kicker">Stream Hero One</span>
-          <div class="platforms">
-            <a class="platform" href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-spotify"/></svg>Spotify</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="platform" href="https://music.apple.com/ng/artist/hero-one/1520370143" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-apple"/></svg>Apple Music</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="platform" href="https://soundcloud.com/heroone" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-soundcloud"/></svg>SoundCloud</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="platform" href="https://www.youtube.com/@hero-one" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-youtube"/></svg>YouTube</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="platform" href="https://music.amazon.com/artists/B01HOYS7YK/hero-one" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-amazon"/></svg>Amazon Music</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="platform" href="https://audiomack.com/hero-one/" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-audiomack"/></svg>Audiomack</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="platform" href="https://www.boomplay.com/artists/24967874" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-boomplay"/></svg>Boomplay</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="platform" href="https://www.deezer.com/us/artist/10614549" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-deezer"/></svg>Deezer</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="platform" href="https://www.submithub.com/link/hero-one" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-submithub"/></svg>SubmitHub</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </div>
-          <a class="watch" href="https://www.youtube.com/@hero-one" target="_blank" rel="noopener">
-            <img src="/assets/img/gallery/vip-vibes-a.webp" width="1280" height="720" alt="" loading="lazy">
-            <span class="watch__label"><svg aria-hidden="true"><use href="#i-youtube"/></svg><span>Watch on YouTube<small>@hero-one · VIP Vibes and more</small></span></span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="campaign" aria-labelledby="campaign-title">
-      <div class="section-head reveal">
-        <div>
-          <span class="eyebrow"><span class="pulse-dot"></span> The 2024 campaign</span>
-          <h2 id="campaign-title">A year of music.<br>A year of movement.</h2>
-        </div>
-        <p>One release every month. Three EPs. International press. Viral momentum. A statement made.</p>
-      </div>
-      <ol class="doctrine-grid reveal">
-        <li><span class="mono">01 · Cadence</span><strong>24 songs</strong><p>Drops every month for the entire calendar year. Pure consistency and evolution.</p></li>
-        <li><span class="mono">02 · Projects</span><strong>3 EPs</strong><p>M.C, O.T 3, BAYO, Lifted: multi-dimensional projects showing range and intent.</p></li>
-        <li><span class="mono">03 · Press</span><strong>Force</strong><p>International buzz and editorial support across English and French press.</p></li>
-        <li><span class="mono">04 · Social</span><strong>DFDDP</strong><p>Sparked viral moments across social media, expanding the digital footprint.</p></li>
-      </ol>
+        <div class="hp-press__foot"><span>Beats &amp; Blues</span><span class="hp-press__go">Read the press release →</span></div>
+      </a>
+      <div class="hp-press__more reveal"><a href="/music/press/">All press releases</a><a href="/music/press/Hero-One-Press-Release-2026.pdf" data-no-swap>PDF ↓</a><a href="/music/credits/">Credits</a></div>
     </section>
 
     <section class="section" id="journey" aria-labelledby="journey-title">
@@ -276,7 +207,7 @@
         <li class="reveal"><span class="year">2017–20</span><article class="card"><h3>Music Genius Network</h3><p>Expanding the reach and sharpening the craft.</p></article></li>
         <li class="reveal"><span class="year">2020</span><article class="card"><h3>Millenial Renaissance Art Limited</h3><p>Full ownership of the masters and the message.</p></article></li>
         <li class="reveal"><span class="year">2022</span><article class="card"><h3>Opulence Grandeur Sound</h3><p>The sonic imprint for catalog distribution and sync.</p></article></li>
-        <li class="reveal"><span class="year">2024</span><article class="card"><h3>24 songs in 12 months</h3><p>Three EPs, plus viral moments with Force and DFDDP. <em>LIMITS</em>, from <em>1000 BOTTLES</em>: “All actions and desires are circumscribed within limits.”</p></article></li>
+        <li class="reveal"><span class="year">2024</span><article class="card"><h3>1000 BOTTLES</h3><p>EPs M.C, O.T 3, BAYO, Lifted, and the moments around Force and DFDDP. <em>LIMITS</em>, from <em>1000 BOTTLES</em>: “All actions and desires are circumscribed within limits.”</p></article></li>
         <li class="reveal"><span class="year">2025</span><article class="card"><h3>Heard in other languages</h3><p>Press in English, French and Spanish, and radio support for <em>Faa ji</em>. <a href="https://portfolio.heroone.art" target="_blank" rel="noopener">See the portfolio</a></p></article></li>
         <li class="reveal is-now"><span class="year">2026</span><article class="card"><h3>Variety in Observable Consciousness</h3><p>The idea in the music becomes a stated law, first stated 20 October 2026. <a href="/philosophy/law/">Read the law</a></p></article></li>
       </ol>
@@ -316,97 +247,23 @@
       </div>
     </section>
 
-    <section class="section" id="gallery" aria-labelledby="gallery-title">
-      <div class="section-head reveal">
-        <div>
-          <span class="eyebrow"><span class="pulse-dot"></span> Visual archive</span>
-          <h2 id="gallery-title">Fifteen years in frame.</h2>
-        </div>
-        <p>From the first award and early stages in 2011 to the 2024 campaign. Open any image for its year, purpose and a full-resolution download.</p>
-      </div>
-      <div class="segmented reveal" role="radiogroup" aria-label="Filter the gallery">
-        <button type="button" role="radio" data-filter="all" aria-checked="true">All <span class="segmented__count">17</span></button>
-        <button type="button" role="radio" data-filter="portrait" aria-checked="false">Portrait <span class="segmented__count">7</span></button>
-        <button type="button" role="radio" data-filter="studio" aria-checked="false">Studio <span class="segmented__count">4</span></button>
-        <button type="button" role="radio" data-filter="stage" aria-checked="false">Stage <span class="segmented__count">2</span></button>
-        <button type="button" role="radio" data-filter="campaign" aria-checked="false">Campaign <span class="segmented__count">3</span></button>
-        <button type="button" role="radio" data-filter="legacy" aria-checked="false">Legacy <span class="segmented__count">1</span></button>
-      </div>
-      <p class="mono" id="gallery-count" aria-live="polite" style="color:var(--text-dim);margin:0 0 1rem"></p>
-      <div class="gallery">
-        <button class="shot" type="button" data-category="portrait" data-title="March 2024 Portrait" data-year="2024" data-usage="Primary press image" data-description="High-resolution portrait for hero art, press packets, and campaign lead imagery." data-size="4000 × 5000" data-full="/assets/img/gallery/march-2024.webp" data-original="/assets/originals/hero-one-march-2024.jpg" aria-label="Open March 2024 Portrait, 2024">
-          <img src="/assets/img/gallery/march-2024-sm.webp" width="576" height="720" alt="March 2024 Portrait: High-resolution portrait for hero art, press packets, and campaign lead imagery." loading="lazy" decoding="async">
-          <span class="shot__meta"><strong>March 2024 Portrait</strong><span>2024 · portrait</span></span>
-        </button>
-        <button class="shot" type="button" data-category="campaign" data-title="VIP Vibes Poster" data-year="2024" data-usage="Release artwork" data-description="Poster-style campaign artwork for VIP Vibes with Hero One." data-size="960 × 1280" data-full="/assets/img/gallery/vip-vibes-poster.webp" data-original="/assets/originals/hero-one-vip-vibes-poster.jpg" aria-label="Open VIP Vibes Poster, 2024">
-          <img src="/assets/img/gallery/vip-vibes-poster-sm.webp" width="540" height="720" alt="VIP Vibes Poster: Poster-style campaign artwork for VIP Vibes with Hero One." loading="lazy" decoding="async">
-          <span class="shot__meta"><strong>VIP Vibes Poster</strong><span>2024 · campaign</span></span>
-        </button>
-        <button class="shot" type="button" data-category="portrait" data-title="December 2023 Portrait" data-year="2023" data-usage="Artist profile" data-description="Clean modern portrait suited for platform profiles, artist pages, and press thumbnails." data-size="3590 × 4488" data-full="/assets/img/gallery/dec-2023.webp" data-original="/assets/originals/hero-one-dec-2023.jpg" aria-label="Open December 2023 Portrait, 2023">
-          <img src="/assets/img/gallery/dec-2023-sm.webp" width="576" height="720" alt="December 2023 Portrait: Clean modern portrait suited for platform profiles, artist pages, and press thumbnails." loading="lazy" decoding="async">
-          <span class="shot__meta"><strong>December 2023 Portrait</strong><span>2023 · portrait</span></span>
-        </button>
-        <button class="shot" type="button" data-category="studio" data-title="BBJN Studio Session A" data-year="2014" data-usage="Studio archive" data-description="Studio-era documentation from the BBJN sessions." data-size="960 × 720" data-full="/assets/img/gallery/bbjn-studio-2014-a.webp" data-original="/assets/originals/hero-one-bbjn-studio-2014-a.jpg" aria-label="Open BBJN Studio Session A, 2014">
-          <img src="/assets/img/gallery/bbjn-studio-2014-a-sm.webp" width="720" height="540" alt="BBJN Studio Session A: Studio-era documentation from the BBJN sessions." loading="lazy" decoding="async">
-          <span class="shot__meta"><strong>BBJN Studio Session A</strong><span>2014 · studio</span></span>
-        </button>
-        <button class="shot" type="button" data-category="portrait" data-title="March 2024 Alternate Portrait" data-year="2024" data-usage="Secondary press image" data-description="Alternate vertical portrait with strong editorial framing for artist bios and feature layouts." data-size="4000 × 5600" data-full="/assets/img/gallery/march-2024-b.webp" data-original="/assets/originals/hero-one-march-2024-b.jpg" aria-label="Open March 2024 Alternate Portrait, 2024">
-          <img src="/assets/img/gallery/march-2024-b-sm.webp" width="514" height="720" alt="March 2024 Alternate Portrait: Alternate vertical portrait with strong editorial framing for artist bios and feature layouts." loading="lazy" decoding="async">
-          <span class="shot__meta"><strong>March 2024 Alternate Portrait</strong><span>2024 · portrait</span></span>
-        </button>
-        <button class="shot" type="button" data-category="stage" data-title="Performing in 2011" data-year="2011" data-usage="Performance archive" data-description="Early-stage performance image documenting the live foundation." data-size="604 × 453" data-full="/assets/img/gallery/performing-2011.webp" data-original="/assets/originals/hero-one-performing-2011.jpg" aria-label="Open Performing in 2011, 2011">
-          <img src="/assets/img/gallery/performing-2011-sm.webp" width="604" height="453" alt="Performing in 2011: Early-stage performance image documenting the live foundation." loading="lazy" decoding="async">
-          <span class="shot__meta"><strong>Performing in 2011</strong><span>2011 · stage</span></span>
-        </button>
-        <button class="shot" type="button" data-category="portrait" data-title="Hero One 2023" data-year="2023" data-usage="Archive portrait" data-description="Vertical archive portrait documenting the visual identity before the 2024 campaign." data-size="3648 × 5376" data-full="/assets/img/gallery/portrait-2023.webp" data-original="/assets/originals/hero-one-portrait-2023.jpg" aria-label="Open Hero One 2023, 2023">
-          <img src="/assets/img/gallery/portrait-2023-sm.webp" width="489" height="720" alt="Hero One 2023: Vertical archive portrait documenting the visual identity before the 2024 campaign." loading="lazy" decoding="async">
-          <span class="shot__meta"><strong>Hero One 2023</strong><span>2023 · portrait</span></span>
-        </button>
-        <button class="shot" type="button" data-category="campaign" data-title="VIP Vibes Mashup A" data-year="2024" data-usage="Landscape campaign creative" data-description="Landscape promotional creative for video thumbnails and wide social placements." data-size="1280 × 720" data-full="/assets/img/gallery/vip-vibes-a.webp" data-original="/assets/originals/hero-one-vip-vibes-a.jpg" aria-label="Open VIP Vibes Mashup A, 2024">
-          <img src="/assets/img/gallery/vip-vibes-a-sm.webp" width="720" height="405" alt="VIP Vibes Mashup A: Landscape promotional creative for video thumbnails and wide social placements." loading="lazy" decoding="async">
-          <span class="shot__meta"><strong>VIP Vibes Mashup A</strong><span>2024 · campaign</span></span>
-        </button>
-        <button class="shot" type="button" data-category="legacy" data-title="First Award" data-year="2011" data-usage="Milestone archive" data-description="Milestone image documenting Hero One&#x27;s first award in 2011." data-size="453 × 604" data-full="/assets/img/gallery/first-award-2011.webp" data-original="/assets/originals/hero-one-first-award-2011.jpg" aria-label="Open First Award, 2011">
-          <img src="/assets/img/gallery/first-award-2011-sm.webp" width="453" height="604" alt="First Award: Milestone image documenting Hero One&#x27;s first award in 2011." loading="lazy" decoding="async">
-          <span class="shot__meta"><strong>First Award</strong><span>2011 · legacy</span></span>
-        </button>
-        <button class="shot" type="button" data-category="portrait" data-title="December 2023 Editorial Portrait" data-year="2023" data-usage="Editorial profile" data-description="Companion portrait from the December 2023 session for editorial rotation and social features." data-size="3524 × 4405" data-full="/assets/img/gallery/dec-2023-a.webp" data-original="/assets/originals/hero-one-dec-2023-a.jpg" aria-label="Open December 2023 Editorial Portrait, 2023">
-          <img src="/assets/img/gallery/dec-2023-a-sm.webp" width="576" height="720" alt="December 2023 Editorial Portrait: Companion portrait from the December 2023 session for editorial rotation and social features." loading="lazy" decoding="async">
-          <span class="shot__meta"><strong>December 2023 Editorial Portrait</strong><span>2023 · portrait</span></span>
-        </button>
-        <button class="shot" type="button" data-category="studio" data-title="MGN Workaholix" data-year="2016" data-usage="Company-era archive" data-description="Archive image tied to the MGN Workaholix era and business development period." data-size="1200 × 1600" data-full="/assets/img/gallery/mgn-workaholix-2016.webp" data-original="/assets/originals/hero-one-mgn-workaholix-2016.jpg" aria-label="Open MGN Workaholix, 2016">
-          <img src="/assets/img/gallery/mgn-workaholix-2016-sm.webp" width="540" height="720" alt="MGN Workaholix: Archive image tied to the MGN Workaholix era and business development period." loading="lazy" decoding="async">
-          <span class="shot__meta"><strong>MGN Workaholix</strong><span>2016 · studio</span></span>
-        </button>
-        <button class="shot" type="button" data-category="studio" data-title="BBJN Studio Session B" data-year="2014" data-usage="Studio archive" data-description="Alternate image from the BBJN studio archive." data-size="960 × 720" data-full="/assets/img/gallery/bbjn-studio-2014-b.webp" data-original="/assets/originals/hero-one-bbjn-studio-2014-b.jpg" aria-label="Open BBJN Studio Session B, 2014">
-          <img src="/assets/img/gallery/bbjn-studio-2014-b-sm.webp" width="720" height="540" alt="BBJN Studio Session B: Alternate image from the BBJN studio archive." loading="lazy" decoding="async">
-          <span class="shot__meta"><strong>BBJN Studio Session B</strong><span>2014 · studio</span></span>
-        </button>
-        <button class="shot" type="button" data-category="portrait" data-title="Hero One 2023 B" data-year="2023" data-usage="Archive portrait" data-description="Additional 2023 portrait for rotating layouts and platform-specific crops." data-size="3648 × 4560" data-full="/assets/img/gallery/portrait-2023-b.webp" data-original="/assets/originals/hero-one-portrait-2023-b.jpg" aria-label="Open Hero One 2023 B, 2023">
-          <img src="/assets/img/gallery/portrait-2023-b-sm.webp" width="576" height="720" alt="Hero One 2023 B: Additional 2023 portrait for rotating layouts and platform-specific crops." loading="lazy" decoding="async">
-          <span class="shot__meta"><strong>Hero One 2023 B</strong><span>2023 · portrait</span></span>
-        </button>
-        <button class="shot" type="button" data-category="stage" data-title="Freshers&#x27; Nite 2011" data-year="2011" data-usage="Performance archive" data-description="Early performance archive from Freshers&#x27; Nite 2011." data-size="640 × 1024" data-full="/assets/img/gallery/freshers-nite-2011.webp" data-original="/assets/originals/hero-one-freshers-nite-2011.jpg" aria-label="Open Freshers&#x27; Nite 2011, 2011">
-          <img src="/assets/img/gallery/freshers-nite-2011-sm.webp" width="450" height="720" alt="Freshers&#x27; Nite 2011: Early performance archive from Freshers&#x27; Nite 2011." loading="lazy" decoding="async">
-          <span class="shot__meta"><strong>Freshers&#x27; Nite 2011</strong><span>2011 · stage</span></span>
-        </button>
-        <button class="shot" type="button" data-category="campaign" data-title="VIP Vibes Mashup B" data-year="2024" data-usage="Landscape campaign creative" data-description="Alternate wide campaign creative for VIP Vibes by Hero One." data-size="1280 × 720" data-full="/assets/img/gallery/vip-vibes-b.webp" data-original="/assets/originals/hero-one-vip-vibes-b.jpg" aria-label="Open VIP Vibes Mashup B, 2024">
-          <img src="/assets/img/gallery/vip-vibes-b-sm.webp" width="720" height="405" alt="VIP Vibes Mashup B: Alternate wide campaign creative for VIP Vibes by Hero One." loading="lazy" decoding="async">
-          <span class="shot__meta"><strong>VIP Vibes Mashup B</strong><span>2024 · campaign</span></span>
-        </button>
-        <button class="shot" type="button" data-category="portrait" data-title="Hero One 2023 C" data-year="2023" data-usage="Archive portrait" data-description="Portrait with strong vertical composition for mobile-first placements." data-size="3141 × 3926" data-full="/assets/img/gallery/portrait-2023-c.webp" data-original="/assets/originals/hero-one-portrait-2023-c.jpg" aria-label="Open Hero One 2023 C, 2023">
-          <img src="/assets/img/gallery/portrait-2023-c-sm.webp" width="576" height="720" alt="Hero One 2023 C: Portrait with strong vertical composition for mobile-first placements." loading="lazy" decoding="async">
-          <span class="shot__meta"><strong>Hero One 2023 C</strong><span>2023 · portrait</span></span>
-        </button>
-        <button class="shot" type="button" data-category="studio" data-title="MGN Second Studio" data-year="2015" data-usage="Studio archive" data-description="Archive image from the MGN second studio period." data-size="640 × 480" data-full="/assets/img/gallery/mgn-studio-2015.webp" data-original="/assets/originals/hero-one-mgn-studio-2015.jpg" aria-label="Open MGN Second Studio, 2015">
-          <img src="/assets/img/gallery/mgn-studio-2015-sm.webp" width="640" height="480" alt="MGN Second Studio: Archive image from the MGN second studio period." loading="lazy" decoding="async">
-          <span class="shot__meta"><strong>MGN Second Studio</strong><span>2015 · studio</span></span>
-        </button>
+    <section class="section hp-mag" id="gallery" aria-labelledby="mag-title">
+      <a class="hp-mag__cover reveal" href="/gallery/">
+        <img src="/assets/img/gallery/march-2024.webp" width="1440" height="1800" alt="Hero One, March 2024" loading="lazy">
+        <span class="hp-mag__mast">HERO<br>ONE</span>
+        <span class="hp-mag__kicker mono">Gallery · Edition 2026</span>
+        <span class="hp-mag__lines"><span>Opulence</span><span>Portraits</span><span>BBJN sessions</span><span>First stages</span></span>
+      </a>
+      <div class="hp-mag__copy reveal">
+        <span class="eyebrow"><span class="pulse-dot"></span> Gallery</span>
+        <h2 id="mag-title">Portraits, stages and studios.</h2>
+        <p>2011 to 2026, from Freshers’ Nite to the March 2024 sessions.</p>
+        <a class="button button--primary" href="/gallery/">Open the gallery <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </section>
 
     <section class="section" id="portfolio" aria-labelledby="portfolio-title">
-      <div class="portfolio reveal">
+      <div class="portfolio portfolio--solo reveal">
         <div>
           <span class="eyebrow"><span class="pulse-dot"></span> Press kit &amp; portfolio</span>
           <h2 id="portfolio-title">Press, reviews and the visual record, in one place.</h2>
@@ -418,10 +275,6 @@
             <a class="button button--primary" href="https://portfolio.heroone.art" target="_blank" rel="noopener">Open the portfolio <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </div>
         </div>
-        <figure class="law-quote">
-          <blockquote>“The observer, observation, observable, even ‘awareness’ and eventual expression all are circumscribed within TIME, choice, alteration and environment.”</blockquote>
-          <figcaption>Adebayo Michael Manuwa · <a href="/philosophy/law/">Variety in Observable Consciousness</a></figcaption>
-        </figure>
       </div>
 
       <div class="registry">
@@ -438,6 +291,7 @@
           <span class="eyebrow"><span class="pulse-dot"></span> Contact</span>
           <h2 id="contact-title" style="margin-top:1.2rem;font-size:clamp(1.9rem,3vw,2.8rem);font-weight:800;letter-spacing:-.04em">Booking, licensing, press, collaboration.</h2>
           <p style="margin-top:1rem;color:var(--text-muted);max-width:34rem">Use the right channel and you will reach the right desk. Follow along for releases, behind-the-scenes and real-time updates.</p>
+          <a class="button button--primary hp-book" href="/#contact" data-book>Book with 3nity Auracle</a>
           <div class="socials">
             <a class="social" href="https://www.instagram.com/heromgn" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
             <a class="social" href="https://x.com/heromgn" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg aria-hidden="true"><use href="#i-x"/></svg></a>
@@ -462,7 +316,7 @@
       <span class="eyebrow"><span class="pulse-dot"></span> Heal · Reflect · Rise</span>
       <h2 id="closing-title">Press play on<br>Beats &amp; Blues.</h2>
       <div class="hero-actions">
-        <a class="button button--primary" href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noopener">Listen on Spotify</a>
+        <a class="button button--primary" href="/music/" data-play="ldcat">Press play</a>
         <a class="button button--ghost" href="https://portfolio.heroone.art" target="_blank" rel="noopener">Hero One portfolio <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </section>
@@ -476,13 +330,13 @@
       </div>
       <nav aria-label="Site">
         <h2 class="kicker">Site</h2>
-        <a href="/">Home</a>
         <a href="/music/">Music</a>
-        <a href="/#listen">Listen</a>
-        <a href="/#journey">Journey</a>
-        <a href="/#gallery">Gallery</a>
+        <a href="/music/press/">Press releases</a>
+        <a href="/music/credits/">Credits</a>
         <a href="/philosophy/">Philosophy</a>
         <a href="/philosophy/law/">The Law</a>
+        <a href="/#journey">Journey</a>
+        <a href="/gallery/">Gallery</a>
       </nav>
       <nav aria-label="Listen">
         <h2 class="kicker">Listen</h2>
@@ -493,10 +347,11 @@
       </nav>
       <nav aria-label="Hero One elsewhere">
         <h2 class="kicker">Elsewhere</h2>
+        <a href="/#contact" data-book>Book</a>
         <a href="https://portfolio.heroone.art" target="_blank" rel="noopener">Portfolio &amp; press kit <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <a href="mailto:mraltd@yahoo.com">Booking</a>
         <a href="https://metameta3.com" target="_blank" rel="noopener">metameta3.com</a>
         <a href="https://333bi.tech" target="_blank" rel="noopener">333bi.tech</a>
+        <a href="/studio/" data-no-swap>Studio</a>
       </nav>
     </div>
     <div class="footer-base mono">
@@ -505,31 +360,12 @@
     </div>
   </footer>
 
-  <dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
-    <div class="lightbox__img"><img id="lb-img" src="" alt=""></div>
-    <div class="lightbox__copy">
-      <div class="lightbox__nav">
-        <button class="icon-button" type="button" id="lb-prev" aria-label="Previous image"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
-        <button class="icon-button" type="button" id="lb-next" aria-label="Next image"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
-        <button class="icon-button" type="button" id="lb-close" aria-label="Close" style="margin-left:auto"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-      </div>
-      <div>
-        <span class="kicker" id="lb-cat"></span>
-        <h3 id="lb-title" style="margin-top:.6rem"></h3>
-        <p id="lb-desc" style="margin-top:.7rem"></p>
-      </div>
-      <dl class="meta-list">
-        <div><dt>Year</dt><dd id="lb-year"></dd></div>
-        <div><dt>Use</dt><dd id="lb-use"></dd></div>
-        <div><dt>Original</dt><dd id="lb-size"></dd></div>
-      </dl>
-      <a class="button button--ghost button--sm" id="lb-download" href="#" download>Download full resolution</a>
-    </div>
-  </dialog>
+
 
   <script src="/assets/js/signal-field.js" defer></script>
   <script src="/assets/js/site.js" defer></script>
   <script src="/assets/js/music-config.js" data-hx-persist></script>
   <script src="/assets/js/player.js" data-hx-persist></script>
+  <script src="/assets/js/book.js" data-hx-persist></script>
 </body>
 </html>

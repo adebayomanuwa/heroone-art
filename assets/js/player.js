@@ -242,20 +242,21 @@
     }).join('') + '</div></div></div>';
   }
   /* The HEAD rig (only accepted brand mark): severity tints the visor only */
-  function headHTML() {
+  function headHTML(px) {
+    px = px || 'hx';
     return '<div class="ah" data-state="idle" data-severity="info" role="img" aria-label="3nity Auracle">' +
       '<div class="ah-rig"><div class="ah-stage"><div class="ah-body">' +
         '<img class="ah-base" src="' + IMG + 'auracle-head-clean-512.webp" alt="" decoding="async" width="512" height="512">' +
         '<img class="ah-visor" src="' + IMG + 'auracle-head-visor-tight-512.webp" alt="" decoding="async" width="512" height="512">' +
         '<svg class="ah-fx" viewBox="0 0 512 512" aria-hidden="true"><defs>' +
-          '<radialGradient id="hx-eye"><stop offset="0" stop-color="#ffdca8" stop-opacity=".95"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>' +
-          '<filter id="hx-soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5"/></filter>' +
-          '<clipPath id="hx-visor"><ellipse cx="' + VISOR[0] + '" cy="' + VISOR[1] + '" rx="' + VISOR[2] + '" ry="' + VISOR[3] + '"/></clipPath>' +
-          '<linearGradient id="hx-scan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4ff0e0" stop-opacity="0"/><stop offset=".5" stop-color="#b6fff6" stop-opacity=".5"/><stop offset="1" stop-color="#4ff0e0" stop-opacity="0"/></linearGradient>' +
+          '<radialGradient id="' + px + '-eye"><stop offset="0" stop-color="#ffdca8" stop-opacity=".95"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>' +
+          '<filter id="' + px + '-soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5"/></filter>' +
+          '<clipPath id="' + px + '-visor"><ellipse cx="' + VISOR[0] + '" cy="' + VISOR[1] + '" rx="' + VISOR[2] + '" ry="' + VISOR[3] + '"/></clipPath>' +
+          '<linearGradient id="' + px + '-scan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4ff0e0" stop-opacity="0"/><stop offset=".5" stop-color="#b6fff6" stop-opacity=".5"/><stop offset="1" stop-color="#4ff0e0" stop-opacity="0"/></linearGradient>' +
         '</defs>' +
-        '<g clip-path="url(#hx-visor)"><g class="ah-hud" stroke="#4ff0e0" stroke-width=".8" stroke-opacity=".35" fill="none"><path d="M80 200H400M80 240H400M80 280H400M80 320H400M80 360H400"/><path d="M120 160V400M180 160V400M240 160V400M300 160V400M360 160V400"/></g>' +
-          '<rect class="ah-scan" x="60" y="150" width="360" height="46" fill="url(#hx-scan)"/></g>' +
-        '<g class="ah-eyes" filter="url(#hx-soft)"><ellipse cx="' + EYE_L[0] + '" cy="' + EYE_L[1] + '" rx="' + EYE_L[2] + '" ry="' + EYE_L[3] + '" fill="url(#hx-eye)"/><ellipse cx="' + EYE_R[0] + '" cy="' + EYE_R[1] + '" rx="' + EYE_R[2] + '" ry="' + EYE_R[3] + '" fill="url(#hx-eye)"/></g>' +
+        '<g clip-path="url(#' + px + '-visor)"><g class="ah-hud" stroke="#4ff0e0" stroke-width=".8" stroke-opacity=".35" fill="none"><path d="M80 200H400M80 240H400M80 280H400M80 320H400M80 360H400"/><path d="M120 160V400M180 160V400M240 160V400M300 160V400M360 160V400"/></g>' +
+          '<rect class="ah-scan" x="60" y="150" width="360" height="46" fill="url(#' + px + '-scan)"/></g>' +
+        '<g class="ah-eyes" filter="url(#' + px + '-soft)"><ellipse cx="' + EYE_L[0] + '" cy="' + EYE_L[1] + '" rx="' + EYE_L[2] + '" ry="' + EYE_L[3] + '" fill="url(#' + px + '-eye)"/><ellipse cx="' + EYE_R[0] + '" cy="' + EYE_R[1] + '" rx="' + EYE_R[2] + '" ry="' + EYE_R[3] + '" fill="url(#' + px + '-eye)"/></g>' +
         '<g class="ah-headset"><circle class="ah-cup" cx="' + CUP[0] + '" cy="' + CUP[1] + '" r="' + CUP[2] + '"/>' +
           [0, .46, .92].map(function (d) { return '<circle class="ah-pulse" style="--ah-d:' + d + 's" cx="' + CUP[0] + '" cy="' + CUP[1] + '" r="' + CUP[2] + '"/>'; }).join('') +
         '</g></svg>' +
@@ -304,7 +305,7 @@
               '<button class="hx-btn hx-play hx-play--xl" type="button" aria-label="Play">' + icon('play') + '<span class="hx-spin" aria-hidden="true"></span></button>' +
               '<button class="hx-btn hx-next" type="button" aria-label="Next">' + icon('next') + '</button>' +
             '</div>' +
-            '<nav class="hx-np-links" aria-label="About this record"><a class="hx-l-credits" href="#">Credits</a><a href="/music/">Press release</a></nav>' +
+            '<nav class="hx-np-links" aria-label="About this record"><a class="hx-l-song" href="/music/">The song</a><a class="hx-l-credits" href="/music/credits/">Credits</a><a class="hx-l-press" href="/music/press/">Press release</a></nav>' +
             '<ol class="hx-q">' + TRACKS.map(function (t, i) {
               return '<li><button type="button" data-i="' + i + '"><span class="hx-q-no" aria-hidden="true"></span><img src="' + t.cover + '" alt="" width="40" height="40"><span class="hx-q-t"><strong>' + t.full + '</strong><em>' + t.artist + '</em></span><span class="hx-q-d" data-dur="' + t.id + '"></span></button></li>';
             }).join('') + '</ol>' +
@@ -326,7 +327,7 @@
     el.roState = root.querySelector('.ro-state'); el.roSig = root.querySelector('.ro-sig'); el.roTrk = root.querySelector('.ro-trk');
     el.npArt = root.querySelector('.hx-np-art'); el.npTitle = root.querySelector('.hx-np-title'); el.npArtist = root.querySelector('.hx-np-artist'); el.npSub = root.querySelector('.hx-np-sub'); el.npNo = root.querySelector('.hx-np-no');
     el.npCur = root.querySelector('.hx-np-cur'); el.npDur = root.querySelector('.hx-np-dur'); el.amb = root.querySelector('.hx-deck-amb img');
-    el.credits = root.querySelector('.hx-l-credits'); el.q = root.querySelector('.hx-q');
+    el.credits = root.querySelector('.hx-l-credits'); el.song = root.querySelector('.hx-l-song'); el.press = root.querySelector('.hx-l-press'); el.q = root.querySelector('.hx-q');
     el.ringP = root.querySelector('.hx-ring-p'); el.pillIcon = root.querySelector('.hx-pill-icon');
 
     root.querySelectorAll('.hx-play').forEach(function (b) { b.addEventListener('click', toggle); });
@@ -338,7 +339,7 @@
     root.querySelector('.hx-min').addEventListener('click', function () { setMin(true); });
     el.pill.addEventListener('click', function () { setMin(false); });
     el.deck.addEventListener('click', function (e) { if (e.target === el.deck) openDeck(false); });
-    el.deck.querySelector('.hx-np-links').addEventListener('click', function (e) { if (e.target.closest('a')) openDeck(false); });
+    el.deck.querySelector('.hx-np-links').addEventListener('click', function (e) { if (e.target.closest('a')) openDeck(false, { keepUrl: true }); });
     el.q.addEventListener('click', function (e) {
       var b = e.target.closest('button[data-i]'); if (!b) return;
       var i = +b.dataset.i; if (i === idx && !audio.paused) return; load(i, true);
@@ -458,7 +459,11 @@
   function kick() { if (!raf) raf = requestAnimationFrame(tick); }
 
   var booted = sget('sessionStorage', 'hx_boot') === '1', lastFocus = null;
-  function openDeck(on) {
+  /* The deck has its own address: /now-playing/<song>/. Opening it pushes that URL;
+     closing goes back. A direct visit to /now-playing/<song>/ lands on the deck. */
+  function deckUrl() { var t = T(); return t.slug ? '/now-playing/' + t.slug + '/' : null; }
+  function openDeck(on, opt) {
+    opt = opt || {};
     if (on === !el.deck.hidden) return;
     if (on) {
       lastFocus = document.activeElement;
@@ -469,6 +474,8 @@
         booted = true; sset('sessionStorage', 'hx_boot', '1');
         el.ah.classList.add('is-boot'); setTimeout(function () { el.ah.classList.remove('is-boot'); }, 3000);
       }
+      var u = deckUrl();
+      if (!opt.silent && u && location.pathname !== u) { try { history.pushState({ hxDeck: 1 }, '', u); } catch (e) {} }
       lastDraw = -1; drawWaves(true); kick();
       setTimeout(function () { root.querySelector('.hx-deck .hx-play').focus({ preventScroll: true }); }, 30);
     } else {
@@ -476,6 +483,10 @@
       document.documentElement.classList.remove('hx-deck-open');
       setTimeout(function () { el.deck.hidden = true; }, reduce.matches ? 0 : 280);
       if (lastFocus && lastFocus.focus && document.contains(lastFocus)) lastFocus.focus({ preventScroll: true });
+      if (opt.silent || opt.keepUrl) return;
+      var np = document.body.getAttribute('data-now-playing');
+      if (history.state && history.state.hxDeck && !np) { history.back(); return; }     // back to the page underneath
+      if (np) swap(document.body.getAttribute('data-song-page') || '/music/', true);   // landed on /now-playing/: go to the song
     }
   }
   function setMin(on, silent) {
@@ -491,7 +502,10 @@
     el.npTitle.textContent = t.title; el.npArtist.textContent = t.artist;
     var extra = t.full && t.full !== t.title ? t.full.replace(t.title, '').replace(/^[\s(]+|[\s)]+$/g, '') : '';
     el.npSub.textContent = extra; el.npSub.hidden = !extra;
-    el.credits.href = t.credits || '/music/'; el.credits.hidden = !t.credits;
+    el.credits.href = t.credits || '/music/credits/'; el.song.href = t.page || '/music/'; el.press.href = t.press || '/music/press/';
+    if (!el.deck.hidden && /^\/now-playing\//.test(location.pathname) && t.slug) {
+      try { history.replaceState(history.state, '', '/now-playing/' + t.slug + '/'); } catch (e) {}
+    }
     el.q.querySelectorAll('button[data-i]').forEach(function (b) { var on = +b.dataset.i === idx; b.classList.toggle('is-current', on); b.setAttribute('aria-current', on ? 'true' : 'false'); });
     if ('mediaSession' in navigator) {
       try {
@@ -573,7 +587,7 @@
     var u = new URL(a.href, location.href);
     if (u.origin !== location.origin) return false;
     if (/\.(pdf|jpe?g|png|webp|gif|mp3|m4a|zip|xml|txt|json)$/i.test(u.pathname)) return false;
-    if (/^\/(studio|api)(\/|$)/.test(u.pathname)) return false;
+    if (/^\/(studio|api|now-playing)(\/|$)/.test(u.pathname)) return false;
     if (u.pathname === location.pathname && u.search === location.search) return false;   // same page / in-page anchor
     return true;
   }
@@ -663,7 +677,31 @@
     e.preventDefault();
     swap(a.href, true);
   });
-  window.addEventListener('popstate', function () { swap(location.href, false); });
+  var shownPath = location.pathname;
+  document.addEventListener('hx:navigated', function () { shownPath = location.pathname; });
+  window.addEventListener('popstate', function (e) {
+    var st = e.state || {};
+    if (st.hxDeck && !document.body.hasAttribute('data-now-playing')) {        // forward into the deck
+      var m = /^\/now-playing\/([^/]+)/.exec(location.pathname), i = m ? bySlug(m[1]) : -1;
+      if (i >= 0 && i !== idx) load(i, false);
+      openDeck(true, { silent: true }); return;
+    }
+    if (location.pathname === shownPath) { if (!el.deck.hidden) openDeck(false, { silent: true }); return; }
+    if (!el.deck.hidden) openDeck(false, { silent: true });
+    swap(location.href, false);
+  });
+  function bySlug(sl) { for (var i = 0; i < TRACKS.length; i++) if (TRACKS[i].slug === sl) return i; return -1; }
+  // links to /now-playing/<song>/ open the deck in place
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="/now-playing/"]');
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var u = new URL(a.href, location.href), m = /^\/now-playing\/([^/]+)\/?$/.exec(u.pathname);
+    if (u.origin !== location.origin || !m) return;
+    var i = bySlug(m[1]); if (i < 0) return;
+    e.preventDefault();
+    if (i !== idx || !audio.getAttribute('src')) load(i, true);
+    openDeck(true);
+  }, true);
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
   /* ── visits ── */
@@ -695,7 +733,17 @@
   pageview();
   document.addEventListener('hx:navigated', function () {
     root.classList.toggle('on-light', !!document.querySelector('meta[name="hx-player"][content="light"]'));
+    landOnNowPlaying();
   });
+  // A /now-playing/<song>/ page: cue that song and show the deck (playback waits for a tap)
+  function landOnNowPlaying() {
+    var id = document.body.getAttribute('data-now-playing'); if (!id) return;
+    var i = TRACKS.findIndex(function (t) { return t.id === id; }); if (i < 0) return;
+    if (i !== idx) { resumeAt = null; load(i, false); }
+    openDeck(true, { silent: true });
+  }
+  landOnNowPlaying();
+  window.__hxAuracle = { head: headHTML, field: fieldHTML };
 
   window.__heroPlayer = { play: play, pause: pause, toggle: toggle, next: next, prev: prev, load: load, audio: audio, flush: flush, open: function () { openDeck(true); }, close: function () { openDeck(false); } };
 })();
