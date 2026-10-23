@@ -1,0 +1,7 @@
+{
+  "name": "heroone-art",
+  "private": true,
+  "type": "module",
+  "description": "heroone.art — static site + two Vercel Functions (/api/stream, /api/collect).",
+  "engines": { "node": ">=18" }
+}

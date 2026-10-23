@@ -1,0 +1,178 @@
+{
+  "ldcat": {
+    "title": "LDCAT",
+    "subtitle": "Love Don’t Cost a Thang",
+    "track": "ldcat",
+    "description": "Full writing, performance and production credits for LDCAT by Hero One.",
+    "groups": [
+      {
+        "name": "Writers",
+        "rows": [
+          [
+            "Arranger",
+            "Hero One"
+          ],
+          [
+            "Composer",
+            "Hero One, J' Snare, TL Blaq"
+          ],
+          [
+            "Lyricist",
+            "Hero One"
+          ],
+          [
+            "Songwriter",
+            "Adebayo Michael Manuwa"
+          ]
+        ]
+      },
+      {
+        "name": "Performers / Production",
+        "rows": [
+          [
+            "Additional Vocals",
+            "TL Blaq, Jennifer"
+          ],
+          [
+            "Creative Director",
+            "Adebayo Michael Manuwa"
+          ],
+          [
+            "Graphic Design",
+            "Hero One"
+          ],
+          [
+            "Lead Vocals",
+            "Hero One"
+          ],
+          [
+            "Mastering Engineer",
+            "Lagosigboboy, Adebayo Michael Manuwa"
+          ],
+          [
+            "Mixing Engineer",
+            "Lagosigboboy"
+          ],
+          [
+            "Photo Editor",
+            "Basit \"Lamborghiniboy\" Odunbaku"
+          ],
+          [
+            "Photography",
+            "Lukman \"Zazavelli\" Oni"
+          ],
+          [
+            "Producer",
+            "Hero One, J' Snare"
+          ],
+          [
+            "Recording Engineer",
+            "Hero One"
+          ],
+          [
+            "Renaissance Music Chamber Choir",
+            "Adebayo Michael Manuwa"
+          ],
+          [
+            "Vocoder",
+            "Hero One, Lagosigboboy"
+          ]
+        ]
+      }
+    ]
+  },
+  "highest-currency-gotta-get-it": {
+    "title": "Highest Currency, Gotta Get it",
+    "subtitle": "",
+    "track": "highest-currency",
+    "description": "Full writing, performance and production credits for Highest Currency, Gotta Get it by Hero One.",
+    "groups": [
+      {
+        "name": "Writers",
+        "rows": [
+          [
+            "Arranger",
+            "Hero One"
+          ],
+          [
+            "Composer",
+            "Hero One"
+          ],
+          [
+            "Lyricist",
+            "Adebayo Michael Manuwa"
+          ],
+          [
+            "Songwriter",
+            "Adebayo Michael Manuwa"
+          ]
+        ]
+      },
+      {
+        "name": "Performers / Production",
+        "rows": [
+          [
+            "A&R Administrator",
+            "Lukman \"Zazavelli\" Oni"
+          ],
+          [
+            "Additional Vocals",
+            "Jennifer"
+          ],
+          [
+            "Beats",
+            "Hero One"
+          ],
+          [
+            "Chorus",
+            "Hero One"
+          ],
+          [
+            "Cover Art",
+            "Hero One"
+          ],
+          [
+            "Cover Photography",
+            "Basit \"Lamborghiniboy\" Odunbaku"
+          ],
+          [
+            "Creative Director",
+            "Adebayo Michael Manuwa"
+          ],
+          [
+            "Executive Producer",
+            "Adebayo Michael Manuwa"
+          ],
+          [
+            "Mastering Engineer",
+            "Lagosigboboy, Hero One"
+          ],
+          [
+            "Mixing Engineer",
+            "Lagosigboboy"
+          ],
+          [
+            "Photography",
+            "Lukman \"Zazavelli\" Oni"
+          ],
+          [
+            "Producer",
+            "Hero One"
+          ],
+          [
+            "Rap",
+            "Hero One"
+          ],
+          [
+            "Recording Engineer",
+            "Hero One"
+          ],
+          [
+            "Renaissance Music Chamber Choir",
+            "Adebayo Michael Manuwa"
+          ]
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+# Masters never go in this repo: songs live in the private Supabase bucket "streams"
+*.mp3
+*.wav
+*.flac
+*.m4a
+*.aif*
+# secrets and local tooling
+.env
+.env.*
+!.env.example
+.vercel/
+node_modules/
+.DS_Store
+Thumbs.db
