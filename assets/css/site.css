@@ -120,6 +120,8 @@ p { margin: 0; }
 .button--sm { min-height: 40px; padding: 0 1rem; font-size: .85rem; }
 .icon { width: 1.1em; height: 1.1em; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .icon--sm { width: .85em; height: .85em; }
+/* Outbound chevron removed sitewide (links stay; no trailing arrow glyph). */
+.icon:has(use[href="#i-arrow"]) { display: none !important; }
 
 /* ── Glass header ────────────────────────────────────────────────── */
 .site-header {
@@ -576,7 +578,7 @@ p { margin: 0; }
 .m-song__links a { color: var(--gold); }
 .m-song__links a:hover { color: var(--gold-bright); }
 .m-rel { list-style: none; margin: 0; padding: 0; display: grid; }
-.m-rel a { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 1rem; padding: 1rem .2rem; border-bottom: 1px solid var(--line); transition: padding .3s var(--ease), color .2s; }
+.m-rel a { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 1rem; padding: 1rem .2rem; border-bottom: 1px solid var(--line); transition: padding .3s var(--ease), color .2s; }
 .m-rel li:first-child a { border-top: 1px solid var(--line); }
 .m-rel a:hover { padding-left: .8rem; color: var(--gold-bright); }
 .m-rel__t { font-family: var(--ff-display); font-size: clamp(1.1rem, 1.8vw, 1.45rem); font-weight: 700; letter-spacing: -.02em; }
@@ -588,7 +590,7 @@ p { margin: 0; }
 .m-press__lede { max-width: 46rem; color: #62655f; font-size: 1.05rem; }
 .m-press__go { display: inline-flex; align-items: center; gap: .4rem; font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #9c322e; }
 .m-credits { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
-.m-credits a { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; align-items: center; gap: 1rem; padding: .7rem; border-radius: 16px; border: 1px solid var(--line); background: rgb(255 255 255 / .02); transition: border-color .2s, background .2s; }
+.m-credits a { display: grid; grid-template-columns: 56px minmax(0, 1fr); align-items: center; gap: 1rem; padding: .7rem; border-radius: 16px; border: 1px solid var(--line); background: rgb(255 255 255 / .02); transition: border-color .2s, background .2s; }
 .m-credits a:hover { border-color: rgb(var(--gold-rgb) / .45); background: rgb(var(--gold-rgb) / .06); }
 .m-credits img { width: 56px; height: 56px; border-radius: 10px; object-fit: cover; }
 .m-credits strong { display: block; font-weight: 700; }

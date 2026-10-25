@@ -33,7 +33,7 @@ def write(rel, text):
     open(p, 'w', encoding='utf-8').write(text)
     print('wrote', '/' + rel.replace('index.html', ''))
 
-ARROW = '<svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg>'
+ARROW = ''
 PLAY_I = '<svg class="play-i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg><svg class="pause-i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.4v14H7zM13.6 5H17v14h-3.6z"/></svg>'
 MARK = '/assets/img/brand/heroone-wordmark.webp'
 MARK_W, MARK_H = 1567, 959
@@ -91,7 +91,7 @@ FOOTER = f'''<footer class="site-footer">
       <nav aria-label="Hero One elsewhere">
         <h2 class="kicker">Elsewhere</h2>
         <a href="/#contact" data-book>Book</a>
-        <a href="https://portfolio.heroone.art" target="_blank" rel="noopener">Portfolio &amp; press kit <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a href="https://portfolio.heroone.art" target="_blank" rel="noopener">Portfolio &amp; press kit</a>
         <a href="https://metameta3.com" target="_blank" rel="noopener">metameta3.com</a>
         <a href="https://333bi.tech" target="_blank" rel="noopener">333bi.tech</a>
         <a href="/studio/" data-no-swap>Studio</a>
