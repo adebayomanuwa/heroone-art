@@ -6,7 +6,7 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#0d0f14">
   <title>Studio · Hero One</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/brand/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/brand/favicon-32.png?v=clean">
   <style>
     @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("/assets/fonts/hanken-grotesk-normal.woff2") format("woff2"); }
     @font-face { font-family: "Bodoni Moda"; font-style: italic; font-weight: 400 900; font-display: swap; src: url("/assets/fonts/bodoni-moda-italic.woff2") format("woff2"); }
@@ -186,6 +186,12 @@
     </div>
 
     <section class="card">
+      <h2>Booking requests</h2>
+      <p class="sub">From the 3nity Auracle chat on the site. Reply from your email.</p>
+      <div class="tscroll" id="bookings"></div>
+    </section>
+
+    <section class="card">
       <h2>Trackable share link</h2>
       <p class="sub">Tag every link you post. Plays from that link show under its source above.</p>
       <form class="utm" id="utm">
@@ -199,7 +205,7 @@
     </section>
   </main>
 
-  <script src="/assets/js/music-config.js"></script>
+  <script src="/assets/js/music-config.js?v=23d7e09d51"></script>
   <script src="/assets/vendor/supabase-js-2.45.4.umd.js"></script>
   <script>
   (function () {
@@ -240,8 +246,21 @@
       });
     }
 
+    function fetchBookings() {
+      if (!live) return Promise.resolve([
+        { created_at: new Date(Date.now() - 36e5).toISOString(), topic_label: 'Performance or show', desk: 'booking', name: 'Sample Venue', email: 'events@example.com', when_where: 'Toronto, spring', message: 'Sample request. Real requests appear here once Supabase is connected.' },
+      ]);
+      return sb.rpc('heroone_studio_bookings', { p_limit: 50 }).then(function (r) { if (r.error) throw r.error; return r.data || []; });
+    }
+    function renderBookings(list) {
+      $('#bookings').innerHTML = list.length ? '<table><thead><tr><th>When</th><th>About</th><th>From</th><th>Date / place</th><th>Message</th></tr></thead><tbody>' + list.map(function (b) {
+        var subj = encodeURIComponent('Re: ' + (b.topic_label || 'Hero One'));
+        return '<tr><td>' + new Date(b.created_at).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) + '</td><td>' + esc(b.topic_label || b.topic) + '<br><small style="color:var(--ink-3)">' + esc(b.desk) + '</small></td><td>' + esc(b.name) + '<br><a href="mailto:' + esc(b.email) + '?subject=' + subj + '">' + esc(b.email) + '</a></td><td>' + esc(b.when_where || '') + '</td><td style="white-space:normal;min-width:240px">' + esc(b.message) + '</td></tr>';
+      }).join('') + '</tbody></table>' : '<p class="empty">No requests yet.</p>';
+    }
     function load() {
       document.body.classList.add('loading');
+      fetchBookings().then(renderBookings).catch(function () { $('#bookings').innerHTML = '<p class="empty">Bookings unavailable.</p>'; });
       fetchStats().then(function (d) { render(d); }).catch(function (e) {
         var msg = /not authorised/i.test(e.message || '') ? 'This account isn’t on the studio list. Add its email to heroone.studio_admins in Supabase.' : (e.message || 'Could not load stats.');
         setBanner('warn', '<strong>Couldn’t load stats.</strong> ' + esc(msg));

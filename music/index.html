@@ -2,230 +2,162 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
-  <meta name="author" content="Hero One">
-  <meta name="description" content="LDCAT and Highest Currency, Gotta Get it. Hero One. Beats &amp; Blues.">
-  <meta name="hx-player" content="light">
-  <title>Hero One | LDCAT &amp; Highest Currency, Gotta Get it | Press Release</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#06080f">
+  <title>Music · Hero One</title>
+  <meta name="description" content="Hero One’s music by year: songs streaming on heroone.art, press releases and full credits.">
   <link rel="canonical" href="https://heroone.art/music/">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/brand/favicon-32.png">
-  <link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png">
-  <meta property="og:type" content="article">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/brand/favicon-32.png?v=clean">
+  <link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png?v=clean">
   <meta property="og:site_name" content="Hero One">
   <meta property="og:url" content="https://heroone.art/music/">
-  <meta property="og:title" content="Hero One · LDCAT &amp; Highest Currency, Gotta Get it">
-  <meta property="og:description" content="Press release. Listen on heroone.art.">
+  <meta property="og:title" content="Music · Hero One">
+  <meta property="og:description" content="Hero One’s music by year: songs streaming on heroone.art, press releases and full credits.">
   <meta property="og:image" content="https://heroone.art/assets/img/music/ldcat-1200.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://heroone.art/assets/img/music/ldcat-1200.jpg">
-  <link rel="preload" href="/assets/fonts/bodoni-moda-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/hanken-grotesk-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/player.css" data-hx-persist>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"Hero One","url":"https://heroone.art/","genre":"Beats & Blues","track":[{"@type":"MusicRecording","name":"LDCAT (Love Don’t Cost a Thang)","byArtist":{"@type":"MusicGroup","name":"Hero One"},"url":"https://heroone.art/music/","image":"https://heroone.art/assets/img/music/ldcat-1200.jpg"},{"@type":"MusicRecording","name":"Highest Currency, Gotta Get it","byArtist":{"@type":"MusicGroup","name":"Hero One"},"url":"https://heroone.art/music/","image":"https://heroone.art/assets/img/music/highest-currency-1200.jpg"}]}</script>
-  <style>
-    @font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:400 900;font-display:swap;src:url("/assets/fonts/bodoni-moda-normal.woff2") format("woff2");}
-    @font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:400 900;font-display:swap;src:url("/assets/fonts/bodoni-moda-italic.woff2") format("woff2");}
-    @font-face{font-family:"Hanken Grotesk";font-style:normal;font-weight:100 900;font-display:swap;src:url("/assets/fonts/hanken-grotesk-normal.woff2") format("woff2");}
-    @font-face{font-family:"Hanken Grotesk";font-style:italic;font-weight:100 900;font-display:swap;src:url("/assets/fonts/hanken-grotesk-italic.woff2") format("woff2");}
-        :root {
-      --paper: #f5f2eb;
-      --ink: #1e211f;
-      --muted: #62655f;
-      --line: #cfcec5;
-      --accent: #9c322e;
-      --night: #1d2421;
-      --serif: "Bodoni Moda", "Bodoni MT", Didot, Georgia, serif;
-      --sans: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 28px; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
-    a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px; }
-    a:hover { color: var(--accent); }
-    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
-    button { font: inherit; }
-    .frame { width: min(1280px, calc(100% - 112px)); margin-inline: auto; }
-    .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .17em; text-transform: uppercase; line-height: 1.5; }
-    .skip { position: absolute; top: 8px; left: 8px; padding: 12px; background: var(--paper); z-index: 10; transform: translateY(-160%); }
-    .skip:focus { transform: translateY(0); }
-    .masthead { padding-top: 30px; }
-    .masthead-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-bottom: 25px; border-bottom: 1px solid var(--ink); }
-    .wordmark { font-size: 18px; font-weight: 500; letter-spacing: .32em; text-decoration: none; white-space: nowrap; }
-    .nav { display: flex; align-items: center; gap: 30px; }
-    .nav a, .print { border: 0; padding: 3px 0; background: transparent; color: var(--ink); font-size: 11px; letter-spacing: .11em; text-transform: uppercase; text-decoration: none; cursor: pointer; }
-    .nav a:hover, .print:hover { color: var(--accent); }
-    .hero { padding-top: 56px; padding-bottom: 44px; }
-    .hero-label { display: flex; justify-content: space-between; align-items: center; gap: 20px; color: var(--muted); }
-    .hero-label .category { color: var(--accent); }
-    .hero-title { margin: 29px 0 23px; font-family: var(--serif); font-size: clamp(64px, 7.6vw, 112px); font-weight: 400; line-height: 1.01; letter-spacing: -.055em; font-variation-settings: "opsz" 88; }
-    .hero-title span { display: block; }
-    .hero-title em { font-weight: 400; }
-    .hero-baseline { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 32px; }
-    .dek { max-width: 640px; font-size: 18px; line-height: 1.5; }
-    .record-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-    .record { min-width: 0; margin: 0; }
-    .art { overflow: hidden; background: #d4d3cb; aspect-ratio: 1; }
-    .art img { display: block; width: 100%; height: auto; aspect-ratio: 1; }
-    .record figcaption { display: grid; grid-template-columns: 28px 1fr; gap: 8px; padding: 19px 0 23px; border-bottom: 1px solid var(--line); }
-    .record-number { color: var(--accent); font-size: 11px; padding-top: 5px; font-variant-numeric: tabular-nums; }
-    .record h2 { margin: 0; font-size: 19px; font-weight: 500; line-height: 1.25; letter-spacing: -.015em; }
-    .record h2.expanded-title { white-space: nowrap; }
-    .record-subtitle { display: block; margin-top: 7px; color: var(--muted); font-size: 12px; line-height: 1.5; }
-    .release { display: grid; grid-template-columns: 1fr 2.16fr; gap: 70px; padding-block: 78px 82px; }
-    .section-label { margin-top: 7px; color: var(--accent); }
-    .section-label span { display: block; }
-    .section-label .sub { margin-top: 17px; max-width: 160px; font-size: 12px; letter-spacing: 0; text-transform: none; font-weight: 400; color: var(--muted); }
-    .release-body { max-width: 790px; }
-    .release-body p { margin: 0 0 27px; font-size: 18px; line-height: 1.78; }
-    .release-body p:first-child { font-family: var(--serif); font-size: 28px; line-height: 1.52; font-weight: 400; letter-spacing: -.012em; font-variation-settings: "opsz" 24; }
-    .release-body p:last-child { margin-bottom: 0; }
-    .release-body cite { font-style: italic; }
-    .release-body a { text-decoration-color: var(--accent); }
-    .footer { display: flex; justify-content: space-between; gap: 20px; align-items: center; padding-block: 27px 32px; border-top: 1px solid var(--line); }
-    .footer .eyebrow { color: var(--muted); font-size: 10px; }
-    .footer a { font-size: 12px; text-decoration: none; }
-    @media (min-width: 1600px) { .hero-title { font-size: 118px; } }
-    @media (max-width: 900px) {
-      .frame { width: calc(100% - 64px); }
-      .hero { padding-top: 39px; }
-      .hero-title { font-size: clamp(57px, 8.8vw, 84px); }
-      .nav { gap: 20px; }
-      .hero-baseline { grid-template-columns: 1fr; gap: 18px; }
-      .record-grid { gap: 20px; }
-      .release { grid-template-columns: 150px 1fr; gap: 30px; padding-block: 55px 60px; }
-      .release-body p:first-child { font-size: 25px; }
-      .release-body p { font-size: 17px; }
-    }
-    @media (max-width: 600px) {
-      .frame { width: calc(100% - 40px); }
-      .masthead { padding-top: 22px; }
-      .masthead-inner { padding-bottom: 20px; }
-      .wordmark { font-size: 15px; letter-spacing: .25em; }
-      .nav { gap: 17px; }
-      .nav a, .print { font-size: 10px; letter-spacing: .06em; }
-      .nav .records-nav { display: none; }
-      .hero { padding-top: 32px; padding-bottom: 30px; }
-      .hero-label { align-items: flex-start; }
-      .eyebrow { font-size: 9px; letter-spacing: .13em; }
-      .hero-title { font-size: clamp(43px, 11.8vw, 70px); margin-block: 25px 20px; letter-spacing: -.048em; line-height: 1.05; }
-      .dek { font-size: 16px; line-height: 1.6; }
-      .record-grid { grid-template-columns: 1fr; gap: 28px; }
-      .record figcaption { padding-top: 15px; padding-bottom: 19px; }
-      .record h2 { font-size: 19px; }
-      .record h2.expanded-title { font-size: clamp(14px, 4.35vw, 19px); }
-      .release { grid-template-columns: 1fr; gap: 25px; padding-block: 44px 49px; }
-      .section-label span { display: inline; }
-      .section-label .sub { display: none; }
-      .release-body p:first-child { font-size: 25px; line-height: 1.5; }
-      .release-body p { font-size: 16px; line-height: 1.8; margin-bottom: 24px; }
-      .footer { align-items: flex-start; padding-block: 24px; }
-      .footer .eyebrow { font-size: 9px; max-width: 175px; }
-    }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-    @page { size: A4; margin: 13mm 14mm; }
-    @media print {
-      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      body { background: #fff; }
-      .frame { width: 100%; }
-      .skip, .nav { display: none; }
-      .masthead { padding-top: 0; }
-      .masthead-inner { padding-bottom: 13px; }
-      .wordmark { font-size: 14px; }
-      .hero { padding-block: 20px 22px; }
-      .hero-title { font-size: 49px; margin-block: 13px; line-height: 1.02; }
-      .hero-baseline { grid-template-columns: 1fr auto; gap: 20px; }
-      .dek { font-size: 12px; max-width: 370px; }
-      .eyebrow { font-size: 9px; }
-      .record-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
-      .record figcaption { padding-block: 10px; grid-template-columns: 18px 1fr; }
-      .record-number { font-size: 9px; padding-top: 2px; }
-      .record h2 { font-size: 14px; }
-      .record h2.expanded-title { font-size: 14px; }
-      .record-subtitle { font-size: 10px; margin-top: 3px; }
-      .release { grid-template-columns: 82px 1fr; gap: 22px; padding-block: 25px 24px; }
-      .section-label { font-size: 9px; }
-      .release-body p, .release-body p:first-child { font-family: var(--sans); font-size: 13.5px; line-height: 1.57; letter-spacing: 0; margin-bottom: 14px; }
-      .release-body p { orphans: 3; widows: 3; }
-      .footer { padding-block: 13px 0; }
-      .footer .eyebrow { font-size: 8px; }
-      .footer a { font-size: 11px; }
-    }
-  
-
-    /* ── heroone.art additions: listen controls (the release itself is unchanged) ── */
-    .record figcaption { grid-template-columns: 28px 1fr auto; align-items: start; }
-    .listen {
-      display: inline-flex; align-items: center; gap: 10px; margin-top: 1px;
-      padding: 8px 14px 8px 9px; border: 1px solid var(--ink); border-radius: 999px;
-      background: transparent; color: var(--ink); cursor: pointer;
-      font: 600 11px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase;
-      transition: background .2s, color .2s, border-color .2s;
-    }
-    .listen:hover { color: var(--accent); border-color: var(--accent); }
-    .listen .dot { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: var(--paper); transition: background .2s; }
-    .listen .dot svg { width: 11px; height: 11px; }
-    .listen .pause-i { display: none; }
-    .listen.is-playing { background: var(--ink); color: var(--paper); }
-    .listen.is-playing .dot { background: var(--accent); }
-    .listen.is-playing .play-i { display: none; }
-    .listen.is-playing .pause-i { display: block; }
-    .art { position: relative; }
-    .art .art-play { position: absolute; inset: 0; border: 0; padding: 0; background: transparent; cursor: pointer; }
-    .art .art-play:focus-visible { outline-offset: -6px; }
-    .nav .pdf { font-size: 11px; letter-spacing: .11em; text-transform: uppercase; text-decoration: none; }
-    @media (max-width: 600px) {
-      .record figcaption { grid-template-columns: 22px 1fr; }
-      .listen { grid-column: 2; justify-self: start; margin-top: 12px; }
-      .nav .pdf { display: none; }
-    }
-    .record-credits { display: block; width: max-content; margin-top: 10px; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; color: var(--accent); }
-    .record-credits:hover { text-decoration: underline; }
-    @media print { .listen, .art-play, .nav .pdf, .record-credits { display: none !important; } .record figcaption { grid-template-columns: 18px 1fr; } }
-  </style>
+  <link rel="stylesheet" href="/assets/css/site.css?v=e46ee173b8">
+  <meta name="hx-player" content="dark">
+  <link rel="stylesheet" href="/assets/css/player.css?v=91e87b2393" data-hx-persist>
+  <link rel="stylesheet" href="/assets/css/book.css?v=5c41800c6b" data-hx-persist>
 </head>
 <body>
-  <a class="skip" href="#release">Skip to press release</a>
-  <header class="masthead frame">
-    <div class="masthead-inner">
-      <a class="wordmark" href="/" aria-label="Hero One official website">HERO ONE</a>
-      <nav class="nav" aria-label="Page navigation">
-        <a href="#release">The release</a>
-        <a class="records-nav" href="#records">The records</a>
-        <a class="pdf" href="/music/Hero-One-Press-Release-2026.pdf" data-no-swap>PDF <span aria-hidden="true">↓</span></a>
-        <button class="print" type="button" onclick="window.print()" aria-label="Print this press release or save it as PDF">Print <span aria-hidden="true">↗</span></button>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpmMjAyMjlhMy1kM2M2LTRjMTEtOGQzMi1hM2FkYzNkNDg5MmYAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaP0RSipUaWS5DfYSMCeUsJMAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo2MmI5ZDE5Yi02ZTQzLTRiZTctYTY2Ny0zMjA3ZmZmM2VkMTZscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoi1R+Rlx+CdGiMQqLuiivAgAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggAuLFeVlNkOgRq0N9kM4Mw+nDWB70ZDbKPLG2BjqDZUikZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaBl5LkkakjQxdDVoIviYtKsAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCCyEHGVKKGLJD2a9SLr5lXosf9dZ8czYzDJg3JcMkNJMGRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBiGZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmYyMDIyOWEzLWQzYzYtNGMxMS04ZDMyLWEzYWRjM2Q0ODkyZi9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjdhMTNkZWMzLWJmZWQtNGQ2ZS1hNWQ3LTQ4ZTI4MjQwOTMwOXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCAC4sV5WU2Q6BGrQ32QzgzD6cNYHvRkNso8sbYGOoNlSKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggo657/9i61QAv1TY3JFk3WwjFCwV8aqAMwj1DFNGPOo6iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggYn1XJ3QGL9yxoWCNtAKOBJbqtEHU8U4Pkbt0FOCpak90Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQC6vcPnR2IrGCUmn8PRD83l4miQpb1ljFN0mhmjWeplwAXCL6NrHmWx4uP7/CVSD3ttNe5iByZHoG33PEoC7COk=</c2pa:manifest></metadata>
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></symbol>
+      <symbol id="i-spotify" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.65 14.65c-.2.3-.6.4-.9.2-2.5-1.5-5.6-1.9-9.3-1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.1-.9 7.6-.5 10.4 1.2.3.2.4.6.2.9zm1.2-2.8c-.3.4-.7.5-1.1.3-2.8-1.7-7.1-2.2-10.4-1.2-.4.1-.9-.1-1-.6-.1-.4.1-.9.6-1 3.8-1.1 8.5-.6 11.7 1.3.4.3.5.8.2 1.2zm.1-2.9c-3.4-2-8.9-2.2-12.1-1.2-.5.2-1-.1-1.1-.6-.2-.5.1-1 .6-1.2 3.7-1.1 9.8-.9 13.7 1.3.5.3.6.9.3 1.4-.3.4-.9.6-1.4.3z"/></symbol>
+      <symbol id="i-apple" viewBox="0 0 24 24"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.02-1.5-2.62-1.7-3.19-1.73-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.61 2.19-1.54 2.67-.39 6.62 1.11 8.79.73 1.06 1.6 2.25 2.75 2.2 1.1-.04 1.52-.71 2.85-.71 1.33 0 1.71.71 2.88.69 1.19-.02 1.94-1.08 2.67-2.14.84-1.23 1.19-2.42 1.21-2.48-.03-.01-2.32-.89-2.33-3.54zM14.18 6.1c.61-.74 1.02-1.76.91-2.78-.88.04-1.94.59-2.57 1.32-.56.65-1.06 1.69-.93 2.69.98.08 1.98-.5 2.59-1.23z"/></symbol>
+      <symbol id="i-soundcloud" viewBox="0 0 24 24"><path d="M1 14.5c0 1 .5 1.8 1 1.8V12.7c-.5 0-1 .8-1 1.8zm2.2 2.1h.9v-5.4l-.9.5zm1.8 0h.9V10l-.9.4zm1.8 0h.9V9.1l-.9.2zm1.8 0h.9V8.4l-.9.3zm1.8 0h.9V7.6l-.9.5zm1.8 0h7.3a3.3 3.3 0 0 0 0-6.6c-.4 0-.8.1-1.2.2A5.5 5.5 0 0 0 12.2 6.8v9.8z"/></symbol>
+      <symbol id="i-amazon" viewBox="0 0 24 24"><path d="M3 15.5c3.9 2.4 10.3 3.6 16 .8.6-.3 1.1.3.5.8-4.4 3.5-12.7 3.3-16.9-.9-.4-.4.1-1 .4-.7zm17.2-1.2c.5.6-.1 4.1-2.3 5.8-.3.3-.6.1-.5-.2.5-1.3 1.6-4 1.1-4.6-.5-.6-3.2-.3-4.4-.1-.4 0-.4-.3-.1-.5 2.1-1.5 5.6-1 6.2-.4zM12.4 4c-2.5 0-4.4 1.3-4.9 3.4l2.3.3c.2-.9.9-1.6 2.1-1.6 1.6 0 1.9 1.2 1.9 2.1v.5c-3 .2-6.6.8-6.6 4.1 0 2 1.5 3.1 3.3 3.1 1.6 0 2.6-.6 3.4-1.6.3.5.7.9 1.2 1.3l1.8-1.6c-.5-.5-.9-1-.9-2V7.9C16 5.5 14.9 4 12.4 4zm1.4 6.9c0 1.5-.8 2.9-2.2 2.9-1 0-1.6-.6-1.6-1.6 0-1.9 1.7-2.1 3.8-2.1z"/></symbol>
+      <symbol id="i-audiomack" viewBox="0 0 24 24"><path d="M2 14h2v3H2zm3.5-3h2v6h-2zm3.5-3h2v9H9zm3.5 2h2v7h-2zm3.5-4h2v11h-2zm3.5 5h2v6h-2z"/></symbol>
+      <symbol id="i-boomplay" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-2 14.5v-9l6 4.5-6 4.5z"/></symbol>
+      <symbol id="i-deezer" viewBox="0 0 24 24"><path d="M2 17h4v3H2zm5 0h4v3H7zm5 0h4v3h-4zm5 0h5v3h-5zm-5-4h4v3h-4zm5 0h5v3h-5zm-10 0h4v3H7zm10-4h5v3h-5zm-5 0h4v3h-4zm5-4h5v3h-5z"/></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M21.8 8c-.24-.91-.95-1.62-1.86-1.86C17.96 5.67 12 5.67 12 5.67s-5.96 0-7.94.47C3.15 6.38 2.44 7.09 2.2 8 1.73 9.98 1.73 12 1.73 12s0 2.02.47 4c.24.91.95 1.62 1.86 1.86 1.98.47 7.94.47 7.94.47s5.96 0 7.94-.47c.91-.24 1.62-.95 1.86-1.86.47-1.98.47-4 .47-4s0-2.02-.47-4zM9.55 15V9l5.27 3-5.27 3z"/></symbol>
+      <symbol id="i-submithub" viewBox="0 0 24 24"><path d="M12 2 6.5 11h11L12 2zm5.5 11a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zM3 21.5h8v-8H3v8z"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.21-6.82-5.96 6.82H1.69l7.73-8.84L1.16 2.25h6.81l4.71 6.23 5.56-6.23zm-1.16 16.98h1.84L7.08 4.2H5.12l11.96 15.03z"/></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.12 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></symbol>
+      <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 3.18-4.51V9.4a6.33 6.33 0 0 0-5.38 10.86A6.34 6.34 0 0 0 16.52 15.7V8.18a8.15 8.15 0 0 0 4.8 1.55V6.29a4.86 4.86 0 0 1-1.73-.6z"/></symbol>
+    </defs>
+  </svg>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand-lockup" href="/" aria-label="Hero One home">
+      <img src="/assets/img/brand/heroone-wordmark.webp" width="1567" height="959" alt="">
+      <span>Beats &amp; Blues<br>Reality Music</span>
+    </a>
+    <div class="header-actions">
+      <a class="button button--primary button--sm" href="/#contact" data-book>Book</a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+    <nav class="site-nav" id="site-menu" aria-label="Primary">
+      <div class="nav-group">
+        <a class="nav-big" href="/music/" aria-current="page">Music</a>
+        <div class="nav-sub"><a href="/music/#catalog">Catalog</a><a href="/music/press/">Press releases</a><a href="/music/credits/">Credits</a></div>
+      </div>
+      <a class="nav-big" href="/philosophy/">Philosophy</a>
+      <a class="nav-big" href="/#journey">Journey</a>
+      <a class="nav-big" href="/gallery/">Gallery</a>
+      <div class="nav-foot">
+        <a class="nav-studio" href="/studio/" data-no-swap><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>Studio</a>
+        <a class="nav-book" href="/#contact" data-book>Book</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="page-hero page-hero--music" aria-labelledby="ph-title">
+      <div class="signal-field" data-signal-field aria-hidden="true"><canvas></canvas></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="page-hero__inner">
+        <span class="eyebrow"><span class="pulse-dot"></span> Music</span>
+        <h1 id="ph-title">Music</h1>
+        <nav class="m-tabs" aria-label="Music sections">
+          <a href="#catalog">Catalog</a><a href="/music/press/">Press releases</a><a href="/music/credits/">Credits</a><a href="#elsewhere">Elsewhere</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section m-section" id="catalog" aria-labelledby="catalog-title">
+      <div class="m-head"><h2 id="catalog-title">Catalog</h2></div>
+      <section class="m-year reveal" aria-labelledby="y2026"><h3 class="m-year__n" id="y2026">2026</h3><div class="m-year__body"><div class="m-songs"><article class="m-song">
+          <div class="m-song__media"><a class="m-song__art" href="/music/ldcat/"><img src="/assets/img/music/ldcat-512.webp" srcset="/assets/img/music/ldcat-512.webp 512w, /assets/img/music/ldcat-800.webp 800w" sizes="(max-width: 720px) 80vw, 300px" width="512" height="512" alt="LDCAT cover art" loading="lazy"></a>
+          <button class="m-song__play" type="button" data-play="ldcat" aria-pressed="false" aria-label="Play LDCAT"><svg class="play-i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg><svg class="pause-i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.4v14H7zM13.6 5H17v14h-3.6z"/></svg></button></div>
+          <div class="m-song__meta">
+            <h3><a href="/music/ldcat/">LDCAT</a></h3>
+            <p class="m-song__sub">Love Don’t Cost a Thang</p>
+            <p class="m-song__links mono"><span>2:35</span><a href="/music/credits/ldcat/">Credits</a><a href="/now-playing/ldcat/">Now playing</a></p>
+          </div>
+        </article><article class="m-song">
+          <div class="m-song__media"><a class="m-song__art" href="/music/highest-currency-gotta-get-it/"><img src="/assets/img/music/highest-currency-512.webp" srcset="/assets/img/music/highest-currency-512.webp 512w, /assets/img/music/highest-currency-800.webp 800w" sizes="(max-width: 720px) 80vw, 300px" width="512" height="512" alt="Highest Currency, Gotta Get it cover art" loading="lazy"></a>
+          <button class="m-song__play" type="button" data-play="highest-currency" aria-pressed="false" aria-label="Play Highest Currency, Gotta Get it"><svg class="play-i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg><svg class="pause-i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.4v14H7zM13.6 5H17v14h-3.6z"/></svg></button></div>
+          <div class="m-song__meta">
+            <h3><a href="/music/highest-currency-gotta-get-it/">Highest Currency, Gotta Get it</a></h3>
+            
+            <p class="m-song__links mono"><span>1:45</span><a href="/music/credits/highest-currency-gotta-get-it/">Credits</a><a href="/now-playing/highest-currency-gotta-get-it/">Now playing</a></p>
+          </div>
+        </article></div></div></section><section class="m-year reveal" aria-labelledby="y2025"><h3 class="m-year__n" id="y2025">2025</h3><div class="m-year__body"><ul class="m-rel"><li><a href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noopener"><span class="m-rel__t">Faa ji</span><span class="m-rel__k mono">Single</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li></ul></div></section><section class="m-year reveal" aria-labelledby="y2024"><h3 class="m-year__n" id="y2024">2024</h3><div class="m-year__body"><ul class="m-rel"><li><a href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noopener"><span class="m-rel__t">1000 BOTTLES</span><span class="m-rel__k mono">Release · includes LIMITS</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li><a href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noopener"><span class="m-rel__t">M.C, O.T 3, BAYO, Lifted</span><span class="m-rel__k mono">EPs</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li><a href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noopener"><span class="m-rel__t">Force</span><span class="m-rel__k mono">Single</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li><a href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noopener"><span class="m-rel__t">DFDDP</span><span class="m-rel__k mono">Single</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li><a href="https://www.youtube.com/@hero-one" target="_blank" rel="noopener"><span class="m-rel__t">VIP Vibes</span><span class="m-rel__k mono">Mashup · video</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li></ul></div></section>
+    </section>
+
+    <section class="section m-section" id="press" aria-labelledby="press-title">
+      <div class="m-head"><h2 id="press-title">Press releases</h2><a class="mono" href="/music/press/">All press releases <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      <a class="m-press reveal" href="/music/press/ldcat-highest-currency-2026/">
+          <span class="m-press__eyebrow">Press release · 2026</span>
+          <strong>LDCAT &amp; Highest Currency, Gotta Get it</strong>
+          <span class="m-press__lede">LDCAT was mastered in a coffee shop in downtown London, Ontario, but began in Lagos in 2023, originally as Outside.</span>
+          <span class="m-press__go">Read <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+    </section>
+
+    <section class="section m-section" id="credits" aria-labelledby="credits-title">
+      <div class="m-head"><h2 id="credits-title">Credits</h2><a class="mono" href="/music/credits/Hero-One-Full-Credits-2026.pdf" data-no-swap>Full credits PDF <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      <ul class="m-credits"><li><a href="/music/credits/ldcat/"><img src="/assets/img/music/ldcat-160.webp" alt="" width="56" height="56" loading="lazy"><span><strong>LDCAT</strong></span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li><a href="/music/credits/highest-currency-gotta-get-it/"><img src="/assets/img/music/highest-currency-160.webp" alt="" width="56" height="56" loading="lazy"><span><strong>Highest Currency, Gotta Get it</strong></span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li></ul>
+    </section>
+
+    <section class="section m-section" id="elsewhere" aria-labelledby="else-title">
+      <div class="m-head"><h2 id="else-title">Elsewhere</h2></div>
+      <div class="platforms m-platforms"><a class="platform" href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-spotify"/></svg>Spotify</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="platform" href="https://music.apple.com/ng/artist/hero-one/1520370143" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-apple"/></svg>Apple Music</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="platform" href="https://soundcloud.com/heroone" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-soundcloud"/></svg>SoundCloud</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="platform" href="https://www.youtube.com/@hero-one" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-youtube"/></svg>YouTube</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="platform" href="https://music.amazon.com/artists/B01HOYS7YK/hero-one" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-amazon"/></svg>Amazon Music</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="platform" href="https://audiomack.com/hero-one/" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-audiomack"/></svg>Audiomack</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="platform" href="https://www.boomplay.com/artists/24967874" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-boomplay"/></svg>Boomplay</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="platform" href="https://www.deezer.com/us/artist/10614549" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#i-deezer"/></svg>Deezer</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/img/brand/heroone-wordmark.webp" width="1567" height="959" alt="Hero One">
+        <p>Beats &amp; Blues Reality Music by Adebayo Michael Manuwa. Part of the <a href="https://333bi.tech" target="_blank" rel="noopener" style="color:var(--gold-bright)">333BI</a> ecosystem.</p>
+      </div>
+      <nav aria-label="Site">
+        <h2 class="kicker">Site</h2>
+        <a href="/music/">Music</a>
+        <a href="/music/press/">Press releases</a>
+        <a href="/music/credits/">Credits</a>
+        <a href="/philosophy/">Philosophy</a>
+        <a href="/philosophy/law/">The Law</a>
+        <a href="/#journey">Journey</a>
+        <a href="/gallery/">Gallery</a>
+      </nav>
+      <nav aria-label="Listen">
+        <h2 class="kicker">Listen</h2>
+        <a href="https://open.spotify.com/artist/2tr20IvKIxa9P9I3ucID2g" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://music.apple.com/ng/artist/hero-one/1520370143" target="_blank" rel="noopener">Apple Music</a>
+        <a href="https://soundcloud.com/heroone" target="_blank" rel="noopener">SoundCloud</a>
+        <a href="https://www.youtube.com/@hero-one" target="_blank" rel="noopener">YouTube</a>
+      </nav>
+      <nav aria-label="Hero One elsewhere">
+        <h2 class="kicker">Elsewhere</h2>
+        <a href="/#contact" data-book>Book</a>
+        <a href="https://portfolio.heroone.art" target="_blank" rel="noopener">Portfolio &amp; press kit <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a href="https://metameta3.com" target="_blank" rel="noopener">metameta3.com</a>
+        <a href="https://333bi.tech" target="_blank" rel="noopener">333bi.tech</a>
+        <a href="/studio/" data-no-swap>Studio</a>
       </nav>
     </div>
-  </header>
-  <main>
-    <header class="hero frame">
-      <div class="hero-label eyebrow"><span class="category">Music / Press release</span><span>Hero One · 2026</span></div>
-      <h1 class="hero-title"><span>LDCAT</span><span><em>Highest Currency,</em></span><span><em>Gotta Get it</em></span></h1>
-      <div class="hero-baseline">
-        <div class="dek">Beats &amp; Blues</div>
-      </div>
-    </header>
-    <section id="records" class="record-grid frame" aria-label="The two records and their official cover artwork">
-      <figure class="record">
-        <div class="art"><img src="/assets/img/music/ldcat-1400.webp" srcset="/assets/img/music/ldcat-800.webp 800w, /assets/img/music/ldcat-1400.webp 1400w" sizes="(max-width: 600px) 100vw, 50vw" width="1400" height="1400" alt="Official LDCAT cover: Hero One crouches beside a red sports car beneath the title LDCAT; the subtitle reads Love Don’t Cost a Thang."><button class="art-play" type="button" data-play="ldcat" aria-label="Play LDCAT"></button></div>
-        <figcaption><span class="record-number" aria-hidden="true">01</span><div><h2 class="expanded-title">LDCAT (Love Don’t Cost a Thang)</h2><span class="record-subtitle">Hero One</span><a class="record-credits" href="/music/ldcat/credits/">Full credits <span aria-hidden="true">→</span></a></div><button class="listen" type="button" data-play="ldcat" aria-pressed="false" aria-label="Play LDCAT"><span class="dot" aria-hidden="true"><svg class="play-i" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg><svg class="pause-i" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4.5v16H6zM13.5 4H18v16h-4.5z"/></svg></span><span data-play-label>Play</span></button></figcaption>
-      </figure>
-      <figure class="record">
-        <div class="art"><img src="/assets/img/music/highest-currency-1400.webp" srcset="/assets/img/music/highest-currency-800.webp 800w, /assets/img/music/highest-currency-1400.webp 1400w" sizes="(max-width: 600px) 100vw, 50vw" width="1400" height="1400" alt="Official Highest Currency, Gotta Get it cover: a black and white portrait of Hero One standing among railway tracks, with the artist name and title in red."><button class="art-play" type="button" data-play="highest-currency" aria-label="Play Highest Currency, Gotta Get it"></button></div>
-        <figcaption><span class="record-number" aria-hidden="true">02</span><div><h2>Highest Currency, Gotta Get it</h2><span class="record-subtitle">Hero One</span><a class="record-credits" href="/music/highest-currency-gotta-get-it/credits/">Full credits <span aria-hidden="true">→</span></a></div><button class="listen" type="button" data-play="highest-currency" aria-pressed="false" aria-label="Play Highest Currency, Gotta Get it"><span class="dot" aria-hidden="true"><svg class="play-i" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg><svg class="pause-i" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4.5v16H6zM13.5 4H18v16h-4.5z"/></svg></span><span data-play-label>Play</span></button></figcaption>
-      </figure>
-    </section>
-    <article id="release" class="release frame" aria-label="Press release">
-      <div class="section-label eyebrow"><span>The release</span></div>
-      <div class="release-body">
-        <p>LDCAT was mastered in a coffee shop in downtown London, Ontario, but began in Lagos in 2023, originally as Outside. Its identity passed through different periods of my life, with arrangements taking shape in 2025 and completion coming in 2026.</p>
-        <p>Meanwhile, the musical origins of “Highest Currency, Gotta Get it” stretch back through Massive Gang Nation, Lagos and Osogbo, Osun State. The new hook formulation draws from that history. LDCAT can be Latin/Reggaeton. Highest Currency can have an entirely different musical architecture. Both significantly grounded in “Beats &amp; Blues”.</p>
-        <p id="philosophy">My theory, <a href="/philosophy/law/"><cite>Variety in Observable Consciousness</cite></a>: “The observer, observation, observable, even ‘awareness’ and eventual expression all are circumscribed within TIME, choice, alteration and environment.”</p>
-      </div>
-    </article>
-  </main>
-  <footer class="footer frame"><span class="eyebrow">Hero One / Beats &amp; Blues</span><a href="/">heroone.art <span aria-hidden="true">↗</span></a></footer>
-  <script src="/assets/js/music-config.js" data-hx-persist></script>
-  <script src="/assets/js/player.js" data-hx-persist></script>
+    <div class="footer-base mono">
+      <span>© 2010–<span data-current-year>2026</span> Millenial Renaissance Art Limited &amp; Opulence Grandeur Sound</span>
+      <span>Heal · Reflect · Rise</span>
+    </div>
+  </footer>
+  <script src="/assets/js/signal-field.js?v=bcf7c0bbe3" defer></script>
+  <script src="/assets/js/site.js?v=d8fe58fde4" defer></script>
+  <script src="/assets/js/music-config.js?v=23d7e09d51" data-hx-persist></script>
+  <script src="/assets/js/player.js?v=88ef2c5397" data-hx-persist></script>
+  <script src="/assets/js/book.js?v=2546014946" data-hx-persist></script>
 </body>
 </html>

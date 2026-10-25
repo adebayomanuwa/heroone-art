@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds /music/<slug>/credits/index.html from tools/credits.json (the credits Hero One published).
+"""Builds /music/credits/<slug>/index.html from tools/credits.json (the credits Hero One published).
 Run from the repo root:  python3 tools/build_credits.py
 Edit tools/credits.json to change a credit, then re-run. Text is used exactly as written there."""
 import json, html, re, os
@@ -26,22 +26,24 @@ def page(key, rec, other_key, other, n, total):
     roles_total = sum(len(g['rows']) for g in groups)
     meta = json.load(open(os.path.join(ROOT, 'assets', 'music', rec['track'] + '.json')))
     title, sub = rec['title'], rec.get('subtitle', '')
-    url = f'https://heroone.art/music/{key}/credits/'
+    url = f'https://heroone.art/music/credits/{key}/'
     img = f'/assets/img/music/{rec["track"]}'
     long = len(title) > 14
 
     def names_html(names):
         return ''.join(f'<span><a href="#p-{slug(x.strip())}">{esc(x.strip())}</a></span>' for x in names.split(',') if x.strip())
 
+    # One line per person within each section: the name once, their roles separated by commas.
     blocks = []
     for i, g in enumerate(groups, 1):
-        rows = ''.join(f'<div class="credit"><dt>{esc(r)}</dt><dd>{names_html(v)}</dd></div>' for r, v in g['rows'])
+        by, seen = {}, []
+        for role, names in g['rows']:
+            for name in [x.strip() for x in names.split(',') if x.strip()]:
+                if name not in by: by[name] = []; seen.append(name)
+                if role not in by[name]: by[name].append(role)
+        rows = ''.join(f'<div class="credit credit--p"><dt>{esc(n)}</dt><dd>{esc(", ".join(by[n]))}</dd></div>' for n in seen)
         blocks.append(f'<section class="block" id="{slug(g["name"])}" aria-labelledby="h-{slug(g["name"])}"><div class="block-head"><h2 id="h-{slug(g["name"])}"><i>{roman(i)}.</i>{esc(g["name"])}</h2></div><dl class="credits">{rows}</dl></section>')
-    ranked = order   # order of appearance in the credits, never ranked
-    ppl = ''.join(f'<li class="person" id="p-{slug(x)}"><h3>{esc(x)}</h3><p>{esc(", ".join(people[x]))}</p></li>' for x in ranked)
-    k = len(groups) + 1
-    blocks.append(f'<section class="block" id="contributors" aria-labelledby="h-contributors"><div class="block-head"><h2 id="h-contributors"><i>{roman(k)}.</i>Contributors</h2></div><ul class="people">{ppl}</ul></section>')
-    rail = ''.join(f'<li><a href="#{slug(g["name"])}">{esc(g["name"])}</a></li>' for g in groups) + '<li><a href="#contributors">Contributors</a></li>'
+    rail = ''.join(f'<li><a href="#{slug(g["name"])}">{esc(g["name"])}</a></li>' for g in groups)
 
     ld = {
         '@context': 'https://schema.org', '@type': 'MusicRecording', 'name': title + (f' ({sub})' if sub else ''), 'url': url,
@@ -74,6 +76,7 @@ def page(key, rec, other_key, other, n, total):
   <link rel="preload" href="/assets/fonts/bodoni-moda-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/credits.css">
   <link rel="stylesheet" href="/assets/css/player.css" data-hx-persist>
+  <link rel="stylesheet" href="/assets/css/book.css" data-hx-persist>
   <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body>
@@ -82,8 +85,9 @@ def page(key, rec, other_key, other, n, total):
   <header class="masthead"><div class="frame masthead-inner">
     <a class="wordmark" href="/" aria-label="Hero One, home">HERO ONE</a>
     <nav class="nav" aria-label="Credits">
-      <a href="/music/">Press release</a>
-      <a class="hide-sm" href="/music/{other_key}/credits/">{esc(other['title'])}</a>
+      <a href="/music/">Music</a>
+      <a class="hide-sm" href="/music/press/">Press releases</a>
+      <a href="/music/credits/">Credits</a>
       <a href="/music/credits/Hero-One-Full-Credits-2026.pdf" data-no-swap>PDF <span aria-hidden="true">↓</span></a>
       <button type="button" class="hide-sm" onclick="window.print()">Print <span aria-hidden="true">↗</span></button>
     </nav>
@@ -103,7 +107,8 @@ def page(key, rec, other_key, other, n, total):
         <hr class="rule">
         <div class="actions">
           <button class="btn btn--solid" type="button" data-play="{rec['track']}" aria-pressed="false"><span class="dot" aria-hidden="true">{PLAY.replace('class="play-i"', 'class="play-i"')}</span><span data-play-label>Play</span></button>
-          <a class="btn btn--plain" href="/music/">Read the press release</a>
+          <a class="btn btn--plain" href="/music/{key}/">The song</a>
+          <a class="btn btn--plain" href="/music/press/ldcat-highest-currency-2026/">Press release</a>
         </div>
       </div>
     </header>
@@ -111,19 +116,20 @@ def page(key, rec, other_key, other, n, total):
     <div class="notes">
       <aside class="rail" aria-label="On this page">
         <ol>{rail}</ol>
-        <a class="other" href="/music/{other_key}/credits/"><img src="{other_img}" alt="" width="56" height="56" loading="lazy"><span>Also on heroone.art<strong>{esc(other['title'])}</strong></span></a>
+        <a class="other" href="/music/credits/{other_key}/"><img src="{other_img}" alt="" width="56" height="56" loading="lazy"><span>Also on heroone.art<strong>{esc(other['title'])}</strong></span></a>
       </aside>
       <div>{''.join(blocks)}</div>
     </div>
 
     <footer class="colophon">
       <span class="eyebrow">Hero One / Beats &amp; Blues</span>
-      <nav aria-label="More"><a href="/music/credits/Hero-One-Full-Credits-2026.pdf" data-no-swap>Full credits, both records (PDF)</a><a href="/">heroone.art ↗</a></nav>
+      <nav aria-label="More"><a href="/music/credits/">All credits</a><a href="/music/credits/Hero-One-Full-Credits-2026.pdf" data-no-swap>Full credits, both records (PDF)</a><a href="/">heroone.art ↗</a></nav>
     </footer>
   </main>
   </div>
   <script src="/assets/js/music-config.js" data-hx-persist></script>
   <script src="/assets/js/player.js" data-hx-persist></script>
+  <script src="/assets/js/book.js" data-hx-persist></script>
 </body>
 </html>
 '''
@@ -131,7 +137,7 @@ def page(key, rec, other_key, other, n, total):
 keys = list(DATA)
 for i, key in enumerate(keys):
     other_key = keys[(i + 1) % len(keys)]
-    out = os.path.join(ROOT, 'music', key, 'credits')
+    out = os.path.join(ROOT, 'music', 'credits', key)
     os.makedirs(out, exist_ok=True)
     open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(page(key, DATA[key], other_key, DATA[other_key], i + 1, len(keys)))
-    print('built', f'/music/{key}/credits/')
+    print('built', f'/music/credits/{key}/')

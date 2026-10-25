@@ -152,3 +152,26 @@ h1.is-long { font-size: clamp(44px, 6vw, 84px); line-height: 1; }
   .people { grid-template-columns: 1fr 1fr; } .person { padding: 8px 10px 8px 0; break-inside: avoid; } .person h3 { font-size: 15px; } .person p { font-size: 11px; }
   .colophon { margin-top: 6mm; font-size: 10px; }
 }
+
+/* index pages (press releases, credits) */
+.nav a[aria-current="page"] { color: var(--red); }
+.index-hero { padding: 56px 0 36px; border-bottom: 1px solid var(--ink); }
+.index-hero .eyebrow { display: flex; justify-content: space-between; gap: 16px; color: var(--muted); }
+.index-hero .eyebrow span:first-child { color: var(--red); }
+.index-hero h1 { margin: 22px 0 0; }
+.index-list { list-style: none; margin: 0; padding: 0; }
+.index-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 20px; border-bottom: 1px solid var(--line); }
+.index-row > a:first-child { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 24px; padding: 26px 0; text-decoration: none; }
+.index-row img { width: 64px; height: 64px; object-fit: cover; }
+.index-row__y { font-family: var(--serif); font-size: 30px; color: var(--red); }
+.index-row__t strong { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 3vw, 38px); line-height: 1.1; letter-spacing: -.02em; }
+.index-row__t em { display: block; margin-top: 6px; font-style: normal; font-size: 14px; color: var(--muted); }
+.index-row__go, .index-row__pdf { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
+.index-row__go { color: var(--red); }
+.index-note { margin: 28px 0 0; font-size: 13px; }
+@media (max-width: 600px) { .index-row > a:first-child { grid-template-columns: auto minmax(0, 1fr); } .index-row__go { display: none; } }
+
+/* credits grouped by person: name once, roles comma-separated */
+.credit--p dt { padding-top: 0; font-family: var(--serif); font-size: clamp(20px, 2vw, 25px); font-weight: 400; letter-spacing: -.01em; text-transform: none; color: var(--ink); line-height: 1.25; }
+.credit--p dd { display: block; padding-top: 7px; font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; line-height: 1.7; color: var(--muted); }
+@media print { .credit--p dt { font-size: 14px; } .credit--p dd { font-size: 9px; padding-top: 3px; } }

@@ -28,14 +28,16 @@ Where every binary in this site came from and what was done to it. Hashes are th
 
 | Published file | Source | Transformation |
 | --- | --- | --- |
-| `assets/img/brand/heroone-logo.webp` | heroone-art `Hero One design no bg .png` (3000×1800) | Trimmed to content, 1200px WebP q88 |
-| `assets/img/brand/heroone-logo-480.png` | same | Trimmed, 480px PNG |
-| `assets/img/brand/icon-512.png`, `icon-192.png`, `apple-touch-icon.png`, `favicon-32.png` | same | Logo centred on ink `#06080f` |
+| `assets/img/brand/heroone-wordmark.webp` | `HeroOne_AppleMusic_Logo_3000x1200.png` | Trimmed to the artwork. This is the site wordmark: “Hero One”, with no dots between the letters |
+| `assets/img/brand/heroone-logo.webp` | heroone-art `Hero One design no bg .png` (3000×1800) | Earlier wordmark, kept on disk. The site no longer uses it |
+| `assets/img/brand/heroone-logo-480.png` | same earlier wordmark | Trimmed, 480px PNG |
+| `assets/img/brand/icon-512.png`, `icon-192.png`, `apple-touch-icon.png` | the clean wordmark | Centred on ink `#06080f` |
+| `assets/img/brand/favicon-32.png` | `HeroOne_YouTube_Watermark_Bolt_800.png` | The bolt only, centred on ink. A full wordmark does not read at 32px |
 | `assets/img/brand/bmi.webp` | heroone-art `BMI ICON.webp` | Re-encoded WebP |
 | `assets/img/brand/soundexchange.webp` | heroone-art `SoundExchangeLogo.png` | 600px WebP |
 | `assets/img/brand/mral.webp` | heroone-art `mra logo.png` | WebP |
 | `assets/img/brand/ogs.webp` | heroone-art `OGs no bg.png` | 480px WebP |
-| `assets/img/og-image.jpg` | March 2024 portrait + logo | 1200×630 social card |
+| `assets/img/og-image.jpg` | March 2024 portrait + the clean Hero One wordmark | 1200×630 social card |
 | `assets/img/og-law.jpg` | Rendered from the Law page's own type and ring | 1200×630 social card |
 
 ## Fonts
