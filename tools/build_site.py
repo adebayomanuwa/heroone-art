@@ -35,13 +35,15 @@ def write(rel, text):
 
 ARROW = '<svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg>'
 PLAY_I = '<svg class="play-i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg><svg class="pause-i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.4v14H7zM13.6 5H17v14h-3.6z"/></svg>'
+MARK = '/assets/img/brand/heroone-wordmark.webp'
+MARK_W, MARK_H = 1567, 959
 
 # ───────────────────────── shared header / footer ─────────────────────────
 def header(active=''):
     cur = lambda k: ' aria-current="page"' if k == active else ''
     return f'''<header class="site-header">
     <a class="brand-lockup" href="/" aria-label="Hero One home">
-      <img src="/assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="">
+      <img src="{MARK}" width="{MARK_W}" height="{MARK_H}" alt="">
       <span>Beats &amp; Blues<br>Reality Music</span>
     </a>
     <div class="header-actions">
@@ -63,10 +65,10 @@ def header(active=''):
     </nav>
   </header>'''
 
-FOOTER = '''<footer class="site-footer">
+FOOTER = f'''<footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="/assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="Hero One">
+        <img src="{MARK}" width="{MARK_W}" height="{MARK_H}" alt="Hero One">
         <p>Beats &amp; Blues Reality Music by Adebayo Michael Manuwa. Part of the <a href="https://333bi.tech" target="_blank" rel="noopener" style="color:var(--gold-bright)">333BI</a> ecosystem.</p>
       </div>
       <nav aria-label="Site">
@@ -122,8 +124,8 @@ def page(path, title, desc, body, *, active='', image='/assets/img/og-image.jpg'
   <title>{esc(title)}</title>
   <meta name="description" content="{esc(desc)}">{robots}
   <link rel="canonical" href="{url}">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/brand/favicon-32.png">
-  <link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/brand/favicon-32.png?v=clean">
+  <link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png?v=clean">
   <meta property="og:site_name" content="Hero One">
   <meta property="og:url" content="{url}">
   <meta property="og:title" content="{esc(title)}">
@@ -154,6 +156,29 @@ PRESS = {p['slug']: p for p in CAT['press']}
 def play_btn(s, cls='m-play', label=True):
     lab = '<span data-play-label>Play</span>' if label else ''
     return f'<button class="{cls}" type="button" data-play="{s["id"]}" aria-pressed="false" aria-label="Play {esc(s["title"])}">{PLAY_I}{lab}</button>'
+
+def lyric_html(s):
+    rel = s.get('lyrics')
+    if not rel: return ''
+    raw = open(os.path.join(ROOT, rel), encoding='utf-8').read().replace('\r\n', '\n').replace('\r', '\n')
+    stanzas, cur = [], []
+    for line in raw.split('\n'):
+        if line.strip(): cur.append(line.strip())
+        elif cur: stanzas.append(cur); cur = []
+    if cur: stanzas.append(cur)
+    sheet = ''.join('<p>' + '<br>'.join(esc(line) for line in stanza) + '</p>' for stanza in stanzas)
+    return f'''    <section class="section song-lyrics" aria-labelledby="lyrics-title">
+      <div class="song-lyrics__head">
+        <h2 id="lyrics-title">Lyrics</h2>
+        <p>The same words sit in the player. They are not timed to the recording, so nothing in them pretends to be the line being sung.</p>
+      </div>
+      <div class="song-lyrics__sheet">{sheet}</div>
+      <p class="song-lyrics__go"><button class="button button--ghost" type="button" data-lyrics="{s["id"]}">Open in the player</button></p>
+    </section>'''
+
+def lyric_btn(s):
+    if not s.get('lyrics'): return ''
+    return f'<button class="button button--ghost" type="button" data-lyrics="{s["id"]}">Lyrics</button>'
 
 def song_card(s):
     c = s['cover']
@@ -244,6 +269,7 @@ def build_song(s):
           <p class="song-hero__by">Hero One <span class="mono">· {dur(s['id'])}</span></p>
           <div class="song-hero__actions">
             {play_btn(s, 'button button--primary song-play')}
+            {lyric_btn(s)}
             <a class="button button--ghost" href="/now-playing/{s['slug']}/">Now playing {ARROW}</a>
           </div>
           <ul class="song-links">
@@ -260,6 +286,8 @@ def build_song(s):
         <figcaption class="mono">Hero One · {f'<a href="/music/press/{p["slug"]}/">Press release, {p["year"]}</a>' if p else ''}</figcaption>
       </figure>
     </section>
+
+    {lyric_html(s)}
 
     <section class="section m-section" aria-labelledby="also-title">
       <div class="m-head"><h2 id="also-title">Also</h2><a class="mono" href="/music/">All music {ARROW}</a></div>
@@ -278,7 +306,7 @@ def build_now_playing(s):
         <p class="mono">Now playing on heroone.art</p>
         <h1 id="np-title">{esc(s['title'])}</h1>
         <p class="np-page__by">Hero One</p>
-        <div class="np-page__actions">{play_btn(s, 'button button--primary song-play')}<a class="button button--ghost" href="/music/{s['slug']}/">The song</a></div>
+        <div class="np-page__actions">{play_btn(s, 'button button--primary song-play')}{lyric_btn(s)}<a class="button button--ghost" href="/music/{s['slug']}/">The song</a></div>
       </div>
     </section>'''
     write(f'now-playing/{s["slug"]}/index.html', page(f'/now-playing/{s["slug"]}/', f'Now playing: {s["title"]} · Hero One', f'Listen to {s["title"]} by Hero One on heroone.art.', body,
@@ -295,7 +323,7 @@ def paper(path, title, desc, inner, crumbs):
   <title>{esc(title)}</title>
   <meta name="description" content="{esc(desc)}">
   <link rel="canonical" href="{SITE}{path}">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/brand/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/brand/favicon-32.png?v=clean">
   <meta property="og:title" content="{esc(title)}">
   <meta property="og:image" content="{SITE}/assets/img/music/ldcat-1200.jpg">
   <link rel="stylesheet" href="/assets/css/credits.css">
@@ -393,8 +421,8 @@ def build_magazine():
         <button type="button" class="pg-zoom" {zoom(f)} aria-label="Open {esc(f['title'])}">{img(f)}</button>
         <p class="pg-cap"><span>{esc(f['title'])}</span><span class="pg-folio">{f['year']}</span></p>
       </section>'''))
-    pages.append(('Back cover', '', '''<section class="fb-page pg-back" data-label="Back cover">
-        <img src="/assets/img/brand/heroone-logo.webp" width="1200" height="735" alt="Hero One">
+    pages.append(('Back cover', '', f'''<section class="fb-page pg-back" data-label="Back cover">
+        <img src="{MARK}" width="{MARK_W}" height="{MARK_H}" alt="Hero One">
         <p>Beats &amp; Blues Reality Music</p>
         <p class="pg-folio">heroone.art</p>
       </section>'''))

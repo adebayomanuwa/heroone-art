@@ -74,6 +74,18 @@
   var urls = {};                     // track id -> { url, exp }
   var resumeAt = null;
   var retried = false;
+  /* Repeat stays off until a listener asks. Off keeps the old behaviour: play the
+     catalog in order, then stop. All and One exist so a lyric sheet can be rehearsed. */
+  var repeatMode = sget('localStorage', 'hx_repeat');
+  if (repeatMode !== 'all' && repeatMode !== 'one') repeatMode = 'off';
+  var vol = parseFloat(sget('localStorage', 'hx_vol'));
+  if (!isFinite(vol)) vol = 1;
+  vol = Math.max(0, Math.min(1, vol));
+  var lastVol = vol > 0.001 ? vol : 1;
+  var remain = sget('localStorage', 'hx_remain') === '1';
+  var lyricsOn = false;
+  var lyr = {};
+  try { audio.volume = vol; } catch (e) {}
 
   function T() { return TRACKS[idx]; }
   function newListen(prev) {
@@ -183,8 +195,16 @@
   });
   audio.addEventListener('ended', function () {
     endListen('ended'); flush(false);
-    if (idx < TRACKS.length - 1) next(); else { ui.state('paused'); syncButtons(); }
+    if (repeatMode === 'one') { replay(); return; }
+    if (idx < TRACKS.length - 1) next();
+    else if (repeatMode === 'all') load(0, true);
+    else { ui.state('paused'); syncButtons(); }
   });
+  function replay() {
+    listen = newListen();
+    try { audio.currentTime = 0; } catch (e) {}
+    play();
+  }
   audio.addEventListener('error', function () {
     // signed URL expired (or network blip): fetch a fresh one once and carry on from the same spot
     if (retried) { ui.state('error'); return; }
@@ -217,6 +237,10 @@
       min: '<path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>',
       close: '<path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>',
       expand: '<path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>',
+      lyrics: '<path d="M5 6.5h14M5 12h14M5 17.5h9" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/>',
+      repeat: '<path d="M17 2.5 21 6.5 17 10.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 11.5V9.2A3.2 3.2 0 0 1 6.2 6H21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7 21.5 3 17.5 7 13.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12.5v2.3a3.2 3.2 0 0 1-3.2 3.2H3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>',
+      vol: '<path d="M4 9.5h2.8L11 6v12l-4.2-3.5H4z"/><path d="M14.2 9.2a3.4 3.4 0 0 1 0 5.6M16.6 7a6.2 6.2 0 0 1 0 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
+      mute: '<path d="M4 9.5h2.8L11 6v12l-4.2-3.5H4z"/><path d="M15 10l5 5M20 10l-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
     }[name];
     return '<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">' + p + '</svg>';
   }
@@ -282,6 +306,7 @@
           '<button class="hx-btn hx-play" type="button" aria-label="Play">' + icon('play') + '<span class="hx-spin" aria-hidden="true"></span></button>' +
           '<button class="hx-btn hx-next" type="button" aria-label="Next">' + icon('next') + '</button>' +
         '</div>' +
+        '<button class="hx-btn hx-lyrics-dock" type="button" aria-pressed="false" aria-label="Show lyrics">' + icon('lyrics') + '</button>' +
         '<span class="hx-vu" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>' +
         '<button class="hx-face" type="button" aria-label="Open the 3nity Auracle deck" aria-haspopup="dialog"><img src="' + IMG + 'auracle-face-160.webp" alt="" width="40" height="40"></button>' +
         '<button class="hx-btn hx-min" type="button" aria-label="Minimise player">' + icon('min') + '</button>' +
@@ -294,18 +319,32 @@
             '<button class="hx-btn hx-close" type="button" aria-label="Close">' + icon('close') + '</button></header>' +
           '<div class="hx-stage">' + fieldHTML() + '<div class="hx-head">' + headHTML() + '</div>' +
             '<div class="hx-readout" aria-hidden="true"><span>State <b class="ro-state">IDLE</b></span><span>Signal <b class="ro-sig">000</b></span><span>Field <b class="ro-trk">DORMANT</b></span></div>' +
+            '<div class="hx-lyrics" hidden>' +
+              '<div class="hx-ly-bar">' +
+                '<div class="hx-ly-id"><span class="hx-ly-kicker">Lyrics</span><span class="hx-ly-note">Not timed to the recording</span></div>' +
+                '<div class="hx-ly-tools"><button class="hx-tool hx-ly-copy" type="button">Copy</button><button class="hx-tool hx-ly-back" type="button">Show stage</button></div>' +
+              '</div>' +
+              '<div class="hx-ly-scroll" tabindex="0" aria-label="Lyrics. These words are not timed to the recording."></div>' +
+            '</div>' +
           '</div>' +
           '<div class="hx-np">' +
             '<div class="hx-np-top"><img class="hx-np-art" alt="" width="512" height="512">' +
               '<div class="hx-np-id"><span class="hx-np-no">Beats &amp; Blues</span><h2 class="hx-np-title"></h2><p class="hx-np-sub"></p><p class="hx-np-artist"></p></div></div>' +
             waveHTML('hx-wave--deck', 'Seek') +
-            '<div class="hx-np-times" aria-hidden="true"><span class="hx-np-cur">0:00</span><span class="hx-np-dur">0:00</span></div>' +
+            '<div class="hx-np-times"><span class="hx-np-cur" aria-hidden="true">0:00</span><button class="hx-np-dur" type="button" aria-label="Show time remaining">0:00</button></div>' +
             '<div class="hx-np-ctl">' +
               '<button class="hx-btn hx-prev" type="button" aria-label="Previous">' + icon('prev') + '</button>' +
               '<button class="hx-btn hx-play hx-play--xl" type="button" aria-label="Play">' + icon('play') + '<span class="hx-spin" aria-hidden="true"></span></button>' +
               '<button class="hx-btn hx-next" type="button" aria-label="Next">' + icon('next') + '</button>' +
             '</div>' +
+            '<div class="hx-np-tools">' +
+              '<button class="hx-tool hx-lyrics" type="button" aria-pressed="false" aria-label="Show lyrics">' + icon('lyrics') + 'Lyrics</button>' +
+              '<button class="hx-tool hx-repeat" type="button" aria-pressed="false">' + icon('repeat') + '<span class="hx-repeat-l">Off</span></button>' +
+              '<div class="hx-vol"><button class="hx-btn hx-mute" type="button" aria-label="Mute">' + icon('vol') + '</button>' +
+                '<input class="hx-vol-range" type="range" min="0" max="1" step="0.01" value="' + vol + '" aria-label="Volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"></div>' +
+            '</div>' +
             '<nav class="hx-np-links" aria-label="About this record"><a class="hx-l-song" href="/music/">The song</a><a class="hx-l-credits" href="/music/credits/">Credits</a><a class="hx-l-press" href="/music/press/">Press release</a></nav>' +
+            '<p class="hx-q-label">Records</p>' +
             '<ol class="hx-q">' + TRACKS.map(function (t, i) {
               return '<li><button type="button" data-i="' + i + '"><span class="hx-q-no" aria-hidden="true"></span><img src="' + t.cover + '" alt="" width="40" height="40"><span class="hx-q-t"><strong>' + t.full + '</strong><em>' + t.artist + '</em></span><span class="hx-q-d" data-dur="' + t.id + '"></span></button></li>';
             }).join('') + '</ol>' +
@@ -328,33 +367,53 @@
     el.npCur = root.querySelector('.hx-np-cur'); el.npDur = root.querySelector('.hx-np-dur'); el.amb = root.querySelector('.hx-deck-amb img');
     el.credits = root.querySelector('.hx-l-credits'); el.song = root.querySelector('.hx-l-song'); el.press = root.querySelector('.hx-l-press'); el.q = root.querySelector('.hx-q');
     el.ringP = root.querySelector('.hx-ring-p'); el.pillIcon = root.querySelector('.hx-pill-icon');
+    el.stage = root.querySelector('.hx-stage'); el.ly = root.querySelector('.hx-lyrics'); el.lyScroll = root.querySelector('.hx-ly-scroll');
+    el.lyCopy = root.querySelector('.hx-ly-copy'); el.lyNote = root.querySelector('.hx-ly-note');
+    el.lyBtn = root.querySelector('.hx-np-tools .hx-lyrics'); el.lyDock = root.querySelector('.hx-lyrics-dock');
+    el.repeat = root.querySelector('.hx-repeat'); el.vol = root.querySelector('.hx-vol-range'); el.mute = root.querySelector('.hx-mute');
 
     root.querySelectorAll('.hx-play').forEach(function (b) { b.addEventListener('click', toggle); });
     root.querySelectorAll('.hx-prev').forEach(function (b) { b.addEventListener('click', prev); });
     root.querySelectorAll('.hx-next').forEach(function (b) { b.addEventListener('click', next); });
-    el.art.addEventListener('click', function () { openDeck(true); });
-    root.querySelector('.hx-face').addEventListener('click', function () { openDeck(true); });
+    el.art.addEventListener('click', function () { openLyrics(false); openDeck(true); });
+    root.querySelector('.hx-face').addEventListener('click', function () { openLyrics(false); openDeck(true); });
     root.querySelector('.hx-close').addEventListener('click', function () { openDeck(false); });
     root.querySelector('.hx-min').addEventListener('click', function () { setMin(true); });
     el.pill.addEventListener('click', function () { setMin(false); });
     el.deck.addEventListener('click', function (e) { if (e.target === el.deck) openDeck(false); });
     el.deck.querySelector('.hx-np-links').addEventListener('click', function (e) { if (e.target.closest('a')) openDeck(false, { keepUrl: true }); });
+    el.lyBtn.addEventListener('click', function () { openLyrics(!lyricsOn); if (el.deck.hidden) openDeck(true); });
+    el.lyDock.addEventListener('click', function () { openLyrics(true); openDeck(true); });
+    root.querySelector('.hx-ly-back').addEventListener('click', function () { openLyrics(false); });
+    el.lyCopy.addEventListener('click', copyLyrics);
+    el.repeat.addEventListener('click', cycleRepeat);
+    el.mute.addEventListener('click', function () { setVol(vol > 0.001 ? 0 : lastVol); });
+    el.vol.addEventListener('input', function () { setVol(parseFloat(el.vol.value)); });
+    el.npDur.addEventListener('click', function () {
+      remain = !remain;
+      sset('localStorage', 'hx_remain', remain ? '1' : '0');
+      ui.progress();
+    });
     el.q.addEventListener('click', function (e) {
       var b = e.target.closest('button[data-i]'); if (!b) return;
       var i = +b.dataset.i; if (i === idx && !audio.paused) return; load(i, true);
     });
     document.addEventListener('keydown', function (e) {
       if (el.deck.hidden) return;
+      var field = document.activeElement;
+      var typing = field && (field.tagName === 'INPUT' || field.tagName === 'TEXTAREA' || field.isContentEditable);
       if (e.key === 'Escape') { e.preventDefault(); openDeck(false); }
       else if (e.key === 'Tab') {                                   // keep focus inside the dialog
-        var f = Array.prototype.slice.call(el.deck.querySelectorAll('button,a[href],[tabindex="0"]')).filter(function (x) { return x.offsetParent; });
+        var f = Array.prototype.slice.call(el.deck.querySelectorAll('button,a[href],input,[tabindex="0"]')).filter(function (x) { return !x.disabled && x.offsetParent; });
         if (!f.length) return;
         if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
         else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
-      } else if (e.key === ' ' && !/^(BUTTON|A|INPUT)$/.test(document.activeElement.tagName) && document.activeElement.getAttribute('role') !== 'slider') { e.preventDefault(); toggle(); }
+      } else if (!typing && (e.key === 'l' || e.key === 'L') && !e.metaKey && !e.ctrlKey && !e.altKey) { e.preventDefault(); openLyrics(!lyricsOn); }
+      else if (!typing && (e.key === 'r' || e.key === 'R') && !e.metaKey && !e.ctrlKey && !e.altKey) { e.preventDefault(); cycleRepeat(); }
+      else if (e.key === ' ' && field && !typing && field !== el.lyScroll && !/^(BUTTON|A|INPUT)$/.test(field.tagName) && field.getAttribute('role') !== 'slider') { e.preventDefault(); toggle(); }
     });
     el.deck.addEventListener('pointermove', function (e) {
-      if (reduce.matches) return;
+      if (reduce.matches || lyricsOn) return;
       var r = el.rig.getBoundingClientRect(), x = (e.clientX - (r.left + r.width / 2)) / window.innerWidth, y = (e.clientY - (r.top + r.height / 2)) / window.innerHeight;
       el.rig.style.setProperty('--tilt-y', (x * 22).toFixed(2) + 'deg'); el.rig.style.setProperty('--tilt-x', (-y * 16).toFixed(2) + 'deg');
       el.rig.style.setProperty('--look-x', (x * 10).toFixed(2) + 'px'); el.rig.style.setProperty('--look-y', (y * 6).toFixed(2) + 'px');
@@ -362,7 +421,133 @@
     el.waves.forEach(bindWave);
     window.addEventListener('resize', function () { lastDraw = -1; drawWaves(true); });
     setMin(sget('localStorage', 'hx_min') === '1', true);
+    paintRepeat(); paintVol();
     TRACKS.forEach(function (t) { getData(t.id); });
+  }
+
+  /* Lyrics are plain text, with no line times. Spotify and Apple both refuse to
+     invent a highlight in that case: a wrong line is worse than an honest sheet.
+     The words stay readable, and the waveform remains the only playhead. */
+  function parseLyrics(raw) {
+    var stanzas = [], cur = [];
+    String(raw).replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n').forEach(function (line) {
+      if (!line.trim()) { if (cur.length) { stanzas.push(cur); cur = []; } }
+      else cur.push(line.trim());
+    });
+    if (cur.length) stanzas.push(cur);
+    return { stanzas: stanzas, text: stanzas.map(function (s) { return s.join('\n'); }).join('\n\n') };
+  }
+  function paintLyrics(pack) {
+    el.lyScroll.replaceChildren();
+    if (pack === 'loading') {
+      var wait = document.createElement('p');
+      wait.className = 'hx-ly-loading';
+      wait.textContent = 'Opening the lyric sheet.';
+      el.lyScroll.appendChild(wait);
+      el.lyCopy.disabled = true;
+      return;
+    }
+    if (!pack || !pack.stanzas.length) {
+      var empty = document.createElement('p');
+      empty.className = 'hx-ly-empty';
+      empty.textContent = 'The lyric sheet is not available for this record yet.';
+      el.lyScroll.appendChild(empty);
+      el.lyCopy.disabled = true;
+      return;
+    }
+    pack.stanzas.forEach(function (lines) {
+      var stanza = document.createElement('p');
+      stanza.className = 'hx-ly-stanza';
+      lines.forEach(function (line, i) {
+        if (i) stanza.appendChild(document.createElement('br'));
+        stanza.appendChild(document.createTextNode(line));
+      });
+      el.lyScroll.appendChild(stanza);
+    });
+    el.lyCopy.disabled = false;
+    el.lyScroll.scrollTop = 0;
+  }
+  function ensureLyrics(track) {
+    if (!track.lyrics) { paintLyrics(null); return; }
+    if (lyr[track.id]) { paintLyrics(lyr[track.id]); return; }
+    paintLyrics('loading');
+    var url = new URL(track.lyrics, location.origin).href;
+    fetch(url, { credentials: 'same-origin' }).then(function (r) {
+      if (!r.ok) throw new Error('lyrics');
+      return r.text();
+    }).then(function (text) {
+      lyr[track.id] = parseLyrics(text);
+      if (lyricsOn && T().id === track.id) paintLyrics(lyr[track.id]);
+    }).catch(function () {
+      delete lyr[track.id];
+      if (lyricsOn && T().id === track.id) paintLyrics(null);
+    });
+  }
+  function openLyrics(on) {
+    lyricsOn = !!on;
+    el.stage.classList.toggle('is-lyrics', lyricsOn);
+    el.ly.hidden = !lyricsOn;
+    [el.lyBtn, el.lyDock].forEach(function (b) {
+      b.setAttribute('aria-pressed', lyricsOn ? 'true' : 'false');
+      b.setAttribute('aria-label', lyricsOn ? 'Hide lyrics' : 'Show lyrics');
+    });
+    if (lyricsOn) { ensureLyrics(T()); lastDraw = -1; drawWaves(true); }
+  }
+  function copyLyrics() {
+    var track = T(), pack = lyr[track.id];
+    if (!pack || !pack.text) return;
+    var full = track.full + '\n' + track.artist + '\n\n' + pack.text;
+    var done = function () {
+      el.lyCopy.textContent = 'Copied';
+      setTimeout(function () { if (el.lyCopy) el.lyCopy.textContent = 'Copy'; }, 1600);
+    };
+    var legacy = function () {
+      var ta = document.createElement('textarea');
+      ta.value = full; ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed'; ta.style.left = '-999px';
+      document.body.appendChild(ta); ta.select();
+      try { if (document.execCommand('copy')) done(); } catch (e) {}
+      ta.remove();
+    };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(full).then(done, legacy);
+    else legacy();
+  }
+  function cycleRepeat() {
+    repeatMode = repeatMode === 'off' ? 'all' : repeatMode === 'all' ? 'one' : 'off';
+    sset('localStorage', 'hx_repeat', repeatMode);
+    paintRepeat();
+  }
+  function paintRepeat() {
+    if (!el.repeat) return;
+    var label = { off: 'Off', all: 'All', one: 'One' };
+    var name = {
+      off: 'Repeat is off. Repeat every record.',
+      all: 'Repeating every record. Repeat this record.',
+      one: 'Repeating this record. Turn repeat off.',
+    };
+    el.repeat.querySelector('.hx-repeat-l').textContent = label[repeatMode];
+    el.repeat.setAttribute('aria-label', name[repeatMode]);
+    el.repeat.setAttribute('aria-pressed', repeatMode === 'off' ? 'false' : 'true');
+    el.repeat.dataset.mode = repeatMode;
+  }
+  function setVol(v) {
+    v = Math.max(0, Math.min(1, +v || 0));
+    vol = v;
+    if (v > 0.001) lastVol = v;
+    try { audio.volume = v; } catch (e) {}
+    sset('localStorage', 'hx_vol', String(Math.round(v * 100) / 100));
+    paintVol();
+  }
+  function paintVol() {
+    if (!el.vol) return;
+    var pct = Math.round(vol * 100);
+    if (document.activeElement !== el.vol) el.vol.value = String(vol);
+    el.vol.style.setProperty('--hx-vol', pct + '%');
+    el.vol.setAttribute('aria-valuenow', String(pct));
+    el.vol.setAttribute('aria-valuetext', pct + ' percent');
+    el.mute.setAttribute('aria-label', vol > 0.001 ? 'Mute' : 'Unmute');
+    el.mute.setAttribute('aria-pressed', vol > 0.001 ? 'false' : 'true');
+    el.mute.innerHTML = icon(vol > 0.001 ? 'vol' : 'mute');
   }
 
   /* waveform scrubber (real peaks of the master) */
@@ -506,6 +691,7 @@
       try { history.replaceState(history.state, '', '/now-playing/' + t.slug + '/'); } catch (e) {}
     }
     el.q.querySelectorAll('button[data-i]').forEach(function (b) { var on = +b.dataset.i === idx; b.classList.toggle('is-current', on); b.setAttribute('aria-current', on ? 'true' : 'false'); });
+    if (lyricsOn) ensureLyrics(t);
     if ('mediaSession' in navigator) {
       try {
         navigator.mediaSession.metadata = new MediaMetadata({
@@ -541,7 +727,10 @@
       if (!el.dock) return;
       var x = data[T().id], d = audio.duration && isFinite(audio.duration) ? audio.duration : (x ? x.duration : 0), t = audio.currentTime || 0;
       el.time.textContent = fmt(t) + ' / ' + fmt(d);
-      el.npCur.textContent = fmt(t); el.npDur.textContent = fmt(d);
+      el.npCur.textContent = fmt(t);
+      var left = Math.max(0, d - t);
+      el.npDur.textContent = remain && d ? '\u2212' + fmt(left) : fmt(d);
+      el.npDur.setAttribute('aria-label', remain ? 'Showing time remaining, ' + fmt(left) + ' left. Show duration.' : 'Showing duration, ' + fmt(d) + '. Show time remaining.');
       var f = d ? t / d : 0;
       el.ringP.style.strokeDashoffset = (188.5 * (1 - f)).toFixed(1);
       root.style.setProperty('--hx-p', f.toFixed(4));
@@ -568,6 +757,17 @@
     if (i < 0) return;
     if (root.classList.contains('is-min') && sget('localStorage', 'hx_min') !== '1') setMin(false);
     if (i === idx && listen && !listen.stopped && audio.getAttribute('src')) toggle(); else load(i, true);
+  });
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-lyrics]');
+    if (!b) return;
+    var i = TRACKS.findIndex(function (t) { return t.id === b.dataset.lyrics; });
+    if (i < 0) return;
+    e.preventDefault();
+    if (root.classList.contains('is-min') && sget('localStorage', 'hx_min') !== '1') setMin(false);
+    if (i !== idx) load(i, !audio.paused);
+    openLyrics(true);
+    openDeck(true);
   });
 
   if ('mediaSession' in navigator) {

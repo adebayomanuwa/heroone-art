@@ -93,7 +93,7 @@ The **Book** button on every page opens a 3nity Auracle chat. It asks what the r
 
 1. Upload `<id>.mp3` to the `heroone-streams` bucket.
 2. Run in SQL: `insert into heroone.tracks (id, title, storage_path) values ('<id>', '<Title>', '<id>.mp3');`
-3. Add the track to `assets/js/music-config.js` (id, slug, title, cover, art, page, credits, press) and to `tools/catalog.json` → `songs`.
+3. Add the track to `assets/js/music-config.js` (id, slug, title, cover, art, page, credits, press, and `lyrics` when a text file exists) and to `tools/catalog.json` → `songs`. Put the lyric text in `lyrics/` and point both files at it. The player shows those words as a reading sheet. It does not invent line times.
 4. Make covers in `assets/img/music/` (`<id>-160/512/800/1400.webp`, `<id>-1200.jpg`).
 5. Generate `assets/music/<id>.json` (waveform and envelope) with `python3 tools/peaks.py <id> path/to/song.mp3`. This needs ffmpeg and numpy.
 6. For credits: add the song to `tools/credits.json`. Then run `python3 tools/build_credits.py && python3 tools/build_site.py` to build its song page, its `/now-playing/` URL and its credits page.

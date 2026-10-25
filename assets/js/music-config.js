@@ -20,6 +20,7 @@ window.HERO_MUSIC = {
       page: '/music/ldcat/',
       credits: '/music/credits/ldcat/',
       press: '/music/press/ldcat-highest-currency-2026/',
+      lyrics: '/lyrics/Hero One - LDCAT.txt',
     },
     {
       id: 'highest-currency',
@@ -32,6 +33,7 @@ window.HERO_MUSIC = {
       page: '/music/highest-currency-gotta-get-it/',
       credits: '/music/credits/highest-currency-gotta-get-it/',
       press: '/music/press/ldcat-highest-currency-2026/',
+      lyrics: '/lyrics/Hero One - Highest Currency, Gotta Get it.txt',
     },
   ],
 };

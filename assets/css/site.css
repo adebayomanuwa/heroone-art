@@ -620,6 +620,13 @@ p { margin: 0; }
 .song-quote blockquote { margin: 0; font-family: "Bodoni Moda", Georgia, serif; font-size: clamp(1.4rem, 2.6vw, 2.2rem); line-height: 1.35; letter-spacing: -.01em; }
 .song-quote figcaption { margin-top: 1.4rem; color: var(--text-dim); }
 .song-quote figcaption a { color: var(--gold); }
+.song-lyrics.section { padding-top: clamp(2.4rem, 5vw, 4rem); }
+.song-lyrics__head { display: flex; justify-content: space-between; align-items: end; gap: 1rem 2rem; flex-wrap: wrap; }
+.song-lyrics__head h2 { font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -.04em; }
+.song-lyrics__head p { max-width: 26rem; color: var(--text-dim); }
+.song-lyrics__sheet { margin-top: 1.8rem; max-width: 36rem; font-size: clamp(1.05rem, 1.5vw, 1.22rem); line-height: 1.55; }
+.song-lyrics__sheet p { margin: 0 0 1.35em; }
+.song-lyrics__go { margin-top: .2rem; }
 @media (max-width: 900px) { .song-hero__inner { grid-template-columns: 1fr; } .song-hero__art { max-width: 520px; } }
 
 /* /now-playing/<slug>/ (the deck opens over it) */
