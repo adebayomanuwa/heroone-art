@@ -213,7 +213,7 @@ def build_music():
           <span class="m-press__go">Read {ARROW}</span>
         </a>''' for p in CAT['press'])
     credits = ''.join(f'<li><a href="/music/credits/{s["slug"]}/"><img src="{s["cover"]}-160.webp" alt="" width="56" height="56" loading="lazy"><span><strong>{esc(s["title"])}</strong></span>{ARROW}</a></li>' for s in SONGS)
-    plats = ''.join(f'<a class="platform" href="{u}" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#{i}"/></svg>{esc(n)}</span>{ARROW}</a>' for n, u, i in CAT['platforms'])
+    plats = ''.join(f'<a class="platform" href="{u}" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#{i}"/></svg>{esc(n)}</span></a>' for n, u, i in CAT['platforms'])
     body = f'''    <section class="page-hero page-hero--music" aria-labelledby="ph-title">
       <div class="signal-field" data-signal-field aria-hidden="true"><canvas></canvas></div>
       <div class="hero-grain" aria-hidden="true"></div>
