@@ -185,21 +185,13 @@ p { margin: 0; }
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 .hero-copy { position: relative; z-index: 3; max-width: 690px; }
-.hero-lettering {
-  display: block; width: min(520px, 92vw); margin: 1.4rem 0 0;
-  filter: drop-shadow(0 24px 48px rgb(var(--gold-rgb) / .28)); animation: rise 1s var(--ease) both;
+.hero-logo {
+  width: min(240px, 60%);
+  height: auto;
+  margin: 1.3rem 0 0;
+  filter: drop-shadow(0 16px 36px rgb(var(--gold-rgb) / .32));
+  animation: rise 1s var(--ease) both;
 }
-.hero-lettering .hero-logo { display: block; width: 100%; height: auto; margin: 0; filter: none; animation: none; }
-/* Artist custom lettering (glyph PNGs from Hero-One-Custom-Lettering). Used sparingly, not sitewide. */
-.ho-lettering { display: inline-flex; align-items: flex-end; line-height: 0; flex: none; }
-.ho-lettering img { display: block; width: auto; max-width: none; }
-.ho-lettering__space { flex: none; width: .42em; }
-.ho-lettering--xs { height: 1.85rem; filter: drop-shadow(0 4px 12px rgb(0 0 0 / .55)); }
-.ho-lettering--xs .ho-g--H { height: 1.85rem; margin-right: -.08rem; }
-.ho-lettering--xs .ho-g--low { height: .48rem; margin-bottom: .28rem; margin-left: -.07rem; }
-.ho-lettering--xs .ho-g--r { height: .46rem; margin-left: -.1rem; }
-.ho-lettering--xs .ho-g--cap { height: .68rem; margin-bottom: .22rem; margin-left: -.04rem; }
-.ho-lettering--xs .ho-lettering__space { width: .28rem; margin-bottom: .26rem; }
 .hero h1 { margin: 1.1rem 0 1.3rem; font-size: clamp(2.3rem, 4.3vw, 4.5rem); font-weight: 800; line-height: .95; letter-spacing: -.05em; }
 .line { display: block; }
 .line--gold {
@@ -238,7 +230,8 @@ p { margin: 0; }
 .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
 .portrait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgb(6 8 15 / .75)); pointer-events: none; }
 .portrait figcaption { position: absolute; left: 1rem; right: 1rem; bottom: 1rem; z-index: 1; display: flex; justify-content: space-between; align-items: end; gap: 1rem; }
-.portrait figcaption .mono { font-size: .72rem; letter-spacing: .14em; }
+.portrait figcaption strong { font-family: var(--ff-display); font-size: 1.1rem; }
+.portrait figcaption .mono { font-family: var(--ff-mono); font-size: .8rem; letter-spacing: .12em; color: var(--gold-bright); }
 .float-chip {
   position: absolute; z-index: 3; display: inline-flex; align-items: center; gap: .5rem;
   padding: .55rem .85rem; border-radius: 14px;
