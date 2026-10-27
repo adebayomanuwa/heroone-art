@@ -37,6 +37,11 @@ ARROW = ''
 PLAY_I = '<svg class="play-i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg><svg class="pause-i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.4v14H7zM13.6 5H17v14h-3.6z"/></svg>'
 MARK = '/assets/img/brand/heroone-wordmark.webp'
 MARK_W, MARK_H = 1567, 959
+# Custom lettering on the gallery back cover only (homepage hero is hand-set in index.html).
+LETTERING_BACK = '''<picture class="pg-back__lettering">
+        <source srcset="/assets/img/brand/heroone-lettering-animated.gif" media="(prefers-reduced-motion: no-preference)">
+        <img src="{MARK}" width="{MARK_W}" height="{MARK_H}" alt="Hero One">
+      </picture>'''.format(MARK=MARK, MARK_W=MARK_W, MARK_H=MARK_H)
 
 # ───────────────────────── shared header / footer ─────────────────────────
 def header(active=''):
@@ -422,7 +427,7 @@ def build_magazine():
         <p class="pg-cap"><span>{esc(f['title'])}</span><span class="pg-folio">{f['year']}</span></p>
       </section>'''))
     pages.append(('Back cover', '', f'''<section class="fb-page pg-back" data-label="Back cover">
-        <img src="{MARK}" width="{MARK_W}" height="{MARK_H}" alt="Hero One">
+        {LETTERING_BACK}
         <p>Beats &amp; Blues Reality Music</p>
         <p class="pg-folio">heroone.art</p>
       </section>'''))

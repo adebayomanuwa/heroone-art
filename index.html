@@ -25,8 +25,10 @@
   <meta name="twitter:image" content="https://heroone.art/assets/img/og-image.jpg">
   <link rel="preload" href="/assets/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/dm-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/img/brand/heroone-lettering-animated.gif" as="image" media="(prefers-reduced-motion: no-preference)">
+  <link rel="preload" href="/assets/img/brand/heroone-wordmark.webp" as="image" media="(prefers-reduced-motion: reduce)">
   <link rel="preload" href="/assets/img/gallery/march-2024.webp" as="image">
-  <link rel="stylesheet" href="/assets/css/site.css?v=b83d6e415c">
+  <link rel="stylesheet" href="/assets/css/site.css?v=1afa86a3a3">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -107,7 +109,10 @@
 
       <div class="hero-copy">
         <span class="eyebrow"><span class="pulse-dot"></span> Official artist site</span>
-        <img class="hero-logo" src="/assets/img/brand/heroone-wordmark.webp" width="1567" height="959" alt="Hero One">
+        <picture class="hero-lettering">
+          <source srcset="/assets/img/brand/heroone-lettering-animated.gif" media="(prefers-reduced-motion: no-preference)">
+          <img class="hero-logo" src="/assets/img/brand/heroone-wordmark.webp" width="1567" height="959" alt="Hero One">
+        </picture>
         <h1 id="hero-title">
           <span class="line">Beats &amp; Blues</span>
           <span class="line line--gold">Reality Music.</span>
@@ -127,7 +132,19 @@
         </svg>
         <figure class="portrait">
           <img src="/assets/img/gallery/march-2024.webp" width="1440" height="1800" alt="Hero One in white under a warm spotlight, March 2024" fetchpriority="high">
-          <figcaption><strong>Hero One</strong><span class="mono">MMXXIV</span></figcaption>
+          <figcaption>
+            <div class="ho-lettering ho-lettering--xs" role="img" aria-label="Hero One">
+              <img class="ho-g ho-g--H" src="/assets/img/brand/lettering/H-lightning.png" alt="" width="528" height="960" decoding="async">
+              <img class="ho-g ho-g--low" src="/assets/img/brand/lettering/e-lowercase.png" alt="" width="151" height="157" decoding="async">
+              <img class="ho-g ho-g--low ho-g--r" src="/assets/img/brand/lettering/r-lowercase.png" alt="" width="109" height="151" decoding="async">
+              <img class="ho-g ho-g--low" src="/assets/img/brand/lettering/o-lowercase.png" alt="" width="164" height="157" decoding="async">
+              <span class="ho-lettering__space" aria-hidden="true"></span>
+              <img class="ho-g ho-g--cap" src="/assets/img/brand/lettering/O-capital.png" alt="" width="232" height="227" decoding="async">
+              <img class="ho-g ho-g--low" src="/assets/img/brand/lettering/n-lowercase.png" alt="" width="158" height="151" decoding="async">
+              <img class="ho-g ho-g--low" src="/assets/img/brand/lettering/e-final.png" alt="" width="151" height="157" decoding="async">
+            </div>
+            <span class="mono">MMXXIV</span>
+          </figcaption>
         </figure>
         <span class="float-chip float-chip--a"><i></i> Artist · Producer</span>
         <span class="float-chip float-chip--b"><i></i> Opulence Grandeur Sound</span>

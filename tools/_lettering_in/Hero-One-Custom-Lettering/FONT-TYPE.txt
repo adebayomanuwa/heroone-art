@@ -1,0 +1,7 @@
+HERO ONE CUSTOM LETTERING
+
+Font type: Custom logo lettering, supplied by the artist.
+The H lightning emblem and every other supplied letter are preserved from the original PNG.
+Available artwork: H, e, r, o, O, n, and the final e variant.
+Files: Original 3000 x 1200 PNG, transparent glyph PNGs, and exact layout coordinates.
+Format: Raster artwork. This folder does not contain an installable TTF/OTF font or a complete alphabet.

@@ -1,0 +1,63 @@
+{
+  "source": "C:\\Users\\Michael\\Pictures\\HeroOne_AppleMusic_Logo_3000x1200.png",
+  "canvas": [
+    3000,
+    1200
+  ],
+  "font_family": "Hero One Custom Lettering",
+  "font_identification": "Custom lettering supplied and identified as their own by the artist.",
+  "asset_type": "Original custom logo lettering preserved as transparent PNG assets.",
+  "source_sha256": "eee1a9aec0480ff8dfffec1b93bbcfd61eee099f284f367f7be94895446233cb",
+  "glyphs": {
+    "H": {
+      "file": "glyphs/H-lightning.png",
+      "x": 715,
+      "y": 120,
+      "width": 528,
+      "height": 960
+    },
+    "e": {
+      "file": "glyphs/e-lowercase.png",
+      "x": 1146,
+      "y": 558,
+      "width": 151,
+      "height": 157
+    },
+    "r": {
+      "file": "glyphs/r-lowercase.png",
+      "x": 1326,
+      "y": 558,
+      "width": 109,
+      "height": 151
+    },
+    "o": {
+      "file": "glyphs/o-lowercase.png",
+      "x": 1448,
+      "y": 558,
+      "width": 164,
+      "height": 157
+    },
+    "O": {
+      "file": "glyphs/O-capital.png",
+      "x": 1694,
+      "y": 487,
+      "width": 232,
+      "height": 227
+    },
+    "n": {
+      "file": "glyphs/n-lowercase.png",
+      "x": 1946,
+      "y": 558,
+      "width": 158,
+      "height": 151
+    },
+    "last_e": {
+      "file": "glyphs/e-final.png",
+      "x": 2132,
+      "y": 558,
+      "width": 151,
+      "height": 157
+    }
+  },
+  "installable_font_file": null
+}
