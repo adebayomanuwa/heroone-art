@@ -99,7 +99,7 @@ FOOTER = f'''<footer class="site-footer">
     </div>
     <div class="footer-base mono">
       <span>© 2010–<span data-current-year>2026</span> Millenial Renaissance Art Limited &amp; Opulence Grandeur Sound</span>
-      <span>Heal · Reflect · Rise</span>
+      <span>Reality Music</span>
     </div>
   </footer>'''
 
