@@ -489,7 +489,7 @@
     if (pack === 'loading') {
       var wait = document.createElement('p');
       wait.className = 'hx-ly-loading';
-      wait.textContent = 'Opening the lyric sheet.';
+      wait.textContent = 'Loading lyrics…';
       el.lyScroll.appendChild(wait);
       el.lyCopy.disabled = true;
       return;

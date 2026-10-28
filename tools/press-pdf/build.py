@@ -74,8 +74,8 @@ doc = f'''<!doctype html><html lang="en"><head><meta charset="utf-8">
   <section class="release">
     <p class="k red">The release</p>
     <div class="body">
-      <p>LDCAT was mastered in a coffee shop in downtown London, Ontario, but began in Lagos in 2023, originally as Outside. Its identity passed through different periods of my life, with arrangements taking shape in 2025 and completion coming in 2026.</p>
-      <p>Meanwhile, the musical origins of “Highest Currency, Gotta Get it” stretch back through Massive Gang Nation, Lagos and Osogbo, Osun State. The new hook formulation draws from that history. LDCAT can be Latin/Reggaeton. Highest Currency can have an entirely different musical architecture. Both work from Beats &amp; Blues.</p>
+      <p>LDCAT was mastered in a coffee shop in downtown London, Ontario, but began in Lagos in 2023, originally as Outside. Arrangements took shape in 2025; the record was finished in 2026.</p>
+      <p>Meanwhile, “Highest Currency, Gotta Get it” traces back through Massive Gang Nation, Lagos and Osogbo, Osun State. The new hook comes from that history. LDCAT leans Latin and Reggaeton; Highest Currency runs a different beat. Both work from Beats &amp; Blues.</p>
       <p>My theory, <a class="u" href="{U}/philosophy/law/"><em>Variety in Observable Consciousness</em></a>: “The observer, observation, observable, even ‘awareness’ and eventual expression all are circumscribed within TIME, choice, alteration and environment.”</p>
     </div>
   </section>
