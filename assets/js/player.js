@@ -497,7 +497,7 @@
     if (!pack || !pack.stanzas.length) {
       var empty = document.createElement('p');
       empty.className = 'hx-ly-empty';
-      empty.textContent = 'The lyric sheet is not available for this record yet.';
+      empty.textContent = 'Lyrics are not available for this record yet.';
       el.lyScroll.appendChild(empty);
       el.lyCopy.disabled = true;
       return;
