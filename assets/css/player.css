@@ -199,7 +199,6 @@ html.hx-deck-open { overflow: hidden; }
 .hx-lyrics { display: flex; flex-direction: column; width: 100%; min-height: 0; flex: 1; }
 .hx-ly-bar { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 2px 2px 12px; }
 .hx-ly-kicker { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
-.hx-ly-note { display: block; margin-top: 4px; max-width: 16rem; font-size: 12.5px; line-height: 1.35; color: var(--dim); }
 .hx-ly-tools { display: flex; gap: 8px; flex: none; }
 .hx-ly-scroll {
   flex: 1; min-height: 240px; max-height: min(64vh, 620px); overflow: auto;
