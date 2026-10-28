@@ -170,7 +170,6 @@ def lyric_html(s):
     return f'''    <section class="section song-lyrics" aria-labelledby="lyrics-title">
       <div class="song-lyrics__head">
         <h2 id="lyrics-title">Lyrics</h2>
-        <p>The same words sit in the player. They are not timed to the recording, so nothing in them pretends to be the line being sung.</p>
       </div>
       <div class="song-lyrics__sheet">{sheet}</div>
       <p class="song-lyrics__go"><button class="button button--ghost" type="button" data-lyrics="{s["id"]}">Open in the player</button></p>
