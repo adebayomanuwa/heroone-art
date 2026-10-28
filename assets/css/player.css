@@ -212,6 +212,17 @@ html.hx-deck-open { overflow: hidden; }
   font-size: clamp(18px, 2vw, 26px); line-height: 1.45; letter-spacing: -.02em;
   text-wrap: balance;
 }
+.hx-ly-line { transition: color .2s ease, opacity .2s ease; }
+.hx-ly-scroll.is-timed .hx-ly-line {
+  color: var(--dim); opacity: .72; cursor: pointer;
+}
+.hx-ly-scroll.is-timed .hx-ly-line:hover { color: var(--text); opacity: .95; }
+.hx-ly-scroll.is-timed .hx-ly-line.is-active {
+  color: var(--gold-bright); opacity: 1;
+}
+.hx-ly-scroll.is-timed .hx-ly-line:focus-visible {
+  outline: none; box-shadow: 0 0 0 2px rgb(var(--gold-rgb) / .55); border-radius: 4px;
+}
 .hx-ly-empty, .hx-ly-loading { margin: 2.2rem auto; max-width: 24rem; text-align: center; color: var(--muted); font-size: 15px; line-height: 1.5; }
 .hx-np-tools { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; }
 .hx-tool {
