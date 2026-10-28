@@ -321,10 +321,10 @@
             '<div class="hx-readout" aria-hidden="true"><span>State <b class="ro-state">IDLE</b></span><span>Signal <b class="ro-sig">000</b></span><span>Field <b class="ro-trk">DORMANT</b></span></div>' +
             '<div class="hx-lyrics" hidden>' +
               '<div class="hx-ly-bar">' +
-                '<div class="hx-ly-id"><span class="hx-ly-kicker">Lyrics</span><span class="hx-ly-note">Not timed to the recording</span></div>' +
+                '<div class="hx-ly-id"><span class="hx-ly-kicker">Lyrics</span></div>' +
                 '<div class="hx-ly-tools"><button class="hx-tool hx-ly-copy" type="button">Copy</button><button class="hx-tool hx-ly-back" type="button">Show stage</button></div>' +
               '</div>' +
-              '<div class="hx-ly-scroll" tabindex="0" aria-label="Lyrics. These words are not timed to the recording."></div>' +
+              '<div class="hx-ly-scroll" tabindex="0" aria-label="Lyrics"></div>' +
             '</div>' +
           '</div>' +
           '<div class="hx-np">' +
@@ -368,7 +368,7 @@
     el.credits = root.querySelector('.hx-l-credits'); el.song = root.querySelector('.hx-l-song'); el.press = root.querySelector('.hx-l-press'); el.q = root.querySelector('.hx-q');
     el.ringP = root.querySelector('.hx-ring-p'); el.pillIcon = root.querySelector('.hx-pill-icon');
     el.stage = root.querySelector('.hx-stage'); el.ly = root.querySelector('.hx-lyrics'); el.lyScroll = root.querySelector('.hx-ly-scroll');
-    el.lyCopy = root.querySelector('.hx-ly-copy'); el.lyNote = root.querySelector('.hx-ly-note');
+    el.lyCopy = root.querySelector('.hx-ly-copy');
     el.lyBtn = root.querySelector('.hx-np-tools .hx-lyrics'); el.lyDock = root.querySelector('.hx-lyrics-dock');
     el.repeat = root.querySelector('.hx-repeat'); el.vol = root.querySelector('.hx-vol-range'); el.mute = root.querySelector('.hx-mute');
 
