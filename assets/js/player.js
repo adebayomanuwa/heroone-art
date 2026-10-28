@@ -85,6 +85,8 @@
   var remain = sget('localStorage', 'hx_remain') === '1';
   var lyricsOn = false;
   var lyr = {};
+  var lyActive = -1;
+  var lyLines = [];
   try { audio.volume = vol; } catch (e) {}
 
   function T() { return TRACKS[idx]; }
@@ -169,6 +171,7 @@
   var seekTimer = null;
   audio.addEventListener('seeking', function () { if (listen) listen.last = null; });
   audio.addEventListener('seeked', function () {
+    syncLyrics(audio.currentTime || 0, true);
     clearTimeout(seekTimer);
     seekTimer = setTimeout(function () {
       if (listen && listen.fired.play) emit('seek', { track: listen.track, listen: listen.id, pos: audio.currentTime });
@@ -176,6 +179,7 @@
   });
   audio.addEventListener('timeupdate', function () {
     ui.progress();
+    syncLyrics(audio.currentTime || 0, false);
     if (!listen || audio.paused) return;
     var t = audio.currentTime;
     if (listen.last != null) {
@@ -321,10 +325,10 @@
             '<div class="hx-readout" aria-hidden="true"><span>State <b class="ro-state">IDLE</b></span><span>Signal <b class="ro-sig">000</b></span><span>Field <b class="ro-trk">DORMANT</b></span></div>' +
             '<div class="hx-lyrics" hidden>' +
               '<div class="hx-ly-bar">' +
-                '<div class="hx-ly-id"><span class="hx-ly-kicker">Lyrics</span><span class="hx-ly-note">Not timed to the recording</span></div>' +
+                '<div class="hx-ly-id"><span class="hx-ly-kicker">Lyrics</span></div>' +
                 '<div class="hx-ly-tools"><button class="hx-tool hx-ly-copy" type="button">Copy</button><button class="hx-tool hx-ly-back" type="button">Show stage</button></div>' +
               '</div>' +
-              '<div class="hx-ly-scroll" tabindex="0" aria-label="Lyrics. These words are not timed to the recording."></div>' +
+              '<div class="hx-ly-scroll" tabindex="0" aria-label="Lyrics"></div>' +
             '</div>' +
           '</div>' +
           '<div class="hx-np">' +
@@ -368,7 +372,7 @@
     el.credits = root.querySelector('.hx-l-credits'); el.song = root.querySelector('.hx-l-song'); el.press = root.querySelector('.hx-l-press'); el.q = root.querySelector('.hx-q');
     el.ringP = root.querySelector('.hx-ring-p'); el.pillIcon = root.querySelector('.hx-pill-icon');
     el.stage = root.querySelector('.hx-stage'); el.ly = root.querySelector('.hx-lyrics'); el.lyScroll = root.querySelector('.hx-ly-scroll');
-    el.lyCopy = root.querySelector('.hx-ly-copy'); el.lyNote = root.querySelector('.hx-ly-note');
+    el.lyCopy = root.querySelector('.hx-ly-copy');
     el.lyBtn = root.querySelector('.hx-np-tools .hx-lyrics'); el.lyDock = root.querySelector('.hx-lyrics-dock');
     el.repeat = root.querySelector('.hx-repeat'); el.vol = root.querySelector('.hx-vol-range'); el.mute = root.querySelector('.hx-mute');
 
@@ -386,6 +390,23 @@
     el.lyDock.addEventListener('click', function () { openLyrics(true); openDeck(true); });
     root.querySelector('.hx-ly-back').addEventListener('click', function () { openLyrics(false); });
     el.lyCopy.addEventListener('click', copyLyrics);
+    el.lyScroll.addEventListener('click', function (e) {
+      var line = e.target.closest('.hx-ly-line');
+      if (!line || line.dataset.t == null) return;
+      var t = parseFloat(line.dataset.t);
+      if (!isFinite(t)) return;
+      try { audio.currentTime = t; } catch (err) {}
+      syncLyrics(t, true);
+      ui.progress();
+      drawWaves(true);
+    });
+    el.lyScroll.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      var line = e.target.closest('.hx-ly-line');
+      if (!line || line.dataset.t == null) return;
+      e.preventDefault();
+      line.click();
+    });
     el.repeat.addEventListener('click', cycleRepeat);
     el.mute.addEventListener('click', function () { setVol(vol > 0.001 ? 0 : lastVol); });
     el.vol.addEventListener('input', function () { setVol(parseFloat(el.vol.value)); });
@@ -410,7 +431,7 @@
         else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
       } else if (!typing && (e.key === 'l' || e.key === 'L') && !e.metaKey && !e.ctrlKey && !e.altKey) { e.preventDefault(); openLyrics(!lyricsOn); }
       else if (!typing && (e.key === 'r' || e.key === 'R') && !e.metaKey && !e.ctrlKey && !e.altKey) { e.preventDefault(); cycleRepeat(); }
-      else if (e.key === ' ' && field && !typing && field !== el.lyScroll && !/^(BUTTON|A|INPUT)$/.test(field.tagName) && field.getAttribute('role') !== 'slider') { e.preventDefault(); toggle(); }
+      else if (e.key === ' ' && field && !typing && field !== el.lyScroll && !field.classList.contains('hx-ly-line') && !/^(BUTTON|A|INPUT)$/.test(field.tagName) && field.getAttribute('role') !== 'slider') { e.preventDefault(); toggle(); }
     });
     el.deck.addEventListener('pointermove', function (e) {
       if (reduce.matches || lyricsOn) return;
@@ -425,24 +446,50 @@
     TRACKS.forEach(function (t) { getData(t.id); });
   }
 
-  /* Lyrics are plain text, with no line times. Spotify and Apple both refuse to
-     invent a highlight in that case: a wrong line is worse than an honest sheet.
-     The words stay readable, and the waveform remains the only playhead. */
+  /* Lyrics are plain text. Optional line start times live at
+     /assets/music/<id>.times.json (seconds, one entry per non-empty line).
+     When times match, the player highlights and scrolls the current line. */
   function parseLyrics(raw) {
-    var stanzas = [], cur = [];
+    var stanzas = [], cur = [], n = 0;
     String(raw).replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n').forEach(function (line) {
       if (!line.trim()) { if (cur.length) { stanzas.push(cur); cur = []; } }
-      else cur.push(line.trim());
+      else { cur.push(line.trim()); n += 1; }
     });
     if (cur.length) stanzas.push(cur);
-    return { stanzas: stanzas, text: stanzas.map(function (s) { return s.join('\n'); }).join('\n\n') };
+    return { stanzas: stanzas, lineCount: n, text: stanzas.map(function (s) { return s.join('\n'); }).join('\n\n') };
+  }
+  function lineIndexAt(t, times) {
+    if (!times || !times.length || t < times[0]) return -1;
+    var i = 0;
+    while (i + 1 < times.length && times[i + 1] <= t) i += 1;
+    return i;
+  }
+  function syncLyrics(t, force) {
+    if (!lyricsOn || !lyLines.length) return;
+    var pack = lyr[T().id];
+    if (!pack || !pack.times) return;
+    var i = lineIndexAt(t, pack.times);
+    if (i === lyActive && !force) return;
+    if (lyActive >= 0 && lyLines[lyActive]) lyLines[lyActive].classList.remove('is-active');
+    lyActive = i;
+    if (i < 0 || !lyLines[i]) return;
+    var node = lyLines[i];
+    node.classList.add('is-active');
+    var sc = el.lyScroll, nr = node.getBoundingClientRect(), sr = sc.getBoundingClientRect();
+    if (nr.top < sr.top + 20 || nr.bottom > sr.bottom - 20) {
+      try { node.scrollIntoView({ block: 'center', behavior: reduce.matches ? 'auto' : 'smooth' }); }
+      catch (e) { node.scrollIntoView(true); }
+    }
   }
   function paintLyrics(pack) {
     el.lyScroll.replaceChildren();
+    el.lyScroll.classList.remove('is-timed');
+    lyActive = -1;
+    lyLines = [];
     if (pack === 'loading') {
       var wait = document.createElement('p');
       wait.className = 'hx-ly-loading';
-      wait.textContent = 'Opening the lyric sheet.';
+      wait.textContent = 'Loading lyrics…';
       el.lyScroll.appendChild(wait);
       el.lyCopy.disabled = true;
       return;
@@ -455,28 +502,48 @@
       el.lyCopy.disabled = true;
       return;
     }
+    var timed = Array.isArray(pack.times) && pack.times.length === pack.lineCount;
+    if (timed) el.lyScroll.classList.add('is-timed');
     pack.stanzas.forEach(function (lines) {
       var stanza = document.createElement('p');
       stanza.className = 'hx-ly-stanza';
       lines.forEach(function (line, i) {
         if (i) stanza.appendChild(document.createElement('br'));
-        stanza.appendChild(document.createTextNode(line));
+        var span = document.createElement('span');
+        span.className = 'hx-ly-line';
+        span.textContent = line;
+        if (timed) {
+          span.dataset.t = String(pack.times[lyLines.length]);
+          span.tabIndex = 0;
+          span.setAttribute('role', 'button');
+        }
+        stanza.appendChild(span);
+        lyLines.push(span);
       });
       el.lyScroll.appendChild(stanza);
     });
     el.lyCopy.disabled = false;
     el.lyScroll.scrollTop = 0;
+    if (timed) syncLyrics(audio.currentTime || 0, true);
   }
   function ensureLyrics(track) {
     if (!track.lyrics) { paintLyrics(null); return; }
     if (lyr[track.id]) { paintLyrics(lyr[track.id]); return; }
     paintLyrics('loading');
-    var url = new URL(track.lyrics, location.origin).href;
-    fetch(url, { credentials: 'same-origin' }).then(function (r) {
+    var textUrl = new URL(track.lyrics, location.origin).href;
+    var timesUrl = new URL(track.lyricsTimes || ('/assets/music/' + track.id + '.times.json'), location.origin).href;
+    var textP = fetch(textUrl, { credentials: 'same-origin' }).then(function (r) {
       if (!r.ok) throw new Error('lyrics');
       return r.text();
-    }).then(function (text) {
-      lyr[track.id] = parseLyrics(text);
+    });
+    var timesP = fetch(timesUrl, { credentials: 'same-origin' }).then(function (r) {
+      return r.ok ? r.json() : null;
+    }).catch(function () { return null; });
+    Promise.all([textP, timesP]).then(function (parts) {
+      var pack = parseLyrics(parts[0]);
+      var times = parts[1];
+      if (Array.isArray(times) && times.length === pack.lineCount) pack.times = times.map(Number);
+      lyr[track.id] = pack;
       if (lyricsOn && T().id === track.id) paintLyrics(lyr[track.id]);
     }).catch(function () {
       delete lyr[track.id];

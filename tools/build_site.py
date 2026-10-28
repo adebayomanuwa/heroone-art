@@ -33,7 +33,7 @@ def write(rel, text):
     open(p, 'w', encoding='utf-8').write(text)
     print('wrote', '/' + rel.replace('index.html', ''))
 
-ARROW = '<svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg>'
+ARROW = ''
 PLAY_I = '<svg class="play-i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg><svg class="pause-i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.4v14H7zM13.6 5H17v14h-3.6z"/></svg>'
 MARK = '/assets/img/brand/heroone-wordmark.webp'
 MARK_W, MARK_H = 1567, 959
@@ -91,7 +91,7 @@ FOOTER = f'''<footer class="site-footer">
       <nav aria-label="Hero One elsewhere">
         <h2 class="kicker">Elsewhere</h2>
         <a href="/#contact" data-book>Book</a>
-        <a href="https://portfolio.heroone.art" target="_blank" rel="noopener">Portfolio &amp; press kit <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a href="https://portfolio.heroone.art" target="_blank" rel="noopener">Portfolio &amp; press kit</a>
         <a href="https://metameta3.com" target="_blank" rel="noopener">metameta3.com</a>
         <a href="https://333bi.tech" target="_blank" rel="noopener">333bi.tech</a>
         <a href="/studio/" data-no-swap>Studio</a>
@@ -99,7 +99,7 @@ FOOTER = f'''<footer class="site-footer">
     </div>
     <div class="footer-base mono">
       <span>© 2010–<span data-current-year>2026</span> Millenial Renaissance Art Limited &amp; Opulence Grandeur Sound</span>
-      <span>Heal · Reflect · Rise</span>
+      <span>Reality Music</span>
     </div>
   </footer>'''
 
@@ -170,7 +170,6 @@ def lyric_html(s):
     return f'''    <section class="section song-lyrics" aria-labelledby="lyrics-title">
       <div class="song-lyrics__head">
         <h2 id="lyrics-title">Lyrics</h2>
-        <p>The same words sit in the player. They are not timed to the recording, so nothing in them pretends to be the line being sung.</p>
       </div>
       <div class="song-lyrics__sheet">{sheet}</div>
       <p class="song-lyrics__go"><button class="button button--ghost" type="button" data-lyrics="{s["id"]}">Open in the player</button></p>
@@ -213,7 +212,7 @@ def build_music():
           <span class="m-press__go">Read {ARROW}</span>
         </a>''' for p in CAT['press'])
     credits = ''.join(f'<li><a href="/music/credits/{s["slug"]}/"><img src="{s["cover"]}-160.webp" alt="" width="56" height="56" loading="lazy"><span><strong>{esc(s["title"])}</strong></span>{ARROW}</a></li>' for s in SONGS)
-    plats = ''.join(f'<a class="platform" href="{u}" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#{i}"/></svg>{esc(n)}</span>{ARROW}</a>' for n, u, i in CAT['platforms'])
+    plats = ''.join(f'<a class="platform" href="{u}" target="_blank" rel="noopener"><span><svg class="brand" aria-hidden="true"><use href="#{i}"/></svg>{esc(n)}</span></a>' for n, u, i in CAT['platforms'])
     body = f'''    <section class="page-hero page-hero--music" aria-labelledby="ph-title">
       <div class="signal-field" data-signal-field aria-hidden="true"><canvas></canvas></div>
       <div class="hero-grain" aria-hidden="true"></div>

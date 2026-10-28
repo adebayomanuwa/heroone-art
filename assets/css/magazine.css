@@ -69,7 +69,7 @@ body.is-magazine { background: radial-gradient(120% 80% at 50% 0%, #15171f 0%, #
 .pg-frame--land .pg-cap .pg-folio { color: var(--dim); }
 
 .pg-back { display: grid; place-content: center; justify-items: center; gap: 3cqw; background: var(--ink); color: rgb(255 255 255 / .8); text-align: center; }
-.pg-back img { width: 46cqw; height: auto; }
+.pg-back img { width: 46cqw; height: auto; display: block; filter: drop-shadow(0 8px 24px rgb(0 0 0 / .45)); }
 .pg-back p { margin: 0; font-size: max(10px, 2.8cqw); }
 .pg-back .pg-folio { color: var(--gold); }
 .pg-blank { background: var(--paper); }

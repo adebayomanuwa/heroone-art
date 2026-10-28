@@ -199,7 +199,6 @@ html.hx-deck-open { overflow: hidden; }
 .hx-lyrics { display: flex; flex-direction: column; width: 100%; min-height: 0; flex: 1; }
 .hx-ly-bar { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 2px 2px 12px; }
 .hx-ly-kicker { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
-.hx-ly-note { display: block; margin-top: 4px; max-width: 16rem; font-size: 12.5px; line-height: 1.35; color: var(--dim); }
 .hx-ly-tools { display: flex; gap: 8px; flex: none; }
 .hx-ly-scroll {
   flex: 1; min-height: 240px; max-height: min(64vh, 620px); overflow: auto;
@@ -212,6 +211,17 @@ html.hx-deck-open { overflow: hidden; }
   font-family: var(--display); font-weight: 700;
   font-size: clamp(18px, 2vw, 26px); line-height: 1.45; letter-spacing: -.02em;
   text-wrap: balance;
+}
+.hx-ly-line { transition: color .2s ease, opacity .2s ease; }
+.hx-ly-scroll.is-timed .hx-ly-line {
+  color: var(--dim); opacity: .72; cursor: pointer;
+}
+.hx-ly-scroll.is-timed .hx-ly-line:hover { color: var(--text); opacity: .95; }
+.hx-ly-scroll.is-timed .hx-ly-line.is-active {
+  color: var(--gold-bright); opacity: 1;
+}
+.hx-ly-scroll.is-timed .hx-ly-line:focus-visible {
+  outline: none; box-shadow: 0 0 0 2px rgb(var(--gold-rgb) / .55); border-radius: 4px;
 }
 .hx-ly-empty, .hx-ly-loading { margin: 2.2rem auto; max-width: 24rem; text-align: center; color: var(--muted); font-size: 15px; line-height: 1.5; }
 .hx-np-tools { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; }

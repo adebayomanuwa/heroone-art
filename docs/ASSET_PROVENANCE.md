@@ -28,7 +28,7 @@ Where every binary in this site came from and what was done to it. Hashes are th
 
 | Published file | Source | Transformation |
 | --- | --- | --- |
-| `assets/img/brand/heroone-wordmark.webp` | `HeroOne_AppleMusic_Logo_3000x1200.png` | Trimmed to the artwork. This is the site wordmark: “Hero One”, with no dots between the letters |
+| `assets/img/brand/heroone-wordmark.webp` | `HeroOne_AppleMusic_Logo_3000x1200.png` | Trimmed to the artwork. This is the site's official custom lettering wordmark: “Hero One”, with no dots or dashes, clean 8-bit alpha |
 | `assets/img/brand/heroone-logo.webp` | heroone-art `Hero One design no bg .png` (3000×1800) | Earlier wordmark, kept on disk. The site no longer uses it |
 | `assets/img/brand/heroone-logo-480.png` | same earlier wordmark | Trimmed, 480px PNG |
 | `assets/img/brand/icon-512.png`, `icon-192.png`, `apple-touch-icon.png` | the clean wordmark | Centred on ink `#06080f` |
