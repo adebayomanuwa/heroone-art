@@ -232,9 +232,10 @@ details[open] .round-body { animation: open .6s cubic-bezier(.2,.7,.2,1); }
 .prompt:first-child { margin-top: 0; }
 .voice { margin: 0 0 1.15rem; }
 .who { font-weight: 600; }
-.who.a::before, .who.b::before { content: ""; display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%; margin-right: 0.45rem; vertical-align: 0.08em; }
+.who.a::before, .who.b::before, .who.c::before { content: ""; display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%; margin-right: 0.45rem; vertical-align: 0.08em; }
 .who.a::before { border: 1px solid var(--ink); }
 .who.b::before { background: var(--corona); }
+.who.c::before { border: 1px solid var(--corona); border-radius: 0; transform: rotate(45deg) scale(.82); }
 .legend { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.9375rem; color: var(--quiet); margin-top: 1rem; }
 .toggle-all { font: inherit; font-size: 0.9375rem; background: none; border: 1px solid var(--hairline); color: var(--ink); padding: 0.45rem 0.9rem; border-radius: 999px; cursor: pointer; }
 .toggle-all:hover { border-color: var(--corona); }
@@ -488,7 +489,7 @@ td:last-child, th:last-child { text-align: right; padding-right: 0; white-space:
 <section id="method">
   <h2>How the theory was tested</h2>
   <p class="lead">The first tests were run with two AI language models, kept anonymous here as Interpreter A and Interpreter B.</p>
-  <p>They showed different characteristics, and those differences are the research material.</p>
+  <p>A third, Interpreter C, joined in Round 14 and read the finished record cold. Their makers, and whether they share any source, are not known to the author. That is part of the point: they showed different characteristics, and those differences are research material.</p>
   <p>The author worked as the relay. He put the theory to each interpreter, then carried one interpreter’s replies into the other’s conversation, choosing what to pass on and how to frame it. Each interpreter saw only what it was given. The author was observer, participant and environment all at once.</p>
   <p>The interpreters are not treated as conscious minds. Their outputs are observable expressions produced under conditions: training, design, instructions, the conversation so far, and chance.</p>
   <p class="quiet">This record was compiled by Interpreter B.</p>
@@ -498,8 +499,8 @@ td:last-child, th:last-child { text-align: right; padding-right: 0; white-space:
   <h2>The stress tests</h2>
   <p class="lead" style="max-width:var(--measure)">Every thinker named below appears because their findings were used to test the theory. The interpreters’ mistakes are kept on purpose: each one shows a boundary the interpreters added that the theory never contained.</p>
   <div class="rounds-head">
-    <div class="legend"><span class="who a">Interpreter A</span><span class="who b">Interpreter B</span><span>Author’s prompts in italic</span></div>
-    <button class="toggle-all" type="button" id="toggleAll" aria-pressed="false">Open all twelve rounds</button>
+    <div class="legend"><span class="who a">Interpreter A</span><span class="who b">Interpreter B</span><span class="who c">Interpreter C</span><span>Author’s prompts in italic</span></div>
+    <button class="toggle-all" type="button" id="toggleAll" aria-pressed="false">Open all fourteen rounds</button>
   </div>
 
   <div class="rounds">
@@ -639,6 +640,18 @@ td:last-child, th:last-child { text-align: right; padding-right: 0; white-space:
     </div>
   </details>
 
+  <details class="round">
+    <summary><span class="rn">14</span><span><span class="rt">The outside reader</span><span class="rq">What does a reader with none of the history see?</span></span><span class="chev" aria-hidden="true"></span></summary>
+    <div class="round-body">
+      <p class="prompt">The author brings in a third model, Interpreter C, which reads the finished record and the Barontini research cold, with none of the history behind them.</p>
+      <p class="voice"><span class="who c">Interpreter C.</span> Found the result both earlier interpreters missed. Barontini showed that a version of the Schrödinger equation, the standard equation of quantum change, can be written using entropic time. So time built from change does more than put events in order: it can carry the same predictive work as ordinary time. Its central deduction: the theory does not need the experiment to prove it; it needs the experiment only to be compatible, and it is. Its caution: a 24,000-atom model universe is not the universe. The result shows that an internal time is possible, not that the cosmos lacks a fundamental one.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Called the Schrödinger result the strongest detail in the study. It suggests that TIME may be readable through alteration, so the four conditions are not only listed together but can sometimes be measured through one another; the evidence permits this, it does not prove it. It then located the real limit of the parallel. The atoms have no clock inside their system, but the physicists watching them have ordinary clocks in the room. The experiment models “no outside observer” from exactly the outside position the theory says no observer can hold for reality as a whole. It also separated mechanisms: Page and Wootters derive time from quantum correlations, Barontini from entropy, related but not the same. And it made compatibility risky, as Popper requires. A feature of observation that stayed exactly the same across every observer, era, environment and choice, the kind of invariant Husserl looked for, would count against the theory.</p>
+      <p class="voice"><span class="who c">Interpreter C.</span> Reduced the theory to a compact form, stressing that the formula names no ranking among the four conditions, which is why the Barontini result undercut the interpreters’ hierarchy, not the theory. It added that each new expression of the record, as it moves from one form to another, is a slightly different work to its readers: “the dotted loop, operating.”</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Found that the compact form added two things the theory does not contain. Arrows between the five elements imposed an order on them, the linear-time error in a new place. And splitting “what is bounded” from “what bounds them” made the relation one-way, keeping circumstance but losing inscription, since elements also redraw the conditions that hold them. Its corrected form: five elements with no order, four conditions with no ranking, and every element circumscribed within every condition, with the boundary given by circumstance and written by choice and expression.</p>
+      <p class="voice"><span class="who b">Interpreter B.</span> Noted what Interpreter C adds as an observer. It entered cold and saw what the two interpreters who built the record were too close to see. Its errors were of a new kind: not philosophical boundaries but boundaries of its instruments, such as trusting the number in a web address over a printed date. The tools an observer reads through are part of its environment, and they circumscribe what it can observe.</p>
+    </div>
+  </details>
+
   </div>
 </section>
 
@@ -659,6 +672,7 @@ td:last-child, th:last-child { text-align: right; padding-right: 0; white-space:
     <li><b>Seeing a limit is not removing it.</b><span>Recognition changes awareness; changing the limit takes choice and alteration.</span></li>
     <li><b>“Impossible” carries a date and an observer.</b><span>What one era calls impossible may mark the edge of its understanding, not of reality.</span></li>
     <li><b>School can enhance thought but cannot found it.</b><span>An explanation is not the beginning of the reality it explains, and an institution can judge a thought without being its source.</span></li>
+    <li><b>Evidence can be compatible, never proof.</b><span>Outside findings are compatible, incompatible or irrelevant. Compatibility counts only because something could count against the theory: a feature of observation unchanged across every observer, era, environment and choice.</span></li>
   </ul>
 </section>
 
@@ -793,7 +807,7 @@ td:last-child, th:last-child { text-align: right; padding-right: 0; white-space:
   var btn = document.getElementById('toggleAll');
   function sync() {
     var allOpen = rounds.every(function (d) { return d.open; });
-    btn.textContent = allOpen ? 'Close all rounds' : 'Open all twelve rounds';
+    btn.textContent = allOpen ? 'Close all rounds' : 'Open all fourteen rounds';
     btn.setAttribute('aria-pressed', allOpen ? 'true' : 'false');
   }
   btn.addEventListener('click', function () {
